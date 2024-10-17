@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-echo "test"
-echo exit
-
 k=${1:-1000}
 
 complain() {
