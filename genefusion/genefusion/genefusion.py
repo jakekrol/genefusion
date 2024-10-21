@@ -16,7 +16,7 @@ def stix_sharded(dir_shard, chr, left_start, left_end, right_start, right_end,ou
     args = locals()
     for key, value in args.items():
         print(f"{key}: {value}")
-    time.sleep(3)
+    #time.sleep(3)
     shards = os.listdir(dir_shard)
     if not shards:
         print('no shards found at',dir_shard)
@@ -66,4 +66,4 @@ def genefile2queries(chr_gene_file):
     queries['chr'] = [chr] * len(queries['gene_i'])
     # strand not used for query, but use to organize output
     queries['strand'] = [strand] * len(queries['gene_i'])
-    return queries
+    return pd.DataFrame(queries)
