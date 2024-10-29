@@ -4,13 +4,13 @@ from multiprocessing import Pool
 import re
 import pandas as pd
 import numpy as np
-def stix(index, db, chr, left_start, left_end, right_start, right_end, outfile,type,chdir=None):
+def stix(index, db, chrm, left_start, left_end, right_start, right_end, outfile,type,chdir=None):
     if chdir:
         os.chdir(chdir)
-    cmd = f"stix -i {index} -d {db} -t {type} -l {chr}:{left_start}-{left_end} -r {chr}:{right_start}-{right_end} -s 500 > {outfile}"
+    cmd = f"stix -i {index} -d {db} -t {type} -l {chrm}:{left_start}-{left_end} -r {chrm}:{right_start}-{right_end} -s 500 > {outfile}"
     print(cmd)
     os.system(cmd)
-def stix_sharded(dir_shard, chr, left_start, left_end, right_start, right_end,outdir,outfile,type,processes,index_name='index',db_name='stix.ped.db'):
+def stix_sharded(dir_shard, chrm, left_start, left_end, right_start, right_end,outdir,outfile,type,processes,index_name='index',db_name='stix.ped.db'):
     print('begin sharded stix')
     processes = int(processes)
     args = locals()
@@ -25,21 +25,21 @@ def stix_sharded(dir_shard, chr, left_start, left_end, right_start, right_end,ou
     data = []
     for shard in shards:
          shard_out = os.path.join(outdir,f'{os.path.basename(shard)}.{outfile}')
-         data.append((index_name,db_name,chr,left_start,left_end,right_start,right_end,shard_out,type,shard))
+         data.append((index_name,db_name,chrm,left_start,left_end,right_start,right_end,shard_out,type,shard))
     print('data','\n',data[0])
     print('performing stix queries over shards at',dir_shard, 'with',processes,'processes')
     with Pool(processes=processes) as pool:
         pool.starmap(stix, data)
     print('end sharded stix')
 
-def genefile2queries(chr_gene_file):
+def genefile2queries(chr_gene_file, max_dist = 10 ** 6):
     base = os.path.basename(chr_gene_file)
     match = re.match(r"chr(\d+)\.(.+)", base)
     if match:
-        chr = match.group(1)
+        chrm = match.group(1)
         strand = match.group(2)
     else:
-        raise ValueError(f"file {base} does not match pattern chr(\d+)\.(.+), | valid example -> chr21.neg")
+        raise ValueError(f"file {base} does not match pattern chr.#.strand, | valid example -> chr21.neg")
     df = pd.read_csv(chr_gene_file, sep='\t',header=None, usecols=[0,1,2,3])
     queries = {
         'gene_i': [], 'gene_i_start':[], 'gene_i_stop': [], 'gene_j': [],
@@ -55,15 +55,18 @@ def genefile2queries(chr_gene_file):
             gene_j = df.iloc[k,3]
             gene_j_start = df.iloc[k,1]
             gene_j_stop = df.iloc[k,2]
+            if gene_j_start - gene_i_stop > max_dist:
+                continue
+            else:
+                queries['gene_i'].append(gene_i)
+                queries['gene_i_start'].append(gene_i_start)
+                queries['gene_i_stop'].append(gene_i_stop)
+                queries['gene_j'].append(gene_j)
+                queries['gene_j_start'].append(gene_j_start)
+                queries['gene_j_stop'].append(gene_j_stop)
 
-            queries['gene_i'].append(gene_i)
-            queries['gene_i_start'].append(gene_i_start)
-            queries['gene_i_stop'].append(gene_i_stop)
-            queries['gene_j'].append(gene_j)
-            queries['gene_j_start'].append(gene_j_start)
-            queries['gene_j_stop'].append(gene_j_stop)
-
-    queries['chr'] = [chr] * len(queries['gene_i'])
+    # it's assumed these are fixed by preprocessing the input file
+    queries['chr'] = [chrm] * len(queries['gene_i'])
     # strand not used for query, but use to organize output
     queries['strand'] = [strand] * len(queries['gene_i'])
     return pd.DataFrame(queries)
