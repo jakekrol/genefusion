@@ -4,6 +4,20 @@ from multiprocessing import Pool
 import re
 import pandas as pd
 import numpy as np
+def giggle_sharded(dir_shard, index, genefile, gene, chrm, strand, left, right, outdir, chdir=True):
+    # giggle_sharded("/data/jake/genefusion/data/prostate/shards", "index", "/data/jake/genefusion/data/gene_file.txt", "ERG", 21, "neg", 39751949, 40033704, "/data/jake/genefusion/data/2024_10_31-fusions")
+    # expect index name to be consistent across all shards
+    shards = [os.path.join(dir_shard, x) for x in os.listdir(dir_shard)]
+    for shard in shards:
+        if chdir:
+            os.chdir(shard)
+        outfile = f"{os.path.basename(shard)}.{chrm}.{strand}.{gene}.{left}.{right}.giggle"
+        outintersect = f"{os.path.basename(shard)}.{chrm}.{strand}.{gene}.{left}.{right}.intersect"
+        outfile = os.path.join(outdir, outfile)
+        outintersect = os.path.join(outdir, outintersect)
+        cmd = f"/data/jake/genefusion/scripts/shell/genefusion_giggle.sh -i {index} -f {genefile} -g {gene} -c {chrm} -s {strand} -l {left} -r {right} -o {outfile} -b {outintersect}"
+        os.system(cmd)
+
 def stix(index, db, chrm, left_start, left_end, right_start, right_end, outfile,type,chdir=None):
     if chdir:
         os.chdir(chdir)
@@ -32,7 +46,7 @@ def stix_sharded(dir_shard, chrm, left_start, left_end, right_start, right_end,o
         pool.starmap(stix, data)
     print('end sharded stix')
 
-def genefile2queries(chr_gene_file, max_dist = 10 ** 6):
+def genefile2queries(chr_gene_file, max_dist = 5 * (10 ** 6)):
     base = os.path.basename(chr_gene_file)
     match = re.match(r"chr(\d+)\.(.+)", base)
     if match:
