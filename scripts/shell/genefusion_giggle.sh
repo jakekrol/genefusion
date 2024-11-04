@@ -47,11 +47,12 @@ if [ -z "${outintersect}" ]; then
   outintersect="$chrm.$strand.$gene.$left.$right.intersect"
 fi
 
-giggle search -v -i $index -r $chrm:$left-$right | cut -f 5-7 > $outfile
+giggle search -v -i $index -r $chrm:$left-$right > $outfile # | cut -f 5-7 > $outfile
 # rm excord hits with all -1 interval
-sed -i '/^-1/d' $outfile
+# adjust to get bedtools intersect to work
+#sed -i '/^-1/d' $outfile
 # intersect with gene file
-bedtools intersect -a $genefile -b $outfile > $outintersect
+#bedtools intersect -a $genefile -b $outfile > $outintersect
 date
 
 #date
