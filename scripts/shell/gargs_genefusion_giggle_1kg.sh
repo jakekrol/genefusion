@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# parallel stix queries for pcawg prostate gene fusion data
+# parallel giggle queries for pcawg prostate gene fusion data
 
 procs=${1:-70}
 onekg="/data/stix/1kg/low_coverage"
