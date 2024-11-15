@@ -1,0 +1,29 @@
+# coding: utf-8
+from genefusion.genefusion import cln_giggle
+import numpy as np
+import pandas as pd
+d_giggle = 'giggle'
+d_no_neg1 = 'giggle_no_neg1'
+d_giggle_cln = 'giggle_cln'
+os.listdir(d_giggle)
+import os,sys
+os.listdir(d_giggle)
+def mutate(src, dest):
+    df = pd.read_csv(src,sep='\t',header=None)
+    df_cln = cln_giggle(df)
+    df_cln.to_csv(dest,sep='\t',header=False,index=False)
+    
+srcs = [os.path.join(d_giggle, x) for x in os.listdir(d_giggle)]
+srcs
+dests = [os.path.join(d_giggle_cln, x) for x in os.listdir(d_giggle)]
+dests
+queries = []
+for src, dest in zip(srcs,dests):
+    queries.append((src,dest))
+   
+queries
+import multiprocessing as mp
+cpus = 64
+with mp.Pool(processes=cpus) as pool:
+    pool.starmap(mutate, queries)
+    
