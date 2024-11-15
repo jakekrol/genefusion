@@ -4,6 +4,23 @@ from multiprocessing import Pool
 import re
 import pandas as pd
 import numpy as np
+
+def rm_non_std_chrm(df):
+    allow = [str(x) for x in list(range(1,23))] + ['X', 'Y']
+    mask = df.iloc[:,4].apply(lambda x: x in allow)
+    return df[mask]
+
+def rmneg1(df):
+    # rm '-1' values for excord right hand hits (chr, start, end = -1); not sure what these mean
+    # '-1' raises error in bedtools intersect
+    filtered_df = df[(df.iloc[:, 4] != -1) & (df.iloc[:, 5] != -1) & (df.iloc[:, 6] != -1)]
+    return filtered_df
+
+def cln_giggle(df):
+    df = rm_non_std_chrm(df)
+    df = rmneg1(df)
+    return df
+
 def giggle_sharded(dir_shard, index, genefile, gene, chrm, strand, left, right, outdir, chdir=True):
     # giggle_sharded("/data/jake/genefusion/data/prostate/shards", "index", "/data/jake/genefusion/data/gene_file.txt", "ERG", 21, "neg", 39751949, 40033704, "/data/jake/genefusion/data/2024_10_31-fusions")
     # expect index name to be consistent across all shards
