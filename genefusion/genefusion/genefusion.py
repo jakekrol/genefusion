@@ -15,10 +15,18 @@ def rmneg1(df):
     # '-1' raises error in bedtools intersect
     filtered_df = df[(df.iloc[:, 4] != -1) & (df.iloc[:, 5] != -1) & (df.iloc[:, 6] != -1)]
     return filtered_df
+def rm_double_zero(df):
+    # rm rows where both start and end are 0
+    rm_idx = df[(df.iloc[:,5] == 0) & (df.iloc[:,6] ==0)].index
+    if len(rm_idx) > 0:
+        return df.drop(rm_idx)
+    else:
+        return df
 
 def cln_giggle(df):
     df = rm_non_std_chrm(df)
     df = rmneg1(df)
+    df = rm_double_zero(df)
     return df
 
 def giggle_sharded(dir_shard, index, genefile, gene, chrm, strand, left, right, outdir, chdir=True):
