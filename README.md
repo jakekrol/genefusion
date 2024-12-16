@@ -54,3 +54,59 @@ ls | gargs --log ../gargs.log -p 64 -o "$bedtools intersect -a $genefile -b <(cu
 ### Sample-wise gene2gene evidence
 
 Same as population, except split GIGGLE output files by the sample column, then do intersect.
+
+## Data
+
+### Gene2gene matrices
+
+loading
+```
+# load the npz parts as dataframes and stack
+def reassemble_dataframe_from_npz(parts_prefix, num_parts):
+    dfs = []
+    
+    for part_num in range(1, num_parts + 1):
+        # Load the .npz file
+        part_file = f"{parts_prefix}_part{part_num}.npz"
+        data = np.load(part_file,allow_pickle=True)
+        
+        # Convert the dictionary of arrays back to a DataFrame, including the index
+        index = data['index']
+        df_part = pd.DataFrame({key: data[key] for key in data if key != 'index'}, index=index)
+        
+        # Append the DataFrame part to the list
+        dfs.append(df_part)
+    
+    # Concatenate all DataFrame parts
+    df = pd.concat(dfs)
+    
+    return df
+C = reassemble_dataframe_from_npz("C",10)
+```
+
+saving
+```
+# npz format is much faster to load than a gzipped tsv
+def split_dataframe_to_npz(df, output_prefix, num_parts):
+    # Calculate the number of rows per part
+    rows_per_part = len(df) // num_parts
+    
+    for part_num in range(num_parts):
+        start_row = part_num * rows_per_part
+        end_row = (part_num + 1) * rows_per_part if part_num < num_parts - 1 else len(df)
+        
+        # Slice the DataFrame
+        df_part = df.iloc[start_row:end_row]
+        
+        # Convert the DataFrame to a dictionary of arrays, including the index
+        data_dict = {col: df_part[col].values for col in df_part.columns}
+        data_dict['index'] = df_part.index.values
+        
+        # Save the part as an .npz file
+        output_file = f"{output_prefix}_part{part_num + 1}.npz"
+        np.savez_compressed(output_file, **data_dict)
+split_dataframe_to_npz(C, "C", 10)
+```
+
+- When comparing two population matrices, the shape can differ due to some genes lacking any evidence.
+- Resolve by padding any row/col indices with 0s for the missing genes
