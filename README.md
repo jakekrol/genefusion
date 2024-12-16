@@ -7,7 +7,7 @@ https://github.com/jakekrol/genefusion.git && cd genefusion && pip install -e .
 
 ## GIGGLE interface
 
-`gf-giggle_sharded` CLI script performs sharded giggle queries
+`git clone gf-giggle_sharded` CLI script performs sharded giggle queries
 ```
 # serial
 gf-giggle_sharded /data/jake/genefusion/data/prostate/shards index /data/jake/genefusion/data/gene_file.txt  ERG 21 neg 39751949 40033704 /data/jake/genefusion/scratch/2024-12-15-giggle_sharded
