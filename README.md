@@ -28,6 +28,16 @@ gf-giggle_sharded /data/jake/genefusion/data/prostate/shards index /data/jake/ge
 /data/jake/genefusion/scripts/shell/genefusion_giggle.sh -i alt_sort_b -f /data/jake/genefusion/data/gene_file.txt -c {0} -s {1} -g {2} -l {3} -r {4} -o {5}/{0}.{1}.{2}.{3}.{4}.giggle
 ```
 
+## STIX interface
+
+```
+# parallel over 12 cores
+genefusion-stix_sharded \
+    /data/jake/genefusion/data/prostate/shards \
+    21 39751949 40033704 42836478 42903043 \
+    /data/jake/genefusion/scratch/2024-12-15-stix_sharded \
+    erg.tmprss2.stix_sharded.stix DEL 12 
+```
 
 ## DNA gene2gene evidence
 
@@ -44,14 +54,3 @@ ls | gargs --log ../gargs.log -p 64 -o "$bedtools intersect -a $genefile -b <(cu
 ### Sample-wise gene2gene evidence
 
 Same as population, except split GIGGLE output files by the sample column, then do intersect.
-
-## STIX interface
-
-```
-# parallel over 12 cores
-genefusion-stix_sharded \
-    /data/jake/genefusion/data/prostate/shards \
-    21 39751949 40033704 42836478 42903043 \
-    /data/jake/genefusion/scratch/2024-12-15-stix_sharded \
-    erg.tmprss2.stix_sharded.stix DEL 12 
-```
