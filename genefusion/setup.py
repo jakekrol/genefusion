@@ -15,10 +15,11 @@ setup(
     entry_points={
     'console_scripts': [
         'genefusion-stix=genefusion.stix:main',
-        'genefusion-stix_sharded=genefusion.stix_sharded:main',
-        'genefusion-genefusion_stix_sharded=genefusion.genefusion_stix_sharded:main',
+        # 'genefusion-stix_sharded=genefusion.stix_sharded:main',
+        # 'genefusion-genefusion_stix_sharded=genefusion.genefusion_stix_sharded:main',
         # 'genefusion-genefusion_giggle=genefusion.genefusion_giggle:main',
         'gf-giggle_sharded=genefusion.giggle_sharded:main',
+        'gf-stix_sharded=genefusion.stix_sharded:main'
     ],
     },
     python_requires='>=3.6',       

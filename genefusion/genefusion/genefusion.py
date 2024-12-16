@@ -42,7 +42,6 @@ def cln_giggle(df):
     df = rm_double_zero(df)
     return df
 
-
 def giggle_sharded(
     dir_shard,
     index,
@@ -140,6 +139,7 @@ def stix_sharded(
     processes,
     index_name="index",
     db_name="stix.ped.db",
+    shard_pattern="shard",
 ):
     print("begin sharded stix")
     processes = int(processes)
@@ -151,7 +151,7 @@ def stix_sharded(
     if not shards:
         print("no shards found at", dir_shard)
         return
-    shards = [os.path.join(dir_shard, shard) for shard in shards]
+    shards = [os.path.join(dir_shard, x) for x in shards if re.match(shard_pattern, x)]
     data = []
     for shard in shards:
         shard_out = os.path.join(outdir, f"{os.path.basename(shard)}.{outfile}")
