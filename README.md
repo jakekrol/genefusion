@@ -51,7 +51,7 @@ genefusion-stix_sharded \
 ls | gargs --log ../gargs.log -p 64 -o "$bedtools intersect -a $genefile -b <(cut -f 5-7 {0}) > $outdir/{0}.g2g"
 ```
 
-### Sample-wise gene2gene evidence
+### Sample-wise
 
 Same as population, except split GIGGLE output files by the sample column, then do intersect.
 
