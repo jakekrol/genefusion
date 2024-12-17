@@ -108,5 +108,24 @@ def split_dataframe_to_npz(df, output_prefix, num_parts):
 split_dataframe_to_npz(C, "C", 10)
 ```
 
-- When comparing two population matrices, the shape can differ due to some genes lacking any evidence.
-- Resolve by padding any row/col indices with 0s for the missing genes
+
+
+- When comparing two population matrices, shape can differ because some genes lacked any evidence as either source (row) or target (col).
+- Resolve with row/col 0 pad
+
+```
+# example H padding
+g_C = set(C.index)
+g_H = set(H.index)
+g = g_C.union(g_H)
+def pad_mat(df, genes):
+    d = df.copy()
+    index = set(df.index)
+    new = genes.difference(index)
+    pad = pd.DataFrame(columns = df.columns)
+    for g in new:
+        pad.loc[g] = np.zeros(d.shape[1], dtype=np.int64)
+    d = pd.concat([d,pad])
+    return d
+H_padded = pad_mat(H,g)
+```
