@@ -1,0 +1,26 @@
+- script: /data/jake/genefusion/scripts/python/split_fusions_sample_wise.py
+    - PCAWG
+    - example: /data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/fusions_25_01_05/10.neg.A1CF.52559169.52645435.fusion
+- scratch: /data/jake/genefusion/scratch/2025-01-17-sample_wise_fusions
+- pkg function
+    - get_sample_wise_fusions
+- input
+    - fusion file for a gene across whole pop
+- output
+    - split fusion files by sample
+    - PCAWG path
+        - /data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/2025_01_17-fusions_sample_wise
+- example input2
+    - test appending
+    - /data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/fusions_25_01_05/10.neg.ABI1.27035522.27150016.fusion
+- gargs
+
+```
+ls fusions_25_01_05/ > input.txt
+for i in {1..26998}; do echo "/data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/2025_01_17-fusions_sample_wise" >> input2.txt; done
+paste input.txt input2.txt > input3.txt
+sed 's|^|/data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/fusions_25_01_05/|' input3.txt  > input4.txt
+gargs --log samplefusions.log -p 64 -o "gf-samplefusions {0} {1}" < input4.txt
+
+
+```
