@@ -5,7 +5,7 @@ from multiprocessing import Pool
 import re
 import pandas as pd
 import numpy as np
-
+from filelock import FileLock
 
 def rm_non_std_chrm(df):
     allow = [str(x) for x in list(range(1, 23))] + ["X", "Y"]
@@ -226,3 +226,40 @@ def genefile2queries(chr_gene_file, max_dist=5 * (10**6)):
     # strand not used for query, but use to organize output
     queries["strand"] = [strand] * len(queries["gene_i"])
     return pd.DataFrame(queries)
+
+def get_sample_wise_fusions(infile, gene, outdir, append=False):
+    # example
+    # input: 
+    # infile='/data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/fusions_25_01_05/10.neg.A1CF.52559169.52645435.fusion'
+    # gene = 'A1CF'
+    # outdir='/data/jake/genefusion/scratch/2025-01-17-sample_wise_fusions'
+    # group by sample and write to file 
+    df = pd.read_csv(infile, sep='\t', header=None)
+
+    # gene = os.path.basename(infile).split('.')[2:-3][0]
+    print("Gene: ", gene) 
+
+    if append:
+        mode = 'a'
+    else:    
+        mode = 'w'
+
+    for sample, group in df.groupby(10): # column 11 is sample
+        # strip the folder index prefix
+        # and strip extension suffices
+        sample = os.path.basename(sample)
+        sample = sample.split('.')[0]
+
+        group['source'] = gene
+        group.rename(columns={3: 'target'}, inplace=True)
+        # only bother keeping source and target gene column
+        group = group[['source', 'target']]
+        outfile = f'{outdir}/{sample}.fusion'
+        with FileLock(outfile + ".lock"):
+            group.to_csv(
+                outfile,
+                sep='\t',
+                header=None,
+                index=False,
+                mode=mode
+            )
