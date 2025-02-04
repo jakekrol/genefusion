@@ -7,6 +7,19 @@ import pandas as pd
 import numpy as np
 from filelock import FileLock
 
+
+def index_els(el, out, index="/data/jake/genefusion/data/genes.index"):
+    df_idx = pd.read_csv(index, sep="\t", header=None, names=["gene"], usecols=[1])
+    df_el = pd.read_csv(el, sep="\t", header=None, names=["gene1", "gene2"])
+    with open(out, "w") as f:
+        for i, row in df_el.iterrows():
+            gene1 = row["gene1"].split(".")[0]  # remove version number
+            gene2 = row["gene2"].split(".")[0]  # remove version number
+            idx1 = str(df_idx[df_idx["gene"] == gene1].index[0])
+            idx2 = str(df_idx[df_idx["gene"] == gene2].index[0])
+            f.write(idx1 + "\t" + idx2 + "\n")
+
+
 def rm_non_std_chrm(df):
     allow = [str(x) for x in list(range(1, 23))] + ["X", "Y"]
     mask = df.iloc[:, 4].apply(lambda x: x in allow)
@@ -41,6 +54,7 @@ def cln_giggle(df):
     df = rmneg1(df)
     df = rm_double_zero(df)
     return df
+
 
 def giggle_sharded(
     dir_shard,
@@ -106,6 +120,7 @@ def giggle_sharded(
         [print(cmd) for cmd in cmds]
         with Pool(processes=cpus) as pool:
             pool.map(os.system, cmds)
+
 
 def stix(
     index,
@@ -227,39 +242,34 @@ def genefile2queries(chr_gene_file, max_dist=5 * (10**6)):
     queries["strand"] = [strand] * len(queries["gene_i"])
     return pd.DataFrame(queries)
 
+
 def get_sample_wise_fusions(infile, gene, outdir, append=False):
     # example
-    # input: 
+    # input:
     # infile='/data/jake/genefusion/data/2024_11_10-fusions-pcawg-combined/fusions_25_01_05/10.neg.A1CF.52559169.52645435.fusion'
     # gene = 'A1CF'
     # outdir='/data/jake/genefusion/scratch/2025-01-17-sample_wise_fusions'
-    # group by sample and write to file 
-    df = pd.read_csv(infile, sep='\t', header=None)
+    # group by sample and write to file
+    df = pd.read_csv(infile, sep="\t", header=None)
 
     # gene = os.path.basename(infile).split('.')[2:-3][0]
-    print("Gene: ", gene) 
+    print("Gene: ", gene)
 
     if append:
-        mode = 'a'
-    else:    
-        mode = 'w'
+        mode = "a"
+    else:
+        mode = "w"
 
-    for sample, group in df.groupby(10): # column 11 is sample
+    for sample, group in df.groupby(10):  # column 11 is sample
         # strip the folder index prefix
         # and strip extension suffices
         sample = os.path.basename(sample)
-        sample = sample.split('.')[0]
+        sample = sample.split(".")[0]
 
-        group['source'] = gene
-        group.rename(columns={3: 'target'}, inplace=True)
+        group["source"] = gene
+        group.rename(columns={3: "target"}, inplace=True)
         # only bother keeping source and target gene column
-        group = group[['source', 'target']]
-        outfile = f'{outdir}/{sample}.fusion'
+        group = group[["source", "target"]]
+        outfile = f"{outdir}/{sample}.fusion"
         with FileLock(outfile + ".lock"):
-            group.to_csv(
-                outfile,
-                sep='\t',
-                header=None,
-                index=False,
-                mode=mode
-            )
+            group.to_csv(outfile, sep="\t", header=None, index=False, mode=mode)
