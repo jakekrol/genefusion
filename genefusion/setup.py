@@ -22,6 +22,7 @@ setup(
         'gf-stix_sharded=genefusion.stix_sharded:main',
         'gf-samplefusions=genefusion.samplefusions:main',
         'gf-index_els=genefusion.index_els:main',
+        'gf-el2wadj_list=genefusion.el2wadj_list:main'
     ],
     },
     python_requires='>=3.6',       
