@@ -9,9 +9,38 @@ from filelock import FileLock
 import networkx as nx
 from collections import Counter
 
+class TreeNode:
+    def __init__(self, value, index):
+        self.value = value
+        self.index = index  # Store index of the string in the sorted list
+        self.left = None
+        self.right = None
+
+def build_balanced_tree(strings, start=0, end=None):
+    if end is None:
+        end = len(strings)
+    if start >= end:
+        return None
+
+    mid = (start + end) // 2
+    root = TreeNode(strings[mid], mid)
+    root.left = build_balanced_tree(strings, start, mid)  # Left subtree
+    root.right = build_balanced_tree(strings, mid + 1, end)  # Right subtree
+    return root
+
+def search_tree(root, query):
+    """Search for the query string in the binary tree and return its index if found."""
+    if root is None:
+        return -1  # Not found
+    if root.value == query:
+        return root.index
+    elif query < root.value:
+        return search_tree(root.left, query)
+    else:
+        return search_tree(root.right, query)
+
 def el2wadj_list(el, out,n = 25374):
     # n:= max gene index in /data/jake/genefusion/data/genes.index
-    # Read the edge list from a file
     with open(el) as f:
         edges = [tuple(map(int, line.strip().split("\t"))) for line in f]
 
@@ -37,19 +66,25 @@ def el2wadj_list(el, out,n = 25374):
             else:
                 f.write(f"{node}\n")
 
-
-
 def index_els(el, out, index="/data/jake/genefusion/data/genes.index"):
-    df_idx = pd.read_csv(index, sep="\t", header=None, names=["gene"], usecols=[1])
-    df_el = pd.read_csv(el, sep="\t", header=None, names=["gene1", "gene2"])
-    with open(out, "w") as f:
-        for i, row in df_el.iterrows():
-            gene1 = row["gene1"].split(".")[0]  # remove version number
-            gene2 = row["gene2"].split(".")[0]  # remove version number
-            idx1 = str(df_idx[df_idx["gene"] == gene1].index[0])
-            idx2 = str(df_idx[df_idx["gene"] == gene2].index[0])
-            f.write(idx1 + "\t" + idx2 + "\n")
+    # input edge list of gene names
+    # output edge list of gene indices
+    string_list = []
+    with open(index, 'r') as f:
+        for line in f:
+            string_list.append(line.split('\t')[1].strip('\n'))
+    root = build_balanced_tree(string_list)
 
+    with open(out, "w") as f:
+        with open(el) as g:
+            for line in g.readlines():
+                i,j = line.strip().split("\t") # remove \n and split on tab
+                g_i = i.split(".")[0] # remove version number
+                g_j = j.split(".")[0] # remove version number
+                # binary search to find gene index
+                idx_i = search_tree(root, g_i)
+                idx_j = search_tree(root, g_j)
+                f.write(f"{idx_i}\t{idx_j}\n")
 
 def rm_non_std_chrm(df):
     allow = [str(x) for x in list(range(1, 23))] + ["X", "Y"]
