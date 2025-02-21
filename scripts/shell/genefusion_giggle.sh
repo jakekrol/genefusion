@@ -31,9 +31,9 @@ while getopts "i:f:g:c:s:l:r:o:b" opt; do
     o)
       outfile=$OPTARG
       ;;
-    b)
-      outintersect=$OPTARG
-      ;;
+    # b)
+    #   outintersect=$OPTARG
+    #   ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
       ;;
@@ -43,9 +43,9 @@ date
 if [ -z "${outfile}" ]; then
   outfile="$chrm.$strand.$gene.$left.$right.giggle"
 fi
-if [ -z "${outintersect}" ]; then
-  outintersect="$chrm.$strand.$gene.$left.$right.intersect"
-fi
+# if [ -z "${outintersect}" ]; then
+#   outintersect="$chrm.$strand.$gene.$left.$right.intersect"
+# fi
 
 giggle search -v -i $index -r $chrm:$left-$right > $outfile # | cut -f 5-7 > $outfile
 # rm excord hits with all -1 interval
