@@ -8,7 +8,28 @@ import numpy as np
 from filelock import FileLock
 import networkx as nx
 from collections import Counter
+import ast
+import json
+import heapq
 
+### graph metrics
+def topk_ew(g,k=100):
+    mh = []
+    for u, v, edge_data in g.edges(data=True):
+        w = edge_data['weight']
+        # if heap is not full, push the weight
+        if len(mh) < k:
+            heapq.heappush(mh, (w,u,v))
+
+        # otherwise compare the weight with the smallest weight in the heap (element 0)
+        else:
+            if w > mh[0][0]:
+                heapq.heapreplace(mh, (w,u,v))
+    topk= sorted(mh,reverse=True, key=lambda x: x[0])
+    df = pd.DataFrame(topk,columns=['weight','v1','v2'])
+    return df
+
+### binary search
 class TreeNode:
     def __init__(self, value, index):
         self.value = value
@@ -39,32 +60,120 @@ def search_tree(root, query):
     else:
         return search_tree(root.right, query)
 
-def el2wadj_list(el, out,n = 25374):
-    # n:= max gene index in /data/jake/genefusion/data/genes.index
-    with open(el) as f:
-        edges = [tuple(map(int, line.strip().split("\t"))) for line in f]
-
-    # Count occurrences of each edge
-    edge_counts = Counter(edges)
-
-    # Create a weighted graph
-    G = nx.Graph()
-    for (u, v), weight in edge_counts.items():
-        G.add_edge(u, v, weight=weight)
-    # add singletons
-    n = 25374
-    for i in range(0, n+1):
-        if i not in G.nodes:
-            G.add_node(i)
-
-    with open(out, "w") as f:
-        for node, neighbors in sorted(G.adjacency(), key=lambda x: int(x[0])):
-            if neighbors:
-                neighbor_str = ",".join(f"({nbr}:{data['weight']})" for nbr, data in neighbors.items())
-                line = f"{node},{neighbor_str}" if neighbor_str else f"{node}"
-                f.write(line + "\n")
+    
+### adjacency/edge list
+def json2graph(j, self_loops = False, index='/data/jake/genefusion/data/genes.index'):
+    with open(j, 'r') as f:
+        aj = json.load(f)
+    self_loops=False
+    s_idx = pd.read_csv(index, sep='\t', header=None, usecols=[1]).squeeze() # squeeze into series
+    g = nx.Graph()
+    # note i,j need to be strings when accessing aj
+    for i in aj.keys():
+        g.add_node(int(i), label=s_idx[int(i)])
+        for j in aj[i]['edges'].keys():
+            w = int(aj[i]['edges'][j])
+            # handle self loops
+            if int(j) == int(i):
+                if self_loops:
+                    g.add_edge(int(i), int(j), weight=w)
+                else:    
+                    continue
+            # check if edge already stored since adj list is undirected
+            # and we store both directions
+            if g.has_edge(int(i), int(j)):
+                continue
             else:
-                f.write(f"{node}\n")
+                g.add_edge(int(i), int(j), weight=w) 
+    return g
+
+
+def read_adj(input, self_loops = False, index='/data/jake/genefusion/data/genes.index'):
+    print('DEPRECATED: use json2graph instead')
+    # caution: nodes are not sorted once in the graph.
+    # if you loop over nodes recommend to sort
+    # the graph is still correct, it's just that nodes were inserted in arbitrary order
+    # example: node named "200" may not have index 200 in G.nodes()
+    s_idx = pd.read_csv(index, sep='\t', header=None, usecols=[1]).squeeze() # squeeze into series
+    G = nx.Graph()
+    with open(input, 'r') as f:
+        for line in f:
+            line = line.strip().split('\t')
+            i = int(line[0])
+            G.add_node(i)
+            # lookup gene name
+            G.nodes[i]['label'] = s_idx[i]
+            # dictionary of weighted edges
+            d = ast.literal_eval(line[1].strip())
+            for k, v in d.items():
+                # check if edge already stored (since adj list is undirected)
+                # if edge does not exist then skip
+                if i == k:
+                    if self_loops:
+                        G.add_edge(i, k, weight=v)
+                    else:
+                        continue
+                if G.has_edge(i, k):
+                    continue
+                else:
+                    G.add_edge(i, k, weight=v)
+    return G
+
+def el2json(el, out, n = 25375):
+    aj = {}
+    for i in range(0,n):
+        aj[i] = {'edges':{}}
+    with open(el, 'r') as f:
+        for line in f:
+            line = line.strip().split('\t')
+            i = int(line[0])
+            j = int(line[1])
+            # update i's adj list
+            if j in aj[i]['edges'].keys():
+                aj[i]['edges'][j] += 1
+            else:
+                aj[i]['edges'][j] = 1
+            # update j's adj list
+            if i in aj[j]['edges'].keys():
+                aj[j]['edges'][i] += 1
+            else:
+                aj[j]['edges'][i] = 1
+    with open(out, 'w') as f:
+        json.dump(aj, f, indent=4, sort_keys=True)
+
+
+# def el2wadj_list(el, out,n = 25375):
+#     print("DEPRECATED: use el2json instead")
+#     # n is number of genes
+#     adj_list = {}
+#     # add gene nodes, zero indexed
+#     for i in range(n):
+#         adj_list[i] = {}
+#     # convert edge list to weighted adjacency list
+#     # a dict of dicts
+#     # d1 keys are nodes
+#     # d2 keys are neighbors
+#     # d2 values are edge weights
+#     with open(el, 'r') as f:
+#         for line in f:
+#             line = line.strip().split('\t')
+#             i = int(line[0])
+#             j = int(line[1])
+#             # update i's adj list
+#             if j in adj_list[i]:
+#                 adj_list[i][j] += 1
+#             else:
+#                 adj_list[i][j] = 1
+#             # update j's adj list
+#             if i in adj_list[j]:
+#                 adj_list[j][i] += 1
+#             else:
+#                 adj_list[j][i] = 1
+#     # write adjacency list to file
+#     # each line is node_idx \t neighbor dict
+#     with open(out, 'w') as f:
+#         for k, v in adj_list.items():
+#             f.write(str(k) + '\t' + str(v) + '\n')
 
 def index_els(el, out, index="/data/jake/genefusion/data/genes.index"):
     # input edge list of gene names
@@ -84,13 +193,38 @@ def index_els(el, out, index="/data/jake/genefusion/data/genes.index"):
                 # binary search to find gene index
                 idx_i = search_tree(root, g_i)
                 idx_j = search_tree(root, g_j)
+                if idx_i == -1:
+                    print(f"gene not found in index: {g_i}")
+                    continue
+                if idx_j == -1:
+                    print(f"gene not found in index: {g_j}")
+                    continue
                 f.write(f"{idx_i}\t{idx_j}\n")
 
+### network stats
+def g2degst(input,output):
+    G = read_adj(input)
+    n = len(G.nodes())
+    with open(output, 'w') as f:
+        f.write('node\tdegree\tstrength\n')
+        for i in range(n):
+            deg = G.degree(i)
+            st = G.degree(i, weight='weight')
+            f.write(f'{i}\t{deg}\t{st}\n')
+
+def g2ewdist(input,output):
+    G = read_adj(input)
+    with open(output, 'w') as f:
+        f.write('node1\tnode2\tweight\n')
+        for i,j, dict in G.edges(data=True):
+            w = dict['weight']
+            f.write(f'{i}\t{j}\t{w}\n')
+
+### cln giggle
 def rm_non_std_chrm(df):
     allow = [str(x) for x in list(range(1, 23))] + ["X", "Y"]
     mask = df.iloc[:, 4].apply(lambda x: x in allow)
     return df[mask]
-
 
 def rmneg1(df):
     # rm '-1' values for excord right hand hits (chr, start, end = -1); not sure what these mean
