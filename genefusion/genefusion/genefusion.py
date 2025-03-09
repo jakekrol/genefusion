@@ -62,6 +62,16 @@ def search_tree(root, query):
 
     
 ### adjacency/edge list
+def aggg(g_agg,g):
+    # aggregate weights of g into g_agg
+    # by summation
+    for i,j,d in g.edges(data=True):
+        if g_agg.has_edge(i,j):
+            g_agg[i][j]['weight'] += d['weight']
+        else:
+            g_agg.add_edge(i,j,weight=d['weight'])
+    return g_agg
+    
 def graph2json(g, out):
     aj={}
     for n in g.nodes():
