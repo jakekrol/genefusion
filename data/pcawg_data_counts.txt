@@ -1,0 +1,160 @@
+biliary
+DNA
+Cancer: 12
+Normal: 12
+Total: 24
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+blood
+DNA
+Cancer: 165
+Normal: 133
+Total: 298
+RNA
+Cancer: 144
+Normal: 0
+Total: 144
+---
+bone
+DNA
+Cancer: 64
+Normal: 64
+Total: 128
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+breast
+DNA
+Cancer: 122
+Normal: 123
+Total: 245
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+esophagus
+DNA
+Cancer: 98
+Normal: 98
+Total: 196
+RNA
+Cancer: 14
+Normal: 0
+Total: 14
+---
+headneck
+DNA
+Cancer: 0
+Normal: 0
+Total: 0
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+kidney
+DNA
+Cancer: 74
+Normal: 74
+Total: 148
+RNA
+Cancer: 98
+Normal: 56
+Total: 154
+---
+liver
+DNA
+Cancer: 295
+Normal: 284
+Total: 579
+RNA
+Cancer: 132
+Normal: 112
+Total: 244
+---
+lung
+DNA
+Cancer: 0
+Normal: 0
+Total: 0
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+lymphatic
+DNA
+Cancer: 100
+Normal: 100
+Total: 200
+RNA
+Cancer: 175
+Normal: 0
+Total: 175
+---
+oral
+DNA
+Cancer: 13
+Normal: 13
+Total: 26
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+ovary
+DNA
+Cancer: 71
+Normal: 71
+Total: 142
+RNA
+Cancer: 184
+Normal: 0
+Total: 184
+---
+pancreas
+DNA
+Cancer: 326
+Normal: 324
+Total: 650
+RNA
+Cancer: 156
+Normal: 0
+Total: 156
+---
+prostate
+DNA
+Cancer: 267
+Normal: 191
+Total: 458
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+skin
+DNA
+Cancer: 70
+Normal: 70
+Total: 140
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
+stomach
+DNA
+Cancer: 37
+Normal: 37
+Total: 74
+RNA
+Cancer: 0
+Normal: 0
+Total: 0
+---
