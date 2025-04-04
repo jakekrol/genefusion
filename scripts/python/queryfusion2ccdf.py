@@ -28,19 +28,20 @@ if args.index is None:
 if not os.path.exists(args.index):
     print(f'error: "{args.index}" does not exist')
     sys.exit(1)
-if args.bed is None:
-    args.bed = '/data/jake/genefusion/data/Homo_sapiens.GRCh37.82.genes.bed'
+# if args.bed is None:
+#     args.bed = '/data/jake/genefusion/data/Homo_sapiens.GRCh37.82.genes.bed'
 
 ### giggle search
 # choose gene with lexicographically less coordinates
-df = pd.read_csv(args.bed, sep='\t', header=None)
-df.columns = ['chrm','left', 'right','gene','nothing','strand']
+df = pd.read_csv(genefile, sep='\t', header=None)
+df.columns = ['chrm','left', 'right','gene','strand']
 # lookup coords
 try:
-    i = df.index[df['gene']==args.gene_x][0]
+    # care of invalid unicode characters
+    i = df.index[df['gene']==str(args.gene_x)][0]
 except IndexError as e:
     print(e)
-    print(f'error looking up gene " {args.gene_x} "  in bed file')
+    print(f'error looking up gene " {repr(args.gene_x)} "  in bed file')
     sys.exit(1)
 chr1 = df.loc[i,'chrm']
 left1 = df.loc[i,'left']
@@ -50,7 +51,7 @@ try:
     j = df.index[df['gene']==args.gene_y][0]
 except IndexError as e:
     print(e)
-    print(f'error looking up gene " {args.gene_y} "  in bed file')
+    print(f'error looking up gene " {repr(args.gene_y)} "  in bed file')
     sys.exit(1)
 chr2 = df.loc[j,'chrm']
 left2 = df.loc[j,'left']
@@ -109,8 +110,12 @@ target = genes - {query}
 target = target.pop()
 # get count of target partner
 cmd = f"cut -f 4 {out_intersect} | grep -c {target}"
-result = subprocess.run(cmd,shell=True,check=True,capture_output=True,text=True)
-vline = int(result.stdout.strip()) # use this as vline
+try:
+    result = subprocess.run(cmd,shell=True,check=True,capture_output=True,text=True)
+    vline = int(result.stdout.strip()) # use this as vline
+except:
+    result = -1
+    vline = int(0)
 # get count distribution of all partners
 cmd = f"sed -i 's/[a-zA-Z].*//g' {out_fusions}"
 result = subprocess.run(cmd,shell=True,check=True)
