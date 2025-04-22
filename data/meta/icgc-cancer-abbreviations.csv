@@ -1,0 +1,81 @@
+abbreviation,cancer
+ALL,Acute Lymphoblastic Leukemia
+AML,Acute Myeloid Leukemia
+BLCA,Bladder Cancer
+BLCA,Bladder Urothelial Cancer
+BOCA,Soft Tissue cancer
+BOCA,Bone Cancer
+BPLL,B
+BRCA,Breast ER+ and HER2
+BRCA,Breast Cancer
+BRCA,Breast Cancer
+BRCA,Breast Triple Negative/Lobular Cancer
+BRCA,Breast Cancer
+BTCA,Biliary Tract Cancer
+BTCA,Biliary Tract Cancer
+CESC,Cervical Squamous Cell Carcinoma
+CLLE,Chronic Lymphocytic Leukemia
+CMDI,Chronic Myeloid Disorders
+COAD,Colon Adenocarcinoma
+COCA,Colorectal Cancer
+DLBC,Lymphoid Neoplasm Diffuse Large B
+EOPC,Early Onset Prostate Cancer
+ESAD,Esophageal Adenocarcinoma
+ESCA,Esophageal Cancer
+GACA,Gastric Cancer
+GACA,Gastric Cancer
+GBM,Brain Glioblastoma Multiforme
+HNSC,Head and Neck Squamous Cell Carcinoma
+KICH,Kidney Chromophobe
+KIRC,Kidney Renal Clear Cell Carcinoma
+KIRP,Kidney Renal Papillary Cell Carcinoma
+LAML,Leukemia
+LAML,Acute Myeloid Leukemia
+LAML,Acute Myeloid Leukemia
+LGG,Brain Lower Grade Glioma
+LIAD,Benign Liver Tumour
+LICA,Liver Cancer
+LICA,Liver Cancer
+LIHC,Liver Hepatocellular carcinoma
+LIHM,Liver Cancer
+LINC,Liver Cancer
+LIRI,Liver Cancer
+LMS,Soft tissue cancer
+LUAD,Lung Adenocarcinoma
+LUSC,Lung Cancer
+LUSC,Lung Cancer
+LUSC,Lung Squamous Cell Carcinoma
+MALY,Malignant Lymphoma
+MELA,Skin Cancer
+NACA,Nasopharyngeal cancer
+NBL,Neuroblastoma
+NKTL,Blood Cancer
+ORCA,Oral Cancer
+OV,Ovarian Cancer
+OV,Ovarian Serous Cystadenocarcinoma
+PAAD,Pancreatic Cancer
+PACA,Pancreatic Cancer
+PACA,Pancreatic Cancer
+PAEN,Pancreatic Cancer Endocrine neoplasms
+PAEN,Pancreatic Endocrine Neoplasms
+PBCA,Pediatric Brain Cancer
+PBCA,Pediatric Brain Tumor
+PEME,Pediatric Medulloblastoma
+PRAD,Prostate Adenocarcinoma
+PRAD,Prostate Cancer
+PRAD,Prostate Cancer
+PRAD,Prostate Adenocarcinoma
+PRAD,Prostate Adenocarcinoma
+READ,Rectum Adenocarcinoma
+RECA,Renal Cancer
+RECA,Renal Cell Cancer
+RT,Rhabdoid Tumors
+SARC,Sarcoma
+SKCA,Skin Adenocarcinoma
+SKCM,Skin Cutaneous melanoma
+STAD,Gastric Adenocarcinoma
+THCA,Thyroid Cancer
+THCA,Thyroid Cancer
+THCA,Head and Neck Thyroid Carcinoma
+UCEC,Uterine Corpus Endometrial Carcinoma
+UTCA,Uterine Cancer
