@@ -71,3 +71,64 @@ gargs -p 60 --log=g.log -o "./intersect_swapped.sh {0} {1}" < i.txt
 gargs -p 60 --log=g.log -o "./unswap_intervals.sh {0} {1}" < i.txt
 ```
 
+6. clean sample names
+
+- purpose: remove dir prefix and extension suffix from sample IDs
+
+```
+dinter_unswap='dir with unswapped intersect files'
+tissue=ovary
+cd $dinter_unswap
+# test without -i flag first if not confident
+# prefix
+ls | gargs -p 60 --log=../g.log -o "sed -i '|ovary_sort/||' {0}"
+# suffix
+ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
+```
+
+7. sample splitting
+
+- purpose: split unswapped, gene-intersected, GIGGLE BED file by the sample column. Each sample gets its own file
+- input {0}: in file
+- output {1}: directory to house sample-wise, gene-wise intersected GIGGLE files
+- details:
+    - usually {1} is constant
+
+```
+gargs -p 60 --log=g.log -o "./samplesplit_intersect.sh {0} {1}" < i.txt
+```
+
+8. migrate samples
+
+- purpose: move sample-wise, gene-wise, gene-intersected GIGGLE BED files by looking up whether the sample is tumor/normal
+- parameters:
+    - `-i` input dir of sample GIGGLE files
+    - `-n` output normal dir
+    - `-t` output tumor dir
+    - `-s` path to `fileid2sample_type.py` script, for lookup
+    - `-l` logfile path
+ 
+- details:
+    - slow startup as the id2sampletype cache is built, then fast
+    - serial
+        - consider using a pre-computed id2sampletype cache to parallelize this
+
+ 
+```
+./migrate_sample2.py -i $din -n $dnormal -t $dtumor -s /data/jake/genefusion/scripts/python/fileid2sample_type.py -l /data/jake/genefusion/logs/migrate_sample2.log
+```
+
+9. aggregate by sample type
+
+- purpose: combine sample-wise, gene-wise intersected GIGGLE files of a sample type (tumor/normal) s.t. each gene gets one file again
+    - useful for computing pop. scale stats
+- parameters:
+    - `-i` input dir of norm/tumor sample-wise, gene-wise intersected GIGGLE files of a specific sample type (from step 8 output)
+    - `-o` output dir of the aggregated files
+    - `-l` path to logfile
+- details:
+    - serial, not parallelized
+    - uses file name to parse sample and gene
+```
+./agg_sample_fusions.py -i $din -o $dout -l /data/jake/genefusion/logs/agg_sample_fusions.log
+```
