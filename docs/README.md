@@ -132,3 +132,12 @@ gargs -p 60 --log=g.log -o "./samplesplit_intersect.sh {0} {1}" < i.txt
 ```
 ./agg_sample_fusions.py -i $din -o $dout -l /data/jake/genefusion/logs/agg_sample_fusions.log
 ```
+
+10. count fusions
+
+- purpose: for each gene count its fusion partners from paired-end (PE) read evidence
+- input {0}: path to gene-wise intersected GIGGLE file (population or sample is fine)
+- output {1}: path to count file of partner fusions
+```
+gargs -p 60 --log=g.log -o "./count_fusions.sh {0} {1}" < i.txt
+```
