@@ -13,6 +13,7 @@ samplecol=15
 
 in_base=$(basename $in)
 
+echo "DEPRECATED: see docs/README.md"
 echo "splitting $in to sample wise files to $outdir"
 # the output file name is sample.input_file_name
 awk -F'\t' -v outdir="$outdir" -v suffix="$in_base" -v j=$samplecol '{print > outdir"/"$j"."suffix}' "$in"

@@ -1,0 +1,111 @@
+# coding: utf-8
+import pandas as pd
+import os,sys
+l='/data/jake/genefusion/data/meta/filename2fileid.tsv'
+df_l = pd.read_csv(l,sep='\t')
+df_l
+df_l.iloc[0,:]
+df_l.iloc[0,0]
+df_l['mod'] = df_l['File_Name'].apply(lambda x: x.split('.')[0:3])
+df_l.iloc[0,0]
+df_l.iloc[0,2]
+df_l['mod'] = df_l['File_Name'].apply(lambda x: '.'join(x.split('.')[0:3]))
+df_l['mod'] = df_l['File_Name'].apply(lambda x: '.'.join(x.split('.')[0:3]))
+df_l.iloc[0,2]
+df_l['mod'] = df_l['File_Name'].apply(lambda x: '.'.join(x.split('.')[0:4]))
+df_l.iloc[0,2]
+files = os.listdir()
+files
+get_ipython().run_line_magic('cd', 'xcord_cln')
+files = os.listdir()
+files
+def f(file, df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['File_Name'] == filename
+    fileid=df_l[mask]['File_ID']
+    return fileid
+    
+files
+df_l.iloc[0,2]
+files[0]
+def f(file, df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID']
+    return fileid
+    
+def f(file, df_l=df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID']
+    return fileid
+    
+f('PCAWG.01e50db2-06f3-45d3-85ec-ca9665660e13.STAR.v1.bed.gz')
+df_l = df_l.reset_index(drop=True,inplace=True)
+df_l
+df_l
+df_l = pd.read_csv(l,sep='\t')
+df_l['mod'] = df_l['File_Name'].apply(lambda x: '.'.join(x.split('.')[0:4]))
+df_l.iloc[0,2]
+df_l.reset_index(drop=True,inplace=True)
+f
+def func(file, df_l=df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID']
+    return fileid
+    
+func
+file
+files
+files[0]
+func(files[0])
+func(files[-1])
+def func(file, df_l=df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID']
+    newname=f'{fileid}.excord.bed.gz'
+    return newname
+    
+func(files[-1])
+def func(file, df_l=df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID'].values[0]
+    newname=f'{fileid}.excord.bed.gz'
+    return newname
+    
+func(files[-1])
+def func(file, df_l=df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID'].values[0]
+    newname=f'{fileid}.excord.bed.gz'
+    os.rename(file,newname)
+    return newname
+    
+get_ipython().run_line_magic('pinfo', 'map')
+map(func, files)
+get_ipython().run_line_magic('ls', '')
+def func(file, df_l=df_l):
+    filename = '.'.join(file.split('.')[0:4])
+    mask = df_l['mod'] == filename
+    fileid=df_l[mask]['File_ID'].values[0]
+    newname=f'{fileid}.excord.bed.gz'
+    os.rename(file,newname)
+    return (file, newname)
+    
+func(files[-1])
+get_ipython().run_line_magic('ls', '')
+get_ipython().run_line_magic('ls', '| grep excord')
+for f in files:
+    func(f)
+    
+for f in files:
+    if os.path.exists(f):
+        func(f)
+        
+get_ipython().run_line_magic('ls', '')
+get_ipython().run_line_magic('ls', '| wc -l')
+get_ipython().run_line_magic('ls', '../xcord/ |wc -l')
