@@ -81,7 +81,7 @@ tissue=ovary
 cd $dinter_unswap
 # test without -i flag first if not confident
 # prefix
-ls | gargs -p 60 --log=../g.log -o "sed -i '|ovary_sort/||' {0}"
+ls | gargs -p 60 --log=../g.log -o "sed -i 's|ovary_sort/||' {0}"
 # suffix
 ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
 ```
