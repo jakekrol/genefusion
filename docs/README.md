@@ -107,7 +107,18 @@ ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
 ./add_sampletype.py -i <giggle_file> -s <sample_col_idx> -l <path_to_lookup_tbl> -o <outfile>
 ```
 
-9. count fusions
+9. split files by specimen
+
+- input: GIGGLE intersected file with specimen column added
+- output: split files by the specimen column (expect 2 * number of input files, bc split by tumor/normal)
+- details:
+    - {0} input GIGGLE file
+    - {1} out dir for split files (usually constant)
+```
+gargs -p 60 --log=../g.log -o "./specimensplit_intersect.sh {0} {1}" < w.txt
+```
+
+10. count fusions
 
 - purpose: for each gene count its fusion partners from paired-end (PE) read evidence
 - input {0}: path to gene-wise intersected GIGGLE file (population or sample is fine)
