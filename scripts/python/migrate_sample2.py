@@ -13,6 +13,7 @@ import time
 # output: None 
 # effect: copy file to normal/tumour directories
 
+print("DEPRECATED: see docs/README.md for more information")
 parser = argparse.ArgumentParser(description='Copy sample intersect file to normal/tumour directories')
 parser.add_argument('-i', '--input_dir', type=str, required=True, help='Directory containing intersect files')
 parser.add_argument('-n', '--normal_dir', type=str, required=True)

@@ -21,7 +21,7 @@ args = parser.parse_args()
 # get files
 files = os.listdir(args.input)
 files = [os.path.join(args.input, f) for f in files if os.path.isfile(os.path.join(args.input, f))]
-assert len(files) > 0, "No files provided. Please provide a list of gene fusion count files as stdin."
+assert len(files) > 0, "No found in input directory."
 
 l = []
 n = len(files)
