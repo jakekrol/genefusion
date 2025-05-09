@@ -115,7 +115,7 @@ ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
     - {0} input GIGGLE file
     - {1} out dir for split files (usually constant)
 ```
-gargs -p 60 --log=../g.log -o "./specimensplit_intersect.sh {0} {1}" < w.txt
+gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh {0} {1}" < w.txt
 ```
 
 10. count fusions
