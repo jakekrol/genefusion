@@ -118,11 +118,65 @@ ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
 gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh {0} {1}" < w.txt
 ```
 
-10. count fusions
+10. remove the tumor/normal prefix
+
+- input: filenames
+- output: renamed files
+- details
+    - do this for `giggleinter_(tumor/normal)_final` and `pop_(tumor/normal)_fusion_counts`
+```
+# example
+cd <dir>
+ls > ../z.txt
+cd ../
+# if the prefix is 'tumour.'
+sed "s|tumour\.||" z.txt > y.txt
+paste z.txt y.txt > w.txt
+cd <dir>
+gargs -p 60 -o "mv {0} {1}" ../w.txt
+```
+
+11. count fusions
 
 - purpose: for each gene count its fusion partners from paired-end (PE) read evidence
 - input {0}: path to gene-wise intersected GIGGLE file (population or sample is fine)
 - output {1}: path to count file of partner fusions
 ```
 gargs -p 60 --log=g.log -o "./count_fusions.sh {0} {1}" < i.txt
+```
+
+12. build a fusion PE count table
+
+- purpose: combine fusion counts (population-wise) into a single 3 column table
+- input: path to directory of gene-wise fusion count files
+- output: path to 3 column gene fusion table (left, right, PE-read count)
+- details:
+    - make sure you only use files for a distinct specimen type (tumor/normal), no mixing
+    - long runtime
+        - could speed up w/ map-reduce paradigm s.t. each file is processed in parallel, but this requires a bit of setup
+```
+./build_fusionpe_tbl2.py -i pop_normal_fusion_counts -o pop_normal_fusions.tsv -l build_fusion_pe_tbl2-normal.log
+```
+
+13. count number of samples with any evidence for a fusion
+
+- purpose: for each fusion get the number of samples with any PE evidence for it
+- input: path to directory of gene-wise, speciment-split, unswapped intersect files
+- output: path to 3 column table (left, right, # of samples w/ >=1 PE-evidence)
+- details:
+    - make sure you only use files for a distinct specimen type (tumor/normal), no mixing
+    - long runtime
+        - could speed up w/ map-reduce paradigm s.t. each file is processed in parallel, but this requires a bit of setup
+```
+./count_samples_w1.py -i giggleinter_final_normal -o sample_counts_normal.tsv -l count_samples_w1-normal.log
+```
+
+14. compute gene total burden
+
+- purpose: for each gene, sum its PE-evidence in all non-self genes (total burden)
+- input: path to fusion PE count table (from 12)
+- output: path to 2 column table (gene, burden)
+
+```
+./burden_total.py -i pop_tumor_fusions.tsv -o burden_total_tumor.tsv
 ```
