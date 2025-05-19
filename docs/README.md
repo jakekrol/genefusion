@@ -180,3 +180,84 @@ gargs -p 60 --log=g.log -o "./count_fusions.sh {0} {1}" < i.txt
 ```
 ./burden_total.py -i pop_tumor_fusions.tsv -o burden_total_tumor.tsv
 ```
+
+# Analysis
+
+not perfect, but want to document key steps
+
+1. combine pe count and sample count (need to check how long a proper merge takes)
+
+- input: i) sample_counts_(tumor/normal).tsv ii) pop_tumor_fusions.tsv
+- output: joined file
+
+check if line count matches.
+these are both derived from the same data files, so this condition should always hold
+```
+wc -l <sample_count>
+wc -l <pe_count>
+```
+
+check if head and tail maintain fusion order
+```
+head <sample_count>
+head <pe_count>
+tail <sample_count>
+tail <pe_count>
+```
+
+then just paste
+```
+cut -f3 <sample_count> > z.txt
+paste <pe_count> z.txt > <pe_and_sample_count>
+# add header
+sed -i '1ileft\tright\tpe_count\tsample_count'
+```
+
+2. add burden column
+
+- input: i) fusion stats table (from 1.) ii) total burden file
+- output: fusion stats table with total burden of left and right gene
+
+```
+# add left gene burden
+./add_burden_col.py -f tumor_pe_and_sample_count.tsv -b burden_total_tumor.tsv -o tumor_pe_sample_and_burden.tsv -k1 0 -k2 0 -n burden_total_left -h1
+# add right gene burden (use right gene col as key)
+./add_burden_col.py -f tumor_pe_sample_and_burden -b burden_total_tumor.tsv -o tumor_pe_sample_burden_final.tsv -k1 1 -k2 0 -n burden_total_right -h1
+```
+
+3. randomly sampling fusions
+
+- input: number of fusion pairs to sample
+- output: a 2 column fusion file (unsorted)
+
+```
+./sample_fusion_tbl.py -n 1000 -o neg_rand_1000.txt
+```
+
+4. assign left and right gene to queries
+
+- input: gene fusion table file
+- output: a 2 column fusion file with left and right gene assignements for each fusions pair
+- details: slow
+
+```
+./fusion_tbl2left_sort.py -i neg_rand_1000.txt -o neg_rand_1000_sort.txt
+```
+
+5. query the full fusion stats table
+
+- input: i) 2-col query fusion table (sorted s.t. col 1 is left gene) ii) final stats table with pe_count, sample_count, and total burden iii) total burden table (to fill in cases with 0 PE/sample counts)
+- output: stats table subset for the queries
+
+```
+./query2stats -q neg_rand_1000_sort.txt -t tumor_pe_sample_burden_final.tsv -b burden_total_tumor.tsv -o neg_rand_stats.tsv
+```
+
+6. plot comparative histograms of true positive and randomly sampled data
+
+- input: i) true positive stats table ii) randomly sampled stats table
+- output: overlayed histograms for pe_count, sample_count, and log10(burden total product)
+
+```
+./2025_05_18_plot.py -p true_pos_sort.txt -n neg_rand_sort.txt -o hist
+```
