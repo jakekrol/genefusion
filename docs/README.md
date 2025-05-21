@@ -73,17 +73,12 @@ gargs -p 60 --log=g.log -o "./unswap_intervals.sh {0} {1}" < i.txt
 
 6. clean sample names
 
+- input: giggle intersect unswapped file
+- output: sample column with index prefix and .excord.bed.gz extension removed. leaving only the PCAWG fileid
 - purpose: remove dir prefix and extension suffix from sample IDs
 
 ```
-dinter_unswap='dir with unswapped intersect files'
-tissue=ovary
-cd $dinter_unswap
-# test without -i flag first if not confident
-# prefix
-ls | gargs -p 60 --log=../g.log -o "sed -i 's|ovary_sort/||' {0}"
-# suffix
-ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
+./cln_sample_name.py -i {0} -o {1}
 ```
 
 7. compute file id to specimen type mapping
@@ -104,7 +99,7 @@ ls | gargs -p 60 --log=../g.log -o "sed -i 's/\.excord\.bed\.gz//' {0}"
 - output: GIGGLE file with sample column appended (`-o`)
 
 ```
-./add_sampletype.py -i <giggle_file> -s <sample_col_idx> -l <path_to_lookup_tbl> -o <outfile>
+./add_specimentype.py -i <giggle_file> -s <sample_col_idx> -l <path_to_lookup_tbl> -o <outfile>
 ```
 
 9. split files by specimen
