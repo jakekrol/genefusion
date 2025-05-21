@@ -114,22 +114,12 @@ gargs -p 60 --log=g.log -o "./unswap_intervals.sh {0} {1}" < i.txt
 gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh -i {0} -o {1} -s <specimencolidx>" < w.txt
 ```
 
-10. remove the tumor/normal prefix
+10. move by speciment and remove the tumor/normal prefix
 
-- input: filenames
-- output: renamed files
-- details
-    - do this for `giggleinter_(tumor/normal)_final` and `pop_(tumor/normal)_fusion_counts`
+- input: dir of files with specimen prefixes
+- output: moved files to dirs by specimen type
 ```
-# example
-cd <dir>
-ls > ../z.txt
-cd ../
-# if the prefix is 'tumour.'
-sed "s|tumour\.||" z.txt > y.txt
-paste z.txt y.txt > w.txt
-cd <dir>
-gargs -p 60 -o "mv {0} {1}" ../w.txt
+./migrate_specimen -i <input_dir> -t <tumor_dest> -n <normal_dest> -p <n_procs>
 ```
 
 11. count fusions
