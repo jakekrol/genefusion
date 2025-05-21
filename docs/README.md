@@ -109,8 +109,9 @@ gargs -p 60 --log=g.log -o "./unswap_intervals.sh {0} {1}" < i.txt
 - details:
     - {0} input GIGGLE file
     - {1} out dir for split files (usually constant)
+    - specimencolidx is usually 16 (1-indexed)
 ```
-gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh {0} {1}" < w.txt
+gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh -i {0} -o {1} -s <specimencolidx>" < w.txt
 ```
 
 10. remove the tumor/normal prefix
