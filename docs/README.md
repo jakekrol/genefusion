@@ -147,15 +147,17 @@ gargs -p 60 --log=g.log -o "./count_fusions.sh {0} {1}" < i.txt
 13. count number of samples with any evidence for a fusion
 
 - purpose: for each fusion get the number of samples with any PE evidence for it
-- input: path to directory of gene-wise, speciment-split, unswapped intersect files
+- input: giggle intersect unswapped file (ideally with cleaned sample name)
 - output: path to 3 column table (left, right, # of samples w/ >=1 PE-evidence)
 - details:
     - make sure you only use files for a distinct specimen type (tumor/normal), no mixing
-    - long runtime
-        - could speed up w/ map-reduce paradigm s.t. each file is processed in parallel, but this requires a bit of setup
+    - `-z` will extract left gene from input file name
+    - operates file-wise, requires an aggregation step
 ```
-./count_samples_w1.py -i giggleinter_final_normal -o sample_counts_normal.tsv -l count_samples_w1-normal.log
+./distinct_sample_counts.py -i <left_giggle> -o <out> -r 4 -s 15 -z 
 ```
+
+can aggregate with tail -n +2 -q sample_counts_mapped_tumor/* >> sample_counts_tumor_new.tsv
 
 14. compute gene total burden
 
