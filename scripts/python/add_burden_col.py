@@ -6,13 +6,13 @@ import sys
 import argparse
 import time
 
-# ex: ./add_burden_col.py -f tumor_pe_and_sample_count.tsv -b burden_total_tumor.tsv -o tumor_pe_sample_and_burden.tsv -k1 0 -k2 0 -n burden_total_left
+# ex: ./add_burden_col.py -f tumor_pe_and_sample_count.tsv -b burden_total_tumor.tsv -o tumor_pe_sample_and_burden.tsv -k1 0 -k2 0 -n burden_total_left -hf
 parser = argparse.ArgumentParser(description='Add burden column to gene fusion table')
 parser.add_argument('-f', '--fusion_file', type=str, required=True, help='Input gene fusion table file')
 parser.add_argument('-b', '--burden_file', type=str, required=True, help='Input burden file')
 parser.add_argument('-o', '--output', type=str, required=True, help='Output file for gene fusion table with burden')
-parser.add_argument('-h1', '--fusion_header', action='store_true', help='Fusion file has header')
-parser.add_argument('-h2', '--burden_header', action='store_true', help='Burden file has header')
+parser.add_argument('-hf', '--fusion_header', action='store_true', help='Fusion file has header')
+parser.add_argument('-hb', '--burden_header', action='store_true', help='Burden file has header')
 parser.add_argument('-k1', '--fusion_key', type=int, required=True, help='Column index for fusion key in fusion file')
 parser.add_argument('-k2', '--burden_key', type=int, required=True, help='Column index for burden key in burden file')
 parser.add_argument('-n', '--burden_name', type=str, required=True, help='Column name for burden in output file')

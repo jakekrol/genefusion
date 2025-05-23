@@ -25,6 +25,7 @@ parser.add_argument('-g', '--giggle_index', type=str, required=True)
 parser.add_argument('-s', '--step', type=int, default=0, help='Step to start from')
 parser.add_argument('-x', '--dir_executables', type=str, default='/data/jake/genefusion/executables', help='Directory containing executables')  
 parser.add_argument('-p', '--processes', type=int, default=60, help='Number of processes to use')
+parser.add_argument('-f', '--freeze', action='store_true', help='Freeze: only run the specified step and exit')
 args = parser.parse_args()
 print("Running giggle2fusion pipeline from step: ", args.step)
 time.sleep(3)
@@ -101,7 +102,12 @@ if args.step == 0:
     print(f"Making search input file: {TEMPLATE_GIGGLE_SEARCH}")
     df_search = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
     df_search.columns = ["chrom", "start", "end", "name", "strand", "filename"]
-    df_search.insert(0, "giggle_index", os.path.join(args.base_dir,args.giggle_index))
+    if '/' in args.giggle_index: # assume not in base_dir
+        df_search.insert(0, "giggle_index", args.giggle_index)
+        print (f"Using giggle index: {args.giggle_index}")
+    else:
+        df_search.insert(0, "giggle_index", os.path.join(args.base_dir,args.giggle_index))
+        print (f"Using giggle index: {os.path.join(args.base_dir,args.giggle_index)}")
     fnames = df_search['filename'].tolist()
     df_search["filename"] = df_search["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout", x))
     df_search.to_csv(os.path.join(args.base_dir, "inputs", "search.input"), sep="\t", index=False, header=False)
@@ -155,6 +161,9 @@ if args.step == 0:
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen_split')}\n") # constant output dir
     print(f"Finished making input files in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 
 ### run
@@ -165,7 +174,7 @@ if args.step == 1:
     "gargs",
     "-p", f"{args.processes}",
     "--log=g.log",
-    "-o", "scripts/shell/genefusion_giggle.sh -i {0} -g {4} -c {1} -l {2} -r {3} -s {5} -o {6}"
+    "-o", "./genefusion_giggle.sh -i {0} -g {4} -c {1} -l {2} -r {3} -s {5} -o {6}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "search.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
@@ -174,6 +183,10 @@ if args.step == 1:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
     print(f"Finished running search in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
+    args.step +=1
 
 if args.step == 2:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "clean.input")), "Clean input file not found"
@@ -191,6 +204,9 @@ if args.step == 2:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
     print(f"Finished running clean in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 if args.step == 3:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "swap.input")), "Swap input file not found"
@@ -208,6 +224,9 @@ if args.step == 3:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
     print(f"Finished running swap in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 if args.step == 4:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "intersect.input")), "Intersect input file not found"
@@ -223,6 +242,9 @@ if args.step == 4:
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 if args.step == 5:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap.input")), "Unswap input file not found"
@@ -256,6 +278,9 @@ if args.step == 6:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
     print(f"Finished running unswap clean in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 if args.step == 7:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap_specimen.input")), "Unswap specimen input file not found"
@@ -273,6 +298,9 @@ if args.step == 7:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
     print(f"Finished running unswap specimen in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 if args.step == 8:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap_specimen_split.input")), "Unswap specimen split input file not found"
@@ -290,6 +318,9 @@ if args.step == 8:
         subprocess.run(cmd, stdin=infile)
         subprocess.run(cmd)
     print(f"Finished running unswap specimen split in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 if args.step == 9:
     assert os.path.isdir(os.path.join(args.base_dir, "giggleinter_final_tumor")), "giggleinter_final_tumor directory not found"
@@ -305,5 +336,8 @@ if args.step == 9:
     t = time.time()
     subprocess.run(cmd)
     print(f"Finished running migrate specimen in {time.time() - t:.2f} seconds")
+    if args.freeze:
+        print(f"Freezing at step {args.step}")
+        sys.exit(0)
     args.step +=1
 
