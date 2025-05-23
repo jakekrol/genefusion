@@ -184,3 +184,15 @@ can aggregate with tail -n +2 -q sample_counts_mapped_tumor/* >> sample_counts_t
 ./add_burden_col.py -f tumor_pe_sample_and_burden_new.tsv -b burden_total_tumor_new.tsv tumor_pe_sample_and_burden_new.tsv -k1 1 -k2 0 -n burden_total_right -hf -hb
 ```
 
+17. add sample density column
+
+```
+./add_sample_density.py -i tumor_pe_sample_burden_both_new.tsv -o tumor_pe_sample_burden_both_density.tsv
+```
+
+18. add burden product column
+
+```
+./add_burden_product.py -i tumor_pe_sample_burden_both_density.tsv -o tumor_pe_sample_burden_both_density_product.tsv
+```
+
