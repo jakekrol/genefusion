@@ -1,0 +1,110 @@
+# coding: utf-8
+import pandas as pd
+f='./all_fusion_joined.tsv'
+df=pd.read_csv(f,sep='\t')
+df
+toi = {"bone", "breast", "haematopoietic and lymphoid tissue", "liver", "kidney", "ovary", "esophagus", "gallbladder", "prostate"}
+toi
+df
+df[df['primary_tissue'].isin(toi)]
+df[df['primary_tissue'].isin(toi)].to_csv('cosmic_fusions_toi.tsv',sep='\t',index=False)
+get_ipython().run_line_magic('ls', '')
+get_ipython().run_line_magic('ls', '')
+f='cosmic_fusions_toi.tsv'
+df=pd.read_csv(f,sep='\t')
+df
+result = df.groupby('COSMIC_FUSION_ID')['primary_tissue'].agg(lambda s: s.mode().iloc[0])
+result
+df
+df['COSMIC_FUSION_ID'].nunique()
+result
+result.to_frame()
+result.to_frame().reset_index()
+result = result.to_frame().reset_index()
+result
+result.to_csv('cosmic_fusion2tissue_mode.tsv',sep='\t',index=False)
+get_ipython().run_line_magic('ls', '')
+f='cosmic_fusions_toi.tsv'
+df=pd.read_csv(f,sep='\t')
+df
+result
+pd.merge(result, df, how='left', on='COSMIC_FUSION_ID')
+df_merged=pd.merge(result, df, how='left', on='COSMIC_FUSION_ID')
+df_merged.drop(columns=['primary_tissue_y'])
+df_p=df_merged.drop(columns=['primary_tissue_y'])
+df_p.drop_duplicates()
+df_p=df_merged.drop(columns=['primary_tissue_y', 'sample_name'])
+df_p
+df_p.drop_duplicates()
+# this is good
+get_ipython().run_line_magic('ls', '')
+df_p.columnx
+df_p.columns
+df_p.drop(columns=['COSMIC_SAMPLE_ID', "SAMPLE_NAME"])
+df_p=df_p.drop(columns=['COSMIC_SAMPLE_ID', "SAMPLE_NAME"])
+df_p.drop_duplicates()
+df_p=df_p.drop_duplicates()
+df_p.to_csv('cosmic_fusions2tissue_final.tsv',sep='\t',index=False)
+df_p
+df_p.columns
+df_p['FIVE_PRIME_GENE_SYMBOL']
+cols = list(df_p.columns)
+cols.remove('FIVE_PRIME_GENE_SYMBOL')
+cols.remove('THREE_PRIME_GENE_SYMBOL')
+new_order=[cols[0], 'FIVE_PRIME_GENE_SYMBOL', 'THREE_PRIME_GENE_SYMBOL'] + cols[1:]
+new_order
+df = df_p[new_order]
+df
+df
+df
+df.rename(columns={'primary_tissue_x': 'primary_tissue'})
+df.rename(columns={'primary_tissue_x': 'primary_tissue'})
+df=df.rename(columns={'primary_tissue_x': 'primary_tissue'})
+df.to_csv('./cosmic_fusions2tissue_final.tsv',sep='\t',index=False)
+df.drop_duplicates(subset=['COSMIC_FUSION_ID']).to_csv('cosmic_fusions2tissue_final_sub',sep='\t', index=False)
+df.drop_duplicates(subset=['COSMIC_FUSION_ID']).to_csv('cosmic_fusions2tissue_final_sub.tsv',sep='\t', index=False)
+def f(x):
+    if x == 'haematopoietic and lymphoid tissue':
+        return 'blood-lymph'
+    else:
+        return x
+        
+f('t')
+f('haematopoietic and lymphoid tissue')
+f(df['primary_tissue'])
+def f(x):
+    np.where(x['primary_tissue'].str.contains('haematopoietic and lymphoid tissue'), 'blood-lymph', x['primary_tissue'])
+    
+f(df['primary_tissue'])
+import numpy as np
+f(df['primary_tissue'])
+df
+df.columns
+def f(x):
+    if x == 'haematopoietic and lymphoid tissue':
+        return 'blood-lymph'
+    else:
+        return x
+        
+df['primary_tissue'].apply(f)
+df['primary_tissue'].apply(f).value_counts()
+df['primary_tissue'] = df['primary_tissue'].apply(f)
+df
+df['primary_tissue'].value_counts()
+df
+df.to_csv('./cosmic_fusions2tissue_final_sub.tsv',sep='\t',index=False)
+df.drop_duplicates(subset=['COSMIC_FUSION_ID']).to_csv('cosmic_fusions2tissue_final_sub.tsv',sep='\t', index=False)
+df = df.drop_duplicates(subset=['COSMIC_FUSION_ID'])
+df = df.drop_duplicates(subset=['FIVE_PRIME_GENE_SYMBOL', 'THREE_PRIME_GENE_SYMBOL'])
+df
+df.to_csv('./cosmic_fusions2tissue_final_sub.tsv',sep='\t',index=False)
+df = df[df['FIVE_PRIME_GENE_SYMBOL' != 'THREE_PRIME_GENE_SYMBOL']]
+df = df[df['FIVE_PRIME_GENE_SYMBOL'] != df['THREE_PRIME_GENE_SYMBOL']]
+df
+df.to_csv('./cosmic_fusions2tissue_final_sub.tsv',sep='\t',index=False)
+df['pair'] = df.apply(lambda row: tuple(sorted([row['FIVE_PRIME_GENE_SYMBOL'], row['THREE_PRIME_GENE_SYMBOL']])), axis=1)
+df = df.drop_duplicates(subset=['pair'])
+df
+df = df.drop(columns=['pair'])
+df.to_csv('./cosmic_fusions2tissue_final_sub.tsv',sep='\t',index=False)
+df['primary_tissue'].value_counts()
