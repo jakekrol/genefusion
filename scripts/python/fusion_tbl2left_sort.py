@@ -6,6 +6,8 @@ import argparse
 import time
 import subprocess
 
+print("DEPRECATED: Use add_left_right_col or left_gene functions from genefusion package instead.")
+sys.exit(1)
 parser = argparse.ArgumentParser(description='Subset fusion table for query')
 parser.add_argument('-i', '--input', type=str, required=True, help='Input gene fusion table file')
 parser.add_argument('-o', '--output', type=str, required=True, help='Output file')  

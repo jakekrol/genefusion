@@ -12,6 +12,97 @@ import ast
 import json
 import heapq
 
+def add_left_right_col(df_in, x, y, bedfile='/data/jake/genefusion/data/gene_file.txt.latest', left_col='left', right_col='right'):
+    df_in = left_gene(df_in, x, y, bedfile=bedfile,left_col=left_col)
+    def right(x,y,left):
+        # if left is -1, return -1
+        if left == -1:
+            return -1
+        if x == left:
+            return y
+        if y == left:
+            return x
+    df_in[right_col] = df_in.apply(
+        lambda row: right(row[x], row[y], row[left_col]), axis=1
+    )
+    return df_in
+
+def left_gene(df_in,x,y,bedfile='/data/jake/genefusion/data/gene_file.txt.latest', left_col='left'):
+    '''
+    df_in: pandas DataFrame with columns x and y
+    x: column name for first gene
+    y: column name for second gene
+    bedfile: path to gene bed file
+    '''
+
+    df_bed = pd.read_csv(bedfile, sep='\t', header=None)
+
+    def get_gene_position(gene, df):
+        # Filter the dataframe for the gene
+        df_gene = df[df[3] == gene]
+        if df_gene.shape[0] == 0:
+            return -1, -1, -1  # gene not found
+        # Get the position of the gene
+        chrom = df_gene.iloc[0, 0]
+        start = int(df_gene.iloc[0, 1])
+        end = int(df_gene.iloc[0, 2])
+        return chrom, start, end
+    def compare_genes(gene1, gene2, df):
+        chrom1, start1, end1 = get_gene_position(gene1, df)
+        chrom2, start2, end2 = get_gene_position(gene2, df)
+        if any(x == -1 for x in [chrom1, start1, end1, chrom2, start2, end2]):
+            return -1
+        # handle X and Y chromosomes
+        # both are sex chromosomes
+        if (chrom1 in ['X', 'Y']) and (chrom2 in ['X', 'Y']):
+            # compare X and Y chromosomes
+            if chrom1 == 'X' and chrom2 == 'Y':
+                return gene1
+            elif chrom1 == 'Y' and chrom2 == 'X':
+                return gene2
+        # one is sex chromosome and the other is not
+        if (chrom1 in ['X', 'Y']) and (chrom2 not in ['X', 'Y']):
+            return gene2
+        if (chrom2 in ['X', 'Y']) and (chrom1 not in ['X', 'Y']):
+            return gene1
+        # same sex chromosome
+        if (chrom1 == chrom2) and (chrom1 in ['X', 'Y']):
+            # start
+            if start1 < start2:
+                return gene1
+            elif start1 > start2:
+                return gene2
+            else:
+                # end
+                if end1 < end2:
+                    return gene1
+                else:
+                    return gene2
+        # autosomes
+        if chrom1 < chrom2:
+            return gene1
+        elif chrom1 > chrom2:
+            return gene2
+        else:
+            # start
+            if start1 < start2:
+                return gene1
+            elif start1 > start2:
+                return gene2
+            else:
+                # end
+                if end1 < end2:
+                    return gene1
+                else:
+                    return gene2
+    df_in[left_col] = df_in.apply(
+        lambda row: compare_genes(row[x], row[y], df_bed), axis=1
+    )
+    return df_in
+
+
+
+
 ### graph metrics
 def topk_ew(g,k=100):
     mh = []
@@ -102,7 +193,7 @@ def json2graph(j, self_loops = False, index='/data/jake/genefusion/data/genes.in
     for i in aj.keys():
         g.add_node(int(i), label=s_idx[int(i)])
         for j in aj[i]['edges'].keys():
-            w = int(aj[i]['edges'][j])
+            w = float(aj[i]['edges'][j])
             # handle self loops
             if int(j) == int(i):
                 if self_loops:
