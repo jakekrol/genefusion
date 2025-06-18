@@ -40,8 +40,10 @@ df_genes = pd.read_csv(GENEFILE, sep='\t', header=None)
 df_genes.columns = ['chrm', 'start', 'end', 'name', 'strand']
 l_start = df_genes[df_genes['name'] == args.left]['start'].values[0]
 l_end = df_genes[df_genes['name'] == args.left]['end'].values[0]
+l_chrm = df_genes[df_genes['name'] == args.left]['chrm'].values[0]
 r_start = df_genes[df_genes['name'] == args.right]['start'].values[0]
 r_end = df_genes[df_genes['name'] == args.right]['end'].values[0]
+r_chrm = df_genes[df_genes['name'] == args.right]['chrm'].values[0]
 # breakpoint data
 df = pd.read_csv(args.input, sep='\t', header=None)
 df.columns = [
@@ -76,8 +78,8 @@ if args.plot:
 
     g.fig.text(0.77, 0.5, stats, va='center', ha='left', fontsize=args.fontsize-5)
 
-    plt.xlabel(f'{args.left} base pair position', fontsize=args.fontsize)
-    plt.ylabel(f'{args.right} base pair position', fontsize=args.fontsize)
+    plt.xlabel(f'{args.left} base pair position (chr{l_chrm})', fontsize=args.fontsize,labelpad=10)
+    plt.ylabel(f'{args.right} base pair position (chr{r_chrm})', fontsize=args.fontsize)
     # REMOVE the offset text from the marginal axes (top, right)
     plt.savefig(f'{args.output}_scat_dens.png')
     plt.close()
