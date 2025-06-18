@@ -11,6 +11,36 @@ from collections import Counter
 import ast
 import json
 import heapq
+import pointpats
+
+def clark_evans_R(x,y, x_start, x_end, y_start, y_end, log10 = False):
+    '''
+    x: x coordinates of points
+    y: y coordinates of points
+    x_start: start of x range
+    x_end: end of x range
+    y_start: start of y range
+    y_end: end of y range
+    log10: if True, return log10 of the observed and expected distances
+    '''
+    assert len(x) == len(y), "x and y must have the same length"
+    n = len(x)
+    p = list(zip(x, y))
+    pp = pointpats.PointPattern(p)
+    area = (x_end - x_start) * (y_end - y_start)  # area of the rectangle defined by the two genes
+    d_obs = pp.mean_nnd
+    lmbda = n / area  # density
+    d_exp = 1 / (2 * np.sqrt(lmbda))  # expected distance for a random point pattern
+
+    R = d_obs / d_exp  # Clark-Evans R statistic
+    if log10:
+        d_obs = np.log10(d_obs)
+        d_exp = np.log10(d_exp)
+        return {'R': R, 'log10(d_obs)': d_obs, 'log10(d_exp)': d_exp}
+
+    return {'R': R, 'd_obs': d_obs, 'd_exp': d_exp}
+    
+    
 
 def add_left_right_col(df_in, x, y, bedfile='/data/jake/genefusion/data/gene_file.txt.latest', left_col='left', right_col='right'):
     df_in = left_gene(df_in, x, y, bedfile=bedfile,left_col=left_col)
