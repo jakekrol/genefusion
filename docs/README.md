@@ -119,7 +119,7 @@ gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh -i {0} -o {1} -s <speci
 - input: dir of files with specimen prefixes
 - output: moved files to dirs by specimen type
 ```
-./migrate_specimen -i <input_dir> -t <tumor_dest> -n <normal_dest> -p <n_procs>
+./migrate_specimen.py -i <input_dir> -t <tumor_dest> -n <normal_dest> -p <n_procs>
 ```
 
 11. count fusions
@@ -131,7 +131,7 @@ gargs -p 60 --log=g.log -o "./specimensplit_intersect.sh -i {0} -o {1} -s <speci
     - `-z`: hack to extract left gene from file name
     - `-r`: right gene column index (1-indexed,usually 4)
 ```
-gargs -p 60 --log=g.log -o "./count_fusions.py {0} {1} -z -r 4" < i.txt
+gargs -p 60 --log=g.log -o "./count_fusions.py -i {0} -o {1} -z -r 4" < i.txt
 ```
 
 12. build a fusion PE count table
