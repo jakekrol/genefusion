@@ -166,7 +166,7 @@ can aggregate with tail -n +2 -q pop_tumor_fusion_sample_counts/* >> pop_tumor_f
 - output: path to 2 column table (gene, burden)
 
 ```
-./burden_total.py -i pop_tumor_fusions.tsv -o burden_total_tumor.tsv
+./burden_total.py -i pop_tumor_fusions.tsv -o burden_total_tumor.tsv --header
 ```
 
 15. join sample count onto pe count
