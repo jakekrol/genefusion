@@ -20,8 +20,9 @@ t = time.time()
 df['burden_product'] = df['burden_total_left'] * df['burden_total_right']
 print(f'Computed burden product in {time.time() - t:.2f} seconds')
 t= time.time()
-df['log10_burden_product'] = df['burden_product'].apply(lambda x: 0 if x == 0 else round(np.log10(x), 3))
-print(f'Computed burden product in {time.time() - t:.2f} seconds')
+df['log10_burden_product'] = df['burden_product'] + 1
+df['log10_burden_product'] = round(np.log10(df['burden_product_log10']),4)
+print(f'Computed log10 burden product in {time.time() - t:.2f} seconds')
 t = time.time()
 df.to_csv(args.output, sep='\t', index=False)
 print(f'Wrote result to {args.output} in {time.time() - t:.2f} seconds')
