@@ -12,22 +12,34 @@ import time
 
 # future refactoring:
 # i) don't rely on filename to parse info. use a commented header instead
-# ii) write each step to distinct log file
+# ii) add a logfile
 
 TEMPLATE_GIGGLE_SEARCH="/data/jake/genefusion/data/giggle_search.template"
 FILEID2SAMPLETYPE="/data/jake/genefusion/data/meta/fileid2sampletype.tsv"
 SAMPLECOLIDX = 15
 SPECIMENCOLIDX = 16
+VALID_STEPS = range(18)
+
 
 parser = argparse.ArgumentParser(description="Run giggle2fusion pipeline")
 parser.add_argument('-d', '--base_dir', type=str, required=True)
 parser.add_argument('-g', '--giggle_index', type=str, required=True)
-parser.add_argument('-s', '--step', type=int, default=0, help='Step to start from')
+parser.add_argument('-s', '--steps', type=str, default='all', help='Steps to run, comma separated')
 parser.add_argument('-x', '--dir_executables', type=str, default='/data/jake/genefusion/executables', help='Directory containing executables')  
 parser.add_argument('-p', '--processes', type=int, default=60, help='Number of processes to use')
-parser.add_argument('-f', '--freeze', action='store_true', help='Freeze: only run the specified step and exit')
 args = parser.parse_args()
-print("Running giggle2fusion pipeline from step: ", args.step)
+print('Running wrapper_giggle2fusion.py with arguments:')
+print(args)
+time.sleep(3)
+
+# parse steps
+if not args.steps == 'all':
+    args.steps = [int(i) for i in args.steps.split(',')]
+    if not all([i in VALID_STEPS for i in args.steps]):
+        raise ValueError(f"Invalid steps: {args.steps}. Valid steps are: {VALID_STEPS}")
+else:
+    args.steps = list(VALID_STEPS)
+print(f"Steps to run: {args.steps}")
 time.sleep(3)
 
 
@@ -37,18 +49,6 @@ time.sleep(3)
 #     x = re.sub("r\.excord\.bed\.gz", "", x)
 #     return x
 
-steps = {
-    0: "inputs",
-    1: "search",
-    2: "clean",
-    3: "swap",
-    4: "intersect",
-    5: "unswap",
-    6: "unswap_cln",
-    7: "unswap_specimen",
-    8: "unswap_specimen_split",
-    9: "migrate_specimen"
-}
 
 # scripts = [
 #     "genefusion_giggle.sh",
@@ -67,7 +67,7 @@ steps = {
 # ]
 
 ### inputs
-if args.step == 0:
+if 0 in args.steps:
     t = time.time()
     # make subdirs
     subdirs = [
@@ -79,9 +79,11 @@ if args.step == 0:
         "giggleinter_unswap",
         "giggleinter_unswap_cln",
         "giggleinter_unswap_specimen",
-        "giggleinter_unswap_specimen_split"
+        "giggleinter_unswap_specimen_split",
         "giggleinter_final_tumor",
-        "giggleinter_final_normal"
+        "giggleinter_final_normal",
+        "pop_tumor_fusion_counts",
+        "pop_tumor_fusion_sample_counts"
     ]
     print('Making subdirs')
     for subdir in subdirs:
@@ -92,7 +94,7 @@ if args.step == 0:
     for src in paths:
         # copy to base_dir
         try:
-            shutil.copy(src, args.base_dir)
+            os.symlink(src, args.base_dir)
             print(f"Copied {src} to {args.base_dir}")
         except shutil.SameFileError:
             print(f"File {src} already exists in {args.base_dir}")
@@ -161,13 +163,21 @@ if args.step == 0:
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen_split')}\n") # constant output dir
     print(f"Finished making input files in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
+    # make count fusions input file
+    input_file = os.path.join(args.base_dir, "inputs", "count_fusions_tumor.input")
+    with open(input_file, 'w') as f:
+        for fname in fnames:
+            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
+            f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_counts', fname)}\n")
+    # make distinct sample counts input file
+    input_file = os.path.join(args.base_dir, "inputs", "distinct_sample_counts.input")
+    with open(input_file, 'w') as f:
+        for fname in fnames:
+            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
+            f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_sample_counts', fname)}\n")
 
 ### run
-if args.step == 1:
+if 1 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "search.input")), "Search input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleout")), "Giggle output directory not empty"
     cmd = [
@@ -181,14 +191,9 @@ if args.step == 1:
     t = time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running search in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
 
-if args.step == 2:
+if 2 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "clean.input")), "Clean input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "gigglecln")), "Giggle clean directory not empty"
     cmd = [
@@ -202,13 +207,9 @@ if args.step == 2:
     t = time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running clean in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
-if args.step == 3:
+
+if 3 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "swap.input")), "Swap input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleswap")), "Giggle swap directory not empty"
     cmd = [
@@ -222,13 +223,9 @@ if args.step == 3:
     t= time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running swap in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
-if args.step == 4:
+
+if 4 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "intersect.input")), "Intersect input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleinter")), "Giggle intersect directory not empty"
     cmd = [
@@ -241,12 +238,8 @@ if args.step == 4:
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
-if args.step == 5:
+
+if 5 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap.input")), "Unswap input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleinter_unswap")), "Giggle unswap directory not empty"
     cmd = [
@@ -260,9 +253,8 @@ if args.step == 5:
     t = time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running unswap in {time.time() - t:.2f} seconds")
-if args.step == 6:
+if 6 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap_cln.input")), "Unswap clean input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleinter_unswap_cln")), "Giggle unswap clean directory not empty"
     cmd = [
@@ -276,13 +268,8 @@ if args.step == 6:
     t = time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running unswap clean in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
-if args.step == 7:
+if 7 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap_specimen.input")), "Unswap specimen input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleinter_unswap_specimen")), "Giggle unswap specimen directory not empty"
     cmd = [
@@ -296,33 +283,25 @@ if args.step == 7:
     t = time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running unswap specimen in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
-if args.step == 8:
+
+if 8 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "unswap_specimen_split.input")), "Unswap specimen split input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleinter_unswap_specimen_split")), "Giggle unswap specimen split directory not empty"
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
         "--log=g.log",
-        "-o", f"./specimensplit_intersect.sh -i {{0}} -o {{1}} -s {SPECIMENCOLIDX}"
+        "-o", f"./specimensplit_intersect.sh {{0}} {{1}}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "unswap_specimen_split.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
     t = time.time()
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
-        subprocess.run(cmd)
     print(f"Finished running unswap specimen split in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
-if args.step == 9:
+
+if 9 in args.steps:
     assert os.path.isdir(os.path.join(args.base_dir, "giggleinter_final_tumor")), "giggleinter_final_tumor directory not found"
     assert os.path.isdir(os.path.join(args.base_dir, "giggleinter_final_normal")), "giggleinter_final_normal directory not found"
     cmd = [
@@ -336,8 +315,164 @@ if args.step == 9:
     t = time.time()
     subprocess.run(cmd)
     print(f"Finished running migrate specimen in {time.time() - t:.2f} seconds")
-    if args.freeze:
-        print(f"Freezing at step {args.step}")
-        sys.exit(0)
-    args.step +=1
+
+if 10 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, "inputs", "count_fusions_tumor.input")), "Count fusions input file not found"
+    assert not os.listdir(os.path.join(args.base_dir, "pop_tumor_fusion_counts")), "Pop tumor fusion counts directory not empty"
+    cmd = [
+        "gargs",
+        "-p", f"{args.processes}",
+        "--log=g.log",
+        "-o", f"./count_fusions.py -i {{0}} -o {{1}} -z -r 4"
+    ]
+    input_file = os.path.join(args.base_dir, "inputs", "count_fusions_tumor.input")
+    print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
+    t = time.time()
+    with open(input_file, 'r') as infile:
+        subprocess.run(cmd, stdin=infile)
+    print(f"Finished running count fusions in {time.time() - t:.2f} seconds")
+
+if 11 in args.steps:
+    assert os.path.isdir(os.path.join(args.base_dir, "pop_tumor_fusion_counts")), "pop_tumor_fusion_counts directory not found"
+    assert not os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions.tsv")), "pop_tumor_fusions.tsv file already exists"
+    cmd = [
+        "./agg_pe_counts.py",
+        "-i", os.path.join(args.base_dir, "pop_tumor_fusion_counts"),
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running agg_pe_counts in {time.time() - t:.2f} seconds")
+
+if 12 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, "inputs", "distinct_sample_counts.input")), "Distinct sample counts input file not found"
+    assert not os.listdir(os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts")), "Pop tumor fusion sample counts directory not empty"
+    cmd = [
+        "gargs",
+        "-p", f"{args.processes}",
+        "--log=g.log",
+        "-o", f"./distinct_sample_counts.py -i {{0}} -o {{1}} -r 4 -s 15 -z"
+    ]
+    input_file = os.path.join(args.base_dir, "inputs", "distinct_sample_counts.input")
+    print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
+    t = time.time()
+    with open(input_file, 'r') as infile:
+        subprocess.run(cmd, stdin=infile)
+    print(f"Finished running distinct sample counts in {time.time() - t:.2f} seconds")
+    # aggregate
+    cmd = [
+        "for",
+        "file",
+        "in",
+        os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts", "*"),
+        ";",
+        "do",
+        "tail",
+        "-n", "+2",
+        "--quiet",
+        "$file",
+        ">>",
+        os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts.tsv")
+        ";",
+        "done"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(" ".join(cmd), shell=True)
+    print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
+if 13 in args.steps:
+    # ./burden_total.py -i pop_tumor_fusions.tsv -o burden_total_tumor.tsv
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions.tsv")), "pop_tumor_fusions.tsv file not found"
+    assert not os.path.exists(os.path.join(args.base_dir, "burden_total_tumor.tsv")), "burden_total_tumor.tsv file already exists"
+    cmd = [
+        "./burden_total.py",
+        "-i", os.path.join(args.base_dir, "pop_tumor_fusions.tsv"),
+        "-o", os.path.join(args.base_dir, "burden_total_tumor.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running burden_total in {time.time() - t:.2f} seconds")
+if 14 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions.tsv")), "pop_tumor_fusions.tsv file not found"
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts.tsv")), "pop_tumor_fusion_sample_counts.tsv file not found"
+    cmd = [
+        "./join.py",
+        "-x", os.path.join(args.base_dir, "pop_tumor_fusions.tsv"),
+        "-y", os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts.tsv"),
+        "-t", "left",
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_and_sample.tsv"),
+        "-k", "left,right"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running join in {time.time() - t:.2f} seconds")
+if 15 in args.steps:
+    # left
+    # ./add_burden_col.py -f tumor_pe_and_sample_new.tsv -b burden_total_tumor_new.tsv -o tumor_pe_sample_and_burden_new.tsv -k1 0 -k2 0 -n burden_total_left -hf -hb
+    # # right
+    # ./add_burden_col.py -f tumor_pe_sample_and_burden_new.tsv -b burden_total_tumor_new.tsv tumor_pe_sample_and_burden_new.tsv -k1 1 -k2 0 -n burden_total_right -hf -hb
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_and_sample.tsv")), "pop_tumor_fusions_pe_and_sample.tsv file not found"
+    assert os.path.exists(os.path.join(args.base_dir, "burden_total_tumor.tsv")), "burden_total_tumor.tsv file not found"
+    # left gene burden
+    cmd = [
+        "./add_burden_col.py",
+        "-f", os.path.join(args.base_dir, "pop_tumor_fusions_pe_and_sample.tsv"),
+        "-b", os.path.join(args.base_dir, "burden_total_tumor.tsv"),
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_tmp.tsv"),
+        "-k1", "0",
+        "-k2", "0",
+        "-n", "burden_total_left",
+        "-hf",
+        "-hb"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running add_burden_col left in {time.time() - t:.2f} seconds")
+    # right gene burden
+    cmd = [
+        "./add_burden_col.py",
+        "-f", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_tmp.tsv"),
+        "-b", os.path.join(args.base_dir, "burden_total_tumor.tsv"),
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden.tsv"),
+        "-k1", "1",
+        "-k2", "0",
+        "-n", "burden_total_right",
+        "-hf",
+        "-hb"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running add_burden_col right in {time.time() - t:.2f} seconds")
+    # remove tmp file
+    os.remove(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_tmp.tsv"))
+    print(f"Removed temporary file: {os.path.join(args.base_dir, 'pop_tumor_fusions_pe_sample_burden_tmp.tsv')}")
+if 16 in args.steps:
+    # ./add_sample_density.py -i tumor_pe_sample_burden_both_new.tsv -o tumor_pe_sample_burden_both_density.tsv
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden.tsv")), "pop_tumor_fusions_pe_sample_burden.tsv file not found"
+    cmd = [
+        "./add_sample_density.py",
+        "-i", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden.tsv"),
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running add_sample_density in {time.time() - t:.2f} seconds")
+if 17 in args.steps:
+    # ./add_burden_product.py -i tumor_pe_sample_burden_both_density.tsv -o tumor_pe_sample_burden_both_density_product.tsv
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density.tsv")), "pop_tumor_fusions_pe_sample_burden_density.tsv file not found"
+    cmd = [
+        "./add_burden_product.py",
+        "-i", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density.tsv"),
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running add_burden_product in {time.time() - t:.2f} seconds")
 
