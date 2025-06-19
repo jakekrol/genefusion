@@ -157,7 +157,7 @@ gargs -p 60 --log=g.log -o "./count_fusions.py -i {0} -o {1} -z -r 4" < i.txt
 ./distinct_sample_counts.py -i <left_giggle> -o <out> -r 4 -s 15 -z 
 ```
 
-can aggregate with tail -n +2 -q sample_counts_mapped_tumor/* >> sample_counts_tumor_new.tsv
+can aggregate with tail -n +2 -q pop_tumor_fusion_sample_counts/* >> pop_tumor_fusion_sample_counts.tsv
 
 14. compute gene total burden
 
