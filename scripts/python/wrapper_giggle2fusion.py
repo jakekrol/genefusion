@@ -373,7 +373,7 @@ if 12 in args.steps:
         "--quiet",
         "$file",
         ">>",
-        os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts.tsv")
+        os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts.tsv"),
         ";",
         "done"
     ]
@@ -381,6 +381,17 @@ if 12 in args.steps:
     t = time.time()
     subprocess.run(" ".join(cmd), shell=True)
     print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
+    # add header to the aggregated file
+    cmd = [
+        "sed",
+        "-i",
+        "1ileft\tright\tsample_count",
+        os.path.join(args.base_dir, "pop_tumor_fusion_sample_counts.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished adding header in {time.time() - t:.2f} seconds")
 if 13 in args.steps:
     # ./burden_total.py -i pop_tumor_fusions.tsv -o burden_total_tumor.tsv
     assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions.tsv")), "pop_tumor_fusions.tsv file not found"
@@ -388,7 +399,8 @@ if 13 in args.steps:
     cmd = [
         "./burden_total.py",
         "-i", os.path.join(args.base_dir, "pop_tumor_fusions.tsv"),
-        "-o", os.path.join(args.base_dir, "burden_total_tumor.tsv")
+        "-o", os.path.join(args.base_dir, "burden_total_tumor.tsv"),
+        "--header"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
@@ -410,10 +422,6 @@ if 14 in args.steps:
     subprocess.run(cmd)
     print(f"Finished running join in {time.time() - t:.2f} seconds")
 if 15 in args.steps:
-    # left
-    # ./add_burden_col.py -f tumor_pe_and_sample_new.tsv -b burden_total_tumor_new.tsv -o tumor_pe_sample_and_burden_new.tsv -k1 0 -k2 0 -n burden_total_left -hf -hb
-    # # right
-    # ./add_burden_col.py -f tumor_pe_sample_and_burden_new.tsv -b burden_total_tumor_new.tsv tumor_pe_sample_and_burden_new.tsv -k1 1 -k2 0 -n burden_total_right -hf -hb
     assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_and_sample.tsv")), "pop_tumor_fusions_pe_and_sample.tsv file not found"
     assert os.path.exists(os.path.join(args.base_dir, "burden_total_tumor.tsv")), "burden_total_tumor.tsv file not found"
     # left gene burden
@@ -452,7 +460,6 @@ if 15 in args.steps:
     os.remove(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_tmp.tsv"))
     print(f"Removed temporary file: {os.path.join(args.base_dir, 'pop_tumor_fusions_pe_sample_burden_tmp.tsv')}")
 if 16 in args.steps:
-    # ./add_sample_density.py -i tumor_pe_sample_burden_both_new.tsv -o tumor_pe_sample_burden_both_density.tsv
     assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden.tsv")), "pop_tumor_fusions_pe_sample_burden.tsv file not found"
     cmd = [
         "./add_sample_density.py",
@@ -464,7 +471,6 @@ if 16 in args.steps:
     subprocess.run(cmd)
     print(f"Finished running add_sample_density in {time.time() - t:.2f} seconds")
 if 17 in args.steps:
-    # ./add_burden_product.py -i tumor_pe_sample_burden_both_density.tsv -o tumor_pe_sample_burden_both_density_product.tsv
     assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density.tsv")), "pop_tumor_fusions_pe_sample_burden_density.tsv file not found"
     cmd = [
         "./add_burden_product.py",
