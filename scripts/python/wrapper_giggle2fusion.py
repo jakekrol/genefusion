@@ -18,7 +18,7 @@ TEMPLATE_GIGGLE_SEARCH="/data/jake/genefusion/data/giggle_search.template"
 FILEID2SAMPLETYPE="/data/jake/genefusion/data/meta/fileid2sampletype.tsv"
 SAMPLECOLIDX = 15
 SPECIMENCOLIDX = 16
-VALID_STEPS = range(18)
+VALID_STEPS = range(19)
 
 
 parser = argparse.ArgumentParser(description="Run giggle2fusion pipeline")
@@ -34,37 +34,21 @@ time.sleep(3)
 
 # parse steps
 if not args.steps == 'all':
-    args.steps = [int(i) for i in args.steps.split(',')]
+    # parse a range of steps e.g., 3- implies 3 to last step
+    if "-" in args.steps:
+        start = args.steps.split('-')[0]
+        end = len(VALID_STEPS)
+        args.steps = [int(i) for i in range(int(start), end)]
+    # otherwise, parse a list of steps
+    else: 
+        args.steps = [int(i) for i in args.steps.split(',')]
+    # validate
     if not all([i in VALID_STEPS for i in args.steps]):
         raise ValueError(f"Invalid steps: {args.steps}. Valid steps are: {VALID_STEPS}")
 else:
     args.steps = list(VALID_STEPS)
 print(f"Steps to run: {args.steps}")
 time.sleep(3)
-
-
-# def cln_sample_names(x):
-#     # remove index prefix
-#     x = os.path.basename(x)
-#     x = re.sub("r\.excord\.bed\.gz", "", x)
-#     return x
-
-
-# scripts = [
-#     "genefusion_giggle.sh",
-#     "cln_excord.sh",
-#     "swap_intervals.sh",
-#     "intersect_swapped.sh",
-#     "unswap_intervals.sh",
-#     "cln_sample_name.py",
-#     "add_specimentype.py",
-#     "specimensplit_intersect.sh",
-#     "migrate_specimen.py",
-#     "count_fusions.sh",
-#     "build_fusionpe_tbl2.py",
-#     "count_samples_w1.py",
-#     "burden_total.py"
-# ]
 
 ### inputs
 if 0 in args.steps:
@@ -83,7 +67,8 @@ if 0 in args.steps:
         "giggleinter_final_tumor",
         "giggleinter_final_normal",
         "pop_tumor_fusion_counts",
-        "pop_tumor_fusion_sample_counts"
+        "pop_tumor_fusion_sample_counts",
+        "clark_evans_R"
     ]
     print('Making subdirs')
     for subdir in subdirs:
@@ -100,7 +85,7 @@ if 0 in args.steps:
             print(f"File {src} already exists in {args.base_dir}")
         except Exception as e:
             print(f"An error occurred: {e}")
-# make search input file
+    # make search input file
     print(f"Making search input file: {TEMPLATE_GIGGLE_SEARCH}")
     df_search = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
     df_search.columns = ["chrom", "start", "end", "name", "strand", "filename"]
@@ -175,6 +160,12 @@ if 0 in args.steps:
         for fname in fnames:
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_sample_counts', fname)}\n")
+    # make clark evans R input file
+    input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R.input")
+    with open(input_file, 'w') as f:
+        for fname in fnames:
+            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
+            f.write(f"{os.path.join(args.base_dir, 'clark_evans_R', fname)}\n")
 
 ### run
 if 1 in args.steps:
@@ -433,8 +424,7 @@ if 15 in args.steps:
         "-k1", "0",
         "-k2", "0",
         "-n", "burden_total_left",
-        "-hf",
-        "-hb"
+        "-hf"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
@@ -449,8 +439,7 @@ if 15 in args.steps:
         "-k1", "1",
         "-k2", "0",
         "-n", "burden_total_right",
-        "-hf",
-        "-hb"
+        "-hf"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
@@ -481,4 +470,52 @@ if 17 in args.steps:
     t = time.time()
     subprocess.run(cmd)
     print(f"Finished running add_burden_product in {time.time() - t:.2f} seconds")
+if 18 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, "inputs", "clark_evans_R.input")), "Clark Evans R input file not found"
+    assert not os.listdir(os.path.join(args.base_dir, "clark_evans_R")), "Clark Evans R directory not empty"
+    cmd = [
+        "gargs",
+        "-p", f"{args.processes}",
+        "--log=g.log",
+        "-o", f"/clark_evans_R -i {0} -o {1} -z -n 10"
+    ]
+    input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R.input")
+    print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
+    t = time.time()
+    with open(input_file, 'r') as infile:
+        subprocess.run(cmd, stdin=infile)
+    print(f"Finished running Clark Evans R in {time.time() - t:.2f} seconds")   
+    # aggregate
+    cmd = [
+        "for",
+        "file",
+        "in",
+        os.path.join(args.base_dir, "clark_evans_R", "*"),
+        ";",
+        "do",
+        "tail",
+        "-n", "+2",
+        "--quiet",
+        "$file",
+        ">>",
+        os.path.join(args.base_dir, "clark_evans_R.tsv"),
+        ";",
+        "done"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(" ".join(cmd), shell=True)
+    print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
+    # add header to the aggregated file
+    cmd = [
+        "sed",
+        "-i",
+        "1ileft\tright\tR",
+        os.path.join(args.base_dir, "clark_evans_R.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished adding header in {time.time() - t:.2f} seconds")
+
 
