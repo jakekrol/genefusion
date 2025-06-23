@@ -196,3 +196,9 @@ can aggregate with tail -n +2 -q pop_tumor_fusion_sample_counts/* >> pop_tumor_f
 ./add_burden_product.py -i tumor_pe_sample_burden_both_density.tsv -o tumor_pe_sample_burden_both_density_product.tsv
 ```
 
+19. breakpoint rand test (Clark Evans R)
+
+```
+gargs -p 60 --log=g.log -o "./clark_evans_R -i {0} -o {1} -z -n 10" < clark_evans_R.input
+```
+
