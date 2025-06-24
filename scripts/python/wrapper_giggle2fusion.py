@@ -18,7 +18,7 @@ TEMPLATE_GIGGLE_SEARCH="/data/jake/genefusion/data/giggle_search.template"
 FILEID2SAMPLETYPE="/data/jake/genefusion/data/meta/fileid2sampletype.tsv"
 SAMPLECOLIDX = 15
 SPECIMENCOLIDX = 16
-VALID_STEPS = range(19)
+VALID_STEPS = range(20)
 
 
 parser = argparse.ArgumentParser(description="Run giggle2fusion pipeline")
@@ -517,5 +517,21 @@ if 18 in args.steps:
     t = time.time()
     subprocess.run(cmd)
     print(f"Finished adding header in {time.time() - t:.2f} seconds")
+if 19 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product.tsv")), "pop_tumor_fusions_pe_sample_burden_density_product.tsv file not found"
+    assert os.path.exists(os.path.join(args.base_dir, "clark_evans_R.tsv")), "clark_evans_R.tsv file not found"
+    cmd = [
+        "./join.py",
+        "-x", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product.tsv"),
+        "-y", os.path.join(args.base_dir, "clark_evans_R.tsv"),
+        "-t", "left",
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product_R.tsv"),
+        "-k", "left,right"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running join in {time.time() - t:.2f} seconds")
+
 
 
