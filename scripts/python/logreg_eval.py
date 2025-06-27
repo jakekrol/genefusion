@@ -7,6 +7,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import roc_auc_score, average_precision_score, roc_curve, precision_recall_curve
 from sklearn.preprocessing import StandardScaler
+import numpy as np
+from matplotlib.colors import LogNorm
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Thorough logistic regression evaluation with ElasticNet")
@@ -14,14 +16,17 @@ def parse_args():
     parser.add_argument("-y", "--label_col", type=int, required=True, help="1-indexed label column (subtracts 1 internally)")
     parser.add_argument("-k", "--kfolds", type=int, default=5, help="Number of CV folds (default: 5)")
     parser.add_argument("-o", "--output", required=True, help="Output TSV file with predicted probabilities")
-    parser.add_argument("--seed", type=int, default=42, help="Random seed (default: 42)")
+    parser.add_argument("--seed", type=int, default=0, help="Random seed")
+    parser.add_argument('-f', '--font_size', type=int, default=20, help='Font size for plots (default: 12)')
+    parser.add_argument('-fns', '--false_negatives', type=int, help='Number of false negatives to include when reporting results', default=None)
+    parser.add_argument('-p', '--cpus', type=int, default=1, help='Number of CPU cores to use (default: 1)')
     return parser.parse_args()
 
 def random_hyperparams(seed):
     rng = np.random.RandomState(seed)
     # Always include bounds
-    C_vals = [0.0001, 100]
-    l1_vals = [0.0, 1.0]
+    C_vals = [0.0001, 0.0001, 100, 100]
+    l1_vals = [0.0, 1.0, 0.0, 1.0]
     # 50 random samples
     C_rand = rng.uniform(np.log10(0.0001), np.log10(100), 50) # sample from log space to ensure wide range
     C_rand = np.power(10, C_rand) # convert back to linear scale
@@ -31,9 +36,6 @@ def random_hyperparams(seed):
     return list(zip(C_vals, l1_vals))
 
 def plot_hp_heatmap(C_list, l1_list, auc_list, outpath):
-    import matplotlib.pyplot as plt
-    import numpy as np
-    from matplotlib.colors import LogNorm
 
     plt.figure(figsize=(6,5))
     sc = plt.scatter(l1_list, C_list, c=auc_list, cmap='viridis', s=60, edgecolor='k', norm=None)
@@ -75,18 +77,18 @@ def plot_pr(y_true, y_pred, outpath, title):
     plt.close()
 
 def plot_coefs(coefs, feat_names, outpath, title):
-    plt.figure(figsize=(max(6, len(feat_names)*0.7), 4))
+    plt.figure()
     plt.bar(feat_names, coefs)
     plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Feature")
     plt.ylabel("Coefficient")
-    plt.hlines(0, xmin=0, xmax=len(feat_names)-1, colors='k', linestyles='dashed')
+    plt.axhline(0, color='black', linestyle='--')
+    plt.tight_layout()  # Automatically adjust layout to prevent cutoff
     plt.title(title)
-    plt.tight_layout()
     plt.savefig(outpath)
     plt.close()
 
 def plot_pred_prob_histograms(df, outpath):
-    import matplotlib.pyplot as plt
 
     plt.figure(figsize=(6,4))
     bins = np.linspace(0, 1, 30)
@@ -103,16 +105,23 @@ def plot_pred_prob_histograms(df, outpath):
 def main():
     args = parse_args()
     np.random.seed(args.seed)
+    # plot params
+    plt.rcParams.update({
+        'font.size': args.font_size,
+        'figure.figsize': (8, 6),
+        'axes.titlesize': args.font_size,
+        'axes.labelsize': args.font_size,
+        'xtick.labelsize': args.font_size - 5,
+        'ytick.labelsize': args.font_size - 5,
+        'legend.fontsize': args.font_size,
+        'figure.titlesize': args.font_size + 2
+    })
 
     # Load data
     df = pd.read_csv(args.input, sep="\t")
     y = df.iloc[:, args.label_col - 1].values
     X = df.drop(df.columns[args.label_col - 1], axis=1).values
     feat_names = df.drop(df.columns[args.label_col - 1], axis=1).columns.tolist()
-
-    # Standardize features
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
 
     # Hyperparameter search
     hp_list = random_hyperparams(args.seed)
@@ -128,12 +137,17 @@ def main():
         cv = StratifiedKFold(n_splits=args.kfolds, shuffle=True, random_state=args.seed)
         cv_pred = []
         cv_true = []
-        for train_idx, test_idx in cv.split(X_scaled, y):
+        for train_idx, test_idx in cv.split(X, y):
+            # Fit scaler only on training data
+            scaler = StandardScaler()
+            X_train_scaled = scaler.fit_transform(X[train_idx])
+            # apply to test data
+            X_test_scaled = scaler.transform(X[test_idx])
             model = LogisticRegression(
-                penalty="elasticnet", solver="saga", l1_ratio=l1, C=C, max_iter=10000, random_state=args.seed
+                penalty="elasticnet", solver="saga", l1_ratio=l1, C=C, max_iter=10000, random_state=args.seed, n_jobs=args.cpus
             )
-            model.fit(X_scaled[train_idx], y[train_idx])
-            prob = model.predict_proba(X_scaled[test_idx])[:,1]
+            model.fit(X_train_scaled, y[train_idx])
+            prob = model.predict_proba(X_test_scaled)[:,1]
             cv_pred.append(prob)
             cv_true.append(y[test_idx])
         cv_pred = np.concatenate(cv_pred)
@@ -152,8 +166,11 @@ def main():
     print(f"\nBest hyperparameters: C={best_hp[0]:.5g}, l1_ratio={best_hp[1]:.3f}, CV AUROC={best_auc:.4f}")
 
     # Final model on full data
+    # now, we can scale all data at once
+    sc = StandardScaler()
+    X_scaled = sc.fit_transform(X)
     final_model = LogisticRegression(
-        penalty="elasticnet", solver="saga", l1_ratio=best_hp[1], C=best_hp[0], max_iter=10000, random_state=args.seed
+        penalty="elasticnet", solver="saga", l1_ratio=best_hp[1], C=best_hp[0], max_iter=10000, random_state=args.seed, n_jobs=args.cpus
     )
     final_model.fit(X_scaled, y)
     full_pred = final_model.predict_proba(X_scaled)[:,1]
@@ -161,6 +178,23 @@ def main():
     full_auprc = average_precision_score(y, full_pred)
     print(f"Full-data AUROC: {full_auc:.4f}")
     print(f"Full-data AUPRC: {full_auprc:.4f}")
+    # ADJUSTED
+    if args.false_negatives:
+        # augmented data with false negatives
+        fn = np.ones(args.false_negatives,dtype=np.int64)
+        fn_pred = np.zeros(args.false_negatives, dtype=np.float64)
+
+        # full data
+        adj_y = np.concatenate([y, fn])
+        adj_full_pred = np.concatenate([full_pred, fn_pred])
+        adj_full_auc = roc_auc_score(adj_y, adj_full_pred)
+        adj_full_auprc = average_precision_score(adj_y, adj_full_pred)
+
+        # CV data
+        adj_best_cv_true = np.concatenate([best_cv_true, fn])
+        adj_best_cv_pred = np.concatenate([best_cv_pred, fn_pred])
+        best_adj_auc = roc_auc_score(adj_best_cv_true, adj_best_cv_pred)
+        best_adj_auprc = average_precision_score(adj_best_cv_true, adj_best_cv_pred)
 
     # Plots
     plot_roc(y, full_pred, args.output + ".full_roc.png", "Full Data ROC")
@@ -168,16 +202,33 @@ def main():
     plot_roc(best_cv_true, best_cv_pred, args.output + ".cv_roc.png", "CV ROC (best HP)")
     plot_pr(best_cv_true, best_cv_pred, args.output + ".cv_pr.png", "CV PR (best HP)")
     plot_hp_heatmap(hp_Cs, hp_l1s, hp_aucs, args.output + ".hp_heatmap.png")
+    # ADJUSTED
+    if args.false_negatives:
+        # full
+        plot_roc(adj_y, adj_full_pred, args.output + ".adj_full_roc.png", "Adjusted Full Data ROC")
+        plot_pr(adj_y, adj_full_pred, args.output + ".adj_full_pr.png", "Adjusted Full Data PR")
+        # CV
+        plot_roc(adj_best_cv_true, adj_best_cv_pred, args.output + ".adj_cv_roc.png", "Adjusted CV ROC (best HP)")
+        plot_pr(adj_best_cv_true, adj_best_cv_pred, args.output + ".adj_cv_pr.png", "Adjusted CV PR (best HP)")
+
 
     # Print and save AUROC/AUPRC
     cv_auprc = average_precision_score(best_cv_true, best_cv_pred)
     print(f"CV AUROC (best HP): {best_auc:.4f}")
     print(f"CV AUPRC (best HP): {cv_auprc:.4f}")
 
+
     # Save D* with predicted probabilities
     df_out = df.copy()
     df_out["pred_prob"] = full_pred
     df_out.to_csv(args.output, sep="\t", index=False)
+
+    # Save the final model coefficients
+    coef_df = pd.DataFrame({
+        "feature": feat_names,
+        "coefficient": final_model.coef_[0]
+    })
+    coef_df.to_csv(args.output + ".coefs.tsv", sep="\t", index=False)
 
     # Barplot of coefficients
     plot_coefs(final_model.coef_[0], feat_names, args.output + ".coefs.png", "Final Model Coefficients")
@@ -189,10 +240,15 @@ def main():
     summary = pd.DataFrame([{
         "full_data_AUROC": full_auc,
         "full_data_AUPRC": full_auprc,
+        "full_data_adj_AUROC": adj_full_auc if args.false_negatives else None,
+        "full_data_adj_AUPRC": adj_full_auprc if args.false_negatives else None,
         "cv_best_AUROC": best_auc,
         "cv_best_AUPRC": cv_auprc,
+        "cv_best_adj_AUROC": best_adj_auc if args.false_negatives else None,
+        "cv_best_adj_AUPRC": best_adj_auprc if args.false_negatives else None,
         "best_C": best_hp[0],
-        "best_l1_ratio": best_hp[1]
+        "best_l1_ratio": best_hp[1],
+        "num_added_false_negatives": args.false_negatives if args.false_negatives else None
     }])
     summary.to_csv(args.output + ".summary.tsv", sep="\t", index=False)
 
