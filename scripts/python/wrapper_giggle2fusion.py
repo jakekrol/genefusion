@@ -18,7 +18,7 @@ TEMPLATE_GIGGLE_SEARCH="/data/jake/genefusion/data/giggle_search.template"
 FILEID2SAMPLETYPE="/data/jake/genefusion/data/meta/fileid2sampletype.tsv"
 SAMPLECOLIDX = 15
 SPECIMENCOLIDX = 16
-VALID_STEPS = range(20)
+VALID_STEPS = range(21)
 
 
 parser = argparse.ArgumentParser(description="Run giggle2fusion pipeline")
@@ -477,7 +477,7 @@ if 18 in args.steps:
         "gargs",
         "-p", f"{args.processes}",
         "--log=g.log",
-        "-o", f"/clark_evans_R -i {0} -o {1} -z -n 10"
+        "-o", f"./clark_evans_R.py -i {{0}} -o {{1}} -z -n 10 -d 1000"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
@@ -532,6 +532,17 @@ if 19 in args.steps:
     t = time.time()
     subprocess.run(cmd)
     print(f"Finished running join in {time.time() - t:.2f} seconds")
+if 20 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product_R.tsv")), "pop_tumor_fusions_pe_sample_burden_density_product_R.tsv file not found"
+    cmd = [
+        "./add_R_transformed.py",
+        "-i", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product_R.tsv"),
+        "-o", os.path.join(args.base_dir, "pop_tumor_fusions_pe_sample_burden_density_product_R_trans.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running add_R_transformed in {time.time() - t:.2f} seconds")
 
 
 

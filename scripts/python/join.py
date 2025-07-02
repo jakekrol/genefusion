@@ -39,9 +39,9 @@ if args.type == 'left':
     df_merged = pd.merge(df_x, df_y, on=args.keys, how='left')
     df_merged.to_csv(args.output, sep='\t', index=False)
     print(f'Left join completed. Output written to {args.output}')
-if args.type == 'outer':
+elif args.type == 'outer':
     df_merged = pd.merge(df_x, df_y, on=args.keys, how='outer')
     df_merged.to_csv(args.output, sep='\t', index=False)
     print(f'Outer join completed. Output written to {args.output}')
 else: 
-    raise ValueError(f'Join type {args.type} is not supported. Please use left join.')
+    raise ValueError(f'Join type "{args.type}" is not supported.')
