@@ -10,6 +10,7 @@ SKIP=1
 parser = argparse.ArgumentParser(description='Aggregate PE counts from multiple files')
 parser.add_argument('-i', '--input_dir', type=str, required=True, help='Input directory of gene-wise fusion count files')
 parser.add_argument('-o', '--output', type=str, required=True, help='Output file for aggregated PE counts')
+parser.add_argument('-t', '--type', type=str, choices=['tumor', 'normal'], help='Type of fusion counts to aggregate (tumor or normal)', default='tumor')
 args = parser.parse_args()
 
 assert not os.path.exists(args.output), f'Output file {args.output} already exists. Exiting.'   
@@ -37,9 +38,9 @@ print(f'Finished aggregating PE counts in {args.output} in {time.time()-t:.2f} s
 t = time.time()
 df = pd.read_csv(args.output, sep='\t', header=None)
 print(f'Loaded aggregated PE counts in {time.time()-t:.2f} seconds')
-df.columns = ['left', 'right', 'pe_count']
+df.columns = ['left', 'right', f'pe_count_{args.type}']
 t = time.time()
-df = df.groupby(['left', 'right'])['pe_count'].sum().reset_index()
+df = df.groupby(['left', 'right'])[f'pe_count_{args.type}'].sum().reset_index()
 print(f'Combined PE counts for duplicate genes in {time.time()-t:.2f} seconds')
 t = time.time()
 df.to_csv(args.output, sep='\t', header=True, index=False)
