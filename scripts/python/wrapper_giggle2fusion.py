@@ -351,7 +351,8 @@ if 11 in args.steps:
     cmd = [
         "./agg_pe_counts.py",
         "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusion_counts"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")
+        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
+        "-t", f"{args.type}"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
@@ -474,7 +475,8 @@ if 16 in args.steps:
     cmd = [
         "./add_sample_density.py",
         "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv")
+        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv"),
+        "-t", f"{args.type}"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
@@ -498,7 +500,7 @@ if 18 in args.steps:
         "gargs",
         "-p", f"{args.processes}",
         "--log=g.log",
-        "-o", f"./clark_evans_R.py -i {{0}} -o {{1}} -z -n 10 -d 1000"
+        "-o", f"./clark_evans_R.py -i {{0}} -o {{1}} -z -n 10 -d 1000 -t {args.type}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", f"clark_evans_R_{args.type}.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")

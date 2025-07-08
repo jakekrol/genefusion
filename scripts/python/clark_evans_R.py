@@ -25,7 +25,7 @@ parser.add_argument('-n', '--min_n', type=int, default=10, help='Minimum number 
 parser.add_argument('-z', '--hack', action='store_true', help='Hack to parse left gene name from the input file name')
 parser.add_argument('-d', '--downsample', type = int, default=-1, help='Downsample the targed grouped df to this number of rows. If -1, no downsampling is performed.')
 parser.add_argument('--seed', type=int, default=42, help='Random seed for reproducibility (default: 42)')
-args = parser.parse_args()
+parser.add_argument('-t','--type', type=str, choices=['tumor', 'normal'], default='tumor', help='Type of fusion counts to aggregate (tumor or normal)')
 args = parser.parse_args()
 if args.hack:
     args.left = '.'.join(os.path.basename(args.input).split('.')[:-4]) # remove the last 4 elements (chrom, strand, start, end)
@@ -113,6 +113,7 @@ print(f'Processed all fusions in {time.time() - t:.2f} seconds')
 output_df = pd.DataFrame(output)
 output_df['left'] = args.left
 output_df = output_df[['left', 'right', 'R']]
+output_df.rename(columns={'R': f'R_{args.type}'}, inplace=True)
 t = time.time()
 output_df.to_csv(args.output, sep='\t', index=False)
 print(f'Saved output file to {args.output} in {time.time() - t:.2f} seconds')
