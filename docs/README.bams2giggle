@@ -1,0 +1,26 @@
+# BAMs to GIGGLE index
+
+1. Excord
+```
+# start .txt is input file
+# sep is '.'
+gargs -s '\.' -p 7 --log=g.log -o "dirwbams/{0}.{1}.{2}.{3}.{4} - | excord --discordantdistance 500 /dev/stdin > {0}.{1}.{2}.{3}.bed.gz" < star.txt
+```
+2. Clean excord
+```
+gargs -p 60 --log=g.log -o "cln_excord.sh {0} > {1}" < input.txt
+```
+3. Bedtools sort
+```
+# make sure bedtools is discoverable by gargs spawned procs
+# e.g., bedtools='/data/jake/bedtools.static.binary'
+gargs -p 20 --log=g.log -o "bedtools sort -i {0} > {1}" < input.txt
+```
+4. Compress w/ bgzip
+```
+ls | gargs -p 60 --log=../g.log -o "bgzip {0}"
+```
+5. Build giggle index
+```
+$ time (giggle index -i <tissue>_sort/*.gz -o <tissue>_sort_b)
+```
