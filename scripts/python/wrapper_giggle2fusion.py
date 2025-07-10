@@ -18,7 +18,7 @@ TEMPLATE_GIGGLE_SEARCH="/data/jake/genefusion/data/giggle_search.template"
 FILEID2SAMPLETYPE="/data/jake/genefusion/data/meta/fileid2sampletype.tsv"
 SAMPLECOLIDX = 15
 SPECIMENCOLIDX = 16
-VALID_STEPS = range(21)
+VALID_STEPS = range(23)
 
 
 parser = argparse.ArgumentParser(description="Run giggle2fusion pipeline")
@@ -83,7 +83,7 @@ if 0 in args.steps:
     for src in paths:
         # copy to base_dir
         try:
-            os.symlink(src, args.base_dir)
+            os.symlink(src, os.path.join(args.base_dir, os.path.basename(src)))
             print(f"Copied {src} to {args.base_dir}")
         except shutil.SameFileError:
             print(f"File {src} already exists in {args.base_dir}")
@@ -561,12 +561,36 @@ if 20 in args.steps:
         "./add_R_transformed.py",
         "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv"),
         "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv"),
-        "-n", f"R_{args.type}"
+        "-t", f"{args.type}"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
     subprocess.run(cmd)
     print(f"Finished running add_R_transformed in {time.time() - t:.2f} seconds")
 
+if 21 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv file not found"
+    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file already exists"
+    cmd = [
+        "./fusion_na_mapping.py",
+        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv"),
+        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t= time.time()
+    subprocess.run(cmd)
+    print(f"Finished running fusion_na_mapping in {time.time() - t:.2f} seconds")
 
-
+if 22 in args.steps:
+    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv")), f"pop_{args.type}_fusions_ftr_final.tsv file not found"
+    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file not found"
+    cmd = [
+        "./fusionftr2train.py",
+        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv"),
+        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv"),
+        "-f", "burden"
+    ]
+    print(f"Running '{' '.join(cmd)}'")
+    t = time.time()
+    subprocess.run(cmd)
+    print(f"Finished running fusionftr2train in {time.time() - t:.2f} seconds")
