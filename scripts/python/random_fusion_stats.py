@@ -4,6 +4,7 @@ import os
 import sys
 import argparse
 import time
+import subprocess
 
 parser = argparse.ArgumentParser(description='Get stats for random fusions')
 parser.add_argument('-q', '--query', type=str, required=True, help='Input query file (must be sorted s.t. left gene is col 1)')
@@ -42,6 +43,41 @@ t= time.time()
 if not args.allow_self:
     df_f_filt = df_f_filt[df_f_filt['left'] != df_f_filt['right']]
 print(f'Removed self-fusions in {time.time() - t:.2f} seconds')
+
+# drop duplicates and permutations
+# write tmp
+tmp_file = args.stats_tbl + '.tmp'
+t = time.time()
+df_f_filt.to_csv(tmp_file, sep='\t', index=False)
+print(f'Wrote temp file {tmp_file} in {time.time() - t:.2f} seconds')
+ncols = len(df_f_filt.columns)
+s = ''
+for i in range(3,ncols+1):
+    s += f'${i}, '
+s = s[:-2]  # Remove trailing comma and space
+cmd_str = f"awk 'BEGIN {{OFS=\"\\t\"}} {{print $1, $2, $1 \"zzz\" $2, $2 \"zzz\" $1, {s}}}' {tmp_file} > {args.stats_tbl}.tmp.keyed"
+print("Running command: " + cmd_str)
+subprocess.run(cmd_str, shell=True, check=True)
+print(f'Created keyed fusion stats file in {time.time() - t:.2f} seconds')
+t=time.time()
+df_keyed = pd.read_csv(args.stats_tbl + '.tmp' + '.keyed', sep='\t')
+print(f'Loaded keyed fusion stats file in {time.time() - t:.2f} seconds')
+# drop duplicates
+t= time.time()
+df_keyed = df_keyed.drop_duplicates(subset=['left', 'right'])
+df_keyed = df_keyed.drop(columns=['leftzzzright', 'rightzzzleft'])
+print(f'Dropped duplicates in {time.time() - t:.2f} seconds')
+
+df_f_filt = df_keyed
+
+# fill nas
+cols = df_f_filt.columns.tolist()
+fill0 = [c for c in cols if ('count' in c) or ('transformed' in c)]
+for c in fill0:
+    df_f_filt[c] = df_f_filt[c].fillna(0)
+fill1 = [c for c in cols if 'density' in c]
+for c in fill1:
+    df_f_filt[c] = df_f_filt[c].fillna(1)
 
 # sample random fusions
 t = time.time()

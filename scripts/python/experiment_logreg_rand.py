@@ -5,7 +5,7 @@ import os
 import time
 import subprocess
 
-LOGREG_EVAL = '/data/jake/genefusion/scripts/python/logreg_eval.py'
+LOGREG_EVAL = '/data/jake/rl-tools/ml/logreg_eval.py'
 # args
 parser = argparse.ArgumentParser(description='Run logistic regression evaluation on various random negative fusions')
 parser.add_argument('-p', '--positives', type=str, required=True, help='Input positive fusion file')
@@ -16,6 +16,7 @@ parser.add_argument('-m', '--permutations', type=int, default=100, help='Number 
 parser.add_argument('-s', '--seed', type=int, default=0, help='Random seed for sampling negatives')
 parser.add_argument('-fns', '--false-negatives', type=int, default=None, help='Number of false negatives to use in logreg_eval (default: None)')
 parser.add_argument('--cpus', type=int, default=1, help='Number of CPUs to use for logreg_eval (default: 1)')
+parser.add_argument('--tune_metric', type=str, default='auroc', choices=['auroc', 'auprc'], help='Metric to tune for logreg_eval (default: auroc)')
 args = parser.parse_args()
 if args.negatives is None:
     print('No negatives file specified, using randoms as negatives:', args.randoms)
@@ -100,6 +101,7 @@ for i in range(args.permutations):
         '-o', os.path.join(args.dir_experiment, f'rand_{i}_logreg'),
         '--seed', str(args.seed + i),
         '--cpus', str(args.cpus),
+        '--tune_metric', args.tune_metric
     ]
     if args.false_negatives:
         cmd += ['-fns', str(args.false_negatives)]

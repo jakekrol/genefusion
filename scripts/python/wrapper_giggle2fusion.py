@@ -9,6 +9,7 @@ import re
 import multiprocessing
 import shutil
 import time
+import glob
 
 # future refactoring:
 # i) don't rely on filename to parse info. use a commented header instead
@@ -28,6 +29,7 @@ parser.add_argument('-s', '--steps', type=str, default='all', help='Steps to run
 parser.add_argument('-x', '--dir_executables', type=str, default='/data/jake/genefusion/executables', help='Directory containing executables')  
 parser.add_argument('-p', '--processes', type=int, default=60, help='Number of processes to use')
 parser.add_argument('-t', '--type', type=str, default='tumor', choices=['tumor', 'normal'], help='Type of data to process (tumor or normal)')
+parser.add_argument('--sharded', action='store_true', help='Use sharded giggle index')
 args = parser.parse_args()
 print('Running wrapper_giggle2fusion.py with arguments:')
 print(args)
@@ -74,6 +76,12 @@ if 0 in args.steps:
         "clark_evans_R_tumor",
         "clark_evans_R_normal"
     ]
+    if args.sharded:
+        shards = glob.glob(args.giggle_index + "/shard_*")
+        shards = [os.path.basename(s) for s in shards]
+        subdirs.append("giggleout_sharded")
+        for s in shards:
+            subdirs.append(os.path.join("giggleout_sharded", s))
     print('Making subdirs')
     for subdir in subdirs:
         os.makedirs(os.path.join(args.base_dir, subdir), exist_ok=True)
@@ -91,17 +99,31 @@ if 0 in args.steps:
             print(f"An error occurred: {e}")
     # make search input file
     print(f"Making search input file: {TEMPLATE_GIGGLE_SEARCH}")
-    df_search = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
-    df_search.columns = ["chrom", "start", "end", "name", "strand", "filename"]
-    if '/' in args.giggle_index: # assume not in base_dir
-        df_search.insert(0, "giggle_index", args.giggle_index)
-        print (f"Using giggle index: {args.giggle_index}")
+    if args.sharded:
+        # identify shards
+        shards = glob.glob(args.giggle_index + "/shard_*/*sort_b")
+        df_all = pd.DataFrame()
+        for s in shards:
+            shard_name = s.split('/')[-2]  # get shard name from path
+            df_s = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
+            df_s.columns = ["chrom", "start", "end", "name", "strand", "filename"]
+            df_s.insert(0, "giggle_index", s)
+            fnames = df_s['filename'].tolist()
+            df_s["filename"] = df_s["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout_sharded", shard_name, os.path.basename(x)))
+            df_all = pd.concat([df_all, df_s], ignore_index=True)
+        df_all.to_csv(os.path.join(args.base_dir, "inputs", "search.input"), sep="\t", index=False, header=False)
     else:
-        df_search.insert(0, "giggle_index", os.path.join(args.base_dir,args.giggle_index))
-        print (f"Using giggle index: {os.path.join(args.base_dir,args.giggle_index)}")
-    fnames = df_search['filename'].tolist()
-    df_search["filename"] = df_search["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout", x))
-    df_search.to_csv(os.path.join(args.base_dir, "inputs", "search.input"), sep="\t", index=False, header=False)
+        df_search = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
+        df_search.columns = ["chrom", "start", "end", "name", "strand", "filename"]
+        if '/' in args.giggle_index: # assume not in base_dir
+            df_search.insert(0, "giggle_index", args.giggle_index)
+            print (f"Using giggle index: {args.giggle_index}")
+        else:
+            df_search.insert(0, "giggle_index", os.path.join(args.base_dir,args.giggle_index))
+            print (f"Using giggle index: {os.path.join(args.base_dir,args.giggle_index)}")
+        fnames = df_search['filename'].tolist()
+        df_search["filename"] = df_search["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout", x))
+        df_search.to_csv(os.path.join(args.base_dir, "inputs", "search.input"), sep="\t", index=False, header=False)
 
     # make clean input file
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
@@ -205,6 +227,28 @@ if 1 in args.steps:
     with open(input_file, 'r') as infile:
         subprocess.run(cmd, stdin=infile)
     print(f"Finished running search in {time.time() - t:.2f} seconds")
+    if args.sharded:
+        print('Aggregating results from shards')
+        # aggregate results from shards
+        # gather shard output dirs
+        shard_dirs = glob.glob(os.path.join(args.base_dir, "giggleout_sharded", "shard_*"))
+        # look over files and use append to merge
+        # the files in each shard directory have the same name
+        t= time.time()
+        for shard_dir in shard_dirs:
+            shard_files = [os.path.join(shard_dir,f) for f in os.listdir(shard_dir)]
+            for shard_file in shard_files:
+                # get the basename of the file
+                basename = os.path.basename(shard_file)
+                # write contents to the corresponding file in giggleout
+                dest_file = os.path.join(args.base_dir, "giggleout", basename)
+                if os.path.exists(dest_file):
+                    with open(dest_file, 'a') as dest_f:
+                        with open(shard_file, 'r') as src_f:
+                            dest_f.write(src_f.read())
+                else:
+                    shutil.copy(shard_file, dest_file)
+        print(f'Finished aggregating results from shards in {time.time() - t:.2f} seconds')
 
 if 2 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "clean.input")), "Clean input file not found"
@@ -513,7 +557,7 @@ if 18 in args.steps:
         "for",
         "file",
         "in",
-        os.path.join(args.base_dir, "clark_evans_R", "*"),
+        os.path.join(args.base_dir, f"clark_evans_R_{args.type}", "*"),
         ";",
         "do",
         "tail",
@@ -582,13 +626,14 @@ if 21 in args.steps:
     print(f"Finished running fusion_na_mapping in {time.time() - t:.2f} seconds")
 
 if 22 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv")), f"pop_{args.type}_fusions_ftr_final.tsv file not found"
-    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file not found"
+    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file not found"
+    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv")), f"pop_{args.type}_fusions_ftr_final.tsv file already exists"
     cmd = [
         "./fusionftr2train.py",
         "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv"),
         "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv"),
-        "-f", "burden"
+        "-d", "burden",
+        "-k", "trans"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
