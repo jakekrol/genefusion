@@ -1,0 +1,1 @@
+Example PED file for a prostate STIX index

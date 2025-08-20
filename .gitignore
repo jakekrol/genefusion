@@ -1,3 +1,5 @@
 *.bam
 *.bai
 tmp/*
+data/dna/*
+data/rna/*

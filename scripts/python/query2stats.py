@@ -10,6 +10,7 @@ parser.add_argument('-q', '--query', type=str, required=True, help='Input query 
 parser.add_argument('-t', '--tbl', type=str, required=True, help='Input fusion table file')
 parser.add_argument('-b', '--burden', type=str, required=True, help='Input burden table file')
 parser.add_argument('-o', '--output', type=str, required=True, help='Output file')  
+parser.add_argument('-d', '--drop', action='store_true', help='Drop fusions with sort_result=-1')   
 args = parser.parse_args()
 
 # load query
@@ -58,6 +59,11 @@ for i,val in mask.items():
         df_merged.loc[i, 'burden_total_left'] = burden_l
         df_merged.loc[i, 'burden_total_right'] = burden_r
 print(f'Added burden in {time.time() - t:.2f} seconds')
+# drop fusions with sort_result=-1
+if args.drop:
+    t= time.time()
+    df_merged = df_merged[df_merged['sort_result'] != -1]
+    print(f'Dropped fusions with sort_result=-1 in {time.time() - t:.2f} seconds')
 # write again
 t= time.time()
 df_merged.to_csv(args.output, sep='\t', index=False)
