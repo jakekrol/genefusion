@@ -1,0 +1,1 @@
+../../scripts/python/build_hgnc_alias_map.py
