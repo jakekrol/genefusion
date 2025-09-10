@@ -1,0 +1,1 @@
+../../scripts/python/merge_hgnc_haas_aliases.py
