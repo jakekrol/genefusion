@@ -57,7 +57,7 @@ echo "counting fraction of haas fusions with interval data"
 ```
 
 ### Result
-$> 0.96$ fusions from haas I have interval data for both genes.
+$> 0.96$% fusions from haas I have interval data for both genes.
 
 $>$ because the final counting script cannot handle commas in the haas fusions.
 
