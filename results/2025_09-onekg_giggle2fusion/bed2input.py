@@ -1,0 +1,1 @@
+../../scripts/python/bed2input.py
