@@ -29,5 +29,16 @@ tail -n +2 haas_onekg_no_dups.tsv \
     | hist.py -o haas_onekg_readcount_histogram.png \
     --ylog -x "1000 Genomes depth" -y Frequency
 
+# inspect fusions with >10000 supporting reads in 1kg
+tail -n +2 haas_onekg_no_dups.tsv \
+    | awk '$11 > 10000' | \
+    # nr numeric reverse
+    sort -k11,11nr | \
+    # reorder columns to put depth third
+    awk 'BEGIN{OFS="\t"} {print $1,$2,$11,$3,$4,$5,$6,$7,$8,$9,$10}' > haas_onekg_depth_gt10000.tsv
 
-
+# do the same with >1000 supporting reads in 1kg
+tail -n +2 haas_onekg_no_dups.tsv \
+    | awk '$11 > 1000' | \
+    sort -k11,11nr | \
+    awk 'BEGIN{OFS="\t"} {print $1,$2,$11,$3,$4,$5,$6,$7,$8,$9,$10}' > haas_onekg_depth_gt1000.tsv  
