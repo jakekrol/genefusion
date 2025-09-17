@@ -22,15 +22,19 @@ join.py \
 
 drop_duplicates.py -i haas_onekg.tsv -o haas_onekg_no_dups.tsv -c 5
 
+# fill missing 1000 genomes records with 0
+script='import pandas as pd;df=pd.read_csv("haas_onekg_no_dups.tsv",sep="\t");df["pe_count_normal"].fillna(0,inplace=True);df["pe_count_normal"] = df["pe_count_normal"].astype(int);df.to_csv("haas_onekg_no_dups_filled.tsv",sep="\t",index=False)'
+python3 -c "$script"
+
 # histogram of 1kg supporting reads for haas fusions
 
-tail -n +2 haas_onekg_no_dups.tsv \
+tail -n +2 haas_onekg_no_dups_filled.tsv \
     | cut -f11 \
     | hist.py -o haas_onekg_readcount_histogram.png \
     --ylog -x "1000 Genomes depth" -y Frequency
 
 # inspect fusions with >10000 supporting reads in 1kg
-tail -n +2 haas_onekg_no_dups.tsv \
+tail -n +2 haas_onekg_no_dups_filled.tsv \
     | awk '$11 > 10000' | \
     # nr numeric reverse
     sort -k11,11nr | \
@@ -42,3 +46,14 @@ tail -n +2 haas_onekg_no_dups.tsv \
     | awk '$11 > 1000' | \
     sort -k11,11nr | \
     awk 'BEGIN{OFS="\t"} {print $1,$2,$11,$3,$4,$5,$6,$7,$8,$9,$10}' > haas_onekg_depth_gt1000.tsv  
+
+# scatter plot of haas spanning reads vs 1kg depth
+# for cases where haas spanning reads is greater than 10
+
+tail -n +2 haas_onekg_no_dups_filled.tsv | 
+    # awk '$7 > 10' | \
+    cut -f 7,11 | \
+    scatter.py -o haas_onekg_spanning_vs_1kgdepth.png \
+    --xlog --ylog -x "Haas spanning reads" -y "1000 Genomes depth"
+
+
