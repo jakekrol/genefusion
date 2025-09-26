@@ -1,0 +1,1 @@
+../../scripts/python/gene2alias.py
