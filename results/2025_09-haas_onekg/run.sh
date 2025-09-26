@@ -68,26 +68,26 @@ awk 'BEGIN{OFS="\t"} {print $1,$2,$3,$11,$4,$5,$6,$7,$8,$9,$10}' haas_onekg_no_d
 rm tmp.txt tmp2.txt tmp3.txt
 
 # histogram of 1kg supporting reads for haas fusions
-tail -n +2 haas_onekg_no_dups_filled.tsv \
+tail -n +2 haas_onekg_no_dups_filled_annotated.tsv \
     | cut -f3 \
     | hist.py -o haas_onekg_readcount_histogram.png \
     --ylog -x "1000 Genomes depth" -y Frequency
 
-# inspect fusions with >10000 supporting reads in 1kg
-tail -n +2 haas_onekg_no_dups_filled.tsv \
-    | awk '$3 > 10000' | \
-    # nr numeric reverse
-    sort -k3,3nr > haas_onekg_depth_gt10000.tsv
+# # inspect fusions with >10000 supporting reads in 1kg
+# tail -n +2 haas_onekg_no_dups_filled_annotated.tsv \
+#     | awk '$3 > 10000' | \
+#     # nr numeric reverse
+#     sort -k3,3nr > haas_onekg_depth_gt10000.tsv
 
-# do the same with >1000 supporting reads in 1kg
-tail -n +2 haas_onekg_no_dups.tsv \
-    | awk '$3 > 1000' | \
-    sort -k3,3nr > haas_onekg_depth_gt1000.tsv
+# # do the same with >1000 supporting reads in 1kg
+# tail -n +2 haas_onekg_no_dups_filled_annotated.tsv \
+#     | awk '$3 > 1000' | \
+#     sort -k3,3nr > haas_onekg_depth_gt1000.tsv
 
 # careful! we are using the no_dups file here
 # scatter plot of haas spanning reads vs 1kg depth
 # for cases where haas spanning reads is greater than 10
-tail -n +2 haas_onekg_no_dups_filled.tsv | 
+tail -n +2 haas_onekg_no_dups_filled_annotated.tsv | 
     # awk '$7 > 10' | \
     cut -f 7,11 | \
     scatter.py -o haas_onekg_spanning_vs_1kgdepth.png \
