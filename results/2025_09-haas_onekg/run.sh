@@ -71,6 +71,9 @@ rm tmp.txt tmp2.txt tmp3.txt
 grep -v -E "SELFIE|OVERLAP|BLAST|NEIGHBOR" haas_onekg_no_dups_filled_annotated.tsv \
     > haas_onekg_no_dups_filled_annotated_filt.tsv
 
+# inspect filtered fusions
+grep -E "SELFIE|OVERLAP|BLAST|NEIGHBOR" haas_onekg_no_dups_filled_annotated.tsv > haas_onekg_filtered_out.tsv
+
 # print the count of filtered fusions
 echo "Count of filtered fusions:"
 grep -c -E "SELFIE|OVERLAP|BLAST|NEIGHBOR" haas_onekg_no_dups_filled_annotated.tsv 
@@ -80,14 +83,21 @@ tail -n +2 haas_onekg_no_dups_filled_annotated.tsv \
     | cut -f3 \
     | hist.py -o haas_onekg_readcount_histogram.png \
     --ylog -x "1000 Genomes depth" -y Frequency \
-    --title "Benchmark fusions"
+    --title "All benchmark fusions"
 
 # with filtered data
 tail -n +2 haas_onekg_no_dups_filled_annotated_filt.tsv \
     | cut -f3 \
     | hist.py -o haas_onekg_readcount_histogram_filt.png \
     --ylog -x "1000 Genomes depth" -y Frequency \
-    --title "Benchmark fusions filtered"
+    --title "Post-filter fusions"
+
+# of filtered fusions
+tail -n +2 haas_onekg_annotation_filtered_out.tsv \
+    | cut -f3 \
+    | hist.py -o haas_onekg_readcount_histogram_filtered_out.png \
+    --ylog -x "1000 Genomes depth" -y Frequency \
+    --title "Annotation filtered out fusions"
 
 # compute num. fusions with >1000 supporting reads in 1kg
 # in filtered data
