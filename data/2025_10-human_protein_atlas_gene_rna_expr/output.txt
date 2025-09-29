@@ -1,0 +1,2 @@
+gene	Tissues
+TSPAN6	choroid plexus
