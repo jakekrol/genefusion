@@ -12,6 +12,67 @@ import ast
 import json
 import heapq
 import pointpats
+import swifter
+
+BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
+
+def score(
+    # reads
+    reads_dna_normal=0,
+    reads_dna_tumor=0,
+    reads_rna_normal=0,
+    reads_rna_tumor=0,
+    reads_onekg=0,
+
+    # sample counts
+    samples_dna_normal=0,
+    samples_dna_tumor=0,
+    samples_rna_normal=0,
+    samples_rna_tumor=0,
+    samples_onekg=0,
+    # pop size
+    pop_size_dna_normal=0,
+    pop_size_dna_tumor=0,
+    pop_size_rna_normal=0,
+    pop_size_rna_tumor=0,
+    pop_size_onekg=2536,
+    # hyperparameters
+    w_dna=0.5,
+    upper_factor=100 # bounding extreme read counts
+    # theta=0.5 # weight reads vs recurrence
+):
+    w_rna = 1 - w_dna
+    # bound reads using pop size
+    reads_dna_normal = min(reads_dna_normal, upper_factor * pop_size_dna_normal)
+    reads_dna_tumor = min(reads_dna_tumor, upper_factor * pop_size_dna_tumor)
+    reads_rna_normal = min(reads_rna_normal, upper_factor * pop_size_rna_normal)
+    reads_rna_tumor = min(reads_rna_tumor, upper_factor * pop_size_rna_tumor)
+    # sample recurrence
+    # n_recurrent_normal = samples_dna_normal + samples_rna_normal + samples_onekg
+    # n_recurrent_tumor = samples_dna_tumor + samples_rna_tumor
+    # weighted sum of reads and recurrence among samples
+    score = \
+        (-w_dna*np.log(1+reads_dna_normal)) + \
+        (w_dna*np.log(1+reads_dna_tumor)) + \
+        (-w_dna*np.log(1+reads_onekg)) + \
+        (-w_rna*np.log(1+reads_rna_normal)) + \
+        (w_rna*np.log(1+reads_rna_tumor)) + \
+        (-w_dna*np.log(1+samples_dna_normal)) + \
+        (-w_rna*np.log(1+samples_rna_normal)) + \
+        (-w_dna*np.log(1+samples_onekg)) + \
+        (w_dna*np.log(1+samples_dna_tumor)) + \
+        (w_rna*np.log(1+samples_rna_tumor))
+    return score
+
+def gene2tissue(gene, df_g2t):
+    '''
+    gene: gene name
+    df_g2t: dataframe with gene to tissue mapping
+    '''
+    assert 'gene' in df_g2t.columns, "df_g2t must have a column named 'gene'"
+    assert 'Tissues' in df_g2t.columns, "df_g2t must have a column named 'Tissues'"
+    tissues = df_g2t[df_g2t['gene'] == gene]['Tissues'].tolist()
+    return tissues
 
 def clark_evans_R(x,y, x_start, x_end, y_start, y_end, log10 = False):
     '''
@@ -24,14 +85,21 @@ def clark_evans_R(x,y, x_start, x_end, y_start, y_end, log10 = False):
     log10: if True, return log10 of the observed and expected distances
     '''
     assert len(x) == len(y), "x and y must have the same length"
+    assert x_start < x_end, "x_start must be less than x_end"
+    assert y_start < y_end, "y_start must be less than y_end"
+    w = x_end - x_start
+    h = y_end - y_start
+    assert w > 0, "width must be greater than 0"
+    assert h > 0, "height must be greater than 0"
     n = len(x)
     p = list(zip(x, y))
     pp = pointpats.PointPattern(p)
-    area = (x_end - x_start) * (y_end - y_start)  # area of the rectangle defined by the two genes
+    area = w * h  # area of the rectangle defined by the two genes
     d_obs = pp.mean_nnd
     lmbda = n / area  # density
+    assert lmbda > 0, "density must be greater than 0"
     d_exp = 1 / (2 * np.sqrt(lmbda))  # expected distance for a random point pattern
-
+    # print('x_start', x_start, 'x_end', x_end, 'y_start', y_start,'y_end', y_end,'n:', n,'d_obs:', d_obs, 'd_exp:', d_exp, 'lambda:', lmbda, 'area:', area)
     R = d_obs / d_exp  # Clark-Evans R statistic
     if log10:
         d_obs = np.log10(d_obs)
@@ -42,7 +110,7 @@ def clark_evans_R(x,y, x_start, x_end, y_start, y_end, log10 = False):
     
     
 
-def add_left_right_col(df_in, x, y, bedfile='/data/jake/genefusion/data/gene_file.txt.latest', left_col='left', right_col='right'):
+def add_left_right_col(df_in, x, y, bedfile=BEDFILE, left_col='left', right_col='right'):
     df_in = left_gene(df_in, x, y, bedfile=bedfile,left_col=left_col)
     def right(x,y,left):
         # if left is -1, return -1
@@ -52,12 +120,12 @@ def add_left_right_col(df_in, x, y, bedfile='/data/jake/genefusion/data/gene_fil
             return y
         if y == left:
             return x
-    df_in[right_col] = df_in.apply(
+    df_in[right_col] = df_in.swifter.apply(
         lambda row: right(row[x], row[y], row[left_col]), axis=1
     )
     return df_in
 
-def left_gene(df_in,x,y,bedfile='/data/jake/genefusion/data/gene_file.txt.latest', left_col='left'):
+def left_gene(df_in,x,y,bedfile=BEDFILE, left_col='left'):
     '''
     df_in: pandas DataFrame with columns x and y
     x: column name for first gene
@@ -125,7 +193,7 @@ def left_gene(df_in,x,y,bedfile='/data/jake/genefusion/data/gene_file.txt.latest
                     return gene1
                 else:
                     return gene2
-    df_in[left_col] = df_in.apply(
+    df_in[left_col] = df_in.swifter.apply(
         lambda row: compare_genes(row[x], row[y], df_bed), axis=1
     )
     return df_in
@@ -444,10 +512,14 @@ def giggle_sharded(
     shards = os.listdir(dir_shard)
     shards = [os.path.join(dir_shard, x) for x in shards if re.match(shard_pattern, x)]
     outfiles = [
-        f"{os.path.basename(x)}.{chrm}.{strand}.{gene}.{left}.{right}.giggle"
+        f"{gene}.{chrm}.{strand}.{left}.{right}"
         for x in shards
     ]
-    outfiles = [os.path.join(outdir, x) for x in outfiles]
+    # mk out subdirs corresponding to shards
+    outdirs = [os.path.join(outdir, os.path.basename(x)) for x in shards]
+    for outdir in outdirs:
+        os.makedirs(outdir, exist_ok=True)
+    outfiles = [os.path.join(outdir, x) for outdir, x in zip(outdirs, outfiles)]
     # setup calls to shell script
     cmds = [
         f"/data/jake/genefusion/scripts/shell/genefusion_giggle.sh -i \
