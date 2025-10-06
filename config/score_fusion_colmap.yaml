@@ -1,0 +1,11 @@
+read_dna_normal: "..."
+read_dna_tumor: "..."
+read_rna_normal: "..."
+read_rna_tumor: "..."
+read_dna_onekg: "..."
+samples_dna_normal: "..."
+samples_dna_tumor: "..."
+samples_rna_normal: "..."
+samples_rna_tumor: "..."
+samples_dna_onekg: "..."
+
