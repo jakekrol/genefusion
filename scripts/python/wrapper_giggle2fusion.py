@@ -15,14 +15,18 @@ import glob
 # i) don't rely on filename to parse info. use a commented header instead
 # ii) add a logfile
 
-TEMPLATE_GIGGLE_SEARCH="/data/jake/genefusion/data/giggle_search.template"
-FILEID2SAMPLETYPE="/data/jake/genefusion/data/meta/fileid2sampletype.tsv"
+# TEMPLATE_GIGGLE_SEARCH=\
+#     "/data/jake/genefusion/results/2025_05-fusion_search_template/giggle_search.template"
+FILEID2SAMPLETYPE=\
+    "/data/jake/genefusion/results/2025_05-pcawg_fileid2sample_type/fileid2sampletype.tsv"
 SAMPLECOLIDX = 15
 SPECIMENCOLIDX = 16
 VALID_STEPS = range(23)
 
 
 parser = argparse.ArgumentParser(description="Run giggle2fusion pipeline")
+parser.add_argument('-b', '--bed', type=str, required=True,
+                    help='Path to bed file for intersection')
 parser.add_argument('-d', '--base_dir', type=str, required=True)
 parser.add_argument('-g', '--giggle_index', type=str, required=True)
 parser.add_argument('-s', '--steps', type=str, default='all', help='Steps to run, comma separated')
@@ -30,6 +34,7 @@ parser.add_argument('-x', '--dir_executables', type=str, default='/data/jake/gen
 parser.add_argument('-p', '--processes', type=int, default=60, help='Number of processes to use')
 parser.add_argument('-t', '--type', type=str, default='tumor', choices=['tumor', 'normal'], help='Type of data to process (tumor or normal)')
 parser.add_argument('--sharded', action='store_true', help='Use sharded giggle index')
+parser.add_argument('--template', type=str, default='/data/jake/genefusion/results/2025_05-fusion_search_template/giggle_search.template', help='Path to giggle search template file')
 args = parser.parse_args()
 print('Running wrapper_giggle2fusion.py with arguments:')
 print(args)
@@ -98,22 +103,29 @@ if 0 in args.steps:
         except Exception as e:
             print(f"An error occurred: {e}")
     # make search input file
-    print(f"Making search input file: {TEMPLATE_GIGGLE_SEARCH}")
+    print(f"Making search input file: {args.template}")
     if args.sharded:
         # identify shards
-        shards = glob.glob(args.giggle_index + "/shard_*/*sort_b")
+        shards = glob.glob(args.giggle_index + "/shards/*/*sort_b")
         df_all = pd.DataFrame()
         for s in shards:
             shard_name = s.split('/')[-2]  # get shard name from path
-            df_s = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
+            # make sub dir for shard
+            shard_dir = os.path.join(args.base_dir, "giggleout_sharded", shard_name)
+            os.makedirs(shard_dir, exist_ok=True)
+            # make search file from template
+            df_s = pd.read_csv(args.template, sep="\t", header=None)
             df_s.columns = ["chrom", "start", "end", "name", "strand", "filename"]
             df_s.insert(0, "giggle_index", s)
+            # get filenames for all non-search tasks
             fnames = df_s['filename'].tolist()
             df_s["filename"] = df_s["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout_sharded", shard_name, os.path.basename(x)))
             df_all = pd.concat([df_all, df_s], ignore_index=True)
         df_all.to_csv(os.path.join(args.base_dir, "inputs", "search.input"), sep="\t", index=False, header=False)
+        # filenames for search task
+        fnames_search = df_all['filename'].apply(lambda x: os.path.basename(x)).tolist()
     else:
-        df_search = pd.read_csv(TEMPLATE_GIGGLE_SEARCH, sep="\t", header=None)
+        df_search = pd.read_csv(args.template, sep="\t", header=None)
         df_search.columns = ["chrom", "start", "end", "name", "strand", "filename"]
         if '/' in args.giggle_index: # assume not in base_dir
             df_search.insert(0, "giggle_index", args.giggle_index)
@@ -122,14 +134,16 @@ if 0 in args.steps:
             df_search.insert(0, "giggle_index", os.path.join(args.base_dir,args.giggle_index))
             print (f"Using giggle index: {os.path.join(args.base_dir,args.giggle_index)}")
         fnames = df_search['filename'].tolist()
-        df_search["filename"] = df_search["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout", x))
+        df_search["filename"] = df_search["filename"].apply(lambda x: os.path.join(args.base_dir, "giggleout", str(x)))
         df_search.to_csv(os.path.join(args.base_dir, "inputs", "search.input"), sep="\t", index=False, header=False)
 
     # make clean input file
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
     print(f"Making clean input file: {input_file}")
     with open(input_file, 'w') as f:
-        for fname in fnames:
+        iterable = fnames_search if args.sharded else fnames
+        for fname in iterable:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleout', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'gigglecln', fname)}\n")
     # make swap input file
@@ -137,12 +151,14 @@ if 0 in args.steps:
     print(f"Making swap input file: {input_file}")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'gigglecln', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleswap', fname)}\n")
     # make intersect input file
     input_file = os.path.join(args.base_dir, "inputs", "intersect.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleswap', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter', fname)}\n")
     # make unswap input file
@@ -150,6 +166,7 @@ if 0 in args.steps:
     print(f"Making unswap input file: {input_file}")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap', fname)}\n")
     # make clean unswap input file
@@ -157,6 +174,7 @@ if 0 in args.steps:
     print(f"Making unswap specimen input file: {input_file}")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_cln', fname)}\n")
     # make specimen input file
@@ -164,6 +182,7 @@ if 0 in args.steps:
     print(f"Making unswap specimen input file: {input_file}")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_cln', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\n")
     # make specimen split input file
@@ -171,6 +190,7 @@ if 0 in args.steps:
     print(f"Making unswap specimen split input file: {input_file}")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen_split')}\n") # constant output dir
     print(f"Finished making input files in {time.time() - t:.2f} seconds")
@@ -178,36 +198,42 @@ if 0 in args.steps:
     input_file = os.path.join(args.base_dir, "inputs", "count_fusions_tumor.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_counts', fname)}\n")
     # make count fusions input file for normal
     input_file = os.path.join(args.base_dir, "inputs", "count_fusions_normal.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'pop_normal_fusion_counts', fname)}\n")
     # make distinct sample counts input file for tumor
     input_file = os.path.join(args.base_dir, "inputs", f"distinct_sample_counts_tumor.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_sample_counts', fname)}\n")
     # make distinct sample counts input file for normal
     input_file = os.path.join(args.base_dir, "inputs", f"distinct_sample_counts_normal.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'pop_normal_fusion_sample_counts', fname)}\n")
     # make clark evans R input file for tumor
     input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R_tumor.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'clark_evans_R_tumor', fname)}\n")
     # make clark evans R input file for normal
     input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R_normal.input")
     with open(input_file, 'w') as f:
         for fname in fnames:
+            fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'clark_evans_R_normal', fname)}\n")
 
@@ -289,7 +315,7 @@ if 4 in args.steps:
         "gargs",
         "-p", f"{args.processes}",
         "--log=g.log",
-        "-o", "./intersect_swapped.sh {0} {1}"
+        "-o", f"./intersect_swapped.sh {{0}} {args.bed} {{1}}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "intersect.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
