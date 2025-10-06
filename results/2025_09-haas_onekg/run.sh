@@ -83,12 +83,14 @@ tail -n +2 haas_onekg_no_dups_filled_annotated.tsv \
     | cut -f3 \
     | hist.py -o haas_onekg_readcount_histogram.png \
     --ylog -x "1000 Genomes depth" -y Frequency \
+    --log_trans --bins 50 \
     --title "All benchmark fusions"
 
 # with filtered data
 tail -n +2 haas_onekg_no_dups_filled_annotated_filt.tsv \
     | cut -f3 \
     | hist.py -o haas_onekg_readcount_histogram_filt.png \
+    --log_trans --bins 50 \
     --ylog -x "1000 Genomes depth" -y Frequency \
     --title "Post-filter fusions"
 
@@ -96,6 +98,7 @@ tail -n +2 haas_onekg_no_dups_filled_annotated_filt.tsv \
 tail -n +2 haas_onekg_annotation_filtered_out.tsv \
     | cut -f3 \
     | hist.py -o haas_onekg_readcount_histogram_filtered_out.png \
+    --log_trans --bins 50 \
     --ylog -x "1000 Genomes depth" -y Frequency \
     --title "Annotation filtered out fusions"
 
