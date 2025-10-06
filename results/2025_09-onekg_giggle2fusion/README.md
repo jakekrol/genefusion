@@ -16,5 +16,9 @@ of tumor driving fusions is important
 
 - see `run.sh`
 
+## next step
+
+- analyze 1000 genomes fusion evidence w.r.t Haas 2019 fusions
+
 
 

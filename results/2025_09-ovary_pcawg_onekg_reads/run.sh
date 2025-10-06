@@ -76,5 +76,28 @@ echo "Fusions after filtering: $x"
 tail -n +2 ovary_pcawg_onekg_annotated_filtered.tsv | awk '$3>10' | wc -l
 
 
+### analyzing logreg dataset fusions with low proportion of tumor supporting reads
+cp $GENEFUSION/logreg/ovary/ovary_false_positives.tsv .
 
+# map their gene names
+sourc=ovary_false_positives.tsv
+target=../2025_09-gene_bed/grch37.bed
+output=ovary_false_positives_mapped.tsv
+../../scripts/python/gene2alias.py \
+    --alias $alia \
+    --source $sourc \
+    --target $target \
+    --output $output \
+    --source_col 1,2 \
+    --source_header
+
+# plot the onekg supporting reads for these fusions
+tail -n +2 ovary_false_positives.tsv | cut -f 4 | hist.py -o ovary_logreg_fps_onekg.hist.png --ylog --bins 70 \
+    -x "1KG supporting reads" -y "Frequency" 
+# plot the tumor supporting reads for these fusions
+tail -n +2 ovary_false_positives.tsv | cut -f 3 | hist.py -o ovary_logreg_fps_tumor.hist.png --ylog --bins 70 \
+    -x "Tumor supporting reads" -y "Frequency" 
+# plot the normal supporting reads for these fusions
+tail -n +2 ovary_false_positives.tsv | cut -f 5 | hist.py -o ovary_logreg_fps_normal.hist.png --ylog --bins 70 \
+    -x "Normal supporting reads" -y "Frequency" 
 

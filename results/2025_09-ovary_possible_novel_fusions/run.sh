@@ -127,20 +127,22 @@ for i in range(0, total_rows, batch_size):
     df.to_csv("temp_scored.tsv", sep="\t", index=False, mode=mode, header=header)
     print(f"Batch {batch_num} completed")
 
-# Now sort the complete aggregated file using DuckDB
-print("Sorting complete file by fusion_score...")
-conn.execute('COPY (SELECT * FROM read_csv_auto("temp_scored.tsv", delim="\t") ORDER BY fusion_score DESC) TO "ovary_rand_ftrs_expr_annotated_scored_sorted.tsv" (DELIMITER "\t", HEADER)')
-
-# Clean up temporary file
-print("Cleaning up temporary files...")
-import os
-os.remove("temp_scored.tsv")
-
-conn.close()
-print("Processing complete! Output: ovary_rand_ftrs_expr_annotated_scored_sorted.tsv")
+print("Wrote all batches to temp_scored.tsv")
 EOF
 
 python score_batches.py
+
+# sort
+# start 6:46a
+# takes about 1 hr
+time (
+    tail -n +2 temp_scored.tsv |
+    sort -t$'\t' -k15,15nr \
+        --buffer-size=12G \
+        --parallel=60 \
+        --temporary-directory=/data/jake/genefusion/results/2025_09-ovary_possible_novel_fusions/tmp \
+        > ovary_rand_ftrs_expr_annotated_scored_sorted.tsv
+)
 
 
 # # score

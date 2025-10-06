@@ -15,4 +15,18 @@ cp ../giggle2fusion.template .
     -g /data/stix/1kg/low_coverage/alt_sort_b \
     -s 0,1,2,3,4,5,6 \
     -p 60 \
-    -t normal
+    -t normal \
+    --bed ../../2025_09-gene_bed/grch37.bed
+
+# copy to normal dir
+cp giggleinter_unswap_cln/* giggleinter_final_normal
+
+# run counting steps
+./wrapper_giggle2fusion.py \
+    --template giggle2fusion.template \
+    -d $(pwd) \
+    -g /data/stix/1kg/low_coverage/alt_sort_b \
+    -s 10,11 \
+    -p 60 \
+    -t normal \
+    --bed ../../2025_09-gene_bed/grch37.bed
