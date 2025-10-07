@@ -67,6 +67,18 @@ awk 'BEGIN{OFS="\t"} {print $1,$2,$3,$11,$4,$5,$6,$7,$8,$9,$10}' haas_onekg_no_d
 # cleanup
 rm tmp.txt tmp2.txt tmp3.txt
 
+# re-drop duplicates in terms of
+# original program, fusion, sample
+drop_duplicates.py \
+    -i haas_onekg_no_dups_filled_annotated.tsv \
+    -o haas_onekg_no_dups_filled_annotated.tsv \
+    -c 5,6,7
+
+# count total fusions after name resolution
+echo "Total fusions in benchmark:"
+tail -n +2 haas_onekg_no_dups_filled_annotated.tsv | wc -l
+
+
 # filter out selfies,overlap,homology,neighbor
 grep -v -E "SELFIE|OVERLAP|BLAST|NEIGHBOR" haas_onekg_no_dups_filled_annotated.tsv \
     > haas_onekg_no_dups_filled_annotated_filt.tsv
@@ -102,11 +114,11 @@ tail -n +2 haas_onekg_annotation_filtered_out.tsv \
     --ylog -x "1000 Genomes depth" -y Frequency \
     --title "Annotation filtered out fusions"
 
-# compute num. fusions with >1000 supporting reads in 1kg
+# compute num. fusions with >n supporting reads in 1kg
 # in filtered data
 echo "Count of filtered fusions with >100 supporting reads in 1kg:"
 x=$(tail -n +2 haas_onekg_no_dups_filled_annotated_filt.tsv \
-    | awk '$3 > 100' | wc -l)
+    | awk '$3 > 10' | wc -l)
 n=$(tail -n +2 haas_onekg_no_dups_filled_annotated_filt.tsv | wc -l)
 echo "$x out of $n"
 
