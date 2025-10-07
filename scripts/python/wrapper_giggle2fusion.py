@@ -64,6 +64,7 @@ if 0 in args.steps:
     # make subdirs
     subdirs = [
         "inputs",
+        "logs",
         "giggleout",
         "gigglecln",
         "giggleswap",
@@ -244,7 +245,7 @@ if 1 in args.steps:
     cmd = [
     "gargs",
     "-p", f"{args.processes}",
-    "--log=g.log",
+    "--log=logs/search.log",
     "-o", "./genefusion_giggle.sh -i {0} -g {4} -c {1} -l {2} -r {3} -s {5} -o {6}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "search.input")
@@ -282,7 +283,7 @@ if 2 in args.steps:
     cmd = [
     "gargs",
     "-p", f"{args.processes}",
-    "--log=g.log",
+    "--log=logs/clean.log",
     "-o", "./cln_excord.sh {0} {1}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
@@ -298,7 +299,7 @@ if 3 in args.steps:
     cmd = [
     "gargs",
     "-p", f"{args.processes}",
-    "--log=g.log",
+    "--log=logs/swap.log",
     "-o", "./swap_intervals.sh {0} {1}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "swap.input")
@@ -314,7 +315,7 @@ if 4 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/intersect.log",
         "-o", f"./intersect_swapped.sh {{0}} {args.bed} {{1}}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "intersect.input")
@@ -328,7 +329,7 @@ if 5 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/unswap.log",
         "-o", "./unswap_intervals.sh {0} {1}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "unswap.input")
@@ -343,7 +344,7 @@ if 6 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/unswap_cln.log",
         "-o", f"./cln_sample_name.py -i {{0}} -o {{1}} -s {SAMPLECOLIDX}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "unswap_cln.input")
@@ -358,7 +359,7 @@ if 7 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/unswap_specimen.log",
         "-o", f"./add_specimentype.py -i {{0}} -o {{1}} -s {SAMPLECOLIDX} -l {FILEID2SAMPLETYPE}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "unswap_specimen.input")
@@ -374,7 +375,7 @@ if 8 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/unswap_specimen_split.log",
         "-o", f"./specimensplit_intersect.sh {{0}} {{1}}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "unswap_specimen_split.input")
@@ -405,7 +406,7 @@ if 10 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/count_fusions_{args.type}.log",
         "-o", f"./count_fusions.py -i {{0}} -o {{1}} -z -r 4"
     ]
     input_file = os.path.join(args.base_dir, "inputs", f"count_fusions_{args.type}.input")
@@ -435,7 +436,7 @@ if 12 in args.steps:
     cmd = [
         "gargs",
         "-p", f"{args.processes}",
-        "--log=g.log",
+        "--log=logs/distinct_sample_counts.log",
         "-o", f"./distinct_sample_counts.py -i {{0}} -o {{1}} -r 4 -s 15 -z"
     ]
     input_file = os.path.join(args.base_dir, "inputs", f"distinct_sample_counts_{args.type}.input")
