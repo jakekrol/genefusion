@@ -8,10 +8,10 @@ https://doi.org/10.5281/zenodo.17317215
 
 ```
 # download index
-wget 'https://zenodo.org/records/17317215/files/onekg_fusion.bedpe.gz.tbi?download=1'
+curl -o onekg_fusion.bedpe.gz.tbi 'https://zenodo.org/records/17317215/files/onekg_fusion.bedpe.gz.tbi?download=1'
 # download table (<4GB)
 # this will take some time 
-wget 'https://zenodo.org/records/17317215/files/onekg_fusion.bedpe.gz?download=1'
+curl -o onekg_fusion.bedpe.gz 'https://zenodo.org/records/17317215/files/onekg_fusion.bedpe.gz?download=1'
 ```
 
 
