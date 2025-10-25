@@ -1,3 +1,5 @@
-GRCh37 gene bedfile cleaned of non standard chromosomes
+# goal
 
-Use any simple script to filter first column to keep only values in 1..22  and  X/Y
+make a bedfile for GRCh37 genes as input for genefusion giggle pipeline
+
+also, make a promotter padded version
