@@ -1,0 +1,24 @@
+# read counts
+read_dna_normal: "pe_count_normal"
+read_dna_tumor: "pe_count_tumor"
+read_rna_normal: 0 # will broadcast 0 to all fusions
+read_rna_tumor: 0
+read_dna_onekg: "pe_count_onekg"
+# sample counts
+sample_dna_normal: "sample_count_normal"
+sample_dna_tumor: "sample_count_tumor"
+sample_rna_normal: 0
+sample_rna_tumor: 0
+sample_dna_onekg: "sample_count_onekg"
+# pop sizes
+pop_size_dna_normal: 114
+pop_size_dna_tumor: 142
+pop_size_rna_normal: 0
+pop_size_rna_tumor: 0
+pop_size_dna_onekg: 2536
+# hyperparameters
+weight_tumor: 0.5 # tumor/normal mixing term
+weight_dna: 1 # DNA/RNA mixing term
+weight_read: 0.5 # sample/read mixing term
+upper_factor: 100 # max expected read support per sample
+
