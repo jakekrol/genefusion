@@ -10,6 +10,7 @@ import multiprocessing
 import shutil
 import time
 import glob
+import duckdb as ddb
 
 # future refactoring:
 # i) don't rely on filename to parse info. use a commented header instead
@@ -34,7 +35,7 @@ parser.add_argument('-x', '--dir_executables', type=str, default='/data/jake/gen
 parser.add_argument('-p', '--processes', type=int, default=60, help='Number of processes to use')
 parser.add_argument('-t', '--type', type=str, default='tumor', choices=['tumor', 'normal'], help='Type of data to process (tumor or normal)')
 parser.add_argument('--sharded', action='store_true', help='Use sharded giggle index')
-parser.add_argument('--template', type=str, default='/data/jake/genefusion/results/2025_05-fusion_search_template/giggle_search.template', help='Path to giggle search template file')
+parser.add_argument('--template', type=str, default='/data/jake/genefusion/results/2025_10-fusion_search_template/giggle_search.template', help='Path to giggle search template file')
 args = parser.parse_args()
 print('Running wrapper_giggle2fusion.py with arguments:')
 print(args)
@@ -83,7 +84,7 @@ if 0 in args.steps:
         "clark_evans_R_normal"
     ]
     if args.sharded:
-        shards = glob.glob(args.giggle_index + "/shard_*")
+        shards = glob.glob(os.path.join(args.giggle_index, "shards","shard_*"))
         shards = [os.path.basename(s) for s in shards]
         subdirs.append("giggleout_sharded")
         for s in shards:
@@ -467,15 +468,26 @@ if 12 in args.steps:
     subprocess.run(" ".join(cmd), shell=True)
     print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
     # add header to the aggregated file
+    # use echo instead
     cmd = [
-        "sed",
-        "-i",
-        f"1ileft\tright\tsample_count_{args.type}",
+        "{",
+        "printf",
+        f"left\tright\tsample_count_{args.type}\n",
+        ";",
+        "cat",
+        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv"),
+        ";",
+        "}",
+        ">",
+        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts_tmp.tsv"),
+        "&&",
+        "mv",
+        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts_tmp.tsv"),
         os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv")
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
-    subprocess.run(cmd)
+    subprocess.run(" ".join(cmd), shell=True)
     print(f"Finished adding header in {time.time() - t:.2f} seconds")
 if 13 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")), f"pop_{args.type}_fusions.tsv file not found"
@@ -493,17 +505,28 @@ if 13 in args.steps:
 if 14 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")), f"pop_{args.type}_fusions.tsv file not found"
     assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv")), f"pop_{args.type}_fusion_sample_counts.tsv file not found"
-    cmd = [
-        "./join.py",
-        "-x", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
-        "-y", os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv"),
-        "-t", "left",
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"),
-        "-k", "left,right"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
+    # use duckdb join
+    # cmd = [
+    #     "./join.py",
+    #     "-x", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
+    #     "-y", os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv"),
+    #     "-t", "left",
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"),
+    #     "-k", "left,right"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # subprocess.run(cmd)
     t = time.time()
-    subprocess.run(cmd)
+    with ddb.connect() as con:
+        print("Running join with duckdb")
+        df = con.execute(f"""
+            SELECT x.*, y.sample_count_{args.type}
+            FROM read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")}', delim='\t', header=True) AS x
+            LEFT JOIN read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv")}', delim='\t', header=True) AS y
+            ON x.left = y.left AND x.right = y.right
+            """).fetchdf()
+    print(f"Writing output to {os.path.join(args.base_dir, f'pop_{args.type}_fusions_pe_and_sample.tsv')}")
+    df.to_csv(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"), sep="\t", index=False)
     print(f"Finished running join in {time.time() - t:.2f} seconds")
 if 15 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv")), f"pop_{args.type}_fusions_pe_and_sample.tsv file not found"

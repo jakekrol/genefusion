@@ -9,11 +9,8 @@ import os,sys
 parser = argparse.ArgumentParser(description='Score fusions')
 parser.add_argument('-i', '--input', type=str,required=True, help='Input fusion feature file')
 parser.add_argument('-o', '--output', type=str, required=True, help='Output scored fusion file')
-parser.add_argument('--w_dna', type=float, default=0.5, help='Weight for DNA evidence in scoring (default: 0.5)')
-parser.add_argument('--upper_factor', type=float, default=100, help='Upper factor for scoring (default: 100)')
-parser.add_argument('--pop_size_yaml',type=str,help='YAML file with population sizes (default: None)', default=None)
-parser.add_argument('--col_map_yaml',type=str,help='Column mapping for input file',
-                    default='../../config/score_fusion_colmap.yaml')
+parser.add_argument('--score_yaml',type=str,help='YAML file with population sizes and column names', required=True)
+parser.add_argument('--batch_size',type=int,default=500000,help='Number of rows to process per batch (default: 500000)')
 args = parser.parse_args()
 
 conn = duckdb.connect()
@@ -21,10 +18,14 @@ total_rows = conn.execute(f'SELECT COUNT(*) FROM read_csv_auto("{args.input}", d
 print(f"Total rows: {total_rows}")
 
 
-with open(args.col_map_yaml) as f:
-    colmap = yaml.safe_load(f)
+with open(args.score_yaml) as f:
+    params = yaml.safe_load(f)
+# print out params for debugging
+print("Scoring parameters:")
+for k,v in params.items():
+    print(f"  {k}: {v}")
 
-batch_size = 500000  # Process in smaller batches
+batch_size = args.batch_size # process in batches to save memory
 for i in range(0, total_rows, batch_size):
     batch_num = i // batch_size + 1
     total_batches = (total_rows + batch_size - 1) // batch_size
@@ -33,22 +34,28 @@ for i in range(0, total_rows, batch_size):
     df = conn.execute(f'SELECT * FROM read_csv_auto("{args.input}", delim="\t") LIMIT {batch_size} OFFSET {i}').df()
     df["fusion_score"] = np.vectorize(score)(
         # reads
-        (df[colmap['read_dna_normal']] if colmap['read_dna_normal'] != str(0) else 0),
-        (df[colmap['read_dna_tumor']] if colmap['read_dna_tumor'] != str(0) else 0),
-        (df[colmap['read_rna_normal']] if colmap['read_rna_normal'] != str(0) else 0),
-        (df[colmap['read_rna_tumor']] if colmap['read_rna_tumor'] != str(0) else 0),
-        (df[colmap['read_onekg_dna']] if colmap['read_onekg_dna'] != str(0) else 0),
+        (df[params['read_dna_normal']] if type(params['read_dna_normal']) == str else int(params['read_dna_normal'])),
+        (df[params['read_dna_tumor']] if type(params['read_dna_tumor']) == str else int(params['read_dna_tumor'])),
+        (df[params['read_rna_normal']] if type(params['read_rna_normal']) == str else int(params['read_rna_normal'])),
+        (df[params['read_rna_tumor']] if type(params['read_rna_tumor']) == str else int(params['read_rna_tumor'])),
+        (df[params['read_dna_onekg']] if type(params['read_dna_onekg']) == str else int(params['read_dna_onekg'])),
         # samples
-        (df[colmap['sample_dna_normal']] if colmap['sample_dna_normal'] != str(0) else 0),
-        (df[colmap['sample_dna_tumor']] if colmap['sample_dna_tumor'] != str(0) else 0),
-        (df[colmap['sample_rna_normal']] if colmap['sample_rna_normal'] != str(0) else 0),
-        (df[colmap['sample_rna_tumor']] if colmap['sample_rna_tumor'] != str(0) else 0),
-        (df[colmap['sample_onekg_dna']] if colmap['sample_onekg_dna'] != str(0) else 0),
+        (df[params['sample_dna_normal']] if type(params['sample_dna_normal']) == str else int(params['sample_dna_normal'])),
+        (df[params['sample_dna_tumor']] if type(params['sample_dna_tumor']) == str else int(params['sample_dna_tumor'])),
+        (df[params['sample_rna_normal']] if type(params['sample_rna_normal']) == str else int(params['sample_rna_normal'])),
+        (df[params['sample_rna_tumor']] if type(params['sample_rna_tumor']) == str else int(params['sample_rna_tumor'])),
+        (df[params['sample_dna_onekg']] if type(params['sample_dna_onekg']) == str else int(params['sample_dna_onekg'])),
         # population sizes
-        67, 70, 0, 70, 2536,
+        params['pop_size_dna_normal'],
+        params['pop_size_dna_tumor'],
+        params['pop_size_rna_normal'],
+        params['pop_size_rna_tumor'],
+        params['pop_size_dna_onekg'],
         # hyperparameters
-        w_dna=args.w_dna,
-        upper_factor=args.upper_factor,
+        w_tumor=params['weight_tumor'],
+        w_dna=params['weight_dna'],
+        w_read=params['weight_read'],
+        upper_factor=params['upper_factor'],
     )
     
     # write for first batch, append for others

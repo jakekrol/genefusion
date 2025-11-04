@@ -9,7 +9,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Add specimen type to giggle file')
 parser.add_argument('-i', '--input', type=str, required=True, help='Input giggle file')
 parser.add_argument('-s', '--sample_column', type=int, required=True, help='Sample column index')
-parser.add_argument('-l', '--lookup', type=str, default='/data/jake/genefusion/data/meta/fileid2sampletype.tsv', help='Path to file id to sample type mapping')
+parser.add_argument('-l', '--lookup', type=str, default='/data/jake/genefusion/results/2025_05-pcawg_fileid2sample_type/fileid2sampletype.tsv', help='Path to file id to sample type mapping')
 parser.add_argument('-o', '--output', type=str, required=True, help='Output giggle file with specimen type')
 args = parser.parse_args()
 
