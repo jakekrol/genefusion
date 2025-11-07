@@ -13,8 +13,11 @@ import json
 import heapq
 import pointpats
 import swifter
+import math
 
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
+
+
 
 def score(
     # reads
@@ -35,34 +38,71 @@ def score(
     pop_size_dna_tumor=0,
     pop_size_rna_normal=0,
     pop_size_rna_tumor=0,
-    pop_size_onekg=2536,
+    pop_size_dna_onekg=2536,
     # hyperparameters
+    w_tumor=0.5,
     w_dna=0.5,
-    upper_factor=100 # bounding extreme read counts
-    # theta=0.5 # weight reads vs recurrence
+    w_read=0.5,
+    upper_factor=50 # max expected read count per sample
 ):
+    # Validate hyperparameters
+    assert upper_factor > 1, "upper_factor must be greater than 1"
+    assert 0 <= w_tumor <= 1, "w_tumor must be between 0 and 1"
+    assert 0 <= w_dna <= 1, "w_dna must be between 0 and 1"
+    assert 0 <= w_read <= 1, "w_read must be between 0 and 1"
+
+    # Precompute weights
     w_rna = 1 - w_dna
-    # bound reads using pop size
-    reads_dna_normal = min(reads_dna_normal, upper_factor * pop_size_dna_normal)
-    reads_dna_tumor = min(reads_dna_tumor, upper_factor * pop_size_dna_tumor)
-    reads_rna_normal = min(reads_rna_normal, upper_factor * pop_size_rna_normal)
-    reads_rna_tumor = min(reads_rna_tumor, upper_factor * pop_size_rna_tumor)
-    # sample recurrence
-    # n_recurrent_normal = samples_dna_normal + samples_rna_normal + samples_onekg
-    # n_recurrent_tumor = samples_dna_tumor + samples_rna_tumor
-    # weighted sum of reads and recurrence among samples
-    score = \
-        (-w_dna*np.log(1+reads_dna_normal)) + \
-        (w_dna*np.log(1+reads_dna_tumor)) + \
-        (-w_dna*np.log(1+reads_onekg)) + \
-        (-w_rna*np.log(1+reads_rna_normal)) + \
-        (w_rna*np.log(1+reads_rna_tumor)) + \
-        (-w_dna*np.log(1+samples_dna_normal)) + \
-        (-w_rna*np.log(1+samples_rna_normal)) + \
-        (-w_dna*np.log(1+samples_onekg)) + \
-        (w_dna*np.log(1+samples_dna_tumor)) + \
-        (w_rna*np.log(1+samples_rna_tumor))
+    w_sample = 1 - w_read
+    w_normal = 1 - w_tumor
+
+    # Helper functions
+    def read_support(reads, m):
+        # Compute read support with geometric logic
+        if reads <= 2 * m:
+            return (m - abs(reads - m)) / m
+        return 0
+
+    def sample_support(samples, pop_size):
+        # Compute sample support as a fraction of population size
+        return samples / pop_size
+
+    def modality_score(g, h, w_read):
+        # Compute modality score with weighted contributions
+        return 0.5 * ((w_read * g) + ((1 - w_read) * h))
+
+    # Define modalities as tuples
+    modalities = [
+        ('dna_normal', reads_dna_normal, samples_dna_normal, pop_size_dna_normal, w_dna),
+        ('dna_tumor', reads_dna_tumor, samples_dna_tumor, pop_size_dna_tumor, w_dna),
+        ('rna_normal', reads_rna_normal, samples_rna_normal, pop_size_rna_normal, w_rna),
+        ('rna_tumor', reads_rna_tumor, samples_rna_tumor, pop_size_rna_tumor, w_rna),
+        ('dna_onekg', reads_onekg, samples_onekg, pop_size_dna_onekg, w_dna),
+    ]
+
+    # Filter modalities with pop size > 0 (element 3 in tuple)
+    modalities = [mod for mod in modalities if mod[3] > 0]
+
+    # Compute scores
+    score = 0
+    for name, reads, samples, pop_size, w_modality in modalities:
+        # Compute maximum read support (m)
+        m = upper_factor * pop_size
+        g = read_support(reads, m)
+        h = sample_support(samples, pop_size)
+        f = modality_score(g, h, w_read)
+
+        # Update final score based on modality type
+        if 'tumor' in name:
+            score += w_tumor * w_modality * f
+        elif 'normal' in name or 'onekg' in name:
+            score -= w_normal * w_modality * f
+        else:
+            raise ValueError(f"Modality name not recognized: {name}")
+
     return score
+
+score = np.vectorize(score)
 
 def gene2tissue(gene, df_g2t):
     '''

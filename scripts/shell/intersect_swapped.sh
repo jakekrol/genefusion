@@ -5,10 +5,10 @@
 
 export bedtools='/data/jake/bedtools.static.binary'
 giggleswap=$1
-out=$2
+genebed=$2
+out=$3
 
-genefile='/data/jake/genefusion/data/gene_file.txt.latest'
-echo "Intersecting $giggleswap with $genefile to $out"
-"$bedtools" intersect -a $genefile \
+echo "Intersecting $giggleswap with $genebed to $out"
+"$bedtools" intersect -a $genebed \
     -b $giggleswap -wb -wa > "$out"
 
