@@ -36,6 +36,7 @@ parser.add_argument('-p', '--processes', type=int, default=60, help='Number of p
 parser.add_argument('-t', '--type', type=str, default='tumor', choices=['tumor', 'normal'], help='Type of data to process (tumor or normal)')
 parser.add_argument('--sharded', action='store_true', help='Use sharded giggle index')
 parser.add_argument('--template', type=str, default='/data/jake/genefusion/results/2025_10-fusion_search_template/giggle_search.template', help='Path to giggle search template file')
+parser.add_argument('--modality', type=str, choices=['rna', 'dna'], required=True, help='Data modality: rna or dna')
 args = parser.parse_args()
 print('Running wrapper_giggle2fusion.py with arguments:')
 print(args)
@@ -79,9 +80,9 @@ if 0 in args.steps:
         "pop_tumor_fusion_counts",
         "pop_tumor_fusion_sample_counts",
         "pop_normal_fusion_counts",
-        "pop_normal_fusion_sample_counts",
-        "clark_evans_R_tumor",
-        "clark_evans_R_normal"
+        "pop_normal_fusion_sample_counts"
+        # "clark_evans_R_tumor",
+        # "clark_evans_R_normal"
     ]
     if args.sharded:
         shards = glob.glob(os.path.join(args.giggle_index, "shards","shard_*"))
@@ -143,8 +144,7 @@ if 0 in args.steps:
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
     print(f"Making clean input file: {input_file}")
     with open(input_file, 'w') as f:
-        iterable = fnames_search if args.sharded else fnames
-        for fname in iterable:
+        for fname in fnames:
             fname = str(fname)
             f.write(f"{os.path.join(args.base_dir, 'giggleout', fname)}\t")
             f.write(f"{os.path.join(args.base_dir, 'gigglecln', fname)}\n")
@@ -419,12 +419,13 @@ if 10 in args.steps:
 
 if 11 in args.steps:
     assert os.path.isdir(os.path.join(args.base_dir, f"pop_{args.type}_fusion_counts")), f"pop_{args.type}_fusion_counts directory not found"
-    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")), f"pop_{args.type}_fusions.tsv file already exists"
+    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusions.tsv")), f"pop_{args.type}_{args.modality}_fusions.tsv file already exists"
     cmd = [
         "./agg_pe_counts.py",
         "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusion_counts"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
-        "-t", f"{args.type}"
+        "-o", os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusions.tsv"),
+        "-t", f"{args.type}",
+        "--modality", f"{args.modality}"
     ]
     print(f"Running '{' '.join(cmd)}'")
     t = time.time()
@@ -459,7 +460,7 @@ if 12 in args.steps:
         "--quiet",
         "$file",
         ">>",
-        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv"),
+        os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusion_sample_counts.tsv"),
         ";",
         "done"
     ]
@@ -468,224 +469,224 @@ if 12 in args.steps:
     subprocess.run(" ".join(cmd), shell=True)
     print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
     # add header to the aggregated file
-    # use echo instead
-    cmd = [
-        "{",
-        "printf",
-        f"left\tright\tsample_count_{args.type}\n",
-        ";",
-        "cat",
-        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv"),
-        ";",
-        "}",
-        ">",
-        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts_tmp.tsv"),
-        "&&",
-        "mv",
-        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts_tmp.tsv"),
-        os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv")
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(" ".join(cmd), shell=True)
+    header = "left\tright\tsample_count_" + args.type + "_" + args.modality + "\n"
+    infile=os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusion_sample_counts.tsv")
+    outfile=os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusion_sample_counts_tmp.tsv")
+    t= time.time()
+    with open(outfile, 'w') as out_f:
+        out_f.write(header)
+        with open(infile, 'r') as in_f:
+            shutil.copyfileobj(in_f, out_f)
+    os.replace(outfile, infile)  # replace original file
     print(f"Finished adding header in {time.time() - t:.2f} seconds")
 if 13 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")), f"pop_{args.type}_fusions.tsv file not found"
-    assert not os.path.exists(os.path.join(args.base_dir, f"burden_total_{args.type}.tsv")), f"burden_total_{args.type}.tsv file already exists"
-    cmd = [
-        "./burden_total.py",
-        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
-        "-o", os.path.join(args.base_dir, f"burden_total_{args.type}.tsv"),
-        "--header"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running burden_total in {time.time() - t:.2f} seconds")
-if 14 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")), f"pop_{args.type}_fusions.tsv file not found"
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv")), f"pop_{args.type}_fusion_sample_counts.tsv file not found"
-    # use duckdb join
-    # cmd = [
-    #     "./join.py",
-    #     "-x", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
-    #     "-y", os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv"),
-    #     "-t", "left",
-    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"),
-    #     "-k", "left,right"
-    # ]
-    # print(f"Running '{' '.join(cmd)}'")
-    # subprocess.run(cmd)
+    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusions.tsv")), f"pop_{args.type}_{args.modality}_fusions.tsv file not found"
+    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusion_sample_counts.tsv")), f"pop_{args.type}_{args.modality}_fusion_sample_counts.tsv file not found"
     t = time.time()
     with ddb.connect() as con:
         print("Running join with duckdb")
         df = con.execute(f"""
             SELECT x.*, y.sample_count_{args.type}
-            FROM read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")}', delim='\t', header=True) AS x
-            LEFT JOIN read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_fusion_sample_counts.tsv")}', delim='\t', header=True) AS y
+            FROM read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusions.tsv")}', delim='\t', header=True) AS x
+            LEFT JOIN read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusion_sample_counts.tsv")}', delim='\t', header=True) AS y
             ON x.left = y.left AND x.right = y.right
             """).fetchdf()
-    print(f"Writing output to {os.path.join(args.base_dir, f'pop_{args.type}_fusions_pe_and_sample.tsv')}")
-    df.to_csv(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"), sep="\t", index=False)
+    print(f"Writing output to {os.path.join(args.base_dir, f'pop_{args.type}_{args.modality}_fusions_pe_and_sample.tsv')}")
+    df.to_csv(os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusions_pe_and_sample.tsv"), sep="\t", index=False)
     print(f"Finished running join in {time.time() - t:.2f} seconds")
+if 14 in args.steps:
+    print("DEPRECATED STEP:", "calculate_burden")
+    sys.exit(1)
 if 15 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv")), f"pop_{args.type}_fusions_pe_and_sample.tsv file not found"
-    assert os.path.exists(os.path.join(args.base_dir, f"burden_total_{args.type}.tsv")), f"burden_total_{args.type}.tsv file not found"
-    # left gene burden
-    cmd = [
-        "./add_burden_col.py",
-        "-f", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"),
-        "-b", os.path.join(args.base_dir, f"burden_total_{args.type}.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_tmp.tsv"),
-        "-k1", "0",
-        "-k2", "0",
-        "-n", "burden_total_left",
-        "-hf"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running add_burden_col left in {time.time() - t:.2f} seconds")
-    # right gene burden
-    cmd = [
-        "./add_burden_col.py",
-        "-f", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_tmp.tsv"),
-        "-b", os.path.join(args.base_dir, f"burden_total_{args.type}.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv"),
-        "-k1", "1",
-        "-k2", "0",
-        "-n", "burden_total_right",
-        "-hf"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running add_burden_col right in {time.time() - t:.2f} seconds")
-    # remove tmp file
-    os.remove(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_tmp.tsv"))
-    print(f"Removed temporary file: {os.path.join(args.base_dir, f'pop_{args.type}_fusions_pe_sample_burden_tmp.tsv')}")
+    print("DEPRECATED STEP:", "add_burden_col")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv")), f"pop_{args.type}_fusions_pe_and_sample.tsv file not found"
+    # assert os.path.exists(os.path.join(args.base_dir, f"burden_total_{args.type}.tsv")), f"burden_total_{args.type}.tsv file not found"
+    # # left gene burden
+    # cmd = [
+    #     "./add_burden_col.py",
+    #     "-f", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_and_sample.tsv"),
+    #     "-b", os.path.join(args.base_dir, f"burden_total_{args.type}.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_tmp.tsv"),
+    #     "-k1", "0",
+    #     "-k2", "0",
+    #     "-n", "burden_total_left",
+    #     "-hf"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running add_burden_col left in {time.time() - t:.2f} seconds")
+    # # right gene burden
+    # cmd = [
+    #     "./add_burden_col.py",
+    #     "-f", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_tmp.tsv"),
+    #     "-b", os.path.join(args.base_dir, f"burden_total_{args.type}.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv"),
+    #     "-k1", "1",
+    #     "-k2", "0",
+    #     "-n", "burden_total_right",
+    #     "-hf"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running add_burden_col right in {time.time() - t:.2f} seconds")
+    # # remove tmp file
+    # os.remove(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_tmp.tsv"))
+    # print(f"Removed temporary file: {os.path.join(args.base_dir, f'pop_{args.type}_fusions_pe_sample_burden_tmp.tsv')}")
 if 16 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv")), f"pop_{args.type}_fusions_pe_sample_burden.tsv file not found"
-    cmd = [
-        "./add_sample_density.py",
-        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv"),
-        "-t", f"{args.type}"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running add_sample_density in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "add_sample_density")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv")), f"pop_{args.type}_fusions_pe_sample_burden.tsv file not found"
+    # cmd = [
+    #     "./add_sample_density.py",
+    #     "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv"),
+    #     "-t", f"{args.type}"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running add_sample_density in {time.time() - t:.2f} seconds")
 if 17 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density.tsv file not found"
-    cmd = [
-        "./add_burden_product.py",
-        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv")
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running add_burden_product in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "add_burden_product")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density.tsv file not found"
+    # cmd = [
+    #     "./add_burden_product.py",
+    #     "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv")
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running add_burden_product in {time.time() - t:.2f} seconds")
 if 18 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, "inputs", f"clark_evans_R_{args.type}.input")), "Clark Evans R input file not found"
-    assert not os.listdir(os.path.join(args.base_dir, f"clark_evans_R_{args.type}")), "Clark Evans R directory not empty"
-    cmd = [
-        "gargs",
-        "-p", f"{args.processes}",
-        "--log=g.log",
-        "-o", f"./clark_evans_R.py -i {{0}} -o {{1}} -z -n 10 -d 1000 -t {args.type}"
-    ]
-    input_file = os.path.join(args.base_dir, "inputs", f"clark_evans_R_{args.type}.input")
-    print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
-    t = time.time()
-    with open(input_file, 'r') as infile:
-        subprocess.run(cmd, stdin=infile)
-    print(f"Finished running Clark Evans R in {time.time() - t:.2f} seconds")   
-    # aggregate
-    cmd = [
-        "for",
-        "file",
-        "in",
-        os.path.join(args.base_dir, f"clark_evans_R_{args.type}", "*"),
-        ";",
-        "do",
-        "tail",
-        "-n", "+2",
-        "--quiet",
-        "$file",
-        ">>",
-        os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv"),
-        ";",
-        "done"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(" ".join(cmd), shell=True)
-    print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
-    # add header to the aggregated file
-    cmd = [
-        "sed",
-        "-i",
-        f"1ileft\tright\tR_{args.type}",
-        os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv")
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished adding header in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "clark_evans_R")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, "inputs", f"clark_evans_R_{args.type}.input")), "Clark Evans R input file not found"
+    # assert not os.listdir(os.path.join(args.base_dir, f"clark_evans_R_{args.type}")), "Clark Evans R directory not empty"
+    # cmd = [
+    #     "gargs",
+    #     "-p", f"{args.processes}",
+    #     "--log=g.log",
+    #     "-o", f"./clark_evans_R.py -i {{0}} -o {{1}} -z -n 10 -d 1000 -t {args.type}"
+    # ]
+    # input_file = os.path.join(args.base_dir, "inputs", f"clark_evans_R_{args.type}.input")
+    # print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
+    # t = time.time()
+    # with open(input_file, 'r') as infile:
+    #     subprocess.run(cmd, stdin=infile)
+    # print(f"Finished running Clark Evans R in {time.time() - t:.2f} seconds")   
+    # # aggregate
+    # cmd = [
+    #     "for",
+    #     "file",
+    #     "in",
+    #     os.path.join(args.base_dir, f"clark_evans_R_{args.type}", "*"),
+    #     ";",
+    #     "do",
+    #     "tail",
+    #     "-n", "+2",
+    #     "--quiet",
+    #     "$file",
+    #     ">>",
+    #     os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv"),
+    #     ";",
+    #     "done"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(" ".join(cmd), shell=True)
+    # print(f"Finished running distinct sample counts aggregation in {time.time() - t:.2f} seconds")
+    # # add header to the aggregated file
+    # cmd = [
+    #     "sed",
+    #     "-i",
+    #     f"1ileft\tright\tR_{args.type}",
+    #     os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv")
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished adding header in {time.time() - t:.2f} seconds")
 if 19 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv file not found"
-    assert os.path.exists(os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv")), f"clark_evans_R_{args.type}.tsv file not found"
-    cmd = [
-        "./join.py",
-        "-x", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv"),
-        "-y", os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv"),
-        "-t", "left",
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv"),
-        "-k", "left,right"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running join in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "add_R_values")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv file not found"
+    # assert os.path.exists(os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv")), f"clark_evans_R_{args.type}.tsv file not found"
+    # cmd = [
+    #     "./join.py",
+    #     "-x", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product.tsv"),
+    #     "-y", os.path.join(args.base_dir, f"clark_evans_R_{args.type}.tsv"),
+    #     "-t", "left",
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv"),
+    #     "-k", "left,right"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running join in {time.time() - t:.2f} seconds")
 if 20 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv file not found"
-    cmd = [
-        "./add_R_transformed.py",
-        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv"),
-        "-t", f"{args.type}"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running add_R_transformed in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "add_R_transformed")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv file not found"
+    # cmd = [
+    #     "./add_R_transformed.py",
+    #     "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv"),
+    #     "-t", f"{args.type}"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running add_R_transformed in {time.time() - t:.2f} seconds")
 
 if 21 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv file not found"
-    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file already exists"
-    cmd = [
-        "./fusion_na_mapping.py",
-        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t= time.time()
-    subprocess.run(cmd)
-    print(f"Finished running fusion_na_mapping in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "fusion_na_mapping")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv file not found"
+    # assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file already exists"
+    # cmd = [
+    #     "./fusion_na_mapping.py",
+    #     "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t= time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running fusion_na_mapping in {time.time() - t:.2f} seconds")
 
 if 22 in args.steps:
-    assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file not found"
-    assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv")), f"pop_{args.type}_fusions_ftr_final.tsv file already exists"
-    cmd = [
-        "./fusionftr2train.py",
-        "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv"),
-        "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv"),
-        "-d", "burden",
-        "-k", "trans"
-    ]
-    print(f"Running '{' '.join(cmd)}'")
-    t = time.time()
-    subprocess.run(cmd)
-    print(f"Finished running fusionftr2train in {time.time() - t:.2f} seconds")
+    print("DEPRECATED STEP:", "fusionftr2train")
+    sys.exit(1)
+    # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv")), f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv file not found"
+    # assert not os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv")), f"pop_{args.type}_fusions_ftr_final.tsv file already exists"
+    # cmd = [
+    #     "./fusionftr2train.py",
+    #     "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions_pe_sample_burden_density_product_R_trans_filled.tsv"),
+    #     "-o", os.path.join(args.base_dir, f"pop_{args.type}_fusions_ftr_final.tsv"),
+    #     "-d", "burden",
+    #     "-k", "trans"
+    # ]
+    # print(f"Running '{' '.join(cmd)}'")
+    # t = time.time()
+    # subprocess.run(cmd)
+    # print(f"Finished running fusionftr2train in {time.time() - t:.2f} seconds")
+
+# if 13 in args.steps:
+#     print("DEPRECATED STEP:", "compute burden_total")
+#     sys.exit(1)
+#     # assert os.path.exists(os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv")), f"pop_{args.type}_fusions.tsv file not found"
+#     # assert not os.path.exists(os.path.join(args.base_dir, f"burden_total_{args.type}.tsv")), f"burden_total_{args.type}.tsv file already exists"
+#     # cmd = [
+#     #     "./burden_total.py",
+#     #     "-i", os.path.join(args.base_dir, f"pop_{args.type}_fusions.tsv"),
+#     #     "-o", os.path.join(args.base_dir, f"burden_total_{args.type}.tsv"),
+#     #     "--header"
+#     # ]
+#     # print(f"Running '{' '.join(cmd)}'")
+#     # t = time.time()
+#     # subprocess.run(cmd)
+#     # print(f"Finished running burden_total in {time.time() - t:.2f} seconds")
