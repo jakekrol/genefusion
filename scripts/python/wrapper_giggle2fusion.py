@@ -285,7 +285,7 @@ if 2 in args.steps:
     "gargs",
     "-p", f"{args.processes}",
     "--log=logs/clean.log",
-    "-o", "./cln_excord.sh {0} {1}"
+    "-o", "./cln_excord.sh -i {0} -o {1}"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
@@ -486,7 +486,7 @@ if 13 in args.steps:
     with ddb.connect() as con:
         print("Running join with duckdb")
         df = con.execute(f"""
-            SELECT x.*, y.sample_count_{args.type}
+            SELECT x.*, y.sample_count_{args.type}_{args.modality}
             FROM read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusions.tsv")}', delim='\t', header=True) AS x
             LEFT JOIN read_csv_auto('{os.path.join(args.base_dir, f"pop_{args.type}_{args.modality}_fusion_sample_counts.tsv")}', delim='\t', header=True) AS y
             ON x.left = y.left AND x.right = y.right

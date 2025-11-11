@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 
 import os
 import argparse
@@ -10,7 +11,17 @@ import pandas as pd
 # visualize score dist
 # use calibration fusions as reference
 
+# to-do
+# add random seed to shuf for reproducibility
+# parallelize param runs
+
 SCRIPT_JOINDDB="join_ddb.py"
+PARAMS = {
+    'w_dna': [0.1, 0.5, 0.9],
+    'w_tumor': [0.1, 0.5, 0.9],
+    'w_read': [0.1, 0.5, 0.9],
+    'upper': [10,50,100]
+}
 
 ### args
 parser = argparse.ArgumentParser(description="Score fusions")
@@ -114,7 +125,7 @@ def generate_param_set(
         raise ValueError("No RNA nor DNA columns found in input")
     # weight tumor/normal
     if normal and tumor:
-        w_tumor = [0.1,0.5,0.9]
+        w_tumor = PARAMS['w_tumor']
     elif tumor and (not normal):
         w_tumor = [1.0]
     elif normal and (not tumor):
@@ -123,7 +134,7 @@ def generate_param_set(
         raise ValueError("No tumor nor normal columns found in input")
     # weight read/sample
     if read and sample:
-        w_read = [0.1,0.5,0.9]
+        w_read = PARAMS['w_read']
     elif read and (not sample):
         w_read = [1.0]
     elif sample and (not read):
@@ -131,7 +142,7 @@ def generate_param_set(
     else:
         raise ValueError("No read nor sample columns found in input")
     # upper factor
-    upper_factors = [50, 100, 200]
+    upper_factors = PARAMS['upper']
     # generate param combinations
     # and print total amount of combos
     n = len(w_dna) * len(w_tumor) * len(w_read) * len(upper_factors)
@@ -181,7 +192,7 @@ def sort_tbl(infile, outfile, sort_col='fusion_score', descending=True):
 
 def score_calibration(cal, scored):
     # do a join ddb
-    cmd = f"join_ddb.py -l {cal} -r {scored} --type left -k left,right -o {scored}_cal.tsv"
+    cmd = f"join_ddb.py -l {cal} -r {scored} --type left -k left,right -o {os.path.join(args.output_dir, f'{scored}_cal.tsv')}"
     print(f"Running command: {cmd}")
     os.system(cmd)
     return f"{scored}_cal.tsv"
@@ -190,8 +201,9 @@ def viz(cal, scored):
     ### do a histogram of scores with vlines at calibration points
     # make a csv of calibration scores
     df_cal = pd.read_csv(cal, sep='\t')
-    df_cal['x'] = df_cal['fusion_score'].apply(lambda x: f"{x},r,0.25")
-    df_cal['x'].to_csv(scored + '_cal_scores.csv', index=False, header=False)
+    df_cal['color'] = 'red'
+    df_cal['alpha'] = 0.5
+    df_cal[['fusion_score','color','alpha']].to_csv(scored + '_cal_scores.csv', index=False, header=False, sep='\t')
     ### find fusion score column in scored efficiently
     with open(scored, 'r') as f:
         header = f.readline().strip().split('\t')
@@ -200,9 +212,12 @@ def viz(cal, scored):
     else:
         raise ValueError("fusion_score column not found in scored file")
     ### extract null distribution
-    cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 > {scored}.null"
-    print(f"Running command: {cmd}")
+    # --ranomdom-source for reproducibility
+    cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 0) > {scored}.null"
     os.system(cmd)
+    # ensure calibration scores are appended
+    df_cal['fusion_score'].to_csv(f"{scored}.null", index=False, header=False, mode='a')
+        
     ### plot histogram
     cmd = f"cat {scored}.null | hist.py -o {scored}_score_dist.png --bins 30 " \
         f"--axvline {scored}_cal_scores.csv -y 'Frequency' -x 'Fusion score' " \
@@ -235,22 +250,28 @@ def main():
         with open(param_yaml_path, 'w') as f:
             yaml.dump(param_dict, f)
         print(f"Running scoring with parameter set {i+1}/{n}: {param_yaml_path}")
-        scored_output = score(args.input, param_yaml_path,
-                              os.path.join(
-                                  args.output_dir,
-                                  f'scored_dna{param_dict["weight_dna"]}_t{param_dict["weight_tumor"]}_r{param_dict["weight_read"]}_u{param_dict["upper_factor"]}.tsv'
-                              ))
-        print(f"Scored output written to: {scored_output}")
+        score_outfile = os.path.join(
+            args.output_dir,
+            f'scored_dna{param_dict["weight_dna"]}_t{param_dict["weight_tumor"]}_r{param_dict["weight_read"]}_u{param_dict["upper_factor"]}.tsv'
+        )
+        # cache check
+        if os.path.exists(score_outfile):
+            print(f"Scored output already exists, skipping: {score_outfile}")
+        else:
+            # score
+            score(args.input, param_yaml_path, score_outfile)
+        print(f"Scored output written to: {score_outfile}")
         # sort
-        scored_output_sorted = sort_tbl(scored_output,
-                                        scored_output.replace('.tsv', '_sort.tsv'),
+        scored_output_sorted = sort_tbl(score_outfile,
+                                        score_outfile.replace('.tsv', '_sort.tsv'),
                                         sort_col='fusion_score',
                                         descending=True)
         print(f"Sorted scored output written to: {scored_output_sorted}")
+        # viz 
         if args.calibration:
             scored_cal = score_calibration(args.calibration, scored_output_sorted)
             print(f"Scored calibration output written to: {scored_cal}")
-            outhist = viz(args.calibration, scored_output_sorted)
+            outhist = viz(scored_cal, scored_output_sorted)
             print(f"Score distribution plot written to: {outhist}")
     print("All scoring experiments completed.")
             

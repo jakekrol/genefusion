@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+set -euo pipefail
+export tmp_sort='/data/jake/tmp'
+echo "Using temporary sort directory: $tmp_sort"
+# verify tmp dir exists
+if [ ! -d "$tmp_sort" ]; then
+    echo "Error: Temporary directory $tmp_sort does not exist"
+    exit 1
+fi
+
+if [ "$#" -lt "2" ]; then
+    echo "usage: `basename $0` <input path> <output dir> <threads>"
+    exit 0
+fi
+
+export IN_PATH=$1
+export OUT_PATH=$2
+
+export THREADS=1
+
+if [ "$#" -eq "3" ]; then
+    export THREADS=$3
+fi
+
+# Validate input path
+if [ ! -d "$IN_PATH" ]; then
+    echo "Error: Input path '$IN_PATH' does not exist or is not a directory"
+    exit 1
+fi
+
+# Validate output path
+if [ ! -d "$OUT_PATH" ]; then
+    echo "Error: Output path '$OUT_PATH' does not exist or is not a directory"
+    exit 1
+fi
+
+# Convert to absolute paths to prevent path traversal issues
+IN_PATH=$(realpath "$IN_PATH")
+OUT_PATH=$(realpath "$OUT_PATH")
+
+# Safety check: prevent processing root or home directories
+if [ "$IN_PATH" = "/" ] || [ "$IN_PATH" = "$HOME" ]; then
+    echo "Error: Cannot process root or home directory"
+    exit 1
+fi
+
+# Safety check: ensure input and output are different
+if [ "$IN_PATH" = "$OUT_PATH" ]; then
+    echo "Error: Input and output paths must be different"
+    exit 1
+fi
+
+SORT()
+{
+    set -euo pipefail
+    IN=$1
+
+    if [ ${IN: -4} == ".bed" ]; then
+        BASE=`basename $IN`
+        echo $BASE
+        cat $IN | LC_ALL=C sort --buffer-size 3G -k1,1 -k2,2n -k3,3n -T $tmp_sort \
+        | bgzip -c > $OUT_PATH/$BASE.gz
+    elif [ ${IN: -7} == ".bed.gz" ]; then
+        BASE=`basename $IN`
+        echo $BASE
+        gzip -d -c $IN | LC_ALL=C sort --buffer-size 3G -k1,1 -k2,2n -k3,3n -T $tmp_sort \
+        | bgzip -c > $OUT_PATH/$BASE
+    else
+        echo "SKIPPING $IN"
+    fi
+}
+
+export -f SORT
+
+find $IN_PATH -maxdepth 1 -type f \( -name "*.bed" -o -name "*.bed.gz" \) | \
+    xargs -I{} -P $THREADS bash -c "SORT {}"
