@@ -5,6 +5,8 @@ import os
 import argparse
 import yaml
 import pandas as pd
+import re
+import math
 
 # score fusions
 # with reasonable param search
@@ -20,7 +22,7 @@ PARAMS = {
     'w_dna': [0.1, 0.5, 0.9],
     'w_tumor': [0.1, 0.5, 0.9],
     'w_read': [0.1, 0.5, 0.9],
-    'upper': [10,50,100]
+    'upper': [25, 50, 100]
 }
 
 ### args
@@ -36,8 +38,11 @@ parser.add_argument('--size_dna_normal', type=int, default=0, help='Population s
 parser.add_argument('--size_dna_tumor', type=int, default=0, help='Population size for DNA tumor')
 parser.add_argument('--size_rna_normal', type=int, default=0, help='Population size for RNA normal')
 parser.add_argument('--size_rna_tumor', type=int, default=0, help='Population size for RNA tumor')
-parser.add_argument('--size_dna_onekg', type=int, default=2536, help='Population size for DNA 1K Genomes')
+parser.add_argument('--size_dna_onekg', type=int, default=2535, help='Population size for DNA 1K Genomes')
+parser.add_argument('--onekg_sample_col', type=str, default='sample_count_onekg', help='Column name for onekg sample count')
 args = parser.parse_args()
+
+onekg_sample_count_thresh = math.ceil(args.size_dna_onekg * 0.01)  # 1% frequency threshold
 
 ### setup
 def setup():
@@ -175,6 +180,16 @@ def generate_param_set(
                     param_list.append(param_dict)
     return param_list, n
 
+def fname2params(fname):
+    match = re.search(r'dna([^_]*)_t([^_]*)_r([^_]*)_u([^_]*)', fname)
+    if match:
+        w_dna = float(match.group(1))
+        w_tumor = float(match.group(2))
+        w_read = float(match.group(3))
+        upper = int(match.group(4))
+    assert all(v is not None for v in [w_dna, w_tumor, w_read, upper]), "Failed to extract all parameters from filename"
+    return w_dna, w_tumor, w_read, upper
+
 def score(X, yml_path, outfile):
     """Run scoring script with given input and yaml, output to specified directory"""
     input_file = X
@@ -198,34 +213,90 @@ def score_calibration(cal, scored):
     return f"{scored}_cal.tsv"
 
 def viz(cal, scored):
-    ### do a histogram of scores with vlines at calibration points
-    # make a csv of calibration scores
-    df_cal = pd.read_csv(cal, sep='\t')
-    df_cal['color'] = 'red'
-    df_cal['alpha'] = 0.5
-    df_cal[['fusion_score','color','alpha']].to_csv(scored + '_cal_scores.csv', index=False, header=False, sep='\t')
-    ### find fusion score column in scored efficiently
+    ### do a boxplot of scores stratified by 
+    # i) null
+    # ii) calibration >0.01 onekg freq
+    # iii) calibration <=0.01 onekg freq
+
+    # find fusion score column in scored efficiently
     with open(scored, 'r') as f:
         header = f.readline().strip().split('\t')
     if 'fusion_score' in header:
         score_col_index = header.index('fusion_score') + 1  # +1 for 1-based cut
     else:
         raise ValueError("fusion_score column not found in scored file")
-    ### extract null distribution
-    # --ranomdom-source for reproducibility
-    cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 0) > {scored}.null"
+
+    # get parameters for title
+    w_dna, w_tumor, w_read, upper = fname2params(scored)
+
+    # null
+    # --random-source for reproducibility
+    cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
     os.system(cmd)
-    # ensure calibration scores are appended
-    df_cal['fusion_score'].to_csv(f"{scored}.null", index=False, header=False, mode='a')
+    
+    # calibration
+    df_cal = pd.read_csv(cal, sep='\t')
+    # stratify
+    df_cal['stratum'] = df_cal[args.onekg_sample_col].apply(
+        lambda x: 'high_freq' if x >= onekg_sample_count_thresh else 'low_freq'
+    )
+    assert df_cal['fusion_score'].notna().all(), "NA values found in fusion_score column of calibration data"
+    # group by stratum and write to files
+    high_freq_file = f"{scored}".replace('.tsv', '_cal_high_freq.tsv')
+    low_freq_file = f"{scored}".replace('.tsv', '_cal_low_freq.tsv')
+    df_cal[df_cal['stratum'] == 'high_freq']['fusion_score'].to_csv(high_freq_file, index=False, sep='\t', header=False)
+    df_cal[df_cal['stratum'] == 'low_freq']['fusion_score'].to_csv(low_freq_file, index=False, sep='\t', header=False)
+    # make boxplot
+    cmd = f"boxplot.py --files {scored}.null,{high_freq_file},{low_freq_file} " \
+        f"-o {scored}_score_boxplot.png " \
+        f"--xticklabels 'Rand. gene pairs, Cal. >1% pop. freq 1KGP, Cal. <=1% pop. freq 1KGP' " \
+        f"-y 'Fusion score' --title 'w_dna={w_dna};w_tum={w_tumor};w_read={w_read};u={upper}'"
+    os.system(cmd)
+
+    # finally write full calibration tsv with fusion scores
+    scored_calibration_file = os.path.join(args.output_dir, f"{os.path.basename(scored).replace('.tsv', '_call_all.tsv')}")
+    df_cal.to_csv(scored_calibration_file, index=False, sep='\t')
+
+    # ### do a histogram of scores with vlines at calibration points
+    # # make a csv of calibration scores
+    # df_cal = pd.read_csv(cal, sep='\t')
+    # # color by onekg_pop_freq
+    # df_cal['color'] = df_cal[args.onekg_sample_col].apply(
+    #     lambda x: 'blue' if x >= onekg_sample_count_thresh else 'red'
+    # )
+    # # drop rows with NA fusion score for now
+    # b = df_cal.shape[0]
+    # df_cal = df_cal.dropna(subset=['fusion_score'])
+    # a = df_cal.shape[0]
+    # # write num dropped nas to logfile
+    # with open(os.path.join(args.output_dir, 'log.txt'), 'a') as logf:
+    #     logf.write(f"Dropped {b - a} calibration fusions with NA fusion_score from {b} total\n")
+    # df_cal['alpha'] = 0.5
+    # df_cal[['fusion_score','color','alpha']].to_csv(scored + '_cal_scores.csv', index=False, header=False, sep='\t')
+    # ### find fusion score column in scored efficiently
+    # with open(scored, 'r') as f:
+    #     header = f.readline().strip().split('\t')
+    # if 'fusion_score' in header:
+    #     score_col_index = header.index('fusion_score') + 1  # +1 for 1-based cut
+    # else:
+    #     raise ValueError("fusion_score column not found in scored file")
+    # ### extract null distribution
+    # # --ranomdom-source for reproducibility
+    # cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
+    # os.system(cmd)
+    # # ensure calibration scores are appended
+    # df_cal['fusion_score'].to_csv(f"{scored}.null", index=False, header=False, mode='a')
         
-    ### plot histogram
-    cmd = f"cat {scored}.null | hist.py -o {scored}_score_dist.png --bins 30 " \
-        f"--axvline {scored}_cal_scores.csv -y 'Frequency' -x 'Fusion score' " \
-        f"--ylog --alpha 0.5 " \
-        f"--title 'Fusion Score Distribution'"
-    print(f"Running command: {cmd}")
-    os.system(cmd)
-    return f"{scored}_score_dist.png"
+    # ### plot histogram
+    # # get params for title
+    # w_dna, w_tumor, w_read, upper = fname2params(scored)
+    # cmd = f"cat {scored}.null | hist.py -o {scored}_score_dist.png --bins 30 " \
+    #     f"--axvline {scored}_cal_scores.csv -y 'Frequency' -x 'Fusion score' " \
+    #     f"--ylog --alpha 0.5 " \
+    #     f"--title f'w_dna={w_dna},w_tumor={w_tumor},w_read={w_read},u={upper}'"
+    # print(f"Running command: {cmd}")
+    # os.system(cmd)
+    # return f"{scored}_score_dist.png"
 
 def main():
     in_header = setup()

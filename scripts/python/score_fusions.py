@@ -4,17 +4,13 @@ import swifter
 import dask
 import argparse
 import numpy as np
-from genefusion.genefusion import score
+from genefusion.genefusion import read_support, sample_support, modality_score, score
 import yaml
 import os,sys
 # from pandarallel import pandarallel
 
-swifter.set_defaults(npartitions=os.cpu_count()-10 if os.cpu_count()>10 else 1)
-swifter.set_defaults(progress_bar=True)
+swifter.set_defaults(progress_bar=False)
 swifter.set_defaults(allow_dask_on_strings=True)
-
-
-
 
 
 parser = argparse.ArgumentParser(description='Score fusions')
@@ -22,8 +18,12 @@ parser.add_argument('-i', '--input', type=str,required=True, help='Input fusion 
 parser.add_argument('-o', '--output', type=str, required=True, help='Output scored fusion file')
 parser.add_argument('--score_yaml',type=str,help='YAML file with population sizes and column names', required=True)
 # parser.add_argument('--batch_size',type=int,default=20000000,help='Number of rows to process per batch (default: 10000000)')
-parser.add_argument('--batch_size',type=int,default=20000000,help='Number of rows to process per batch (default: 20000000)')
+parser.add_argument('--batch_size',type=int,default=40000000,help='Number of rows to process per batch (default: 20000000)')
+parser.add_argument('--n_cpus',type=int,default=os.cpu_count()//2,help='Number of CPUs to use (default: half available)')
 args = parser.parse_args()
+
+swifter.set_defaults(npartitions=args.n_cpus)
+print(f"Using {args.n_cpus} CPUs for swifter")
 
 conn = duckdb.connect()
 total_rows = conn.execute(f'SELECT COUNT(*) FROM read_csv_auto("{args.input}", delim="\t")').fetchone()[0]
@@ -44,8 +44,9 @@ for i in range(0, total_rows, batch_size):
     print(f"Processing batch {batch_num}/{total_batches} (rows {i} to {min(i + batch_size, total_rows)})")
 
     df = conn.execute(f'SELECT * FROM read_csv_auto("{args.input}", delim="\t") LIMIT {batch_size} OFFSET {i}').df()
+    
+    # Swifter apply (row-wise)
     df['fusion_score'] = df.swifter.apply(
-    # df['fusion_score'] = df.parallel_apply(
         lambda row: score(
             # reads
             row[params['read_dna_normal']] if type(params['read_dna_normal']) == str else int(params['read_dna_normal']),
@@ -73,19 +74,24 @@ for i in range(0, total_rows, batch_size):
         ),
         axis=1
     )
+    
+    # np.vectorize (column-wise) - uncomment to use instead of swifter
+    # def get_col_or_scalar(param_val, df_obj):
+    #     return df_obj[param_val].values if isinstance(param_val, str) else param_val
+    # 
     # df["fusion_score"] = np.vectorize(score)(
     #     # reads
-    #     (df[params['read_dna_normal']] if type(params['read_dna_normal']) == str else int(params['read_dna_normal'])),
-    #     (df[params['read_dna_tumor']] if type(params['read_dna_tumor']) == str else int(params['read_dna_tumor'])),
-    #     (df[params['read_rna_normal']] if type(params['read_rna_normal']) == str else int(params['read_rna_normal'])),
-    #     (df[params['read_rna_tumor']] if type(params['read_rna_tumor']) == str else int(params['read_rna_tumor'])),
-    #     (df[params['read_dna_onekg']] if type(params['read_dna_onekg']) == str else int(params['read_dna_onekg'])),
+    #     get_col_or_scalar(params['read_dna_normal'], df),
+    #     get_col_or_scalar(params['read_dna_tumor'], df),
+    #     get_col_or_scalar(params['read_rna_normal'], df),
+    #     get_col_or_scalar(params['read_rna_tumor'], df),
+    #     get_col_or_scalar(params['read_dna_onekg'], df),
     #     # samples
-    #     (df[params['sample_dna_normal']] if type(params['sample_dna_normal']) == str else int(params['sample_dna_normal'])),
-    #     (df[params['sample_dna_tumor']] if type(params['sample_dna_tumor']) == str else int(params['sample_dna_tumor'])),
-    #     (df[params['sample_rna_normal']] if type(params['sample_rna_normal']) == str else int(params['sample_rna_normal'])),
-    #     (df[params['sample_rna_tumor']] if type(params['sample_rna_tumor']) == str else int(params['sample_rna_tumor'])),
-    #     (df[params['sample_dna_onekg']] if type(params['sample_dna_onekg']) == str else int(params['sample_dna_onekg'])),
+    #     get_col_or_scalar(params['sample_dna_normal'], df),
+    #     get_col_or_scalar(params['sample_dna_tumor'], df),
+    #     get_col_or_scalar(params['sample_rna_normal'], df),
+    #     get_col_or_scalar(params['sample_rna_tumor'], df),
+    #     get_col_or_scalar(params['sample_dna_onekg'], df),
     #     # population sizes
     #     params['pop_size_dna_normal'],
     #     params['pop_size_dna_tumor'],

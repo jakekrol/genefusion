@@ -14,6 +14,8 @@ import re
 import numpy as np
 from matplotlib.patches import FancyArrowPatch
 import matplotlib.colors as mcolors
+print("Exiting: need to make this script faster")
+sys.exit(1)
 
 PARAMS = {
     'w_dna': [0.1, 0.5, 0.9],
@@ -31,6 +33,7 @@ parser.add_argument('--fontsize', type=int, default=12, help='Font size for plot
 args = parser.parse_args()
 
 def rank_finder(x,y, scorefile):
+    # maybe use score instead of x,y to speed up
     cmd = f"awk '$1 == \"{x}\" && $2 == \"{y}\" {{ print NR; exit }}' {scorefile}"
     print(f"Running command: {cmd}")
     # launch cmd using subprocess
@@ -91,6 +94,9 @@ if not args.cache:
             left = row['left']
             right = row['right']
             rank = rank_finder(left, right, scorefile)
+            if rank == -1:
+                print(f"Warning: Fusion ({left}, {right}) not found in scorefile {scorefile}")
+                continue
             df_cal_cp.at[idx, 'rank'] = rank
             ranks.append(rank)
         # write calibration ranks to file
@@ -142,14 +148,19 @@ for ((w_dna,upper), df_group) in df_results.groupby(['w_dna','upper']):
         cmap=cmap, aspect='auto',
         vmin=rmin, vmax=rmax,
         origin='lower') # reverse colormap so low ranks are highlighted
+    # set axes labels only for edge subplots
+    # left col
+    if j == 0:
+        ax[i,j].set_ylabel('w_read', fontsize=args.fontsize)
+    # bottom row
+    if i == rows - 1:
+        ax[i,j].set_xlabel('w_tumor', fontsize=args.fontsize)
     ax[i,j].set_title(f'w_dna={w_dna}, upper={upper}')
-    ax[i,j].set_xlabel('w_tumor', fontsize=args.fontsize)
-    ax[i,j].set_ylabel('w_read', fontsize=args.fontsize)
     ax[i,j].set_xticks(range(len(pivot.columns)), labels=pivot.columns)
     ax[i,j].set_yticks(range(len(pivot.index)), labels=pivot.index)
     for (k,l),val in np.ndenumerate(pivot.values):
         text_val = int(val) if not np.isnan(val) else 'N/A'
-        ax[i,j].text(l,k,text_val,ha='center',va='center',color='black',fontweight='bold', fontsize=args.fontsize)
+        ax[i,j].text(l,k,text_val,ha='center',va='center',color='black',fontweight='bold', fontsize=args.fontsize-2)
 # add colorbar
 if columns > 1:
     fig.text(0.5, 0.02, 'Upper Factor', ha='center', fontsize=12, fontweight='bold')
