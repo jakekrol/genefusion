@@ -34,6 +34,7 @@ total_pairs = n * (n - 1) // 2
 
 # Generate pairs: i < j in sorted order means gene[i] is "smaller"
 with open(args.output, 'w') as f:
+    f.write("left\tright\n")
     with tqdm(total=total_pairs, desc="Generating pairs", unit="pairs") as pbar:
         for i in range(n):
             for j in range(i + 1, n):
