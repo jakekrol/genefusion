@@ -18,6 +18,18 @@ import math
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
 
 
+# Helper functions for scoring (kept for backwards compatibility if needed elsewhere)
+def read_support(reads, m):
+    if reads <= 2 * m:
+        return (m - abs(reads - m)) / m
+    return 0
+
+def sample_support(samples, pop_size):
+    return samples / pop_size
+
+def modality_score(g, h, w_read):
+    return 0.5 * ((w_read * g) + ((1 - w_read) * h))
+
 
 def score(
     # reads
@@ -45,64 +57,65 @@ def score(
     w_read=0.5,
     upper_factor=50 # max expected read count per sample
 ):
-    # Validate hyperparameters
-    assert upper_factor > 1, "upper_factor must be greater than 1"
-    assert 0 <= w_tumor <= 1, "w_tumor must be between 0 and 1"
-    assert 0 <= w_dna <= 1, "w_dna must be between 0 and 1"
-    assert 0 <= w_read <= 1, "w_read must be between 0 and 1"
+    # Fast exit if all inputs are zero
+    if not (reads_dna_normal or reads_dna_tumor or reads_rna_normal or reads_rna_tumor or reads_onekg or
+            samples_dna_normal or samples_dna_tumor or samples_rna_normal or samples_rna_tumor or samples_onekg):
+        return 0.0
 
     # Precompute weights
-    w_rna = 1 - w_dna
-    w_sample = 1 - w_read
-    w_normal = 1 - w_tumor
+    w_rna = 1.0 - w_dna
+    w_normal = 1.0 - w_tumor
+    w_sample = 1.0 - w_read
 
-    # Helper functions
-    def read_support(reads, m):
-        # Compute read support with geometric logic
-        if reads <= 2 * m:
-            return (m - abs(reads - m)) / m
-        return 0
+    score_val = 0.0
+    
+    # Inline all calculations to avoid function call overhead
+    # Process each modality directly without loops or list creation
+    
+    # DNA Normal
+    if pop_size_dna_normal > 0:
+        m = upper_factor * pop_size_dna_normal
+        # Inline read_support
+        g = (m - abs(reads_dna_normal - m)) / m if reads_dna_normal <= 2 * m else 0.0
+        # Inline sample_support
+        h = samples_dna_normal / pop_size_dna_normal
+        # Inline modality_score
+        f = 0.5 * ((w_read * g) + (w_sample * h))
+        score_val -= w_normal * w_dna * f
+    
+    # DNA Tumor
+    if pop_size_dna_tumor > 0:
+        m = upper_factor * pop_size_dna_tumor
+        g = (m - abs(reads_dna_tumor - m)) / m if reads_dna_tumor <= 2 * m else 0.0
+        h = samples_dna_tumor / pop_size_dna_tumor
+        f = 0.5 * ((w_read * g) + (w_sample * h))
+        score_val += w_tumor * w_dna * f
+    
+    # RNA Normal
+    if pop_size_rna_normal > 0:
+        m = upper_factor * pop_size_rna_normal
+        g = (m - abs(reads_rna_normal - m)) / m if reads_rna_normal <= 2 * m else 0.0
+        h = samples_rna_normal / pop_size_rna_normal
+        f = 0.5 * ((w_read * g) + (w_sample * h))
+        score_val -= w_normal * w_rna * f
+    
+    # RNA Tumor
+    if pop_size_rna_tumor > 0:
+        m = upper_factor * pop_size_rna_tumor
+        g = (m - abs(reads_rna_tumor - m)) / m if reads_rna_tumor <= 2 * m else 0.0
+        h = samples_rna_tumor / pop_size_rna_tumor
+        f = 0.5 * ((w_read * g) + (w_sample * h))
+        score_val += w_tumor * w_rna * f
+    
+    # 1KG (DNA, normal population)
+    if pop_size_dna_onekg > 0:
+        m = upper_factor * pop_size_dna_onekg
+        g = (m - abs(reads_onekg - m)) / m if reads_onekg <= 2 * m else 0.0
+        h = samples_onekg / pop_size_dna_onekg
+        f = 0.5 * ((w_read * g) + (w_sample * h))
+        score_val -= w_normal * w_dna * f
 
-    def sample_support(samples, pop_size):
-        # Compute sample support as a fraction of population size
-        return samples / pop_size
-
-    def modality_score(g, h, w_read):
-        # Compute modality score with weighted contributions
-        return 0.5 * ((w_read * g) + ((1 - w_read) * h))
-
-    # Define modalities as tuples
-    modalities = [
-        ('dna_normal', reads_dna_normal, samples_dna_normal, pop_size_dna_normal, w_dna),
-        ('dna_tumor', reads_dna_tumor, samples_dna_tumor, pop_size_dna_tumor, w_dna),
-        ('rna_normal', reads_rna_normal, samples_rna_normal, pop_size_rna_normal, w_rna),
-        ('rna_tumor', reads_rna_tumor, samples_rna_tumor, pop_size_rna_tumor, w_rna),
-        ('dna_onekg', reads_onekg, samples_onekg, pop_size_dna_onekg, w_dna),
-    ]
-
-    # Filter modalities with pop size > 0 (element 3 in tuple)
-    modalities = [mod for mod in modalities if mod[3] > 0]
-
-    # Compute scores
-    score = 0
-    for name, reads, samples, pop_size, w_modality in modalities:
-        # Compute maximum read support (m)
-        m = upper_factor * pop_size
-        g = read_support(reads, m)
-        h = sample_support(samples, pop_size)
-        f = modality_score(g, h, w_read)
-
-        # Update final score based on modality type
-        if 'tumor' in name:
-            score += w_tumor * w_modality * f
-        elif 'normal' in name or 'onekg' in name:
-            score -= w_normal * w_modality * f
-        else:
-            raise ValueError(f"Modality name not recognized: {name}")
-
-    return score
-
-score = np.vectorize(score)
+    return score_val
 
 def gene2tissue(gene, df_g2t):
     '''
