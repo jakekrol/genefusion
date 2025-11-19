@@ -18,69 +18,46 @@ import math
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
 
 
-# Helper functions for scoring (kept for backwards compatibility if needed elsewhere)
-def read_support(reads, m):
-    if reads <= 2 * m:
-        return (m - abs(reads - m)) / m
-    return 0
 
-def sample_support(samples, pop_size):
-    return samples / pop_size
-
-def modality_score(g, h, w_read):
-    return 0.5 * ((w_read * g) + ((1 - w_read) * h))
-
-
-def score(
-    # reads
-    reads_dna_normal=0,
-    reads_dna_tumor=0,
-    reads_rna_normal=0,
-    reads_rna_tumor=0,
-    reads_onekg=0,
-
-    # sample counts
-    samples_dna_normal=0,
-    samples_dna_tumor=0,
-    samples_rna_normal=0,
-    samples_rna_tumor=0,
-    samples_onekg=0,
-    # pop size
-    pop_size_dna_normal=0,
-    pop_size_dna_tumor=0,
-    pop_size_rna_normal=0,
-    pop_size_rna_tumor=0,
-    pop_size_dna_onekg=2536,
-    # hyperparameters
-    w_tumor=0.5,
-    w_dna=0.5,
-    w_read=0.5,
-    upper_factor=50 # max expected read count per sample
+# Numba JIT-compiled version
+@numba.jit(nopython=True)
+def score_numba(
+    reads_dna_normal,
+    reads_dna_tumor,
+    reads_rna_normal,
+    reads_rna_tumor,
+    reads_onekg,
+    samples_dna_normal,
+    samples_dna_tumor,
+    samples_rna_normal,
+    samples_rna_tumor,
+    samples_onekg,
+    pop_size_dna_normal,
+    pop_size_dna_tumor,
+    pop_size_rna_normal,
+    pop_size_rna_tumor,
+    pop_size_dna_onekg,
+    w_tumor,
+    w_dna,
+    w_read,
+    upper_factor
 ):
-    # Fast exit if all inputs are zero
     if not (reads_dna_normal or reads_dna_tumor or reads_rna_normal or reads_rna_tumor or reads_onekg or
             samples_dna_normal or samples_dna_tumor or samples_rna_normal or samples_rna_tumor or samples_onekg):
         return 0.0
 
-    # Precompute weights
     w_rna = 1.0 - w_dna
     w_normal = 1.0 - w_tumor
     w_sample = 1.0 - w_read
 
     score_val = 0.0
     
-    # Inline all calculations to avoid function call overhead
-    # Process each modality directly without loops or list creation
-    
     # DNA Normal
     if pop_size_dna_normal > 0:
         m = upper_factor * pop_size_dna_normal
-        # Inline read_support
         g = (m - abs(reads_dna_normal - m)) / m if reads_dna_normal <= 2 * m else 0.0
-        # Inline sample_support
         h = samples_dna_normal / pop_size_dna_normal
-        # Inline modality_score
-        f = 0.5 * ((w_read * g) + (w_sample * h))
+        f = ((w_read * g) + (w_sample * h))
         score_val -= w_normal * w_dna * f
     
     # DNA Tumor
@@ -88,7 +65,7 @@ def score(
         m = upper_factor * pop_size_dna_tumor
         g = (m - abs(reads_dna_tumor - m)) / m if reads_dna_tumor <= 2 * m else 0.0
         h = samples_dna_tumor / pop_size_dna_tumor
-        f = 0.5 * ((w_read * g) + (w_sample * h))
+        f = ((w_read * g) + (w_sample * h))
         score_val += w_tumor * w_dna * f
     
     # RNA Normal
@@ -96,7 +73,7 @@ def score(
         m = upper_factor * pop_size_rna_normal
         g = (m - abs(reads_rna_normal - m)) / m if reads_rna_normal <= 2 * m else 0.0
         h = samples_rna_normal / pop_size_rna_normal
-        f = 0.5 * ((w_read * g) + (w_sample * h))
+        f = ((w_read * g) + (w_sample * h))
         score_val -= w_normal * w_rna * f
     
     # RNA Tumor
@@ -104,18 +81,142 @@ def score(
         m = upper_factor * pop_size_rna_tumor
         g = (m - abs(reads_rna_tumor - m)) / m if reads_rna_tumor <= 2 * m else 0.0
         h = samples_rna_tumor / pop_size_rna_tumor
-        f = 0.5 * ((w_read * g) + (w_sample * h))
+        f = ((w_read * g) + (w_sample * h))
         score_val += w_tumor * w_rna * f
     
-    # 1KG (DNA, normal population)
+    # 1KG
     if pop_size_dna_onekg > 0:
         m = upper_factor * pop_size_dna_onekg
         g = (m - abs(reads_onekg - m)) / m if reads_onekg <= 2 * m else 0.0
         h = samples_onekg / pop_size_dna_onekg
-        f = 0.5 * ((w_read * g) + (w_sample * h))
+        f = ((w_read * g) + (w_sample * h))
         score_val -= w_normal * w_dna * f
 
     return score_val
+
+@numba.jit(nopython=True, parallel=True)
+def score_numba_vectorized(
+    reads_dna_normal_arr,
+    reads_dna_tumor_arr,
+    reads_rna_normal_arr,
+    reads_rna_tumor_arr,
+    reads_onekg_arr,
+    samples_dna_normal_arr,
+    samples_dna_tumor_arr,
+    samples_rna_normal_arr,
+    samples_rna_tumor_arr,
+    samples_onekg_arr,
+    pop_size_dna_normal_arr,
+    pop_size_dna_tumor_arr,
+    pop_size_rna_normal_arr,
+    pop_size_rna_tumor_arr,
+    pop_size_dna_onekg_arr,
+    w_tumor_arr,
+    w_dna_arr,
+    w_read_arr,
+    upper_factor_arr
+):
+    n = len(reads_dna_normal_arr)
+    results = np.empty(n, dtype=np.float64)
+    
+    for i in numba.prange(n):
+        results[i] = score_numba(
+            reads_dna_normal_arr[i],
+            reads_dna_tumor_arr[i],
+            reads_rna_normal_arr[i],
+            reads_rna_tumor_arr[i],
+            reads_onekg_arr[i],
+            samples_dna_normal_arr[i],
+            samples_dna_tumor_arr[i],
+            samples_rna_normal_arr[i],
+            samples_rna_tumor_arr[i],
+            samples_onekg_arr[i],
+            pop_size_dna_normal_arr[i],
+            pop_size_dna_tumor_arr[i],
+            pop_size_rna_normal_arr[i],
+            pop_size_rna_tumor_arr[i],
+            pop_size_dna_onekg_arr[i],
+            w_tumor_arr[i],
+            w_dna_arr[i],
+            w_read_arr[i],
+            upper_factor_arr[i]
+        )
+    
+    return results
+
+def score_python(
+    reads_dna_normal=0,
+    reads_dna_tumor=0,
+    reads_rna_normal=0,
+    reads_rna_tumor=0,
+    reads_onekg=0,
+    samples_dna_normal=0,
+    samples_dna_tumor=0,
+    samples_rna_normal=0,
+    samples_rna_tumor=0,
+    samples_onekg=0,
+    pop_size_dna_normal=0,
+    pop_size_dna_tumor=0,
+    pop_size_rna_normal=0,
+    pop_size_rna_tumor=0,
+    pop_size_dna_onekg=2536,
+    w_tumor=0.5,
+    w_dna=0.5,
+    w_read=0.5,
+    upper_factor=50
+):
+    if not (reads_dna_normal or reads_dna_tumor or reads_rna_normal or reads_rna_tumor or reads_onekg or
+            samples_dna_normal or samples_dna_tumor or samples_rna_normal or samples_rna_tumor or samples_onekg):
+        return 0.0
+
+    w_rna = 1.0 - w_dna
+    w_normal = 1.0 - w_tumor
+    w_sample = 1.0 - w_read
+
+    score_val = 0.0
+    
+    # DNA Normal
+    if pop_size_dna_normal > 0:
+        m = upper_factor * pop_size_dna_normal
+        g = (m - abs(reads_dna_normal - m)) / m if reads_dna_normal <= 2 * m else 0.0
+        h = samples_dna_normal / pop_size_dna_normal
+        f = ((w_read * g) + (w_sample * h))
+        score_val -= w_normal * w_dna * f
+    
+    # DNA Tumor
+    if pop_size_dna_tumor > 0:
+        m = upper_factor * pop_size_dna_tumor
+        g = (m - abs(reads_dna_tumor - m)) / m if reads_dna_tumor <= 2 * m else 0.0
+        h = samples_dna_tumor / pop_size_dna_tumor
+        f = ((w_read * g) + (w_sample * h))
+        score_val += w_tumor * w_dna * f
+    
+    # RNA Normal
+    if pop_size_rna_normal > 0:
+        m = upper_factor * pop_size_rna_normal
+        g = (m - abs(reads_rna_normal - m)) / m if reads_rna_normal <= 2 * m else 0.0
+        h = samples_rna_normal / pop_size_rna_normal
+        f = ((w_read * g) + (w_sample * h))
+        score_val -= w_normal * w_rna * f
+    
+    # RNA Tumor
+    if pop_size_rna_tumor > 0:
+        m = upper_factor * pop_size_rna_tumor
+        g = (m - abs(reads_rna_tumor - m)) / m if reads_rna_tumor <= 2 * m else 0.0
+        h = samples_rna_tumor / pop_size_rna_tumor
+        f = ((w_read * g) + (w_sample * h))
+        score_val += w_tumor * w_rna * f
+    
+    # 1KG
+    if pop_size_dna_onekg > 0:
+        m = upper_factor * pop_size_dna_onekg
+        g = (m - abs(reads_onekg - m)) / m if reads_onekg <= 2 * m else 0.0
+        h = samples_onekg / pop_size_dna_onekg
+        f = ((w_read * g) + (w_sample * h))
+        score_val -= w_normal * w_dna * f
+
+    return score_val
+
 
 def gene2tissue(gene, df_g2t):
     '''
