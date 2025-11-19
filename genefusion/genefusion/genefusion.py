@@ -14,6 +14,7 @@ import heapq
 import pointpats
 import swifter
 import math
+import numba
 
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
 
@@ -159,7 +160,7 @@ def score_python(
     pop_size_dna_tumor=0,
     pop_size_rna_normal=0,
     pop_size_rna_tumor=0,
-    pop_size_dna_onekg=2536,
+    pop_size_dna_onekg=2535,
     w_tumor=0.5,
     w_dna=0.5,
     w_read=0.5,
