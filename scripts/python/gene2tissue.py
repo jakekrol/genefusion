@@ -4,17 +4,18 @@ import os,sys
 import pandas as pd
 import argparse
 import yaml
-import swifter
+# import swifter
 
 parser = argparse.ArgumentParser(description="Map genes to tissues using Human Protein Atlas data")
 parser.add_argument("-i", "--input", required=True, help="Input file with gene list (one gene per line)")
 parser.add_argument("-d", "--data",
-                    default="../../data/2025_10-human_protein_atlas_gene_rna_expr/rna_tissue_consensus.tsv",
+                    default="/data/jake/genefusion/data/2025_10-human_protein_atlas_gene_rna_expr/rna_tissue_consensus.tsv",
                     help="Path to rna_tissue_consensus.tsv file from Human Protein Atlas")
 parser.add_argument("-a", "--alias", help="Optional gene alias mapping file",
-                    default="../../results/2025_09-haas_interval_frac/merged_alias.yaml")
+                    default="/data/jake/genefusion/results/2025_09-haas_interval_frac/merged_alias.yaml")
 parser.add_argument("-o", "--out", required=True, help="Output file for gene-tissue mapping")
 parser.add_argument("-k", '--topk', type=int, default=3, help="Number of top tissue(s) to report per gene")
+parser.add_argument("--out_header", type =str, default=None, help="Custom header for output file (comma-separated)")
 # parser.add_argument("--tpm", action="store_true", help="Report TPM values along with tissue(s)")
 
 args = parser.parse_args()
@@ -63,7 +64,11 @@ def map_gene_to_tissues(gene):
         return(",".join(x.tolist()))
 
 df_q = pd.DataFrame(list(queries), columns=['gene'])
-df_q['Tissues'] = df_q['gene'].swifter.apply(map_gene_to_tissues)
+# df_q['Tissues'] = df_q['gene'].swifter.apply(map_gene_to_tissues)
+df_q['Tissues'] = df_q['gene'].apply(map_gene_to_tissues)
+df_q = df_q.sort_values(by='gene')
+if args.out_header:
+    df_q.columns = [args.out_header.split(",")[0], args.out_header.split(",")[1]]
 df_q.to_csv(args.out, sep="\t", index=False)
 
 

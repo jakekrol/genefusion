@@ -20,7 +20,7 @@ def score_python(
     pop_size_dna_tumor=0,
     pop_size_rna_normal=0,
     pop_size_rna_tumor=0,
-    pop_size_dna_onekg=2536,
+    pop_size_dna_onekg=2535,
     w_tumor=0.5,
     w_dna=0.5,
     w_read=0.5,
@@ -223,14 +223,14 @@ def benchmark():
     pop_size_dna_tumor = np.random.randint(1, 200, n).astype(np.float64)
     pop_size_rna_normal = np.random.randint(1, 100, n).astype(np.float64)
     pop_size_rna_tumor = np.random.randint(1, 100, n).astype(np.float64)
-    pop_size_dna_onekg = np.full(n, 2536.0)
+    pop_size_dna_onekg = np.full(n, 2535.0)
     
     # Samples must be <= population size (realistic constraint)
     samples_dna_normal = np.random.randint(0, 1, n).astype(np.float64)
     samples_dna_tumor = np.random.randint(0, 1, n).astype(np.float64)
     samples_rna_normal = np.random.randint(0, 1, n).astype(np.float64)
     samples_rna_tumor = np.random.randint(0, 1, n).astype(np.float64)
-    samples_onekg = np.random.randint(0, 2537, n).astype(np.float64)
+    samples_onekg = np.random.randint(0, 2536, n).astype(np.float64)
     
     for i in range(n):
         samples_dna_normal[i] = np.random.randint(0, int(pop_size_dna_normal[i]) + 1)

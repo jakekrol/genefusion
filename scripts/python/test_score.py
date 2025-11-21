@@ -21,7 +21,7 @@ def score(
     pop_size_dna_tumor=0,
     pop_size_rna_normal=0,
     pop_size_rna_tumor=0,
-    pop_size_dna_onekg=2536,
+    pop_size_dna_onekg=2535,
     # hyperparameters
     w_tumor=0.5,
     w_dna=0.5,

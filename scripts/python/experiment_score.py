@@ -231,8 +231,12 @@ def viz(cal, scored):
 
     # null
     # --random-source for reproducibility
-    cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
-    os.system(cmd)
+    # check cache for null file existence
+    if os.path.exists(f"{scored}.null"):
+        print(f"Null distribution file found: {scored}.null")
+    else:
+        cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
+        os.system(cmd)
     
     # calibration
     df_cal = pd.read_csv(cal, sep='\t')
@@ -241,20 +245,41 @@ def viz(cal, scored):
         lambda x: 'high_freq' if x >= onekg_sample_count_thresh else 'low_freq'
     )
     assert df_cal['fusion_score'].notna().all(), "NA values found in fusion_score column of calibration data"
-    # group by stratum and write to files
+    
+    # group by stratum and write to files (automatically handles 0-row cases)
     high_freq_file = f"{scored}".replace('.tsv', '_cal_high_freq.tsv')
     low_freq_file = f"{scored}".replace('.tsv', '_cal_low_freq.tsv')
-    df_cal[df_cal['stratum'] == 'high_freq']['fusion_score'].to_csv(high_freq_file, index=False, sep='\t', header=False)
-    df_cal[df_cal['stratum'] == 'low_freq']['fusion_score'].to_csv(low_freq_file, index=False, sep='\t', header=False)
-    # make boxplot
-    cmd = f"boxplot.py --files {scored}.null,{high_freq_file},{low_freq_file} " \
-        f"-o {scored}_score_boxplot.png " \
-        f"--xticklabels 'Rand. gene pairs, Cal. >1% pop. freq 1KGP, Cal. <=1% pop. freq 1KGP' " \
-        f"-y 'Fusion score' --title 'w_dna={w_dna};w_tum={w_tumor};w_read={w_read};u={upper}'"
+    
+    strata_found = set()
+    # use groupby to handle cases where stratum might be empty
+    for stratum_name, group_df in df_cal.groupby('stratum'):
+        strata_found.add(stratum_name)
+        if stratum_name == 'high_freq':
+            group_df['fusion_score'].to_csv(high_freq_file, index=False, sep='\t', header=False)
+        elif stratum_name == 'low_freq':
+            group_df['fusion_score'].to_csv(low_freq_file, index=False, sep='\t', header=False)
+    
+    # only use files that exist for plotting
+    subplot_titles = ["Rand. gene pairs"]
+    plotfiles = [f"{scored}.null"]
+    if 'high_freq' in strata_found:
+        plotfiles.append(high_freq_file)
+        subplot_titles.append("Cal. >1% pop. freq 1KGP")
+    if 'low_freq' in strata_found:  
+        plotfiles.append(low_freq_file)
+        subplot_titles.append("Cal <=1% pop. freq 1KGP")
+    subplot_titles_str = ', '.join(subplot_titles)
+    
+    # make histogram
+    cmd = f"hist.py -i {','.join(plotfiles)} " \
+        f"-o {scored}_score_histogram.png " \
+        f"--subplot_titles '{subplot_titles_str}' " \
+        f"--ylog --bins 30 --fontsize 8 " \
+        f"--ylabel 'Fusion score' --title 'w_dna={w_dna}|w_t={w_tumor}|w_r={w_read}|u={upper}'"
     os.system(cmd)
 
     # finally write full calibration tsv with fusion scores
-    scored_calibration_file = os.path.join(args.output_dir, f"{os.path.basename(scored).replace('.tsv', '_call_all.tsv')}")
+    scored_calibration_file = os.path.join(args.output_dir, f"{os.path.basename(scored).replace('.tsv', '_cal_all.tsv')}")
     df_cal.to_csv(scored_calibration_file, index=False, sep='\t')
 
     # ### do a histogram of scores with vlines at calibration points
@@ -333,11 +358,16 @@ def main():
             score(args.input, param_yaml_path, score_outfile)
         print(f"Scored output written to: {score_outfile}")
         # sort
-        scored_output_sorted = sort_tbl(score_outfile,
-                                        score_outfile.replace('.tsv', '_sort.tsv'),
-                                        sort_col='fusion_score',
-                                        descending=True)
-        print(f"Sorted scored output written to: {scored_output_sorted}")
+        # cache check
+        if os.path.exists(score_outfile.replace('.tsv', '_sort.tsv')):
+            print(f"Sorted scored output already exists, skipping: {score_outfile.replace('.tsv', '_sort.tsv')}")
+            scored_output_sorted = score_outfile.replace('.tsv', '_sort.tsv')
+        else:
+            scored_output_sorted = sort_tbl(score_outfile,
+                                            score_outfile.replace('.tsv', '_sort.tsv'),
+                                            sort_col='fusion_score',
+                                            descending=True)
+            print(f"Sorted scored output written to: {scored_output_sorted}")
         # viz 
         if args.calibration:
             scored_cal = score_calibration(args.calibration, scored_output_sorted)

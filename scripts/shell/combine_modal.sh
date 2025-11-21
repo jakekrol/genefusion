@@ -9,8 +9,9 @@ gene_pair_sorted_key=/data/jake/genefusion/results/2025_11-fusion_lexicographic_
 # tumor_and_normal=pop_tumor_and_normal_fusions_pe_and_sample.tsv
 modal=modal_combined_read_sample.tsv
 all_modal=modal_onekg_combined_read_sample.tsv
-all_modal_dedup=modal_onekg_combined_read_sample_no_dups.tsv
-all_modal_dedup_fill=modal_onekg_combined_read_sample_no_dups_fillna.tsv
+all_modal_comb=modal_onekg_combined_read_sample_comb.tsv
+all_modal_comb_fill=modal_onekg_combined_read_sample_comb_fill.tsv
+all_modal_comb_fill_dedup=modal_onekg_combined_read_sample_comb_fill_no_dups.tsv
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -65,15 +66,6 @@ for ((i=1; i<${#files_outer[@]}; i++)); do
 done
 mv "$joined_file" "$output_dir/${modal}"
 
-# # join tumor normal
-# echo "Joining tumor and normal"
-# join_ddb.py \
-#     --type outer \
-#     -l $tumor \
-#     -r $normal \
-#     --keys left,right \
-#     --output $tumor_and_normal
-
 # join onekg
 echo "Joining 1000 Genomes"
 join_ddb.py -l "$output_dir/$modal" \
@@ -81,16 +73,24 @@ join_ddb.py -l "$output_dir/$modal" \
     --type left \
     -k left,right \
     -o "$output_dir/$all_modal"
-#de-duplicate
-echo "De-duplicating"
+# de-duplicate
+echo "Getting all gene combinations"
 join_ddb.py -l $gene_pair_sorted_key \
     -r "$output_dir/$all_modal" \
     --type left \
     -k left,right \
-    --output "$output_dir/$all_modal_dedup"
+    --output "$output_dir/$all_modal_comb"
 # fillna
 echo "Filling NAs with 0"
 fillna.sh \
-    -i "$output_dir/$all_modal_dedup" \
-    -o "$output_dir/$all_modal_dedup_fill" \
+    -i "$output_dir/$all_modal_comb" \
+    -o "$output_dir/$all_modal_comb_fill" \
     -f 0
+# drop duplicates
+echo "Dropping duplicate gene pairs"
+dedup.sh \
+    -i "$output_dir/$all_modal_comb_fill" \
+    -a 1 \
+    -b 2 \
+    -o "$output_dir/${all_modal_comb_fill_dedup}"
+
