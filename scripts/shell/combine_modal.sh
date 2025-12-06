@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # default parameters
-onekg=/data/jake/genefusion/results/2025_09-onekg_giggle2fusion/g2f/pop_normal_fusions_pe_and_sample.tsv
+onekg=/data/jake/genefusion/data/dna_pad/onekg/pop_normal_dna_fusions_pe_and_sample.tsv
 gene_pair_sorted_key=/data/jake/genefusion/results/2025_11-fusion_lexicographic_key/gene_pairs_sorted_by_genomic_position.tsv
 # tumor=pop_tumor_fusions_pe_and_sample.tsv
 # normal=pop_normal_fusions_pe_and_sample.tsv

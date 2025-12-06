@@ -7,7 +7,8 @@ t_0=$(date +%s)
 SCRIPT_SHARD="/data/jake/genefusion/scripts/python/giggle_shard.py"
 SCRIPT_CLN="/data/jake/genefusion/scripts/shell/cln_excord.sh"
 SCRIPT_SORT="/data/jake/genefusion/scripts/shell/sort_bed"
-SCRIPT_SINGULARITY_ENTRY="$HOME/sv/run.sh"
+SCRIPT_SINGULARITY_ENTRY_DIR="$HOME/sv"
+SCRIPT_SINGULARITY_ENTRY="./run.sh"
 
 # args
 echo "# parsing arguments"
@@ -75,22 +76,28 @@ $SCRIPT_SHARD \
         -o "$output_dir/shards" \
         -n "$num_shards" -s "$output_dir/shards.yaml" 2>&1 | tee "$output_dir/shard.log"
 
-# enter singularity
-echo "# entering singularity"
-$SCRIPT_SINGULARITY_ENTRY
+# create giggle indices in singularity
+echo "# creating sharded indices in singularity"
 
-echo "# creating sharded indices"
-# go back to output dir
-cd "$output_dir" || { echo "Failed to cd to $output_dir"; exit 1; }
-# index shards
-cd shards || { echo "Failed to cd to $output_dir/shards"; exit 1; }
-# beds is a dir within each shard
+# Create script to run inside singularity (preserving quotes for giggle)
+cat > "$output_dir/giggle_index.sh" << EOF
+#!/bin/bash
+set -euo pipefail
+cd $output_dir/shards
 input='"beds/*.gz"'
-# make indices in parallel
-seq 0 $((num_shards - 1)) | sed "s|^|shard_|" | \
-    gargs -p "$num_shards" --log=index.log -o \
-    "cd {0} && giggle index -s -i $input -o ${name}_sort_b"
+seq 0 $((num_shards - 1)) | sed 's|^|shard_|' | \
+    gargs -p $num_shards --log=index.log -o \
+    "cd {0} && giggle index -s -i \$input -o ${name}_sort_b"
+EOF
+
+chmod +x "$output_dir/giggle_index.sh"
+
+# Execute the script in singularity
+cd $SCRIPT_SINGULARITY_ENTRY_DIR || { echo "Failed to cd to $SCRIPT_SINGULARITY_ENTRY_DIR"; exit 1; }
+singularity exec \
+    --bind /data:/data \
+    ./stix-env.sif "$output_dir/giggle_index.sh"
 
 t_end=$(date +%s)
-duration=$((t_end - t_0))
+duration=$(( t_end - t_0 ))
 echo "# completed in $duration seconds"

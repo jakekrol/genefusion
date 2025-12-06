@@ -27,7 +27,6 @@ parser = argparse.ArgumentParser(description='Visualize fusion scoring')
 parser.add_argument('-i', '--input', type=str, required=True, help='Input directory of scoring experiment')
 parser.add_argument('--cache', type=str, default=None, help='Use cached summary file if exists')
 parser.add_argument('--fontsize', type=int, default=12, help='Font size for plots')
-parser.add_argument('--score_col', type=int, default=10, help='Column index (1-based) of fusion score in score file')
 args = parser.parse_args()
 
 def rank_finder(score, scorefile, col):
@@ -153,19 +152,23 @@ def plot(df_results, args):
         # set axes labels only for edge subplots
         # left col
         if j == 0:
-            ax[i,j].set_ylabel('w_read', fontsize=args.fontsize)
+            ax[i,j].set_ylabel('$w_{read}$', fontsize=args.fontsize)
+            ax[i,j].set_yticks(range(len(pivot.index)), labels=pivot.index)
+        else:
+            ax[i,j].set_yticks(range(len(pivot.index)), labels=[])
         # bottom row
         if i == rows - 1:
-            ax[i,j].set_xlabel('w_tumor', fontsize=args.fontsize)
-        ax[i,j].set_title(f'w_dna={w_dna}, upper={upper}')
-        ax[i,j].set_xticks(range(len(pivot.columns)), labels=pivot.columns)
-        ax[i,j].set_yticks(range(len(pivot.index)), labels=pivot.index)
+            ax[i,j].set_xlabel('$w_{tumor}$', fontsize=args.fontsize)
+            ax[i,j].set_xticks(range(len(pivot.columns)), labels=pivot.columns)
+        else:
+            ax[i,j].set_xticks(range(len(pivot.columns)), labels=[])
+        ax[i,j].set_title(f'$\\mathbf{{w_{{dna}}={w_dna}, upper={upper}}}$', fontweight='bold', fontsize=args.fontsize)
         for (k,l),val in np.ndenumerate(pivot.values):
             text_val = int(val) if not np.isnan(val) else 'N/A'
             ax[i,j].text(l,k,text_val,ha='center',va='center',color='black',fontweight='bold', fontsize=args.fontsize-2)
     # add major axis labels with arrows
     if columns > 1:
-        fig.text(0.5, 0.02, 'Upper Factor', ha='center', fontsize=12, fontweight='bold')
+        fig.text(0.5, 0.02, 'Upper Factor', ha='center', fontsize=args.fontsize, fontweight='bold')
         # Horizontal arrow at bottom (for columns/upper)
         arrow_x = FancyArrowPatch((0.15, 0.08), (0.9, 0.08),
                             transform=fig.transFigure,
@@ -173,7 +176,7 @@ def plot(df_results, args):
                             mutation_scale=20)
         fig.add_artist(arrow_x)
     if rows > 1:
-        fig.text(0.02, 0.5, '$w_dna$', va='center', rotation=90, fontsize=12, fontweight='bold')
+        fig.text(0.02, 0.5, '$\\mathbf{w_{dna}}$', va='center', rotation=90, fontsize=args.fontsize, fontweight='bold')
         # Vertical arrow on left (for rows/w_dna)
         arrow_y = FancyArrowPatch((0.08, 0.15), (0.08, 0.9),
                                 transform=fig.transFigure,
@@ -187,12 +190,17 @@ def plot(df_results, args):
     # cbar.ax.invert_yaxis()  # Flip colorbar direction
     plt.subplots_adjust(left=0.15, bottom=0.15)
     plt.savefig(os.path.join(args.input, 'scoring_heatmap.png'))
+    return os.path.join(args.input, 'scoring_heatmap.png')
 
 def main():
     df_results = cache_check(args)
-    if df_results is None:
+    if df_results is not None:
+        print("Using cached results")
+    else:
         df_results = data_gather(args)
-    plot(df_results, args)
+    print("Plotting results")
+    outfile = plot(df_results, args)
+    print(f"Done. Output saved to {outfile}")
 
 if __name__ == "__main__":
     main()

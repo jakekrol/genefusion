@@ -218,110 +218,105 @@ def viz(cal, scored):
     # ii) calibration >0.01 onekg freq
     # iii) calibration <=0.01 onekg freq
 
-    # find fusion score column in scored efficiently
-    with open(scored, 'r') as f:
-        header = f.readline().strip().split('\t')
-    if 'fusion_score' in header:
-        score_col_index = header.index('fusion_score') + 1  # +1 for 1-based cut
-    else:
-        raise ValueError("fusion_score column not found in scored file")
-
-    # get parameters for title
-    w_dna, w_tumor, w_read, upper = fname2params(scored)
-
-    # null
-    # --random-source for reproducibility
-    # check cache for null file existence
-    if os.path.exists(f"{scored}.null"):
-        print(f"Null distribution file found: {scored}.null")
-    else:
-        cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
-        os.system(cmd)
-    
-    # calibration
-    df_cal = pd.read_csv(cal, sep='\t')
-    # stratify
-    df_cal['stratum'] = df_cal[args.onekg_sample_col].apply(
-        lambda x: 'high_freq' if x >= onekg_sample_count_thresh else 'low_freq'
-    )
-    assert df_cal['fusion_score'].notna().all(), "NA values found in fusion_score column of calibration data"
-    
-    # group by stratum and write to files (automatically handles 0-row cases)
-    high_freq_file = f"{scored}".replace('.tsv', '_cal_high_freq.tsv')
-    low_freq_file = f"{scored}".replace('.tsv', '_cal_low_freq.tsv')
-    
-    strata_found = set()
-    # use groupby to handle cases where stratum might be empty
-    for stratum_name, group_df in df_cal.groupby('stratum'):
-        strata_found.add(stratum_name)
-        if stratum_name == 'high_freq':
-            group_df['fusion_score'].to_csv(high_freq_file, index=False, sep='\t', header=False)
-        elif stratum_name == 'low_freq':
-            group_df['fusion_score'].to_csv(low_freq_file, index=False, sep='\t', header=False)
-    
-    # only use files that exist for plotting
-    subplot_titles = ["Rand. gene pairs"]
-    plotfiles = [f"{scored}.null"]
-    if 'high_freq' in strata_found:
-        plotfiles.append(high_freq_file)
-        subplot_titles.append("Cal. >1% pop. freq 1KGP")
-    if 'low_freq' in strata_found:  
-        plotfiles.append(low_freq_file)
-        subplot_titles.append("Cal <=1% pop. freq 1KGP")
-    subplot_titles_str = ', '.join(subplot_titles)
-    
-    # make histogram
-    cmd = f"hist.py -i {','.join(plotfiles)} " \
-        f"-o {scored}_score_histogram.png " \
-        f"--subplot_titles '{subplot_titles_str}' " \
-        f"--ylog --bins 30 --fontsize 8 " \
-        f"--ylabel 'Fusion score' --title 'w_dna={w_dna}|w_t={w_tumor}|w_r={w_read}|u={upper}'"
-    os.system(cmd)
-
-    # finally write full calibration tsv with fusion scores
-    scored_calibration_file = os.path.join(args.output_dir, f"{os.path.basename(scored).replace('.tsv', '_cal_all.tsv')}")
-    df_cal.to_csv(scored_calibration_file, index=False, sep='\t')
-
-    # ### do a histogram of scores with vlines at calibration points
-    # # make a csv of calibration scores
-    # df_cal = pd.read_csv(cal, sep='\t')
-    # # color by onekg_pop_freq
-    # df_cal['color'] = df_cal[args.onekg_sample_col].apply(
-    #     lambda x: 'blue' if x >= onekg_sample_count_thresh else 'red'
-    # )
-    # # drop rows with NA fusion score for now
-    # b = df_cal.shape[0]
-    # df_cal = df_cal.dropna(subset=['fusion_score'])
-    # a = df_cal.shape[0]
-    # # write num dropped nas to logfile
-    # with open(os.path.join(args.output_dir, 'log.txt'), 'a') as logf:
-    #     logf.write(f"Dropped {b - a} calibration fusions with NA fusion_score from {b} total\n")
-    # df_cal['alpha'] = 0.5
-    # df_cal[['fusion_score','color','alpha']].to_csv(scored + '_cal_scores.csv', index=False, header=False, sep='\t')
-    # ### find fusion score column in scored efficiently
+    ### subplots of score histograms stratified by null, high-freq cal, low-freq cal
+    # # find fusion score column in scored efficiently
     # with open(scored, 'r') as f:
     #     header = f.readline().strip().split('\t')
     # if 'fusion_score' in header:
     #     score_col_index = header.index('fusion_score') + 1  # +1 for 1-based cut
     # else:
     #     raise ValueError("fusion_score column not found in scored file")
-    # ### extract null distribution
-    # # --ranomdom-source for reproducibility
-    # cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
-    # os.system(cmd)
-    # # ensure calibration scores are appended
-    # df_cal['fusion_score'].to_csv(f"{scored}.null", index=False, header=False, mode='a')
-        
-    # ### plot histogram
-    # # get params for title
+
+    # # get parameters for title
     # w_dna, w_tumor, w_read, upper = fname2params(scored)
-    # cmd = f"cat {scored}.null | hist.py -o {scored}_score_dist.png --bins 30 " \
-    #     f"--axvline {scored}_cal_scores.csv -y 'Frequency' -x 'Fusion score' " \
-    #     f"--ylog --alpha 0.5 " \
-    #     f"--title f'w_dna={w_dna},w_tumor={w_tumor},w_read={w_read},u={upper}'"
-    # print(f"Running command: {cmd}")
+
+    # # null
+    # # --random-source for reproducibility
+    # # check cache for null file existence
+    # if os.path.exists(f"{scored}.null"):
+    #     print(f"Null distribution file found: {scored}.null")
+    # else:
+    #     cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
+    #     os.system(cmd)
+    
+    # # calibration
+    # df_cal = pd.read_csv(cal, sep='\t')
+    # # stratify
+    # df_cal['stratum'] = df_cal[args.onekg_sample_col].apply(
+    #     lambda x: 'high_freq' if x >= onekg_sample_count_thresh else 'low_freq'
+    # )
+    # assert df_cal['fusion_score'].notna().all(), "NA values found in fusion_score column of calibration data"
+    
+    # # group by stratum and write to files (automatically handles 0-row cases)
+    # high_freq_file = f"{scored}".replace('.tsv', '_cal_high_freq.tsv')
+    # low_freq_file = f"{scored}".replace('.tsv', '_cal_low_freq.tsv')
+    
+    # strata_found = set()
+    # # use groupby to handle cases where stratum might be empty
+    # for stratum_name, group_df in df_cal.groupby('stratum'):
+    #     strata_found.add(stratum_name)
+    #     if stratum_name == 'high_freq':
+    #         group_df['fusion_score'].to_csv(high_freq_file, index=False, sep='\t', header=False)
+    #     elif stratum_name == 'low_freq':
+    #         group_df['fusion_score'].to_csv(low_freq_file, index=False, sep='\t', header=False)
+    
+    # # only use files that exist for plotting
+    # subplot_titles = ["Rand. gene pairs"]
+    # plotfiles = [f"{scored}.null"]
+    # if 'high_freq' in strata_found:
+    #     plotfiles.append(high_freq_file)
+    #     subplot_titles.append("Cal. >1% pop. freq 1KGP")
+    # if 'low_freq' in strata_found:  
+    #     plotfiles.append(low_freq_file)
+    #     subplot_titles.append("Cal <=1% pop. freq 1KGP")
+    # subplot_titles_str = ', '.join(subplot_titles)
+    
+    # # make histogram
+    # cmd = f"hist.py -i {','.join(plotfiles)} " \
+    #     f"-o {scored}_score_histogram.png " \
+    #     f"--subplot_titles '{subplot_titles_str}' " \
+    #     f"--ylog --bins 30 --fontsize 8 " \
+    #     f"--ylabel 'Fusion score' --title 'w_dna={w_dna}|w_t={w_tumor}|w_r={w_read}|u={upper}'"
     # os.system(cmd)
-    # return f"{scored}_score_dist.png"
+
+    # # finally write full calibration tsv with fusion scores
+    # scored_calibration_file = os.path.join(args.output_dir, f"{os.path.basename(scored).replace('.tsv', '_cal_all.tsv')}")
+    # df_cal.to_csv(scored_calibration_file, index=False, sep='\t')
+
+    ### do a histogram of scores with vlines at calibration points
+    # make a csv of calibration scores
+    df_cal = pd.read_csv(cal, sep='\t')
+    # color by onekg_pop_freq
+    # df_cal['color'] = df_cal[args.onekg_sample_col].apply(
+    #     lambda x: 'blue' if x >= onekg_sample_count_thresh else 'red'
+    # )
+    df_cal['color'] = 'red'
+    df_cal['alpha'] = 0.5
+    df_cal[['fusion_score','color','alpha']].to_csv(scored + '_cal_scores.csv', index=False, header=False, sep='\t')
+    # find fusion score column in score table efficiently
+    with open(scored, 'r') as f:
+        header = f.readline().strip().split('\t')
+    if 'fusion_score' in header:
+        score_col_index = header.index('fusion_score') + 1  # +1 for 1-based cut
+    else:
+        raise ValueError("fusion_score column not found in scored file")
+    ### extract null distribution
+    # --ranomdom-source for reproducibility
+    cmd = f"tail -n +2 {scored} | cut -f {score_col_index} | shuf -n 1000000 --random-source=<(yes 13) > {scored}.null"
+    os.system(cmd)
+    # ensure calibration scores are included in histogram
+    df_cal['fusion_score'].to_csv(f"{scored}.null", index=False, header=False, mode='a')
+        
+    ### plot histogram
+    # get params for title
+    w_dna, w_tumor, w_read, upper = fname2params(scored)
+    cmd = f"cat {scored}.null | hist.py -o {scored}_score_dist.png --bins 30 " \
+        f"--axvline {scored}_cal_scores.csv -y 'Frequency' -x 'Fusion score' " \
+        f"--ylog --alpha 0.5 " \
+        f"--title 'w_dna={w_dna},w_tumor={w_tumor}\nw_read={w_read},u={upper}'"
+    print(f"Running command: {cmd}")
+    os.system(cmd)
+    return f"{scored}_score_dist.png"
 
 def main():
     in_header = setup()

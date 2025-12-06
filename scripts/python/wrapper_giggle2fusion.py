@@ -243,6 +243,9 @@ if 0 in args.steps:
 if 1 in args.steps:
     assert os.path.exists(os.path.join(args.base_dir, "inputs", "search.input")), "Search input file not found"
     assert not os.listdir(os.path.join(args.base_dir, "giggleout")), "Giggle output directory not empty"
+    result = subprocess.run('giggle', capture_output=True)
+    assert result.returncode == 0, "Giggle not found in PATH. Please install giggle and ensure it is in your PATH."
+
     cmd = [
     "gargs",
     "-p", f"{args.processes}",
