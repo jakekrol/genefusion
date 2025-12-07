@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+# this is awful code, please revise
 import sys
 
 import os
@@ -92,7 +94,7 @@ def generate_param_set(
             rna_norm_read_col = col
         if ('rna' in col) and ('tumor' in col) and (match_read in col):
             rna_tum_read_col = col
-        if ('dna' in col) and ('normal' in col) and (match_read in col):
+        if ('dna' in col) and ('normal' in col) and (match_read in col) and (not 'onekg' in col): # avoid matching onekg
             dna_norm_read_col = col
         if ('dna' in col) and ('tumor' in col) and (match_read in col):
             dna_tum_read_col = col
@@ -102,7 +104,7 @@ def generate_param_set(
             rna_norm_samp_col = col
         if ('rna' in col) and ('tumor' in col) and ('sample' in col):
             rna_tum_samp_col = col
-        if ('dna' in col) and ('normal' in col) and ('sample' in col):
+        if ('dna' in col) and ('normal' in col) and ('sample' in col) and (not 'onekg' in col): # avoid matching onekg
             dna_norm_samp_col = col
         if ('dna' in col) and ('tumor' in col) and ('sample' in col):
             dna_tum_samp_col = col
