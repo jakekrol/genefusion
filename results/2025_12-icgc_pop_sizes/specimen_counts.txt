@@ -1,0 +1,50 @@
+# /data/jake/genefusion/data/dna_pad/blood/shards/shard_*/beds
+Specimen_Type
+tumour    155
+normal    124
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/bone/shards/shard_*/beds
+Specimen_Type
+tumour    60
+normal    58
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/breast/shards/shard_*/beds
+Specimen_Type
+tumour    40
+normal    40
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/esophagus/shards/shard_*/beds
+Specimen_Type
+normal    97
+tumour    94
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/gallbladder/shards/shard_*/beds
+Specimen_Type
+tumour    12
+normal    12
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/headneck/shards/shard_*/beds
+Specimen_Type
+tumour    13
+normal    13
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/kidney/shards/shard_*/beds
+Specimen_Type
+tumour    48
+normal    45
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/liver/shards/shard_*/beds
+Specimen_Type
+tumour    286
+normal    276
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/ovary/shards/shard_*/beds
+Specimen_Type
+tumour    70
+normal    67
+Name: count, dtype: int64
+# /data/jake/genefusion/data/dna_pad/prostate/shards/shard_*/beds
+Specimen_Type
+tumour    142
+normal    114
+Name: count, dtype: int64

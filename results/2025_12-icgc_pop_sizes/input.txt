@@ -1,0 +1,10 @@
+/data/jake/genefusion/data/dna_pad/blood/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/bone/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/breast/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/esophagus/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/gallbladder/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/headneck/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/kidney/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/liver/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/ovary/shards/shard_*/beds
+/data/jake/genefusion/data/dna_pad/prostate/shards/shard_*/beds
