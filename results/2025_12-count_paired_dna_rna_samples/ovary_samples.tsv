@@ -1,0 +1,1076 @@
+ovary	DO46571	FI659107	PCAWG.d6dda3e7-5a17-41b9-8dac-e2eebf8a02cf.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI815982	442e52e7e989ece0cec7ff91f8e7864e.S0416_20120320_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46606	FI658991	PCAWG.97b507d6-ef0d-49ed-8498-2cc50473e12a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46404	FI816306	d371ed072647839da9ec853844d6e9c0.IcgcOvarian_AOCS114_1DNA_7PrimaryTumour_ICGCDBPC20130205090_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46364	FI658761	PCAWG.d83ab77f-765a-432b-99cd-20af96f548ee.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46362	FI816081	4dfc0e5ade448293bbf1af99fb281c3e.S0039_20120426_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46344	FI658725	PCAWG.a5517624-3187-4958-b5d6-5bdf2cda142f.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46493	FI816316	ab90408d9bcdd90c330a103706440d07.IcgcOvarian_AOCS139_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130729001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Metastatic tumour - metastasis to distant location	OV-AU	WGS
+ovary	DO46380	FI816290	9165243325cb48a510b429d092f57500.IcgcOvarian_AOCS095_1DNA_7PrimaryTumour_ICGCDBPC20130607007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI815996	e674504117e408a8e6271c9a1d381419.S0411_20100401_1_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46542	FI816358	296b90140614269f8a04affc7eeb6ce1.IcgcOvarian_AOCS150_1DNA_12Ascites_ICGCDBDE20131003003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46571	FI816286	534495550fafc8aa53a63664ab827b58.IcgcOvarian_AOCS161_1DNA_1NormalBlood_ICGCDBDE20130904005_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46354	FI815962	981ac7c9bb8b34770f89e94eecd168d1.S0417_20110920_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46420	FI659009	PCAWG.e17a842a-9bbb-4991-b35b-eaf657b84b99.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46396	FI816064	7683f436e3fa39cebe27db12a571828c.IcgcOvarian_AOCS109_1DNA_1NormalBlood_ICGCDBPC20130205085_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46408	FI659321	PCAWG.38f73f9a-3885-4203-9a38-23dce417520c.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46404	FI659137	PCAWG.a55d65b8-6a2d-43f9-b7b2-fcfa08f81497.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46384	FI816201	1365881d398f89b1c722cb9dd7a5b736.IcgcOvarian_AOCS097_1DNA_7PrimaryTumour_ICGCDBPC20130205074_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46402	FI659129	PCAWG.b4512740-62be-4b6e-9308-669b513f3ef1.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI816174	fb76d58dc84f184359dd8655120d9b75.S0413_20110923_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46334	FI815959	2addec702b63c944ae798e10fd771860.S0449_20120411_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI816130	bf33f12775b0cd1f2535a425322a9387.IcgcOvarian_AOCS091_1DNA_7PrimaryTumour_ICGCDBPC20130205058_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI816150	d20894b867219ecf7ea8e6a0ce42ccd1.S0413_20120501_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI658835	PCAWG.69ffda6f-41a0-42b5-9d75-7be6bce7a8f5.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46370	FI816207	a5d658f2509d1dadc8fa2b7adc2332ac.IcgcOvarian_AOCS090_1DNA_1NormalBlood_ICGCDBPC20130205054_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46408	FI660134	PCAWG.38f73f9a-3885-4203-9a38-23dce417520c.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46588	FI659177	PCAWG.b9999aa7-279a-4d74-ae50-6c2ab1d27696.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI815963	e9f0764925ff01afd4d4a2dea706c663.S0449_20100414_2_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46358	FI816382	fe1c947b1cf6876e705d47cd06098149.S0414_20120424_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46408	FI816346	4679e26579224433308f3902aeaf98f1.IcgcOvarian_AOCS115_1DNA_1NormalBlood_ICGCDBPC20130205091_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46330	FI816039	b5764f518d6bfb098a12cbea1d3407e9.S0416_20120509_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI816067	ffbaef241917d773f3c8ce5da858d65a.S0039_20120501_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46611	FI659443	PCAWG.d3410632-a274-46b4-8a2e-bbcfd698cc80.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI659197	PCAWG.45957f3c-85db-47ea-8052-f36d357f4fb5.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46402	FI816314	9f696fd9d0b6b7a42acbc31a4cdb9256.IcgcOvarian_AOCS113_1DNA_7PrimaryTumour_ICGCDBPC20130205088_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46370	FI816053	f528a709ba4f579c13ff7dfbe4877a81.IcgcOvarian_AOCS090_1DNA_7PrimaryTumour_ICGCDBPC20130205055_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI815953	cb701e59e4063f79c617e48d20e8861f.S0414_20110727_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46356	FI816073	832f0c2c7adfbdd0cbdfa8fb9d98c979.S0413_20120319_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI658941	PCAWG.72142140-20a0-44d4-b2b8-b8c93e120c7d.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46576	FI659605	PCAWG.c2bf706a-27cb-4cd1-80f5-c453dc0d2e91.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46588	FI659279	PCAWG.b9999aa7-279a-4d74-ae50-6c2ab1d27696.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46374	FI816025	eec24f494adcca6a36a9562dc3c4976a.IcgcOvarian_AOCS092_1DNA_7PrimaryTumour_ICGCDBPC20130205061_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI816050	be671afb3d774d5f420ebd1d24a5d4b8.S0417_20110801_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI816332	65c28184298db59c1d0b36d77e585eab.IcgcOvarian_AOCS093_1DNA_1NormalBlood_ICGCDBPC20130205063_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46346	FI816095	9f6a627229e7dfba3c9bf683cd847336.S0417_20120509_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46611	FI658731	PCAWG.b9fa6d31-aca3-47ed-9f5f-7524270db895.STAR.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46344	FI816042	67c6fb97134002faec2558021d79645e.IcgcOvarian_AOCS065_1DNA_12Ascites_ICGCDBPC20130607008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46581	FI816344	642b3bae586091ee66b195276491452c.IcgcOvarian_AOCS163_1DNA_7PrimaryTumour_ICGCDBDE20130904017_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI659165	PCAWG.c50015e2-768a-4e11-ba67-e65fe13041b3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46346	FI816031	f37ed4969624a3b28a4e77a88893c7d5.S0417_20120509_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI816106	957f74b714515096eb99ca9c5329adb4.IcgcOvarian_AOCS093_1DNA_12Ascites_ICGCDBDE20131003001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - other	OV-AU	WGS
+ovary	DO46330	FI816046	9294c23ecbe326e9e43a11433312c28f.S0428_20120509_2_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46593	FI658989	PCAWG.5c345055-8d45-4eba-a86a-577c1043a1b2.TopHat2.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46368	FI659235	PCAWG.441247ee-d6cd-4a25-81cf-15606ee5ac4a.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46376	FI659081	PCAWG.88bd3a94-735d-4d9d-999c-34ac3aef1301.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46398	FI659089	PCAWG.a5450531-7714-4697-a404-3747feff5c99.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46556	FI816071	01117e6c0656ef38b9eedc37bf3fa746.IcgcOvarian_AOCS155_1DNA_1NormalBlood_ICGCDBPC20130701008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46412	FI816148	e13f868c34fc546d590533d1e4342683.IcgcOvarian_AOCS116_1DNA_1NormalBlood_ICGCDBPC20130205093_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46498	FI816120	a40abd1cd378e8579fdc19221e209ba3.IcgcOvarian_AOCS141_1DNA_12Ascites_ICGCDBPC20130205153_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46591	FI816336	c29b25637404d9e95840e935655d0819.IcgcOvarian_AOCS166_1DNA_1NormalBlood_ICGCDBDE20130904010_IlluminaTruSEQPCRFreeMultiplexedManual_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI815944	9eca8f2716b8adcc9668cfc1c2a8a08d.S0417_20120220_1_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46329	FI816007	6ea2bfc5256dba8e990493212ae54616.IcgcOvarian_AOCS034_1DNA_7PrimaryTumour_ICGCDBPC20130205009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46420	FI816272	265972ab9c91f7978d18e98a92822df5.IcgcOvarian_AOCS119_1DNA_12Ascites_ICGCDBPC20130205097_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46334	FI816052	3c143d46d348772118594385e83b6216.S0413_20120416_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI659243	PCAWG.4ab6f824-6fee-4623-a549-dc5f97152790.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46591	FI659698	PCAWG.73f1be4f-4458-4085-bdc7-a7776c16ee88.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI815958	0005273ab9b2ce7712fb97ad0c6550ca.S0428_20120420_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46390	FI816282	963642dd295ed45283e5b0a0af4fc82e.IcgcOvarian_AOCS106_1DNA_7PrimaryTumour_ICGCDBPC20130607003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46329	FI659229	PCAWG.9d856132-b10d-4553-8adb-7eb70edc2228.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46566	FI816177	5dc249abb4de96b5503d8fd8fa1bcf1f.IcgcOvarian_AOCS159_1DNA_1NormalBlood_ICGCDBDE20130904003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI816096	659c258d61d8fd9e0bfb1a2714f18eab.IcgcOvarian_AOCS093_1DNA_12Ascites_ICGCDBPC20130205062_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46611	FI659099	PCAWG.b9fa6d31-aca3-47ed-9f5f-7524270db895.TopHat2.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46346	FI658691	PCAWG.f3ef932e-0934-489c-99e4-aac61ed88e15.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46561	FI816360	5c543e91f120d99488337a54dc3e254d.IcgcOvarian_AOCS158_1DNA_7PrimaryTumour_ICGCDBDE20130904012_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI816003	1729ea674e601f6a96aa6fee894693f2.S0433_20110720_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI816258	d6a1c7d5cd6bd228814bfad9285e6d60.IcgcOvarian_AOCS168_1DNA_7PrimaryTumour_ICGCDBDE20131003004_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46329	FI659145	PCAWG.9d856132-b10d-4553-8adb-7eb70edc2228.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46378	FI659614	PCAWG.e32387b8-8245-4e8d-ad8f-23b1bc7060c9.TopHat2.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46376	FI658677	PCAWG.88bd3a94-735d-4d9d-999c-34ac3aef1301.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI659237	PCAWG.ae6a5683-ffe3-4f7e-8805-f440874d2060.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46398	FI816250	6cce244f340af4f602bb371dcf8fb819.IcgcOvarian_AOCS111_1DNA_1NormalBlood_ICGCDBPC20130205130_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46331	FI815992	4bf213bdbe19a01e08e92a2092b54f4c.S0416_20120320_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI659103	PCAWG.9fa26e22-4464-4c0a-a05f-5740ccbb2a6e.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46392	FI816205	73fafa8bc8a3e3da137dd3792fad9059.IcgcOvarian_AOCS107_1DNA_1NormalBlood_ICGCDBPC20130205081_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46503	FI659335	PCAWG.be332f3a-f514-4f05-903a-2289b22620bf.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI658797	PCAWG.26f905f4-29b2-47ca-a5ed-4b2ddead9667.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI659035	PCAWG.4384f910-81c8-4cad-8b2c-74408ac98356.STAR.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI816074	339ea51165a5e02b966eaf7b74d06199.IcgcOvarian_AOCS139_1DNA_1NormalBlood_ICGCDBPC20130205149_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46581	FI659688	PCAWG.71a10564-1bcb-4308-b0ea-206136702475.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI816044	7d294b8dc026ba570a9d73b354f37d98.S0428_20120517_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46356	FI816086	df8daedfbf60fbb003b383af26bcd544.S0413_20120319_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46333	FI659287	PCAWG.04f9ba57-6a52-404c-9ecf-25e7206a6979.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46388	FI816338	41b8f3b7c42160ae1cf732005b4d08a5.IcgcOvarian_AOCS105_1DNA_7PrimaryTumour_ICGCDBPC20130205078_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46390	FI816296	ce31fff7e353cf778fe56a72962c27e8.IcgcOvarian_AOCS106_1DNA_1NormalBlood_ICGCDBPC20130205079_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46342	FI658683	PCAWG.45438d60-5a04-424d-b1d8-844162d4e525.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46400	FI658777	PCAWG.f6cc0e5f-cf41-4427-977e-49405a53f3b9.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46334	FI658883	PCAWG.26f905f4-29b2-47ca-a5ed-4b2ddead9667.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI658769	PCAWG.bea8bc28-3b49-480c-a433-b4823cba0de2.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46542	FI659315	PCAWG.1f770205-fece-47c8-a12e-99b3450337b3.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46588	FI816256	681cdcddb70b5110f8fa7eb2e129d328.IcgcOvarian_AOCS165_1DNA_7PrimaryTumour_ICGCDBDE20130904019_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46416	FI816388	fd683578e36d0048a703c65dc697b452.IcgcOvarian_AOCS117_1DNA_12Ascites_ICGCDBPC20130714001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46606	FI816164	ee63698cf783b7fa73a8b410422586a2.IcgcOvarian_AOCS170_1DNA_12Ascites_ICGCDBDE20131003009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - other	OV-AU	WGS
+ovary	DO46581	FI660140	PCAWG.71a10564-1bcb-4308-b0ea-206136702475.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46328	FI816092	19ff11dd0c86fb1d02d57170abbb5e6e.S0417_20100805_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46330	FI816035	cfd0502523d06f598a5fbfda7eeedfcf.S0039_20110914_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46560	FI816254	8a4c0275d3f9822fb211991eb5029136.IcgcOvarian_AOCS157_1DNA_1NormalBlood_ICGCDBDE20130904001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46400	FI658843	PCAWG.f6cc0e5f-cf41-4427-977e-49405a53f3b9.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI658897	PCAWG.3ac9b9a1-a80e-415b-a8a5-cb8aa4878a64.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46350	FI816089	44b60e7e5abf3d1427b7a22edc56c187.S0416_20120419_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI658739	PCAWG.e202c6b8-6ac4-4a2a-840d-820a5f21c62e.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46576	FI816136	32a1b6492ae5e9efff3255e24088df48.IcgcOvarian_AOCS162_1DNA_7PrimaryTumour_ICGCDBDE20130904016_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI816000	7036f3beebac8fea84ee6bc229b4de35.S0039_20111006_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46398	FI659309	PCAWG.a5450531-7714-4697-a404-3747feff5c99.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46329	FI816219	8a70eeebaab45ccf3b3f66d4934e4357.IcgcOvarian_AOCS034_1DNA_1NormalBlood_ICGCDBPC20130205008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI816312	7bb782e44ca05a3b5e5f899231cdd261.IcgcOvarian_AOCS086_1DNA_12Ascites_ICGCDBPC20130205050_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46358	FI659117	PCAWG.8b468225-f03c-4a42-b034-746149b709eb.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46424	FI659293	PCAWG.94ab345c-3f3c-48cb-b3bd-936fcb4237d7.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46382	FI659033	PCAWG.6bfeee12-4659-4627-b314-0a011ca9bd2b.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46602	FI658873	PCAWG.111724fa-ffce-4472-ae1d-eef1f4804796.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46376	FI816110	48aec89531cc7f8e6d3e6012a87b02eb.IcgcOvarian_AOCS093_1DNA_7PrimaryTumour_ICGCDBPC20130205064_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46368	FI815975	a6935c67d102bc72e9eb50977e82d5ec.S0014_20120314_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46382	FI816021	323c3a6c1c7bbd856fe5edba77959fc7.IcgcOvarian_AOCS096_1DNA_1NormalBlood_ICGCDBPC20130205071_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46566	FI658799	PCAWG.a4a80168-7f53-4e57-9f42-dfb85ff9f405.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46333	FI816151	0bd10af7ab0f11e7ad4508059344288b.S0428_20120405_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI819372	ea8d859f36b403045467d7000858dc7f.S0417_20100702_1_Frag.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46448	FI816248	1211533d313650e3459cb1680d788abf.IcgcOvarian_AOCS128_1DNA_7PrimaryTumour_ICGCDBPC20130205112_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI658829	PCAWG.480a5111-3dd7-470a-a0b8-b6b751a18238.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46416	FI658701	PCAWG.9952a9c1-767d-4cc8-82d6-7cf5eb8f969b.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46328	FI658715	PCAWG.4ab6f824-6fee-4623-a549-dc5f97152790.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46503	FI816175	512ee45535940b613a54a6249ce87926.IcgcOvarian_AOCS142_1DNA_12Ascites_ICGCDBPC20130205155_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46581	FI816242	9ca6761d829ce849ecd30d0e71c0b3b3.IcgcOvarian_AOCS163_1DNA_1NormalBlood_ICGCDBDE20130904007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI658953	PCAWG.441247ee-d6cd-4a25-81cf-15606ee5ac4a.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46376	FI658853	PCAWG.35f758b1-becc-46d4-bd75-ec665b593765.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46390	FI658805	PCAWG.ae69d0ff-ef1a-4d53-83bc-406c830123b8.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI659247	PCAWG.3bf72221-5941-4472-bb1c-5b6976a05610.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46329	FI659289	PCAWG.dbc17fb8-3b90-4e10-8183-9bcf052a188a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI658751	PCAWG.18583ccc-e5c9-4759-824c-6851a729f377.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46364	FI816045	efb405fe8040cbf61f6b8c509f061223.S0417_20110905_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46611	FI816350	e275e57863d6be5ff8781b205dd9182e.IcgcOvarian_AOCS171_1DNA_12Ascites_ICGCDBDE20131003012_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - other	OV-AU	WGS
+ovary	DO46388	FI659047	PCAWG.032b9048-1555-4f0e-9212-bbacc4800fff.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46571	FI659107	PCAWG.d6dda3e7-5a17-41b9-8dac-e2eebf8a02cf.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI815982	442e52e7e989ece0cec7ff91f8e7864e.S0416_20120320_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46606	FI658991	PCAWG.97b507d6-ef0d-49ed-8498-2cc50473e12a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46404	FI816306	d371ed072647839da9ec853844d6e9c0.IcgcOvarian_AOCS114_1DNA_7PrimaryTumour_ICGCDBPC20130205090_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI816081	4dfc0e5ade448293bbf1af99fb281c3e.S0039_20120426_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46344	FI658725	PCAWG.a5517624-3187-4958-b5d6-5bdf2cda142f.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46493	FI816316	ab90408d9bcdd90c330a103706440d07.IcgcOvarian_AOCS139_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130729001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Metastatic tumour - metastasis to distant location	OV-AU	WGS
+ovary	DO46380	FI816290	9165243325cb48a510b429d092f57500.IcgcOvarian_AOCS095_1DNA_7PrimaryTumour_ICGCDBPC20130607007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI815996	e674504117e408a8e6271c9a1d381419.S0411_20100401_1_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46542	FI816358	296b90140614269f8a04affc7eeb6ce1.IcgcOvarian_AOCS150_1DNA_12Ascites_ICGCDBDE20131003003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46571	FI816286	534495550fafc8aa53a63664ab827b58.IcgcOvarian_AOCS161_1DNA_1NormalBlood_ICGCDBDE20130904005_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46354	FI815962	981ac7c9bb8b34770f89e94eecd168d1.S0417_20110920_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46420	FI659009	PCAWG.e17a842a-9bbb-4991-b35b-eaf657b84b99.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46396	FI816064	7683f436e3fa39cebe27db12a571828c.IcgcOvarian_AOCS109_1DNA_1NormalBlood_ICGCDBPC20130205085_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46408	FI659321	PCAWG.38f73f9a-3885-4203-9a38-23dce417520c.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46404	FI659137	PCAWG.a55d65b8-6a2d-43f9-b7b2-fcfa08f81497.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46384	FI816201	1365881d398f89b1c722cb9dd7a5b736.IcgcOvarian_AOCS097_1DNA_7PrimaryTumour_ICGCDBPC20130205074_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46402	FI659129	PCAWG.b4512740-62be-4b6e-9308-669b513f3ef1.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI816174	fb76d58dc84f184359dd8655120d9b75.S0413_20110923_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46334	FI815959	2addec702b63c944ae798e10fd771860.S0449_20120411_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI816130	bf33f12775b0cd1f2535a425322a9387.IcgcOvarian_AOCS091_1DNA_7PrimaryTumour_ICGCDBPC20130205058_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI816150	d20894b867219ecf7ea8e6a0ce42ccd1.S0413_20120501_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI658835	PCAWG.69ffda6f-41a0-42b5-9d75-7be6bce7a8f5.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46370	FI816207	a5d658f2509d1dadc8fa2b7adc2332ac.IcgcOvarian_AOCS090_1DNA_1NormalBlood_ICGCDBPC20130205054_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46408	FI660134	PCAWG.38f73f9a-3885-4203-9a38-23dce417520c.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46588	FI659177	PCAWG.b9999aa7-279a-4d74-ae50-6c2ab1d27696.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI815963	e9f0764925ff01afd4d4a2dea706c663.S0449_20100414_2_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46358	FI816382	fe1c947b1cf6876e705d47cd06098149.S0414_20120424_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46408	FI816346	4679e26579224433308f3902aeaf98f1.IcgcOvarian_AOCS115_1DNA_1NormalBlood_ICGCDBPC20130205091_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46362	FI816067	ffbaef241917d773f3c8ce5da858d65a.S0039_20120501_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46611	FI659443	PCAWG.d3410632-a274-46b4-8a2e-bbcfd698cc80.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI659197	PCAWG.45957f3c-85db-47ea-8052-f36d357f4fb5.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46402	FI816314	9f696fd9d0b6b7a42acbc31a4cdb9256.IcgcOvarian_AOCS113_1DNA_7PrimaryTumour_ICGCDBPC20130205088_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46370	FI816053	f528a709ba4f579c13ff7dfbe4877a81.IcgcOvarian_AOCS090_1DNA_7PrimaryTumour_ICGCDBPC20130205055_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI815953	cb701e59e4063f79c617e48d20e8861f.S0414_20110727_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46356	FI816073	832f0c2c7adfbdd0cbdfa8fb9d98c979.S0413_20120319_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI658941	PCAWG.72142140-20a0-44d4-b2b8-b8c93e120c7d.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46576	FI659605	PCAWG.c2bf706a-27cb-4cd1-80f5-c453dc0d2e91.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46588	FI659279	PCAWG.b9999aa7-279a-4d74-ae50-6c2ab1d27696.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46374	FI816025	eec24f494adcca6a36a9562dc3c4976a.IcgcOvarian_AOCS092_1DNA_7PrimaryTumour_ICGCDBPC20130205061_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI816050	be671afb3d774d5f420ebd1d24a5d4b8.S0417_20110801_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI816332	65c28184298db59c1d0b36d77e585eab.IcgcOvarian_AOCS093_1DNA_1NormalBlood_ICGCDBPC20130205063_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46611	FI658731	PCAWG.b9fa6d31-aca3-47ed-9f5f-7524270db895.STAR.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46344	FI816042	67c6fb97134002faec2558021d79645e.IcgcOvarian_AOCS065_1DNA_12Ascites_ICGCDBPC20130607008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46581	FI816344	642b3bae586091ee66b195276491452c.IcgcOvarian_AOCS163_1DNA_7PrimaryTumour_ICGCDBDE20130904017_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI659165	PCAWG.c50015e2-768a-4e11-ba67-e65fe13041b3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46376	FI816106	957f74b714515096eb99ca9c5329adb4.IcgcOvarian_AOCS093_1DNA_12Ascites_ICGCDBDE20131003001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - other	OV-AU	WGS
+ovary	DO46593	FI658989	PCAWG.5c345055-8d45-4eba-a86a-577c1043a1b2.TopHat2.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46368	FI659235	PCAWG.441247ee-d6cd-4a25-81cf-15606ee5ac4a.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46376	FI659081	PCAWG.88bd3a94-735d-4d9d-999c-34ac3aef1301.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46398	FI659089	PCAWG.a5450531-7714-4697-a404-3747feff5c99.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46556	FI816071	01117e6c0656ef38b9eedc37bf3fa746.IcgcOvarian_AOCS155_1DNA_1NormalBlood_ICGCDBPC20130701008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46412	FI816148	e13f868c34fc546d590533d1e4342683.IcgcOvarian_AOCS116_1DNA_1NormalBlood_ICGCDBPC20130205093_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46498	FI816120	a40abd1cd378e8579fdc19221e209ba3.IcgcOvarian_AOCS141_1DNA_12Ascites_ICGCDBPC20130205153_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46591	FI816336	c29b25637404d9e95840e935655d0819.IcgcOvarian_AOCS166_1DNA_1NormalBlood_ICGCDBDE20130904010_IlluminaTruSEQPCRFreeMultiplexedManual_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI815944	9eca8f2716b8adcc9668cfc1c2a8a08d.S0417_20120220_1_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46329	FI816007	6ea2bfc5256dba8e990493212ae54616.IcgcOvarian_AOCS034_1DNA_7PrimaryTumour_ICGCDBPC20130205009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46420	FI816272	265972ab9c91f7978d18e98a92822df5.IcgcOvarian_AOCS119_1DNA_12Ascites_ICGCDBPC20130205097_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46334	FI816052	3c143d46d348772118594385e83b6216.S0413_20120416_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI659243	PCAWG.4ab6f824-6fee-4623-a549-dc5f97152790.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46591	FI659698	PCAWG.73f1be4f-4458-4085-bdc7-a7776c16ee88.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI815958	0005273ab9b2ce7712fb97ad0c6550ca.S0428_20120420_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46390	FI816282	963642dd295ed45283e5b0a0af4fc82e.IcgcOvarian_AOCS106_1DNA_7PrimaryTumour_ICGCDBPC20130607003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46329	FI659229	PCAWG.9d856132-b10d-4553-8adb-7eb70edc2228.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46566	FI816177	5dc249abb4de96b5503d8fd8fa1bcf1f.IcgcOvarian_AOCS159_1DNA_1NormalBlood_ICGCDBDE20130904003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI816096	659c258d61d8fd9e0bfb1a2714f18eab.IcgcOvarian_AOCS093_1DNA_12Ascites_ICGCDBPC20130205062_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46611	FI659099	PCAWG.b9fa6d31-aca3-47ed-9f5f-7524270db895.TopHat2.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46561	FI816360	5c543e91f120d99488337a54dc3e254d.IcgcOvarian_AOCS158_1DNA_7PrimaryTumour_ICGCDBDE20130904012_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI816003	1729ea674e601f6a96aa6fee894693f2.S0433_20110720_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI816258	d6a1c7d5cd6bd228814bfad9285e6d60.IcgcOvarian_AOCS168_1DNA_7PrimaryTumour_ICGCDBDE20131003004_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46329	FI659145	PCAWG.9d856132-b10d-4553-8adb-7eb70edc2228.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46378	FI659614	PCAWG.e32387b8-8245-4e8d-ad8f-23b1bc7060c9.TopHat2.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46376	FI658677	PCAWG.88bd3a94-735d-4d9d-999c-34ac3aef1301.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI659237	PCAWG.ae6a5683-ffe3-4f7e-8805-f440874d2060.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46398	FI816250	6cce244f340af4f602bb371dcf8fb819.IcgcOvarian_AOCS111_1DNA_1NormalBlood_ICGCDBPC20130205130_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46331	FI815992	4bf213bdbe19a01e08e92a2092b54f4c.S0416_20120320_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI659103	PCAWG.9fa26e22-4464-4c0a-a05f-5740ccbb2a6e.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46392	FI816205	73fafa8bc8a3e3da137dd3792fad9059.IcgcOvarian_AOCS107_1DNA_1NormalBlood_ICGCDBPC20130205081_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46503	FI659335	PCAWG.be332f3a-f514-4f05-903a-2289b22620bf.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI658797	PCAWG.26f905f4-29b2-47ca-a5ed-4b2ddead9667.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI659035	PCAWG.4384f910-81c8-4cad-8b2c-74408ac98356.STAR.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI816074	339ea51165a5e02b966eaf7b74d06199.IcgcOvarian_AOCS139_1DNA_1NormalBlood_ICGCDBPC20130205149_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46581	FI659688	PCAWG.71a10564-1bcb-4308-b0ea-206136702475.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI816044	7d294b8dc026ba570a9d73b354f37d98.S0428_20120517_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46356	FI816086	df8daedfbf60fbb003b383af26bcd544.S0413_20120319_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46333	FI659287	PCAWG.04f9ba57-6a52-404c-9ecf-25e7206a6979.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46388	FI816338	41b8f3b7c42160ae1cf732005b4d08a5.IcgcOvarian_AOCS105_1DNA_7PrimaryTumour_ICGCDBPC20130205078_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46390	FI816296	ce31fff7e353cf778fe56a72962c27e8.IcgcOvarian_AOCS106_1DNA_1NormalBlood_ICGCDBPC20130205079_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46342	FI658683	PCAWG.45438d60-5a04-424d-b1d8-844162d4e525.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI658883	PCAWG.26f905f4-29b2-47ca-a5ed-4b2ddead9667.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI658769	PCAWG.bea8bc28-3b49-480c-a433-b4823cba0de2.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46542	FI659315	PCAWG.1f770205-fece-47c8-a12e-99b3450337b3.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46588	FI816256	681cdcddb70b5110f8fa7eb2e129d328.IcgcOvarian_AOCS165_1DNA_7PrimaryTumour_ICGCDBDE20130904019_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46416	FI816388	fd683578e36d0048a703c65dc697b452.IcgcOvarian_AOCS117_1DNA_12Ascites_ICGCDBPC20130714001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46606	FI816164	ee63698cf783b7fa73a8b410422586a2.IcgcOvarian_AOCS170_1DNA_12Ascites_ICGCDBDE20131003009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - other	OV-AU	WGS
+ovary	DO46581	FI660140	PCAWG.71a10564-1bcb-4308-b0ea-206136702475.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46328	FI816092	19ff11dd0c86fb1d02d57170abbb5e6e.S0417_20100805_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46560	FI816254	8a4c0275d3f9822fb211991eb5029136.IcgcOvarian_AOCS157_1DNA_1NormalBlood_ICGCDBDE20130904001_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI658897	PCAWG.3ac9b9a1-a80e-415b-a8a5-cb8aa4878a64.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46350	FI816089	44b60e7e5abf3d1427b7a22edc56c187.S0416_20120419_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI658739	PCAWG.e202c6b8-6ac4-4a2a-840d-820a5f21c62e.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46576	FI816136	32a1b6492ae5e9efff3255e24088df48.IcgcOvarian_AOCS162_1DNA_7PrimaryTumour_ICGCDBDE20130904016_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI816000	7036f3beebac8fea84ee6bc229b4de35.S0039_20111006_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46398	FI659309	PCAWG.a5450531-7714-4697-a404-3747feff5c99.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46329	FI816219	8a70eeebaab45ccf3b3f66d4934e4357.IcgcOvarian_AOCS034_1DNA_1NormalBlood_ICGCDBPC20130205008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI816312	7bb782e44ca05a3b5e5f899231cdd261.IcgcOvarian_AOCS086_1DNA_12Ascites_ICGCDBPC20130205050_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46358	FI659117	PCAWG.8b468225-f03c-4a42-b034-746149b709eb.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46424	FI659293	PCAWG.94ab345c-3f3c-48cb-b3bd-936fcb4237d7.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46382	FI659033	PCAWG.6bfeee12-4659-4627-b314-0a011ca9bd2b.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46602	FI658873	PCAWG.111724fa-ffce-4472-ae1d-eef1f4804796.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46376	FI816110	48aec89531cc7f8e6d3e6012a87b02eb.IcgcOvarian_AOCS093_1DNA_7PrimaryTumour_ICGCDBPC20130205064_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46368	FI815975	a6935c67d102bc72e9eb50977e82d5ec.S0014_20120314_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46382	FI816021	323c3a6c1c7bbd856fe5edba77959fc7.IcgcOvarian_AOCS096_1DNA_1NormalBlood_ICGCDBPC20130205071_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46566	FI658799	PCAWG.a4a80168-7f53-4e57-9f42-dfb85ff9f405.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46333	FI816151	0bd10af7ab0f11e7ad4508059344288b.S0428_20120405_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI819372	ea8d859f36b403045467d7000858dc7f.S0417_20100702_1_Frag.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46374	FI658829	PCAWG.480a5111-3dd7-470a-a0b8-b6b751a18238.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46416	FI658701	PCAWG.9952a9c1-767d-4cc8-82d6-7cf5eb8f969b.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46328	FI658715	PCAWG.4ab6f824-6fee-4623-a549-dc5f97152790.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46503	FI816175	512ee45535940b613a54a6249ce87926.IcgcOvarian_AOCS142_1DNA_12Ascites_ICGCDBPC20130205155_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46581	FI816242	9ca6761d829ce849ecd30d0e71c0b3b3.IcgcOvarian_AOCS163_1DNA_1NormalBlood_ICGCDBDE20130904007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI658953	PCAWG.441247ee-d6cd-4a25-81cf-15606ee5ac4a.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46376	FI658853	PCAWG.35f758b1-becc-46d4-bd75-ec665b593765.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46390	FI658805	PCAWG.ae69d0ff-ef1a-4d53-83bc-406c830123b8.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI659247	PCAWG.3bf72221-5941-4472-bb1c-5b6976a05610.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46329	FI659289	PCAWG.dbc17fb8-3b90-4e10-8183-9bcf052a188a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI658751	PCAWG.18583ccc-e5c9-4759-824c-6851a729f377.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46611	FI816350	e275e57863d6be5ff8781b205dd9182e.IcgcOvarian_AOCS171_1DNA_12Ascites_ICGCDBDE20131003012_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - other	OV-AU	WGS
+ovary	DO46388	FI659047	PCAWG.032b9048-1555-4f0e-9212-bbacc4800fff.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46473	FI658707	PCAWG.bdb30670-e093-42c6-b32d-7ed2c397ac93.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46404	FI658825	PCAWG.a55d65b8-6a2d-43f9-b7b2-fcfa08f81497.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46354	FI815942	cf898de524b0bb27222a9c6f424a1674.S0014_20110920_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI815969	1d4e65ada7a767ee501ecfa0f68b89a8.S0416_20120419_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46566	FI816226	559607998093679676d28d4643f62fae.IcgcOvarian_AOCS159_1DNA_7PrimaryTumour_ICGCDBDE20130904013_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46408	FI816108	caebcf98ca3ac8c4ca88b263011b6c59.IcgcOvarian_AOCS115_1DNA_7PrimaryTumour_ICGCDBPC20130205092_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46416	FI816098	dc46c397920fa3001a64a605062215f1.IcgcOvarian_AOCS117_1DNA_1NormalBlood_ICGCDBPC20130607009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI659077	PCAWG.58d35a25-1fd3-4540-b854-b1b12846156a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46368	FI815941	4edd20c1314e38b5e53d6b96bce4dcc8.S0428_20120306_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46360	FI658757	PCAWG.adf1af84-c49b-4f84-8602-5f9f2459558b.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI659011	PCAWG.04a840f5-c8ea-4988-a36c-39c9d6684cad.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46368	FI816049	1540007f44f1f00a26c8357c6579d5d5.S0411_20110711_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46602	FI816144	583495505baa4288a62de64b1ea8d47d.IcgcOvarian_AOCS169_1DNA_1NormalBlood_ICGCDBDE20131003007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46388	FI659265	PCAWG.032b9048-1555-4f0e-9212-bbacc4800fff.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46586	FI659729	PCAWG.aaa428e0-6069-46df-9852-4d47aa5d8990.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI815938	b205bd402d93fc12f723b12d10c24fe2.S0417_20120319_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46396	FI659331	PCAWG.01e50db2-06f3-45d3-85ec-ca9665660e13.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI816058	869be79944ce85e0ab91d5be42d23e80.S0413_20110923_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46542	FI660136	PCAWG.c6785c84-d769-4c34-97d0-d1ee00fc6c41.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46364	FI658863	PCAWG.d83ab77f-765a-432b-99cd-20af96f548ee.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46586	FI659669	PCAWG.aaa428e0-6069-46df-9852-4d47aa5d8990.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46412	FI659005	PCAWG.3d3fa69f-4653-4c79-96b3-aa451f149fe6.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46360	FI816093	ec771960accc7c651c0ebb33cc144e35.S0414_20110929_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46561	FI659860	PCAWG.554778f3-a699-43cc-93ac-f4bd2b8ba3d2.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46360	FI816014	4d7a149159bb5b0a6c9d984a99f1d6d0.S0414_20120405_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46354	FI658703	PCAWG.0413de9e-b480-4bda-afd0-e0ba293012c3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI815957	fe0780e69cf6aa6e414cba44a886ae5c.S0416_20120530_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46338	FI659141	PCAWG.3832d101-3c09-4121-9652-6f40029847d5.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46488	FI658889	PCAWG.5351c275-21fb-44ad-b047-927852aabbea.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46561	FI816340	32a8f1c66b9bbe0c11d269efbfc62216.IcgcOvarian_AOCS158_1DNA_1NormalBlood_ICGCDBDE20130904002_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46342	FI816091	a620775dd3b80ebce6452ad2268a2081.S0039_20120229_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI816384	22c3f399377655c08f233b617c33d739.IcgcOvarian_AOCS092_1DNA_12Ascites_ICGCDBPC20130205059_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46333	FI816036	5875d2201ff8eb0a13fd3571f30e5126.S0433_20120403_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46334	FI815979	97f11204a13021443c2ce2ee8757bfa5.S0413_20120416_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI659173	PCAWG.57271b5d-5a74-4858-95a6-96118c90e1d3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI659053	PCAWG.37670696-c57e-44ac-9376-09f45581d6e4.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46448	FI658923	PCAWG.67c9cc03-feb3-4b74-9285-0cb88cd69570.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46542	FI658817	PCAWG.1f770205-fece-47c8-a12e-99b3450337b3.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46330	FI658987	PCAWG.433e7fc8-fd85-4346-ad97-18cc025f9d05.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46342	FI816013	68bc3d094ec9ad26b37fff939750771d.S0413_20120229_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46560	FI816352	fba1024d2b9c0f75c836a0cf8c161fe1.IcgcOvarian_AOCS157_1DNA_7PrimaryTumour_ICGCDBDE20130904011_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46352	FI659333	PCAWG.8a30d91f-609b-498b-83fe-06434eb422e3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46571	FI658975	PCAWG.d6dda3e7-5a17-41b9-8dac-e2eebf8a02cf.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46350	FI815952	797d5b7233c78dbce07ff03bdd3d4e7c.S0417_20120419_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46591	FI816189	82c0fa7d90de601b8220f2b46d2d0a90.IcgcOvarian_AOCS166_1DNA_7PrimaryTumour_ICGCDBDE20130904020_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46354	FI659131	PCAWG.0413de9e-b480-4bda-afd0-e0ba293012c3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46340	FI816126	b2d40812c5fa02b10d0ad0a782ff1321.IcgcOvarian_AOCS063_1DNA_7PrimaryTumour_ICGCDBPC20130205025_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46588	FI816364	3a46251de8e97ba497a88dae7b1f39dd.IcgcOvarian_AOCS165_1DNA_1NormalBlood_ICGCDBDE20130904009_IlluminaTruSEQPCRFreeMultiplexedManual_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI659041	PCAWG.3ac9b9a1-a80e-415b-a8a5-cb8aa4878a64.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI816087	7bb88c8e88dd95c3267e2fd6d1dce0aa.S0014_20100809_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46382	FI816304	9d913b6e6e7476d3e1dcd5dddeefe626.IcgcOvarian_AOCS096_1DNA_7PrimaryTumour_ICGCDBPC20130205072_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46424	FI816278	72015b8871feef1e68c3e73bb6e4c917.IcgcOvarian_AOCS120_1DNA_1NormalBlood_ICGCDBPC20130205100_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI658885	PCAWG.af3012c4-1c27-4c55-9448-658e81a8edbc.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46328	FI815999	1a12b1d56a5014da019e700df441b4cd.S0433_20100415_1_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46386	FI816170	1077357584695e97b54cd7ac085d16d0.IcgcOvarian_AOCS104_1DNA_7PrimaryTumour_ICGCDBPC20130205076_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46396	FI659087	PCAWG.01e50db2-06f3-45d3-85ec-ca9665660e13.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI658879	PCAWG.37670696-c57e-44ac-9376-09f45581d6e4.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI659221	PCAWG.b1f90aaa-5a8a-4a0a-8153-db1d58df3119.TopHat2.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46384	FI816300	c49ce25ef4019de16d93f926647a09ed.IcgcOvarian_AOCS097_1DNA_1NormalBlood_ICGCDBPC20130205073_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46606	FI816209	e6ade4dad63ac08d5d996ad2dab5421a.IcgcOvarian_AOCS170_1DNA_7PrimaryTumour_ICGCDBDE20131003008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI658985	PCAWG.480a5111-3dd7-470a-a0b8-b6b751a18238.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46344	FI816160	ed1d041933fb824036f436c79b151782.IcgcOvarian_AOCS065_1DNA_1NormalBlood_ICGCDBPC20130205030_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46370	FI658903	PCAWG.44ccc810-8199-4ee4-9fdd-4c9115155ae1.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI816056	b939fb4617d55d1839b78b4774c61e63.IcgcOvarian_AOCS139_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130729002_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Metastatic tumour - metastasis to distant location	OV-AU	WGS
+ovary	DO46360	FI816023	49358cc295589b531fa67be27636af73.S0436_20120405_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI658865	PCAWG.45957f3c-85db-47ea-8052-f36d357f4fb5.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46330	FI815968	ceea882021949858f2d64d2c62e0fdc1.S0411_20110913_2_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46498	FI658813	PCAWG.d44718b6-4b12-4228-ab2b-ccb35bae0b17.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46352	FI658685	PCAWG.8a30d91f-609b-498b-83fe-06434eb422e3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI658689	PCAWG.04a840f5-c8ea-4988-a36c-39c9d6684cad.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46593	FI816132	94a95392179521658c06e84a88351ad3.IcgcOvarian_AOCS167_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130904024_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Metastatic tumour - metastasis to distant location	OV-AU	WGS
+ovary	DO46329	FI658981	PCAWG.dbc17fb8-3b90-4e10-8183-9bcf052a188a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46568	FI816009	0fbeb4c433ba61897f9f7fcc75ba2277.IcgcOvarian_AOCS160_1DNA_7PrimaryTumour_ICGCDBDE20130904014_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46331	FI816094	52a283bc94923401b41677209b166798.S0039_20110725_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46611	FI659438	PCAWG.d3410632-a274-46b4-8a2e-bbcfd698cc80.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46380	FI658973	PCAWG.573037f8-2859-48c2-8e9a-6da92b78ae29.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46374	FI816318	09c810a79e75a9668c3b139a241f54fb.IcgcOvarian_AOCS092_1DNA_1NormalBlood_ICGCDBPC20130205060_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI816173	7e50a35bc01ea98c98080615a7e1e48b.S0049_20100916_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI816168	79aeb9278919573715321f6bf59fb6f9.IcgcOvarian_AOCS094_1DNA_14TumourLocalRecurrence_ICGCDBPC20130205066_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - solid tissue	OV-AU	WGS
+ovary	DO46606	FI659055	PCAWG.edb28a6e-cdc9-4084-8d9e-0be1fa064776.TopHat2.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46542	FI659179	PCAWG.c6785c84-d769-4c34-97d0-d1ee00fc6c41.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46356	FI815995	8aad9dfe818ac77430b51adebd974b26.S0417_20120319_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46602	FI658947	PCAWG.111724fa-ffce-4472-ae1d-eef1f4804796.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46424	FI816162	f86b1939ae8561faf417874abd4e315c.IcgcOvarian_AOCS120_1DNA_12Ascites_ICGCDBPC20130205099_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46382	FI658915	PCAWG.6bfeee12-4659-4627-b314-0a011ca9bd2b.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46542	FI816140	2f8f3e8f84c8797abe08acf1e83ce6c7.IcgcOvarian_AOCS150_1DNA_12Ascites_ICGCDBPC20130205171_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46328	FI816080	c22b186e7fb2b21df16fcd5d2df1833f.S0417_20120403_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46591	FI659656	PCAWG.73f1be4f-4458-4085-bdc7-a7776c16ee88.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46390	FI658949	PCAWG.ae69d0ff-ef1a-4d53-83bc-406c830123b8.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI816100	2c77a5c30e56ae44e438bab120cc870b.IcgcOvarian_AOCS167_1DNA_1NormalBlood_ICGCDBDE20130904021_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46386	FI658723	PCAWG.3b3273ce-5893-41c4-ba4e-0d4b81de3f1b.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46333	FI816002	c2755af0ff95033592d9ebfd67881a03.S0428_20120405_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46358	FI816034	04b901c03d28bea38843b1c60d924560.S0413_20120517_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46342	FI815985	a30d2dfef862311c3a4ebae4ccc56226.S0436_20120227_1_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46593	FI659257	PCAWG.3416cdb2-089e-463a-8fec-0f67659118a6.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46346	FI815989	8dff52387adc7e1920fa508ad0259867.S0428_20110916_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46380	FI816228	b84560a18f7afa6dd6671d1f2a92c334.IcgcOvarian_AOCS095_1DNA_1NormalBlood_ICGCDBPC20130205069_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46493	FI659161	PCAWG.b1f90aaa-5a8a-4a0a-8153-db1d58df3119.STAR.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46342	FI816083	94d859e4e3671bd8aef4641caeda8707.S0413_20110719_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46593	FI658837	PCAWG.3416cdb2-089e-463a-8fec-0f67659118a6.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46338	FI816142	caf57fb2ec754d8732c0cce665c2689a.IcgcOvarian_AOCS061_1DNA_1NormalBlood_ICGCDBPC20130205022_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46328	FI815990	74696a7e73a90307ae1f4a411974d91f.S0039_20100826_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46416	FI659135	PCAWG.9952a9c1-767d-4cc8-82d6-7cf5eb8f969b.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46356	FI815950	22657ba458bd4b880f4627b673875e9e.S0014_20110920_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46360	FI815929	c651eaadfd469ce84f4fb472125db339.S0411_20110929_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46498	FI659217	PCAWG.bea8bc28-3b49-480c-a433-b4823cba0de2.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46448	FI659277	PCAWG.67c9cc03-feb3-4b74-9285-0cb88cd69570.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46597	FI816118	f4024e4f3622500bcd3ecea9b3d1c04b.IcgcOvarian_AOCS168_1DNA_1NormalBlood_ICGCDBDE20131003005_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46352	FI815960	b34e65356e54f18ea92715bb8335c7ff.S0414_20110802_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46402	FI816181	87f1b56e88513647cfa375984d508e63.IcgcOvarian_AOCS113_1DNA_1NormalBlood_ICGCDBPC20130205087_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46378	FI659423	PCAWG.e32387b8-8245-4e8d-ad8f-23b1bc7060c9.STAR.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI816079	20b3854dbc52b817bab02f6afaa43332.S0428_20120320_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46330	FI816015	15b8ca449d871bde3bfa2e76e45f64fc.S0416_20120509_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46488	FI816199	89819979ac9c8f20912e7d9e2e7eb213.IcgcOvarian_AOCS138_1DNA_1NormalBlood_ICGCDBPC20130607010_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI815961	ae7332ddc7a65211415468a7b1b4dd1c.S0449_20100809_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46420	FI816203	a25f5c0c7b0c84036465f2f8bd7d064f.IcgcOvarian_AOCS119_1DNA_1NormalBlood_ICGCDBPC20130205098_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46473	FI658899	PCAWG.bdb30670-e093-42c6-b32d-7ed2c397ac93.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI816076	de041435aa8bf6e7ecbd22b5436cbaaf.S0413_20110905_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46344	FI659356	PCAWG.2e366a11-2737-48d5-bbf9-34a86a3355d6.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46384	FI659067	PCAWG.a98ddf7a-e7cc-4f81-983d-ea281787329f.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46328	FI816082	d663ca05cc1bfed06faebda8b17b798f.S0413_20120501_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI816102	c23da0cd36ca9e7cae87e3c2db0b37db.IcgcOvarian_AOCS160_1DNA_1NormalBlood_ICGCDBDE20130904004_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46333	FI816059	bb533bf1e750f10fb736f6f368c228fb.S0416_20110905_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46333	FI815984	f658f90c44b5f166d56e69962a39b804.S0433_20120405_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46593	FI659299	PCAWG.5c345055-8d45-4eba-a86a-577c1043a1b2.STAR.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46368	FI815949	4f7ff48b45330ec5dcd197006fd2b0e2.S0411_20110711_2_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46360	FI815943	4f77bd0284419f5a2b86b6295530dadf.S0414_20120405_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46556	FI659382	PCAWG.63f6b5d4-33b9-4754-b34c-959bb3f29fc4.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46360	FI658965	PCAWG.adf1af84-c49b-4f84-8602-5f9f2459558b.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI816394	16de0b7667720812847cb0c43873a6cc.IcgcOvarian_AOCS086_1DNA_7PrimaryTumour_ICGCDBPC20130205052_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46606	FI659001	PCAWG.97b507d6-ef0d-49ed-8498-2cc50473e12a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI816006	b64d5d32664125b91262e895899df34d.S0449_20100414_1_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI659233	PCAWG.e0e39f2e-9709-4ee3-9e69-789831d845e7.TopHat2.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46374	FI659051	PCAWG.886afa77-527c-4a8c-b382-d61ab8c7a4be.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46342	FI815971	404020440b5440b4bc2a5b3990314109.S0413_20120229_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46333	FI815928	ee45b817dec229d22a031c873d3e9549.S0414_20110912_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46360	FI816051	f0cefb80ddcf0df84f2b0b6dc9ee307a.S0436_20120405_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46358	FI815983	c48d2ecd035bd80f2e72a48b95772142.S0428_20120424_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI658717	PCAWG.e202c6b8-6ac4-4a2a-840d-820a5f21c62e.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46344	FI816354	74341842a31669afe968db52a88334c9.IcgcOvarian_AOCS065_1DNA_7PrimaryTumour_ICGCDBPC20130205031_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI659119	PCAWG.57271b5d-5a74-4858-95a6-96118c90e1d3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46392	FI658967	PCAWG.5a67af83-88b1-4f6c-88c9-9a4ac23d8f4a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46473	FI658707	PCAWG.bdb30670-e093-42c6-b32d-7ed2c397ac93.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46404	FI658825	PCAWG.a55d65b8-6a2d-43f9-b7b2-fcfa08f81497.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46354	FI815942	cf898de524b0bb27222a9c6f424a1674.S0014_20110920_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI815969	1d4e65ada7a767ee501ecfa0f68b89a8.S0416_20120419_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46566	FI816226	559607998093679676d28d4643f62fae.IcgcOvarian_AOCS159_1DNA_7PrimaryTumour_ICGCDBDE20130904013_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46408	FI816108	caebcf98ca3ac8c4ca88b263011b6c59.IcgcOvarian_AOCS115_1DNA_7PrimaryTumour_ICGCDBPC20130205092_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46416	FI816098	dc46c397920fa3001a64a605062215f1.IcgcOvarian_AOCS117_1DNA_1NormalBlood_ICGCDBPC20130607009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI659077	PCAWG.58d35a25-1fd3-4540-b854-b1b12846156a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46368	FI815941	4edd20c1314e38b5e53d6b96bce4dcc8.S0428_20120306_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46360	FI658757	PCAWG.adf1af84-c49b-4f84-8602-5f9f2459558b.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI659011	PCAWG.04a840f5-c8ea-4988-a36c-39c9d6684cad.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46368	FI816049	1540007f44f1f00a26c8357c6579d5d5.S0411_20110711_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46602	FI816144	583495505baa4288a62de64b1ea8d47d.IcgcOvarian_AOCS169_1DNA_1NormalBlood_ICGCDBDE20131003007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46388	FI659265	PCAWG.032b9048-1555-4f0e-9212-bbacc4800fff.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46586	FI659729	PCAWG.aaa428e0-6069-46df-9852-4d47aa5d8990.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI815938	b205bd402d93fc12f723b12d10c24fe2.S0417_20120319_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46396	FI659331	PCAWG.01e50db2-06f3-45d3-85ec-ca9665660e13.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI816058	869be79944ce85e0ab91d5be42d23e80.S0413_20110923_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46542	FI660136	PCAWG.c6785c84-d769-4c34-97d0-d1ee00fc6c41.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46586	FI659669	PCAWG.aaa428e0-6069-46df-9852-4d47aa5d8990.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46412	FI659005	PCAWG.3d3fa69f-4653-4c79-96b3-aa451f149fe6.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46360	FI816093	ec771960accc7c651c0ebb33cc144e35.S0414_20110929_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46561	FI659860	PCAWG.554778f3-a699-43cc-93ac-f4bd2b8ba3d2.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46360	FI816014	4d7a149159bb5b0a6c9d984a99f1d6d0.S0414_20120405_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46354	FI658703	PCAWG.0413de9e-b480-4bda-afd0-e0ba293012c3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI815957	fe0780e69cf6aa6e414cba44a886ae5c.S0416_20120530_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46338	FI659141	PCAWG.3832d101-3c09-4121-9652-6f40029847d5.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46488	FI658889	PCAWG.5351c275-21fb-44ad-b047-927852aabbea.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46561	FI816340	32a8f1c66b9bbe0c11d269efbfc62216.IcgcOvarian_AOCS158_1DNA_1NormalBlood_ICGCDBDE20130904002_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46342	FI816091	a620775dd3b80ebce6452ad2268a2081.S0039_20120229_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI816384	22c3f399377655c08f233b617c33d739.IcgcOvarian_AOCS092_1DNA_12Ascites_ICGCDBPC20130205059_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46333	FI816036	5875d2201ff8eb0a13fd3571f30e5126.S0433_20120403_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46334	FI815979	97f11204a13021443c2ce2ee8757bfa5.S0413_20120416_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI659173	PCAWG.57271b5d-5a74-4858-95a6-96118c90e1d3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI659053	PCAWG.37670696-c57e-44ac-9376-09f45581d6e4.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46542	FI658817	PCAWG.1f770205-fece-47c8-a12e-99b3450337b3.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46342	FI816013	68bc3d094ec9ad26b37fff939750771d.S0413_20120229_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46560	FI816352	fba1024d2b9c0f75c836a0cf8c161fe1.IcgcOvarian_AOCS157_1DNA_7PrimaryTumour_ICGCDBDE20130904011_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46352	FI659333	PCAWG.8a30d91f-609b-498b-83fe-06434eb422e3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46571	FI658975	PCAWG.d6dda3e7-5a17-41b9-8dac-e2eebf8a02cf.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46350	FI815952	797d5b7233c78dbce07ff03bdd3d4e7c.S0417_20120419_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46591	FI816189	82c0fa7d90de601b8220f2b46d2d0a90.IcgcOvarian_AOCS166_1DNA_7PrimaryTumour_ICGCDBDE20130904020_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46354	FI659131	PCAWG.0413de9e-b480-4bda-afd0-e0ba293012c3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46340	FI816126	b2d40812c5fa02b10d0ad0a782ff1321.IcgcOvarian_AOCS063_1DNA_7PrimaryTumour_ICGCDBPC20130205025_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46588	FI816364	3a46251de8e97ba497a88dae7b1f39dd.IcgcOvarian_AOCS165_1DNA_1NormalBlood_ICGCDBDE20130904009_IlluminaTruSEQPCRFreeMultiplexedManual_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46366	FI659041	PCAWG.3ac9b9a1-a80e-415b-a8a5-cb8aa4878a64.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI816087	7bb88c8e88dd95c3267e2fd6d1dce0aa.S0014_20100809_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46382	FI816304	9d913b6e6e7476d3e1dcd5dddeefe626.IcgcOvarian_AOCS096_1DNA_7PrimaryTumour_ICGCDBPC20130205072_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46424	FI816278	72015b8871feef1e68c3e73bb6e4c917.IcgcOvarian_AOCS120_1DNA_1NormalBlood_ICGCDBPC20130205100_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI658885	PCAWG.af3012c4-1c27-4c55-9448-658e81a8edbc.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46328	FI815999	1a12b1d56a5014da019e700df441b4cd.S0433_20100415_1_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46386	FI816170	1077357584695e97b54cd7ac085d16d0.IcgcOvarian_AOCS104_1DNA_7PrimaryTumour_ICGCDBPC20130205076_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46396	FI659087	PCAWG.01e50db2-06f3-45d3-85ec-ca9665660e13.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46356	FI658879	PCAWG.37670696-c57e-44ac-9376-09f45581d6e4.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI659221	PCAWG.b1f90aaa-5a8a-4a0a-8153-db1d58df3119.TopHat2.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46384	FI816300	c49ce25ef4019de16d93f926647a09ed.IcgcOvarian_AOCS097_1DNA_1NormalBlood_ICGCDBPC20130205073_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46606	FI816209	e6ade4dad63ac08d5d996ad2dab5421a.IcgcOvarian_AOCS170_1DNA_7PrimaryTumour_ICGCDBDE20131003008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI658985	PCAWG.480a5111-3dd7-470a-a0b8-b6b751a18238.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46344	FI816160	ed1d041933fb824036f436c79b151782.IcgcOvarian_AOCS065_1DNA_1NormalBlood_ICGCDBPC20130205030_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46370	FI658903	PCAWG.44ccc810-8199-4ee4-9fdd-4c9115155ae1.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI816056	b939fb4617d55d1839b78b4774c61e63.IcgcOvarian_AOCS139_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130729002_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Metastatic tumour - metastasis to distant location	OV-AU	WGS
+ovary	DO46360	FI816023	49358cc295589b531fa67be27636af73.S0436_20120405_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI658865	PCAWG.45957f3c-85db-47ea-8052-f36d357f4fb5.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI658813	PCAWG.d44718b6-4b12-4228-ab2b-ccb35bae0b17.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46352	FI658685	PCAWG.8a30d91f-609b-498b-83fe-06434eb422e3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI658689	PCAWG.04a840f5-c8ea-4988-a36c-39c9d6684cad.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46593	FI816132	94a95392179521658c06e84a88351ad3.IcgcOvarian_AOCS167_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130904024_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Metastatic tumour - metastasis to distant location	OV-AU	WGS
+ovary	DO46329	FI658981	PCAWG.dbc17fb8-3b90-4e10-8183-9bcf052a188a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46568	FI816009	0fbeb4c433ba61897f9f7fcc75ba2277.IcgcOvarian_AOCS160_1DNA_7PrimaryTumour_ICGCDBDE20130904014_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46331	FI816094	52a283bc94923401b41677209b166798.S0039_20110725_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46611	FI659438	PCAWG.d3410632-a274-46b4-8a2e-bbcfd698cc80.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46380	FI658973	PCAWG.573037f8-2859-48c2-8e9a-6da92b78ae29.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46374	FI816318	09c810a79e75a9668c3b139a241f54fb.IcgcOvarian_AOCS092_1DNA_1NormalBlood_ICGCDBPC20130205060_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI816173	7e50a35bc01ea98c98080615a7e1e48b.S0049_20100916_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI816168	79aeb9278919573715321f6bf59fb6f9.IcgcOvarian_AOCS094_1DNA_14TumourLocalRecurrence_ICGCDBPC20130205066_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - solid tissue	OV-AU	WGS
+ovary	DO46606	FI659055	PCAWG.edb28a6e-cdc9-4084-8d9e-0be1fa064776.TopHat2.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46542	FI659179	PCAWG.c6785c84-d769-4c34-97d0-d1ee00fc6c41.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46356	FI815995	8aad9dfe818ac77430b51adebd974b26.S0417_20120319_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46602	FI658947	PCAWG.111724fa-ffce-4472-ae1d-eef1f4804796.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46424	FI816162	f86b1939ae8561faf417874abd4e315c.IcgcOvarian_AOCS120_1DNA_12Ascites_ICGCDBPC20130205099_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46382	FI658915	PCAWG.6bfeee12-4659-4627-b314-0a011ca9bd2b.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46542	FI816140	2f8f3e8f84c8797abe08acf1e83ce6c7.IcgcOvarian_AOCS150_1DNA_12Ascites_ICGCDBPC20130205171_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46328	FI816080	c22b186e7fb2b21df16fcd5d2df1833f.S0417_20120403_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46591	FI659656	PCAWG.73f1be4f-4458-4085-bdc7-a7776c16ee88.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46390	FI658949	PCAWG.ae69d0ff-ef1a-4d53-83bc-406c830123b8.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI816100	2c77a5c30e56ae44e438bab120cc870b.IcgcOvarian_AOCS167_1DNA_1NormalBlood_ICGCDBDE20130904021_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46386	FI658723	PCAWG.3b3273ce-5893-41c4-ba4e-0d4b81de3f1b.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46333	FI816002	c2755af0ff95033592d9ebfd67881a03.S0428_20120405_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46358	FI816034	04b901c03d28bea38843b1c60d924560.S0413_20120517_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46342	FI815985	a30d2dfef862311c3a4ebae4ccc56226.S0436_20120227_1_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46593	FI659257	PCAWG.3416cdb2-089e-463a-8fec-0f67659118a6.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46380	FI816228	b84560a18f7afa6dd6671d1f2a92c334.IcgcOvarian_AOCS095_1DNA_1NormalBlood_ICGCDBPC20130205069_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46493	FI659161	PCAWG.b1f90aaa-5a8a-4a0a-8153-db1d58df3119.STAR.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46342	FI816083	94d859e4e3671bd8aef4641caeda8707.S0413_20110719_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46593	FI658837	PCAWG.3416cdb2-089e-463a-8fec-0f67659118a6.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46338	FI816142	caf57fb2ec754d8732c0cce665c2689a.IcgcOvarian_AOCS061_1DNA_1NormalBlood_ICGCDBPC20130205022_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46328	FI815990	74696a7e73a90307ae1f4a411974d91f.S0039_20100826_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46416	FI659135	PCAWG.9952a9c1-767d-4cc8-82d6-7cf5eb8f969b.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46356	FI815950	22657ba458bd4b880f4627b673875e9e.S0014_20110920_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46360	FI815929	c651eaadfd469ce84f4fb472125db339.S0411_20110929_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46498	FI659217	PCAWG.bea8bc28-3b49-480c-a433-b4823cba0de2.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46597	FI816118	f4024e4f3622500bcd3ecea9b3d1c04b.IcgcOvarian_AOCS168_1DNA_1NormalBlood_ICGCDBDE20131003005_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46352	FI815960	b34e65356e54f18ea92715bb8335c7ff.S0414_20110802_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46402	FI816181	87f1b56e88513647cfa375984d508e63.IcgcOvarian_AOCS113_1DNA_1NormalBlood_ICGCDBPC20130205087_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46378	FI659423	PCAWG.e32387b8-8245-4e8d-ad8f-23b1bc7060c9.STAR.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI816079	20b3854dbc52b817bab02f6afaa43332.S0428_20120320_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46488	FI816199	89819979ac9c8f20912e7d9e2e7eb213.IcgcOvarian_AOCS138_1DNA_1NormalBlood_ICGCDBPC20130607010_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI815961	ae7332ddc7a65211415468a7b1b4dd1c.S0449_20100809_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46420	FI816203	a25f5c0c7b0c84036465f2f8bd7d064f.IcgcOvarian_AOCS119_1DNA_1NormalBlood_ICGCDBPC20130205098_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46473	FI658899	PCAWG.bdb30670-e093-42c6-b32d-7ed2c397ac93.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI816076	de041435aa8bf6e7ecbd22b5436cbaaf.S0413_20110905_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46344	FI659356	PCAWG.2e366a11-2737-48d5-bbf9-34a86a3355d6.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46384	FI659067	PCAWG.a98ddf7a-e7cc-4f81-983d-ea281787329f.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46328	FI816082	d663ca05cc1bfed06faebda8b17b798f.S0413_20120501_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI816102	c23da0cd36ca9e7cae87e3c2db0b37db.IcgcOvarian_AOCS160_1DNA_1NormalBlood_ICGCDBDE20130904004_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46333	FI816059	bb533bf1e750f10fb736f6f368c228fb.S0416_20110905_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46333	FI815984	f658f90c44b5f166d56e69962a39b804.S0433_20120405_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46593	FI659299	PCAWG.5c345055-8d45-4eba-a86a-577c1043a1b2.STAR.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46368	FI815949	4f7ff48b45330ec5dcd197006fd2b0e2.S0411_20110711_2_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46360	FI815943	4f77bd0284419f5a2b86b6295530dadf.S0414_20120405_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46556	FI659382	PCAWG.63f6b5d4-33b9-4754-b34c-959bb3f29fc4.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46360	FI658965	PCAWG.adf1af84-c49b-4f84-8602-5f9f2459558b.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI816394	16de0b7667720812847cb0c43873a6cc.IcgcOvarian_AOCS086_1DNA_7PrimaryTumour_ICGCDBPC20130205052_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46606	FI659001	PCAWG.97b507d6-ef0d-49ed-8498-2cc50473e12a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI816006	b64d5d32664125b91262e895899df34d.S0449_20100414_1_Frag.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI659233	PCAWG.e0e39f2e-9709-4ee3-9e69-789831d845e7.TopHat2.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46374	FI659051	PCAWG.886afa77-527c-4a8c-b382-d61ab8c7a4be.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46342	FI815971	404020440b5440b4bc2a5b3990314109.S0413_20120229_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46333	FI815928	ee45b817dec229d22a031c873d3e9549.S0414_20110912_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46360	FI816051	f0cefb80ddcf0df84f2b0b6dc9ee307a.S0436_20120405_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46358	FI815983	c48d2ecd035bd80f2e72a48b95772142.S0428_20120424_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI658717	PCAWG.e202c6b8-6ac4-4a2a-840d-820a5f21c62e.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46344	FI816354	74341842a31669afe968db52a88334c9.IcgcOvarian_AOCS065_1DNA_7PrimaryTumour_ICGCDBPC20130205031_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI659119	PCAWG.57271b5d-5a74-4858-95a6-96118c90e1d3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46392	FI658967	PCAWG.5a67af83-88b1-4f6c-88c9-9a4ac23d8f4a.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46400	FI816222	b8a0108ddf4cbbe616251ab34b4b9698.IcgcOvarian_AOCS112_1DNA_1NormalBlood_ICGCDBPC20130205132_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46362	FI815946	7a48bb8032bc54fcc9a3b07d7b4687c9.S0449_20120426_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46551	FI816232	c538b89c1edc865b6d0d09748c013a57.IcgcOvarian_AOCS153_1DNA_7PrimaryTumour_ICGCDBPC20130205176_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46388	FI816280	454f75438dfb1152a057ae9963bd1bc3.IcgcOvarian_AOCS105_1DNA_1NormalBlood_ICGCDBPC20130205077_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46593	FI816270	513695e0464b236f8ec620e6be3b56e6.IcgcOvarian_AOCS167_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130904027_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI658733	PCAWG.e0e39f2e-9709-4ee3-9e69-789831d845e7.STAR.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46412	FI659313	PCAWG.3d3fa69f-4653-4c79-96b3-aa451f149fe6.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI658845	PCAWG.9f1bfd1a-5c69-4a08-b872-1a166cd57f5a.STAR.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46342	FI816055	c288f0807ab1b661d94b588714770bc5.S0014_20120314_1_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46325	FI659185	PCAWG.0d5f3240-2f9b-4f2c-bb95-faf0131bbbfb.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46370	FI659263	PCAWG.44ccc810-8199-4ee4-9fdd-4c9115155ae1.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46380	FI659209	PCAWG.573037f8-2859-48c2-8e9a-6da92b78ae29.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46336	FI816383	fa369ee64b9b7172fbdccec1d55c8605.S0414_20120511_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46327	FI658709	PCAWG.ae6a5683-ffe3-4f7e-8805-f440874d2060.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46336	FI815998	ce59d7c67e7d441dd90571a60d7b3622.S0449_20120517_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI658773	PCAWG.fd9d1e80-6600-4a85-a4da-076ea310dad8.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46551	FI659366	PCAWG.197291e2-3108-4aad-b58b-e942dbb44335.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46368	FI815972	6b31d5c34f4e4f6effd31d3658c64248.S0436_20110711_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46338	FI816134	95f6af739d30248ea1bc10f1516bd2cb.IcgcOvarian_AOCS061_1DNA_7PrimaryTumour_ICGCDBPC20130205023_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI816246	954f7dad828a012b8badcb1f52e5aa9d.IcgcOvarian_AOCS139_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130729003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI50779	0b12474b2929eec4a782a14c5708e7be.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI1030	b2525f3804d2eb50e540affd43bf5cb5.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46390	FI9973	8000913f3bfee20913226c2724d1192d.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46586	FI14052	4efdb70f7a1e3d7c3ab196e5e0af48d3.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46404	FI13409	edeee1fb5c0921a21b2641ef0372cf80.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46561	FI28011	24c2d1a62a2c132b8fdaa1843683900d.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46364	FI48763	70d95a5ca16909c0885bd36884c8f2ae.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46360	FI27874	1bd895ec115e9c736c71f3da0c779e1a.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46473	FI22227	05bb0a991508c92f43faa30c2f104e08.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46380	FI29000	c1bd1ed5ce03f1c18e152c419b65f657.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46400	FI45572	36f10f67bf053af47705b3724d5046fe.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46396	FI33934	39575a336604e93e0131072fa5f0c391.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46346	FI20159	055369a13f4091d841c1b7ad62b240bf.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46560	FI18202	84ef1066c6c44a850c07cf348a2be714.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46400	FI45571	c54d950ecfe6d60bf2a88fc9cda8848c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46384	FI48477	a92fe26db1550200b27af2cf9879ecbf.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46542	FI48366	455dd33a27a061e9bfedd675230c8662.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46566	FI34562	9225b15c135ca726c51de50e54bf21e6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46388	FI44772	95e7b6eb4ba1a58377c697a2966ae3a5.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI50778	91ec6f42edd34b5799791571843394a7.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46402	FI2129	8eb07fe2ffe15aad197f0305f69bf485.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46611	FI15163	00a7d5c38c44b1804dc5698ddc7cb809.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46597	FI2858	9702d264f1ca2ccd195c35a67e141fcc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46338	FI53226	c27b20f3e8f8d883d7f9ffc7e33caec6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46402	FI2130	662a45110d9a03ebb6a0f7c1a885aebc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46551	FI28046	6aa2096f5f3306a22607c9018c8be2cd.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46331	FI17094	a4540ae18dad5360b667fcd7ee97a501.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46390	FI9974	df4f6f947f56c9361a3fa9a6886dba94.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46360	FI27875	67733f4578d7f79c8ddf670591291874.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46396	FI33933	27e1f711d1faa761c224510de47b429a.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46588	FI25537	9aa1b7cd730a0f7c59f93c03045c5dde.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46384	FI48476	b3d2c8d0db0f85a17cb9633192d5751c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI25519	1beb0030cd45f348775df60acbfee949.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI15838	37d052815fae9572489fc36d67bef87d.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46340	FI21121	c48f15bb591573766036c305e63f49cb.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46498	FI27221	00090ca9cfeea8cc4309985044989fb3.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46356	FI52477	75b88770f54a95e637e52910471d8112.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46424	FI514	e59fb932d2f370305f80527ae98a41d9.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46376	FI5282	97b4207af9e0934df5e67aaa198904e2.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI39098	b3bc2e9b689c6bd89029a1444e4c8251.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46352	FI51904	c08c8fa7d4d8e17218fc3ed276d9df85.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46448	FI32762	797af0f9bf8c4976ccf632071abe5a65.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46412	FI34653	be13d94be5382610fbf83f8ffa39567d.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46329	FI34151	2b10a62a493fab4116202555c6ce47fd.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46571	FI35998	6e790d872cb0ddbf25e9490ef1d86ba4.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46416	FI45553	7441677a3aed0864a23b17b84c0a28c9.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46561	FI28010	2bc154af2350c0c190b3f172cfae79d2.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46542	FI48365	c439b53742f8b249d9491d93cbaa1dd0.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46602	FI14070	6ad668eaf9579ea22d09e702406e6de1.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46493	FI22208	31e4e6a271fa54fd60f4a37765950141.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI25518	bdffd6d437c23236adcac4a4655de492.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46327	FI44114	ded870fbf0a0d8379c5f45096fa9c0cc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI15837	2a1f273c0c43efd104c2f3983c07c167.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46392	FI12538	3e84163e28d7a5910555c2187ed45fa4.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46329	FI34152	f54e5ff8eadd04483ee881a81d75d84f.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46370	FI28964	379e051abdf580b477e996a0a9733bb4.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46503	FI37666	379f661e918d3b93dca60ea033f214c7.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46581	FI2750	9cc56b4d1a131063be91dc7f60e1fb26.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46392	FI12539	9575f0efb0f91c13d1a357458e379e52.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI2857	d9f24a75032a76846350ecdc5e263d11.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46424	FI513	67c569de7bc46091b59a710323ff56c8.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46591	FI36015	ab6c6b1f111287223d9e4f036ad37f28.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46394	FI23534	198f56e26d1e123f459ce837c1873cb7.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI1031	81af215c826fb52b482798151f8bef3e.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46412	FI34654	a1ca08aa153a40f845f85cb7a82a3c33.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46404	FI13410	501411378ecf6a291d851cfa642af140.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI22209	b5c069f1a92f91f74f31f569f2487184.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46556	FI48384	5e7b9e50f2d95de77d9c5e95f871feb1.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46368	FI31922	31394ff7acdf8492ab6f5104c1965217.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46358	FI7977	a3f579fa95c5c45d0174c081d62b5cf5.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46488	FI11566	9475909a2b2e388a8f6afe0dbb174b73.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46416	FI45554	bf5b874240ec430239013f4292d4151c.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46330	FI6692	2302c05cfac5ebdcb403b8ceb2c055cf.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46591	FI36016	175ffe97f27c66f78c3a60bd768056ca.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46344	FI42345	31bd52870c601240cb7c67544adde3cc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46386	FI33952	863b9f2555f431554bff277e50de46e5.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46473	FI22226	a60741d1912452e1f392c9c6b3ad102f.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46338	FI53225	b5617a4552f51379f12cb1ffd3eb8dbc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46571	FI35997	4248d5842583815bbcce59a79ad8fa10.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI31923	4fe81b7a28e220674b33cc01ec2ee3f2.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46420	FI13427	9428be18dd545db1fb390567f460c265.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46340	FI21122	c6bfb1c8e9f0e471cdfa50ed0162b3ad.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI42720	421767dcff6718bf6f821661e9a6f560.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46352	FI51903	f2ae2f4766062fa75d7ffb4c5c223c55.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46576	FI46123	8170a9f5c9c507c7f9e38451fe1b48bb.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46586	FI14053	b148f23abc6b161e4da6f83278170e71.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46370	FI28963	7a6c1d35c1e6c467db44595b3c99f0f7.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46366	FI8016	3e75096884522dc488c5401fdcd4e178.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46606	FI4249	a0c8c91708d6ac62a40eabbf30b477a1.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46593	FI46140	9b64f2d76a052ab55bcc3366374cdd0b.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46342	FI32095	2d97dc0ce20a80d27b549feb6e5d131c.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46551	FI28047	19f056a4d86c5ff18312151a1154d305.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46386	FI33951	adfa2d07ff6601c98395e1c659f80b72.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46333	FI39529	270b13d6b8fa716b49e14c7bb76e06de.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46366	FI8017	a5d4fc663719c23c7de882834a4b66db.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46388	FI44771	19fa5a6294e5f6b382b90691705be3e2.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46498	FI27222	f457e34b80332a0f5b628596be857327.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46378	FI16909	b881287cbf93ab70cd9ef78d6e0419cd.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46576	FI46122	fab8eb520367780d7fe6f1361f17311b.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46408	FI24624	2e4ab6d2ee26291a42b9dc6e027758dd.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46398	FI34671	07f72ee8f867e8efb91f74bf9b79719e.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46331	FI17093	c1441989f14ca559d4822bf64899befe.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46566	FI34561	f635984874ee39f2aed5c0ae57d31c00.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46344	FI42344	581b5d4a62deb1fd58ca3aee34d8fe2e.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46556	FI48383	ea4f734f939c43349b29e1678ae4543c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI5281	f765c0dd840f44ca6f376d0dbb8664fe.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46336	FI816070	353d19d8002252ddc87fb7c6ac1a9f34.S0414_20120511_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI816238	8b2cf8a6c50401b6b5b75336c15c0467.IcgcOvarian_AOCS091_1DNA_12Ascites_ICGCDBPC20130205056_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46342	FI659305	PCAWG.c50015e2-768a-4e11-ba67-e65fe13041b3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46325	FI658803	PCAWG.0d5f3240-2f9b-4f2c-bb95-faf0131bbbfb.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46611	FI15164	ea0b32fdbac50418cb31247474c0eeab.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI815946	7a48bb8032bc54fcc9a3b07d7b4687c9.S0449_20120426_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46551	FI816232	c538b89c1edc865b6d0d09748c013a57.IcgcOvarian_AOCS153_1DNA_7PrimaryTumour_ICGCDBPC20130205176_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46388	FI816280	454f75438dfb1152a057ae9963bd1bc3.IcgcOvarian_AOCS105_1DNA_1NormalBlood_ICGCDBPC20130205077_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46593	FI816270	513695e0464b236f8ec620e6be3b56e6.IcgcOvarian_AOCS167_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130904027_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI658733	PCAWG.e0e39f2e-9709-4ee3-9e69-789831d845e7.STAR.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46412	FI659313	PCAWG.3d3fa69f-4653-4c79-96b3-aa451f149fe6.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI658845	PCAWG.9f1bfd1a-5c69-4a08-b872-1a166cd57f5a.STAR.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46342	FI816055	c288f0807ab1b661d94b588714770bc5.S0014_20120314_1_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46325	FI659185	PCAWG.0d5f3240-2f9b-4f2c-bb95-faf0131bbbfb.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46370	FI659263	PCAWG.44ccc810-8199-4ee4-9fdd-4c9115155ae1.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46380	FI659209	PCAWG.573037f8-2859-48c2-8e9a-6da92b78ae29.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46336	FI816383	fa369ee64b9b7172fbdccec1d55c8605.S0414_20120511_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46327	FI658709	PCAWG.ae6a5683-ffe3-4f7e-8805-f440874d2060.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46336	FI815998	ce59d7c67e7d441dd90571a60d7b3622.S0449_20120517_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI658773	PCAWG.fd9d1e80-6600-4a85-a4da-076ea310dad8.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46551	FI659366	PCAWG.197291e2-3108-4aad-b58b-e942dbb44335.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46368	FI815972	6b31d5c34f4e4f6effd31d3658c64248.S0436_20110711_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46338	FI816134	95f6af739d30248ea1bc10f1516bd2cb.IcgcOvarian_AOCS061_1DNA_7PrimaryTumour_ICGCDBPC20130205023_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI816246	954f7dad828a012b8badcb1f52e5aa9d.IcgcOvarian_AOCS139_1DNA_16TumourMetastasisToDistantLocation_ICGCDBDE20130729003_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI50779	0b12474b2929eec4a782a14c5708e7be.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI1030	b2525f3804d2eb50e540affd43bf5cb5.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46390	FI9973	8000913f3bfee20913226c2724d1192d.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46586	FI14052	4efdb70f7a1e3d7c3ab196e5e0af48d3.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46404	FI13409	edeee1fb5c0921a21b2641ef0372cf80.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46561	FI28011	24c2d1a62a2c132b8fdaa1843683900d.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46360	FI27874	1bd895ec115e9c736c71f3da0c779e1a.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46473	FI22227	05bb0a991508c92f43faa30c2f104e08.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46380	FI29000	c1bd1ed5ce03f1c18e152c419b65f657.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46396	FI33934	39575a336604e93e0131072fa5f0c391.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46560	FI18202	84ef1066c6c44a850c07cf348a2be714.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46384	FI48477	a92fe26db1550200b27af2cf9879ecbf.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46542	FI48366	455dd33a27a061e9bfedd675230c8662.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46566	FI34562	9225b15c135ca726c51de50e54bf21e6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46388	FI44772	95e7b6eb4ba1a58377c697a2966ae3a5.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46374	FI50778	91ec6f42edd34b5799791571843394a7.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46402	FI2129	8eb07fe2ffe15aad197f0305f69bf485.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46611	FI15163	00a7d5c38c44b1804dc5698ddc7cb809.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46597	FI2858	9702d264f1ca2ccd195c35a67e141fcc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46338	FI53226	c27b20f3e8f8d883d7f9ffc7e33caec6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46402	FI2130	662a45110d9a03ebb6a0f7c1a885aebc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46551	FI28046	6aa2096f5f3306a22607c9018c8be2cd.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46331	FI17094	a4540ae18dad5360b667fcd7ee97a501.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46390	FI9974	df4f6f947f56c9361a3fa9a6886dba94.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46360	FI27875	67733f4578d7f79c8ddf670591291874.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46396	FI33933	27e1f711d1faa761c224510de47b429a.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46588	FI25537	9aa1b7cd730a0f7c59f93c03045c5dde.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46384	FI48476	b3d2c8d0db0f85a17cb9633192d5751c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI25519	1beb0030cd45f348775df60acbfee949.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI15838	37d052815fae9572489fc36d67bef87d.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46340	FI21121	c48f15bb591573766036c305e63f49cb.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46498	FI27221	00090ca9cfeea8cc4309985044989fb3.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46356	FI52477	75b88770f54a95e637e52910471d8112.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46424	FI514	e59fb932d2f370305f80527ae98a41d9.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46376	FI5282	97b4207af9e0934df5e67aaa198904e2.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI39098	b3bc2e9b689c6bd89029a1444e4c8251.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46352	FI51904	c08c8fa7d4d8e17218fc3ed276d9df85.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46412	FI34653	be13d94be5382610fbf83f8ffa39567d.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46329	FI34151	2b10a62a493fab4116202555c6ce47fd.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46571	FI35998	6e790d872cb0ddbf25e9490ef1d86ba4.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46416	FI45553	7441677a3aed0864a23b17b84c0a28c9.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46561	FI28010	2bc154af2350c0c190b3f172cfae79d2.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46542	FI48365	c439b53742f8b249d9491d93cbaa1dd0.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46602	FI14070	6ad668eaf9579ea22d09e702406e6de1.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46493	FI22208	31e4e6a271fa54fd60f4a37765950141.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI25518	bdffd6d437c23236adcac4a4655de492.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46327	FI44114	ded870fbf0a0d8379c5f45096fa9c0cc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI15837	2a1f273c0c43efd104c2f3983c07c167.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46392	FI12538	3e84163e28d7a5910555c2187ed45fa4.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46329	FI34152	f54e5ff8eadd04483ee881a81d75d84f.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46370	FI28964	379e051abdf580b477e996a0a9733bb4.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46503	FI37666	379f661e918d3b93dca60ea033f214c7.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46581	FI2750	9cc56b4d1a131063be91dc7f60e1fb26.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46392	FI12539	9575f0efb0f91c13d1a357458e379e52.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46597	FI2857	d9f24a75032a76846350ecdc5e263d11.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46424	FI513	67c569de7bc46091b59a710323ff56c8.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46591	FI36015	ab6c6b1f111287223d9e4f036ad37f28.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46394	FI23534	198f56e26d1e123f459ce837c1873cb7.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI1031	81af215c826fb52b482798151f8bef3e.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46412	FI34654	a1ca08aa153a40f845f85cb7a82a3c33.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46404	FI13410	501411378ecf6a291d851cfa642af140.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46493	FI22209	b5c069f1a92f91f74f31f569f2487184.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46556	FI48384	5e7b9e50f2d95de77d9c5e95f871feb1.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46368	FI31922	31394ff7acdf8492ab6f5104c1965217.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46358	FI7977	a3f579fa95c5c45d0174c081d62b5cf5.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46488	FI11566	9475909a2b2e388a8f6afe0dbb174b73.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46416	FI45554	bf5b874240ec430239013f4292d4151c.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46591	FI36016	175ffe97f27c66f78c3a60bd768056ca.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46344	FI42345	31bd52870c601240cb7c67544adde3cc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46386	FI33952	863b9f2555f431554bff277e50de46e5.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46473	FI22226	a60741d1912452e1f392c9c6b3ad102f.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46338	FI53225	b5617a4552f51379f12cb1ffd3eb8dbc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46571	FI35997	4248d5842583815bbcce59a79ad8fa10.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI31923	4fe81b7a28e220674b33cc01ec2ee3f2.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46420	FI13427	9428be18dd545db1fb390567f460c265.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46340	FI21122	c6bfb1c8e9f0e471cdfa50ed0162b3ad.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46362	FI42720	421767dcff6718bf6f821661e9a6f560.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46352	FI51903	f2ae2f4766062fa75d7ffb4c5c223c55.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46576	FI46123	8170a9f5c9c507c7f9e38451fe1b48bb.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46586	FI14053	b148f23abc6b161e4da6f83278170e71.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46370	FI28963	7a6c1d35c1e6c467db44595b3c99f0f7.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46366	FI8016	3e75096884522dc488c5401fdcd4e178.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46606	FI4249	a0c8c91708d6ac62a40eabbf30b477a1.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46593	FI46140	9b64f2d76a052ab55bcc3366374cdd0b.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46342	FI32095	2d97dc0ce20a80d27b549feb6e5d131c.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46551	FI28047	19f056a4d86c5ff18312151a1154d305.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46386	FI33951	adfa2d07ff6601c98395e1c659f80b72.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46333	FI39529	270b13d6b8fa716b49e14c7bb76e06de.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46366	FI8017	a5d4fc663719c23c7de882834a4b66db.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46388	FI44771	19fa5a6294e5f6b382b90691705be3e2.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46498	FI27222	f457e34b80332a0f5b628596be857327.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46378	FI16909	b881287cbf93ab70cd9ef78d6e0419cd.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46576	FI46122	fab8eb520367780d7fe6f1361f17311b.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46408	FI24624	2e4ab6d2ee26291a42b9dc6e027758dd.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46398	FI34671	07f72ee8f867e8efb91f74bf9b79719e.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46331	FI17093	c1441989f14ca559d4822bf64899befe.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46566	FI34561	f635984874ee39f2aed5c0ae57d31c00.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46344	FI42344	581b5d4a62deb1fd58ca3aee34d8fe2e.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46556	FI48383	ea4f734f939c43349b29e1678ae4543c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI5281	f765c0dd840f44ca6f376d0dbb8664fe.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46336	FI816070	353d19d8002252ddc87fb7c6ac1a9f34.S0414_20120511_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI816238	8b2cf8a6c50401b6b5b75336c15c0467.IcgcOvarian_AOCS091_1DNA_12Ascites_ICGCDBPC20130205056_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46342	FI659305	PCAWG.c50015e2-768a-4e11-ba67-e65fe13041b3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46325	FI658803	PCAWG.0d5f3240-2f9b-4f2c-bb95-faf0131bbbfb.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46611	FI15164	ea0b32fdbac50418cb31247474c0eeab.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI32094	eb748a472ef4b9356911d46d9fe1477e.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46394	FI23533	478277c6066e7910cd2fe6cdd2a9b41f.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46560	FI18203	d8afd631894ec9b698227e5cff1040d5.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46488	FI11567	13458d5c6ccd01b685c15bba942f7fa7.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46354	FI7057	37f9a8ca33b0d19b90b87609b03780e5.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46362	FI42721	542b0f59086ee2907fa513c801c65f50.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI16908	efa2987d9235cafcbf4d193721479836.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46330	FI6691	4c205a8ae4ecefe6299e31f507da04f2.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46606	FI4248	c43b5028286580f19337b778ec89cbc4.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46398	FI34672	ecfebea2f0997a8c06d63d2eace639a6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI39831	3bd69ae960ce7ec44db296bc65bc8f97.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46420	FI13428	4e8a439a5d8c3ef77174684dfa3590bc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46354	FI7058	c778351fca20f94e49162488bab72458.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46382	FI38293	c76da91f93fd0a376e1564b76fb8efa9.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46350	FI39832	09d643f66c063da3084f3e50297481cf.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46503	FI37667	8850cd29bfa64ea6a624739e7c93a1b4.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46380	FI28999	64ad77486afec8906eb5bc6dd90119ba.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46382	FI38294	85257fae835c4e8482c8f446498579c0.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46334	FI47162	5b56217535b8ecf8a1f50b1f5250b0c1.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46593	FI46141	dc97ce3af2bdad1106972b7304b50d5a.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46346	FI20158	27bf288e124079dc304f9fc72ebc7362.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46588	FI25536	09aa7d81e8e60dc2bbeb7a0130b69961.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI38139	d03caf8cac381ed2d3b3d8f583219624.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46333	FI39528	8851b0e18e4074ff8bd1c07bdff6fc93.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46448	FI32761	cb7971b99c724961b122f28c045ac8bd.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI38140	01a83a1735552daa04093c7d937c6b3f.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46364	FI48762	c57844f68218de1628f75b7c8ae457a1.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46356	FI52478	733a1b009dd4c588d8a7d7968a02d2d6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46581	FI2749	6ea48dc67f6716c3c5b82aaa37800d0c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46327	FI44115	b45daaa3f09ccc023adda55ec74893aa.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46376	FI658881	PCAWG.595240a0-803a-4ff2-b78c-798cd7077c23.TopHat2.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46386	FI816288	10fecd5817c0b4dac183d935c2413610.IcgcOvarian_AOCS104_1DNA_1NormalBlood_ICGCDBPC20130205075_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46346	FI658839	PCAWG.f3ef932e-0934-489c-99e4-aac61ed88e15.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46503	FI659007	PCAWG.be332f3a-f514-4f05-903a-2289b22620bf.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI47161	d25b6bb1ba06b2ce79a8b0caf343d76a.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46380	FI816326	6a20e2f8a89c6ee6b3b4333f12078d7e.IcgcOvarian_AOCS095_1DNA_12Ascites_ICGCDBPC20130205068_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46408	FI24623	9668ff4ecd7dd9421336603dab4b5853.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46358	FI7978	6519650db215b9f6da6cceb0318e074c.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46602	FI14071	f98f78b6946b6acbfe982adbeee3b775.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI39097	29101a4aa392a8f211c788bd45a73e6c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46346	FI816084	90737f1f3fc36b083922a93b2ff1c5a4.S0039_20110914_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46561	FI660138	PCAWG.554778f3-a699-43cc-93ac-f4bd2b8ba3d2.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46576	FI816029	c0c6cbf671234473e2b1949d595c6e35.IcgcOvarian_AOCS162_1DNA_1NormalBlood_ICGCDBDE20130904006_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46350	FI816001	464fb49d0d0f6efc5fbd71da9fa64671.S0417_20110905_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI815991	f99afd3a23343f8abf1017003b1f8297.S0417_20120403_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46556	FI816211	3de2174aeb3f04201551e66c7853a9dc.IcgcOvarian_AOCS155_1DNA_12Ascites_ICGCDBPC20130701009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46358	FI815937	8013c10548ae1e106d6de721e4b60673.S0416_20110923_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46331	FI815988	7a12eab527666fd162a131df95a2eaf7.S0039_20110725_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI658927	PCAWG.af3012c4-1c27-4c55-9448-658e81a8edbc.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46380	FI658891	PCAWG.852b9de2-ad4e-4130-a8db-032f140664c3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46586	FI816310	f510d12442a2527f3f34b07d4ddb829a.IcgcOvarian_AOCS164_1DNA_7PrimaryTumour_ICGCDBDE20130904018_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46368	FI659091	PCAWG.58d35a25-1fd3-4540-b854-b1b12846156a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46571	FI816017	8c232b6b5ba8d1b6dc96d8bd7e5a45b5.IcgcOvarian_AOCS161_1DNA_7PrimaryTumour_ICGCDBDE20130904015_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46394	FI658861	PCAWG.55ca6dbe-ea95-4315-811d-d4beebb53756.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46394	FI816320	f3a8b1475c98dccdafc629e66e5795be.IcgcOvarian_AOCS108_1DNA_7PrimaryTumour_ICGCDBPC20130607005_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46394	FI658785	PCAWG.55ca6dbe-ea95-4315-811d-d4beebb53756.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46330	FI816172	b26b3794b9ce6697ce8b96ab9e888e93.S0428_20120503_1_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46606	FI816146	21ea5988e0c7cbcca7df15b550f388ec.IcgcOvarian_AOCS170_1DNA_1NormalBlood_ICGCDBDE20131003010_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46342	FI815927	aa8e962f9ffb07b12ae44731631c2f2b.S0428_20110728_2_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46334	FI815948	31a3125819ca53a35d57649f5f828d97.S0413_20110905_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46551	FI659610	PCAWG.197291e2-3108-4aad-b58b-e942dbb44335.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI816260	ae1b7946cf13002de4010e46156e9d3e.IcgcOvarian_AOCS167_1DNA_12Ascites_ICGCDBDE20130904028_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46342	FI658775	PCAWG.45438d60-5a04-424d-b1d8-844162d4e525.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46368	FI816005	2f5cbc03ac5c3be557bd0983db1584f5.S0414_20120220_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI816342	ebf54753200033b0be685142e1ade88e.IcgcOvarian_AOCS094_1DNA_7PrimaryTumour_ICGCDBPC20130205067_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI816085	7e61b6a53d6527abff6e5be510db5aab.S0039_20120229_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46586	FI816179	b64476d4ad18e3cffa74e6b28adfb729.IcgcOvarian_AOCS164_1DNA_1NormalBlood_ICGCDBDE20130904008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI816090	70931c38c8d989f065973b25843e7b77.S0428_20120306_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46380	FI659127	PCAWG.852b9de2-ad4e-4130-a8db-032f140664c3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46330	FI659123	PCAWG.433e7fc8-fd85-4346-ad97-18cc025f9d05.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI658983	PCAWG.8b468225-f03c-4a42-b034-746149b709eb.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46338	FI658807	PCAWG.3832d101-3c09-4121-9652-6f40029847d5.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI815947	2f42b01bbaca2676d939ab8b33582f7b.S0417_20100805_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46498	FI816292	f3756b7cb308cfd7ebbd593b8c2845a1.IcgcOvarian_AOCS141_1DNA_12Ascites_ICGCDBDE20131003002_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46372	FI816011	b11da6d511941ab0db475a5adb0c9457.IcgcOvarian_AOCS091_1DNA_1NormalBlood_ICGCDBPC20130205057_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46542	FI816077	969cc1fa2d96845378e66e88bb3ef023.IcgcOvarian_AOCS150_1DNA_1NormalBlood_ICGCDBPC20130205172_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46352	FI816032	eaaf4f34ddaf9b1b6a1d4fdbfa91d499.S0449_20110805_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI815945	808ab5f405b1a1f22936a02042c20f71.S0449_20120517_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46398	FI816234	05fd86c347954f7be6c6ceee9c075de8.IcgcOvarian_AOCS111_1DNA_7PrimaryTumour_ICGCDBPC20130205131_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46333	FI659167	PCAWG.04f9ba57-6a52-404c-9ecf-25e7206a6979.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI816262	6053220a397638589781f233d012467d.IcgcOvarian_AOCS141_1DNA_1NormalBlood_ICGCDBPC20130205154_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46362	FI815955	3054ed4630857f8527fa2f18f1774227.S0414_20110929_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI815954	314cdfcae1ea912eb9bbcbb55670b6ba.S0014_20100604_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46340	FI658939	PCAWG.dd5396a0-770c-4817-b6a1-937c4d2855be.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI816348	a87ae70b3434b541d267979ea7324086.IcgcOvarian_AOCS086_1DNA_1NormalBlood_ICGCDBPC20130205051_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46331	FI815986	4dc35b9b599369f1f9a8314b5b01b857.S0428_20120320_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46329	FI816322	8580602d86e4af2177c7aede24aad24e.IcgcOvarian_AOCS034_1DNA_12Ascites_ICGCDBPC20130205007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46346	FI816024	bdd829e7cd02dea43482caa42666d1db.S0436_20120511_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46325	FI815964	e45e743e5cf0c25f02d252d9299006d6.S0014_20100604_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46364	FI816004	4700417ddb8250cf08a46936430290f8.S0414_20110912_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI659003	PCAWG.35f758b1-becc-46d4-bd75-ec665b593765.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46394	FI816116	306adced35770bc9904114fd1ef32b3f.IcgcOvarian_AOCS108_1DNA_1NormalBlood_ICGCDBPC20130205083_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46396	FI816268	d78a2cf1d52142ba9dc9fa58b6d50fbc.IcgcOvarian_AOCS109_1DNA_7PrimaryTumour_ICGCDBPC20130205086_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46488	FI658729	PCAWG.5351c275-21fb-44ad-b047-927852aabbea.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46420	FI659301	PCAWG.e17a842a-9bbb-4991-b35b-eaf657b84b99.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46362	FI659239	PCAWG.9fa26e22-4464-4c0a-a05f-5740ccbb2a6e.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46402	FI658943	PCAWG.b4512740-62be-4b6e-9308-669b513f3ef1.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46340	FI658847	PCAWG.dd5396a0-770c-4817-b6a1-937c4d2855be.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI659231	PCAWG.3bf72221-5941-4472-bb1c-5b6976a05610.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46488	FI816152	a95970e6b83e701e713670cee61b6336.IcgcOvarian_AOCS138_1DNA_12Ascites_ICGCDBPC20130205146_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.oholmes.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46400	FI816236	1bea81818defc7236f623563c1657913.IcgcOvarian_AOCS112_1DNA_7PrimaryTumour_ICGCDBPC20130205133_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46602	FI816224	65c7e88ab8022c81d785072b45007930.IcgcOvarian_AOCS169_1DNA_7PrimaryTumour_ICGCDBDE20131003006_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46334	FI816088	bf2d440f42b1e90d7be88be866777ce4.S0449_20120411_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI658919	PCAWG.595240a0-803a-4ff2-b78c-798cd7077c23.STAR.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46344	FI659163	PCAWG.a5517624-3187-4958-b5d6-5bdf2cda142f.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46370	FI659241	PCAWG.34f65337-ca19-493e-8ca6-e6e28c39e5a2.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46378	FI816122	af97e87a23673773869181a3abda8c81.IcgcOvarian_AOCS094_1DNA_1NormalBlood_ICGCDBPC20130205065_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46424	FI659121	PCAWG.94ab345c-3f3c-48cb-b3bd-936fcb4237d7.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46374	FI658905	PCAWG.886afa77-527c-4a8c-b382-d61ab8c7a4be.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI658877	PCAWG.9f1bfd1a-5c69-4a08-b872-1a166cd57f5a.TopHat2.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46473	FI816213	3a13952964b7c5ab4958c72f0c1c5201.IcgcOvarian_AOCS134_1DNA_12Ascites_ICGCDBPC20130205134_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46344	FI659509	PCAWG.2e366a11-2737-48d5-bbf9-34a86a3355d6.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46566	FI658815	PCAWG.a4a80168-7f53-4e57-9f42-dfb85ff9f405.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46336	FI658979	PCAWG.fd9d1e80-6600-4a85-a4da-076ea310dad8.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46378	FI659319	PCAWG.72142140-20a0-44d4-b2b8-b8c93e120c7d.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI659125	PCAWG.69ffda6f-41a0-42b5-9d75-7be6bce7a8f5.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46551	FI816334	1663ba8594e1b6bcc7145d579e9413e1.IcgcOvarian_AOCS153_1DNA_1NormalBlood_ICGCDBPC20130205175_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46412	FI816112	52f5e33e6a70f2084d671a0f4d0bb392.IcgcOvarian_AOCS116_1DNA_7PrimaryTumour_ICGCDBPC20130205094_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46576	FI659787	PCAWG.c2bf706a-27cb-4cd1-80f5-c453dc0d2e91.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46362	FI815978	fd0f5950ded2082b7e6b99789b5b72e3.S0449_20120426_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46370	FI658859	PCAWG.34f65337-ca19-493e-8ca6-e6e28c39e5a2.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46368	FI815980	558e3be5a70e744bd0736aafa78be584.S0436_20120316_2_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46493	FI816191	71f39307843cdc9bfbf8296612051c6c.IcgcOvarian_AOCS139_1DNA_7PrimaryTumour_ICGCDBPC20130205150_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI815987	01d1d3a9b29e7473e9367169a22f5eee.S0417_20120419_2_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46346	FI815970	cc001c943e09fd50cd284513db2242d7.S0436_20120511_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46392	FI658779	PCAWG.5a67af83-88b1-4f6c-88c9-9a4ac23d8f4a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46606	FI658855	PCAWG.edb28a6e-cdc9-4084-8d9e-0be1fa064776.STAR.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46556	FI659736	PCAWG.63f6b5d4-33b9-4754-b34c-959bb3f29fc4.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46560	FI659075	PCAWG.075eab42-064d-4336-aa64-3b582a95d0e9.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46392	FI816284	b5b942203efb31cbf6431332706c42a0.IcgcOvarian_AOCS107_1DNA_7PrimaryTumour_ICGCDBPC20130607004_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46560	FI659095	PCAWG.075eab42-064d-4336-aa64-3b582a95d0e9.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI659205	PCAWG.4384f910-81c8-4cad-8b2c-74408ac98356.TopHat2.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46503	FI816264	10cba34d10618174a285547a8e51450b.IcgcOvarian_AOCS142_1DNA_1NormalBlood_ICGCDBPC20130205156_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46404	FI815931	df59b146b333f1165187bb2c0b4dae6c.IcgcOvarian_AOCS114_1DNA_1NormalBlood_ICGCDBPC20130205089_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46386	FI658895	PCAWG.3b3273ce-5893-41c4-ba4e-0d4b81de3f1b.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI659151	PCAWG.18583ccc-e5c9-4759-824c-6851a729f377.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46340	FI816252	6a8655c8088f8e8a482098c53e534335.IcgcOvarian_AOCS063_1DNA_1NormalBlood_ICGCDBPC20130205024_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46384	FI658887	PCAWG.a98ddf7a-e7cc-4f81-983d-ea281787329f.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI659073	PCAWG.d44718b6-4b12-4228-ab2b-ccb35bae0b17.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46473	FI816195	738e5de6355687ccad3b1a844be1b33b.IcgcOvarian_AOCS134_1DNA_1NormalBlood_ICGCDBPC20130205135_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46448	FI816037	3f48838274fe8d683977c55c5008c2f8.IcgcOvarian_AOCS128_1DNA_1NormalBlood_ICGCDBPC20130205111_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46350	FI815974	7e0dfcd74b89efbde5fbc0ca4856f219.S0417_20110801_2_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46611	FI815935	e102107c43cf3a266cf3a275a06fe690.IcgcOvarian_AOCS171_1DNA_1NormalBlood_ICGCDBDE20131003013_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46611	FI816217	7fc7200ef4bd66a5a5145143e8e909e5.IcgcOvarian_AOCS171_1DNA_7PrimaryTumour_ICGCDBDE20131003011_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI32094	eb748a472ef4b9356911d46d9fe1477e.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46394	FI23533	478277c6066e7910cd2fe6cdd2a9b41f.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46560	FI18203	d8afd631894ec9b698227e5cff1040d5.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46488	FI11567	13458d5c6ccd01b685c15bba942f7fa7.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46354	FI7057	37f9a8ca33b0d19b90b87609b03780e5.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46362	FI42721	542b0f59086ee2907fa513c801c65f50.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI16908	efa2987d9235cafcbf4d193721479836.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46606	FI4248	c43b5028286580f19337b778ec89cbc4.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46398	FI34672	ecfebea2f0997a8c06d63d2eace639a6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI39831	3bd69ae960ce7ec44db296bc65bc8f97.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46420	FI13428	4e8a439a5d8c3ef77174684dfa3590bc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46354	FI7058	c778351fca20f94e49162488bab72458.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46382	FI38293	c76da91f93fd0a376e1564b76fb8efa9.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46350	FI39832	09d643f66c063da3084f3e50297481cf.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46503	FI37667	8850cd29bfa64ea6a624739e7c93a1b4.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46380	FI28999	64ad77486afec8906eb5bc6dd90119ba.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46382	FI38294	85257fae835c4e8482c8f446498579c0.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46334	FI47162	5b56217535b8ecf8a1f50b1f5250b0c1.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46593	FI46141	dc97ce3af2bdad1106972b7304b50d5a.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46588	FI25536	09aa7d81e8e60dc2bbeb7a0130b69961.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI38139	d03caf8cac381ed2d3b3d8f583219624.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46333	FI39528	8851b0e18e4074ff8bd1c07bdff6fc93.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46372	FI38140	01a83a1735552daa04093c7d937c6b3f.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46356	FI52478	733a1b009dd4c588d8a7d7968a02d2d6.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46581	FI2749	6ea48dc67f6716c3c5b82aaa37800d0c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46327	FI44115	b45daaa3f09ccc023adda55ec74893aa.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46376	FI658881	PCAWG.595240a0-803a-4ff2-b78c-798cd7077c23.TopHat2.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46386	FI816288	10fecd5817c0b4dac183d935c2413610.IcgcOvarian_AOCS104_1DNA_1NormalBlood_ICGCDBPC20130205075_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46503	FI659007	PCAWG.be332f3a-f514-4f05-903a-2289b22620bf.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46334	FI47161	d25b6bb1ba06b2ce79a8b0caf343d76a.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46380	FI816326	6a20e2f8a89c6ee6b3b4333f12078d7e.IcgcOvarian_AOCS095_1DNA_12Ascites_ICGCDBPC20130205068_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46408	FI24623	9668ff4ecd7dd9421336603dab4b5853.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46358	FI7978	6519650db215b9f6da6cceb0318e074c.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46602	FI14071	f98f78b6946b6acbfe982adbeee3b775.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI39097	29101a4aa392a8f211c788bd45a73e6c.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46561	FI660138	PCAWG.554778f3-a699-43cc-93ac-f4bd2b8ba3d2.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46576	FI816029	c0c6cbf671234473e2b1949d595c6e35.IcgcOvarian_AOCS162_1DNA_1NormalBlood_ICGCDBDE20130904006_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46350	FI816001	464fb49d0d0f6efc5fbd71da9fa64671.S0417_20110905_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46328	FI815991	f99afd3a23343f8abf1017003b1f8297.S0417_20120403_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46556	FI816211	3de2174aeb3f04201551e66c7853a9dc.IcgcOvarian_AOCS155_1DNA_12Ascites_ICGCDBPC20130701009_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46358	FI815937	8013c10548ae1e106d6de721e4b60673.S0416_20110923_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46331	FI815988	7a12eab527666fd162a131df95a2eaf7.S0039_20110725_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46568	FI658927	PCAWG.af3012c4-1c27-4c55-9448-658e81a8edbc.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46380	FI658891	PCAWG.852b9de2-ad4e-4130-a8db-032f140664c3.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46586	FI816310	f510d12442a2527f3f34b07d4ddb829a.IcgcOvarian_AOCS164_1DNA_7PrimaryTumour_ICGCDBDE20130904018_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46368	FI659091	PCAWG.58d35a25-1fd3-4540-b854-b1b12846156a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46571	FI816017	8c232b6b5ba8d1b6dc96d8bd7e5a45b5.IcgcOvarian_AOCS161_1DNA_7PrimaryTumour_ICGCDBDE20130904015_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46394	FI658861	PCAWG.55ca6dbe-ea95-4315-811d-d4beebb53756.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46394	FI816320	f3a8b1475c98dccdafc629e66e5795be.IcgcOvarian_AOCS108_1DNA_7PrimaryTumour_ICGCDBPC20130607005_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46394	FI658785	PCAWG.55ca6dbe-ea95-4315-811d-d4beebb53756.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46606	FI816146	21ea5988e0c7cbcca7df15b550f388ec.IcgcOvarian_AOCS170_1DNA_1NormalBlood_ICGCDBDE20131003010_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46342	FI815927	aa8e962f9ffb07b12ae44731631c2f2b.S0428_20110728_2_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46334	FI815948	31a3125819ca53a35d57649f5f828d97.S0413_20110905_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46551	FI659610	PCAWG.197291e2-3108-4aad-b58b-e942dbb44335.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI816260	ae1b7946cf13002de4010e46156e9d3e.IcgcOvarian_AOCS167_1DNA_12Ascites_ICGCDBDE20130904028_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46342	FI658775	PCAWG.45438d60-5a04-424d-b1d8-844162d4e525.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46368	FI816005	2f5cbc03ac5c3be557bd0983db1584f5.S0414_20120220_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46378	FI816342	ebf54753200033b0be685142e1ade88e.IcgcOvarian_AOCS094_1DNA_7PrimaryTumour_ICGCDBPC20130205067_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46342	FI816085	7e61b6a53d6527abff6e5be510db5aab.S0039_20120229_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46586	FI816179	b64476d4ad18e3cffa74e6b28adfb729.IcgcOvarian_AOCS164_1DNA_1NormalBlood_ICGCDBDE20130904008_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46368	FI816090	70931c38c8d989f065973b25843e7b77.S0428_20120306_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46380	FI659127	PCAWG.852b9de2-ad4e-4130-a8db-032f140664c3.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46358	FI658983	PCAWG.8b468225-f03c-4a42-b034-746149b709eb.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46338	FI658807	PCAWG.3832d101-3c09-4121-9652-6f40029847d5.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46327	FI815947	2f42b01bbaca2676d939ab8b33582f7b.S0417_20100805_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46498	FI816292	f3756b7cb308cfd7ebbd593b8c2845a1.IcgcOvarian_AOCS141_1DNA_12Ascites_ICGCDBDE20131003002_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46372	FI816011	b11da6d511941ab0db475a5adb0c9457.IcgcOvarian_AOCS091_1DNA_1NormalBlood_ICGCDBPC20130205057_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46542	FI816077	969cc1fa2d96845378e66e88bb3ef023.IcgcOvarian_AOCS150_1DNA_1NormalBlood_ICGCDBPC20130205172_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46352	FI816032	eaaf4f34ddaf9b1b6a1d4fdbfa91d499.S0449_20110805_2_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46336	FI815945	808ab5f405b1a1f22936a02042c20f71.S0449_20120517_1_LMP.nopd.nobc.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46398	FI816234	05fd86c347954f7be6c6ceee9c075de8.IcgcOvarian_AOCS111_1DNA_7PrimaryTumour_ICGCDBPC20130205131_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46333	FI659167	PCAWG.04f9ba57-6a52-404c-9ecf-25e7206a6979.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI816262	6053220a397638589781f233d012467d.IcgcOvarian_AOCS141_1DNA_1NormalBlood_ICGCDBPC20130205154_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46362	FI815955	3054ed4630857f8527fa2f18f1774227.S0414_20110929_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46325	FI815954	314cdfcae1ea912eb9bbcbb55670b6ba.S0014_20100604_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46340	FI658939	PCAWG.dd5396a0-770c-4817-b6a1-937c4d2855be.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI816348	a87ae70b3434b541d267979ea7324086.IcgcOvarian_AOCS086_1DNA_1NormalBlood_ICGCDBPC20130205051_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46331	FI815986	4dc35b9b599369f1f9a8314b5b01b857.S0428_20120320_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46329	FI816322	8580602d86e4af2177c7aede24aad24e.IcgcOvarian_AOCS034_1DNA_12Ascites_ICGCDBPC20130205007_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46325	FI815964	e45e743e5cf0c25f02d252d9299006d6.S0014_20100604_1_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI659003	PCAWG.35f758b1-becc-46d4-bd75-ec665b593765.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46394	FI816116	306adced35770bc9904114fd1ef32b3f.IcgcOvarian_AOCS108_1DNA_1NormalBlood_ICGCDBPC20130205083_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46396	FI816268	d78a2cf1d52142ba9dc9fa58b6d50fbc.IcgcOvarian_AOCS109_1DNA_7PrimaryTumour_ICGCDBPC20130205086_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46488	FI658729	PCAWG.5351c275-21fb-44ad-b047-927852aabbea.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46420	FI659301	PCAWG.e17a842a-9bbb-4991-b35b-eaf657b84b99.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46362	FI659239	PCAWG.9fa26e22-4464-4c0a-a05f-5740ccbb2a6e.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46402	FI658943	PCAWG.b4512740-62be-4b6e-9308-669b513f3ef1.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46340	FI658847	PCAWG.dd5396a0-770c-4817-b6a1-937c4d2855be.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46331	FI659231	PCAWG.3bf72221-5941-4472-bb1c-5b6976a05610.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46488	FI816152	a95970e6b83e701e713670cee61b6336.IcgcOvarian_AOCS138_1DNA_12Ascites_ICGCDBPC20130205146_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.oholmes.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46602	FI816224	65c7e88ab8022c81d785072b45007930.IcgcOvarian_AOCS169_1DNA_7PrimaryTumour_ICGCDBDE20131003006_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46334	FI816088	bf2d440f42b1e90d7be88be866777ce4.S0449_20120411_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46376	FI658919	PCAWG.595240a0-803a-4ff2-b78c-798cd7077c23.STAR.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46344	FI659163	PCAWG.a5517624-3187-4958-b5d6-5bdf2cda142f.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46370	FI659241	PCAWG.34f65337-ca19-493e-8ca6-e6e28c39e5a2.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46378	FI816122	af97e87a23673773869181a3abda8c81.IcgcOvarian_AOCS094_1DNA_1NormalBlood_ICGCDBPC20130205065_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46424	FI659121	PCAWG.94ab345c-3f3c-48cb-b3bd-936fcb4237d7.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46374	FI658905	PCAWG.886afa77-527c-4a8c-b382-d61ab8c7a4be.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46493	FI658877	PCAWG.9f1bfd1a-5c69-4a08-b872-1a166cd57f5a.TopHat2.v1.bam	Metastatic tumour - metastasis to distant location	OV-AU	RNA-Seq
+ovary	DO46473	FI816213	3a13952964b7c5ab4958c72f0c1c5201.IcgcOvarian_AOCS134_1DNA_12Ascites_ICGCDBPC20130205134_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46344	FI659509	PCAWG.2e366a11-2737-48d5-bbf9-34a86a3355d6.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46566	FI658815	PCAWG.a4a80168-7f53-4e57-9f42-dfb85ff9f405.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46336	FI658979	PCAWG.fd9d1e80-6600-4a85-a4da-076ea310dad8.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46378	FI659319	PCAWG.72142140-20a0-44d4-b2b8-b8c93e120c7d.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46366	FI659125	PCAWG.69ffda6f-41a0-42b5-9d75-7be6bce7a8f5.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46551	FI816334	1663ba8594e1b6bcc7145d579e9413e1.IcgcOvarian_AOCS153_1DNA_1NormalBlood_ICGCDBPC20130205175_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46412	FI816112	52f5e33e6a70f2084d671a0f4d0bb392.IcgcOvarian_AOCS116_1DNA_7PrimaryTumour_ICGCDBPC20130205094_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46576	FI659787	PCAWG.c2bf706a-27cb-4cd1-80f5-c453dc0d2e91.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46362	FI815978	fd0f5950ded2082b7e6b99789b5b72e3.S0449_20120426_2_LMP.nopd.nobc.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46370	FI658859	PCAWG.34f65337-ca19-493e-8ca6-e6e28c39e5a2.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46368	FI815980	558e3be5a70e744bd0736aafa78be584.S0436_20120316_2_LMP.nopd.nobc.bam	Recurrent tumour - other	OV-AU	WGS
+ovary	DO46493	FI816191	71f39307843cdc9bfbf8296612051c6c.IcgcOvarian_AOCS139_1DNA_7PrimaryTumour_ICGCDBPC20130205150_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46350	FI815987	01d1d3a9b29e7473e9367169a22f5eee.S0417_20120419_2_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46392	FI658779	PCAWG.5a67af83-88b1-4f6c-88c9-9a4ac23d8f4a.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46606	FI658855	PCAWG.edb28a6e-cdc9-4084-8d9e-0be1fa064776.STAR.v1.bam	Primary tumour - other	OV-AU	RNA-Seq
+ovary	DO46556	FI659736	PCAWG.63f6b5d4-33b9-4754-b34c-959bb3f29fc4.STAR.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46560	FI659075	PCAWG.075eab42-064d-4336-aa64-3b582a95d0e9.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46392	FI816284	b5b942203efb31cbf6431332706c42a0.IcgcOvarian_AOCS107_1DNA_7PrimaryTumour_ICGCDBPC20130607004_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS
+ovary	DO46560	FI659095	PCAWG.075eab42-064d-4336-aa64-3b582a95d0e9.TopHat2.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46593	FI659205	PCAWG.4384f910-81c8-4cad-8b2c-74408ac98356.TopHat2.v1.bam	Recurrent tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46503	FI816264	10cba34d10618174a285547a8e51450b.IcgcOvarian_AOCS142_1DNA_1NormalBlood_ICGCDBPC20130205156_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46404	FI815931	df59b146b333f1165187bb2c0b4dae6c.IcgcOvarian_AOCS114_1DNA_1NormalBlood_ICGCDBPC20130205089_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46386	FI658895	PCAWG.3b3273ce-5893-41c4-ba4e-0d4b81de3f1b.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46372	FI659151	PCAWG.18583ccc-e5c9-4759-824c-6851a729f377.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46340	FI816252	6a8655c8088f8e8a482098c53e534335.IcgcOvarian_AOCS063_1DNA_1NormalBlood_ICGCDBPC20130205024_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46384	FI658887	PCAWG.a98ddf7a-e7cc-4f81-983d-ea281787329f.STAR.v1.bam	Primary tumour - solid tissue	OV-AU	RNA-Seq
+ovary	DO46498	FI659073	PCAWG.d44718b6-4b12-4228-ab2b-ccb35bae0b17.TopHat2.v1.bam	Recurrent tumour - other	OV-AU	RNA-Seq
+ovary	DO46473	FI816195	738e5de6355687ccad3b1a844be1b33b.IcgcOvarian_AOCS134_1DNA_1NormalBlood_ICGCDBPC20130205135_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46350	FI815974	7e0dfcd74b89efbde5fbc0ca4856f219.S0417_20110801_2_LMP.nopd.nobc.bam	Normal - EBV immortalized	OV-AU	WGS
+ovary	DO46611	FI815935	e102107c43cf3a266cf3a275a06fe690.IcgcOvarian_AOCS171_1DNA_1NormalBlood_ICGCDBDE20131003013_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Normal - blood derived	OV-AU	WGS
+ovary	DO46611	FI816217	7fc7200ef4bd66a5a5145143e8e909e5.IcgcOvarian_AOCS171_1DNA_7PrimaryTumour_ICGCDBDE20131003011_IlluminaIGNOutsourcing_NoCapture_Bwa_HiSeq.jpearson.bam	Primary tumour - solid tissue	OV-AU	WGS

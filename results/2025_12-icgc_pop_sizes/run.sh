@@ -2,7 +2,6 @@
 set -euo pipefail
 t_0=$(date +%s)
 
-# Initialize variables to avoid unbound variable errors
 script=/data/jake/genefusion/scripts/python/fids2specimen_type_counts.py
 input_file=""
 output_file=""

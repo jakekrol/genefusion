@@ -1,0 +1,660 @@
+kidney	DO46945	FI52495	PCAWG.a08814fc-dd34-11e4-a193-4b7ec254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47000	FI816430	762317b88fcd6c78cde2c20b302d24ca.C0085N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46838	FI742967	aac0da0111d8c2522efdd528c82410d2.B00EXZU_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47159	FI816764	56761cb8c4d29985b5e74982480329a3.C0086T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47243	FI816730	9461b4aa26e26b2355b0f7e882736c14.C0043T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46830	FI30135	PCAWG.315e251c-dd34-11e4-8733-c477c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46856	FI38552	PCAWG.125737ba-dd31-11e4-89b6-1786c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46873	FI817006	cb95fcd5660fb5dfca13153d24700b36.C0020N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46957	FI816486	3384d798beb1dba054b88f901e1b836b.C0063N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47076	FI816502	85f1ce2657faa539b9e3ee771a9c5826.C0040N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI743047	2e8efa3884f718547108f5945c2f754a.B00E4HP_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47249	FI40637	e2e17bc410e704685f9b957488b46b8f.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47048	FI742911	77ceba3d258af1647f8e90e4a8f2010a.B00EY05_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47096	FI377843	59923c7b00ac878de745c85a52dc5401.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46917	FI742881	ca2ad77fc3ff3e6a3c991242a6be6a27.B00E4HG_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46913	FI38160	PCAWG.3d92b40e-dd45-11e4-9303-a2f8c154ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47124	FI816604	41be603928117c4dcd1abd0dd63f68cf.C0066N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46853	FI49355	PCAWG.e423ab9a-dd39-11e4-bf6e-a5ccc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47128	FI817218	122d45c15c7f86686b8b7a35d57bbeb8.C0068T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46957	FI743083	e04a5f9f7cf0cf171c4dfd35919f3617.B00E4JB_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47052	FI816688	97228c753866dc52622c73b5ef86b578.C0026T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47104	FI816460	931b4bc60ecaec97eb10f899c7f6c686.C0054N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI30136	PCAWG.f1592852-dd35-11e4-86fb-ab90c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46905	FI816462	6a311f906cd4a191ac3ec621591062ee.C0035N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46832	FI17509	PCAWG.97335f5e-dd3b-11e4-81c2-094dc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47174	FI30868	PCAWG.edc5da14-dd30-11e4-802c-d583c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46827	FI816646	e0a053bdad65376e118c827df5abb4fa.C0001N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47088	FI816368	f8a951fecccd026b913cfcfc96342acc.C0046T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47159	FI12862	PCAWG.672047d2-dd31-11e4-a528-528cc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46893	FI16927	PCAWG.488551fa-dd3b-11e4-92d0-56e5c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46827	FI6091	PCAWG.b739fca4-dd36-11e4-bdd3-639cc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46893	FI16926	PCAWG.488551fa-dd3b-11e4-92d0-56e5c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47004	FI742887	17eeba319bce29c8adf9d578bde8ee75.B00EXZI_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46917	FI43218	PCAWG.21ed5056-dd31-11e4-9b95-a486c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI5701	PCAWG.0a2585da-dd34-11e4-9a98-3d75c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47132	FI742969	7f13e1b3ec19a604311552d9333f1253.B00E4JG_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47174	FI816694	861e11ed1a4fe57b95dd962d5ea359e2.C0100T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46859	FI816582	7245f6d11bf8bb98ef032d5980c75db5.C0016N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47159	FI816596	e160f995d4888d7bb0a1afab9b94ab8e.C0086N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI742985	66fe58cc2a90b663a91eb882ffed2eb7.B00E4IS_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46980	FI743065	9ad7bd84a01bc36a074ad8000a7bbefe.B00E4J8_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI5704	PCAWG.bddb49d8-dd35-11e4-8a0b-c68dc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47088	FI816472	354a8fc67aba28e59b2f6000ab518bd1.C0046N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46853	FI49356	PCAWG.e423ab9a-dd39-11e4-bf6e-a5ccc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47016	FI5241	PCAWG.c0c0d3b6-dd30-11e4-9c60-4680c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46913	FI38159	PCAWG.3d92b40e-dd45-11e4-9303-a2f8c154ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46984	FI41882	PCAWG.b1c3906e-dd3b-11e4-ab75-128ac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46869	FI816458	69e3345a5aa21f41f235f4c1a115ca14.C0019N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46957	FI7266	PCAWG.51646a30-dd23-11e4-99bf-1e4972a8e264.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47171	FI12035	PCAWG.2cc4814c-dd41-11e4-9754-6df6c154ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47128	FI743079	ce5fbc35a9f15681038fb45106e22b90.B00E4H9_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47000	FI22983	PCAWG.68efeb76-dd3b-11e4-b826-78e9c154ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46832	FI816584	9ff91c4a0661759ed4305abc8f66f904.C0005N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46961	FI742885	8a8e494d5a2abfe02c5ce958c95d09d8.B00EXZV_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46873	FI7754	PCAWG.0f9810da-dd45-11e4-9f99-0cbfc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI742895	a2859c13c065aa78c170778f08e00c51.B00EY0T_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47072	FI48513	PCAWG.0f70b7bc-dd39-11e4-a3d0-e5bdc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47249	FI816592	52117824abdf3b165c51effe0cb2e7d7.C0022N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46856	FI816724	19b8f31c85e03b31442e6bf596fab98d.C0015T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47080	FI742973	2bf99422f0b2c638b83a484ed2a06459.B00EY06_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46913	FI816528	c9015548b54677e9547c17c7231e0e78.C0039N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46925	FI816524	211d037d0efcf6348bcadc0890816332.C0047T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47156	FI34523	PCAWG.820f2112-dd3b-11e4-8b45-55fcc154ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46844	FI742955	3b02d187e94a3d94905c8f03e3d7a796.B00E4IP_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47243	FI816610	c18b03da1b91904e1708ed289408c9e3.C0043N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47068	FI18010	PCAWG.0c1e8a2c-dd38-11e4-aef9-76afc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46826	FI816600	6e3730ba1583a047ec7c4528dd935104.C0064N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46838	FI743109	4b4858bd8db1e3db047bc5a7cd210451.B00EXZX_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46869	FI816466	c48908859b9dc596ad7e94c9f80e237a.C0019T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46925	FI32704	PCAWG.27dd46c2-dd38-11e4-afb0-c9b0c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46897	FI816464	f45adadded1a10e4644075baa55499f9.C0031T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46977	FI816504	05be107b5c1cbdba7154422a9bd1618f.C0073N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46945	FI742993	2dd5006f7d15c947dd83a5fa5b4ca5e1.B00E4IT_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47174	FI30869	PCAWG.edc5da14-dd30-11e4-802c-d583c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46834	FI743045	ed856e32da6b8d16e6b7593f3e1c3adf.B00E4HE_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46838	FI30114	PCAWG.9e6e8eb4-dd3c-11e4-b28a-39d4c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46856	FI38550	PCAWG.c70f52e2-dd30-11e4-a68c-ed80c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47108	FI816588	92db5af0923711896339f565e2aa36aa.C0056N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI816696	81389c61d2cd09be11e81785b502122e.C0079T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI742957	f85311fadbdaf473ceb55cd470702922.B00E4HL_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47159	FI12864	PCAWG.4cf1f35a-dd32-11e4-ba86-a69fc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI19154	PCAWG.6a09899e-dd32-11e4-b507-70a1c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI816500	351f962615a11da1626d008713e9c7b4.C0037N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47132	FI816568	078a581f56d9231ce7f3975d9a39c124.C0070T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI816412	37164036c45033378171e82f2dd141ce.C0036T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI816718	cf240269dc603847bf2214b18d7f5745.C0013T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46834	FI816482	3b663a45aa42d4e9f610fcad327965fd.C0006N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47174	FI30866	PCAWG.bec08a02-dd30-11e4-911e-ff7fc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47092	FI816484	02a8f954a0a33bb0ecae12b7dbb7814d.C0048N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47016	FI5243	PCAWG.f98658a6-dd30-11e4-a293-9384c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46913	FI38158	PCAWG.c5b68258-dd44-11e4-b71d-a98ac254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47156	FI742987	17ca02e33b4161c676319761b02402c5.B00EXZN_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46885	FI816698	516995c2b4c273e17c0aa4bb31e2fe25.C0025T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46859	FI742891	179c4b0edf50be03fa736ad01c81175f.B00E4JC_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46992	FI816748	02461373d2dc3c97454adb8919a0dc6b.C0081T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46961	FI40040	PCAWG.2e3c96c2-dd3c-11e4-83c5-0de4c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46827	FI6093	PCAWG.480ae108-dd37-11e4-8061-88a4c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46832	FI17510	PCAWG.97335f5e-dd3b-11e4-81c2-094dc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46853	FI742975	93e898b297a0fd79a9689c995a1dd59c.B00E4J7_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46937	FI816494	1509ff4b868fc011d075a5033b2c5201.C0053N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47104	FI816366	c13c3086fc85825163aac39bdfd4f863.C0054T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI743001	ed6045819426913d9dbfc98e8e2640d4.B00E4IA_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46873	FI742843	b1697c625bc87432b16af61d4850fa75.B00EY1K_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46945	FI816542	cadec7bdec12a6206385d6b27eb49f61.C0057N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46945	FI52497	PCAWG.a3d9a13c-dd36-11e4-b04f-109bc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46856	FI816518	4f9d058374862569c73ec87617f1d0a9.C0015N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46905	FI28542	PCAWG.e096370e-dd34-11e4-8386-dc81c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46992	FI742883	f8f1433af12464ec701e7d485ae96330.B00EXZS_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47000	FI816430	762317b88fcd6c78cde2c20b302d24ca.C0085N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47159	FI816764	56761cb8c4d29985b5e74982480329a3.C0086T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47243	FI816730	9461b4aa26e26b2355b0f7e882736c14.C0043T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46830	FI30135	PCAWG.315e251c-dd34-11e4-8733-c477c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47076	FI816502	85f1ce2657faa539b9e3ee771a9c5826.C0040N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI743047	2e8efa3884f718547108f5945c2f754a.B00E4HP_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47124	FI816604	41be603928117c4dcd1abd0dd63f68cf.C0066N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47128	FI817218	122d45c15c7f86686b8b7a35d57bbeb8.C0068T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47104	FI816460	931b4bc60ecaec97eb10f899c7f6c686.C0054N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI30136	PCAWG.f1592852-dd35-11e4-86fb-ab90c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47174	FI30868	PCAWG.edc5da14-dd30-11e4-802c-d583c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47159	FI12862	PCAWG.672047d2-dd31-11e4-a528-528cc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46909	FI5701	PCAWG.0a2585da-dd34-11e4-9a98-3d75c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47132	FI742969	7f13e1b3ec19a604311552d9333f1253.B00E4JG_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47174	FI816694	861e11ed1a4fe57b95dd962d5ea359e2.C0100T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47159	FI816596	e160f995d4888d7bb0a1afab9b94ab8e.C0086N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI742985	66fe58cc2a90b663a91eb882ffed2eb7.B00E4IS_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI5704	PCAWG.bddb49d8-dd35-11e4-8a0b-c68dc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46984	FI41882	PCAWG.b1c3906e-dd3b-11e4-ab75-128ac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46869	FI816458	69e3345a5aa21f41f235f4c1a115ca14.C0019N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47128	FI743079	ce5fbc35a9f15681038fb45106e22b90.B00E4H9_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47000	FI22983	PCAWG.68efeb76-dd3b-11e4-b826-78e9c154ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI742885	8a8e494d5a2abfe02c5ce958c95d09d8.B00EXZV_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46850	FI742895	a2859c13c065aa78c170778f08e00c51.B00EY0T_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47072	FI48513	PCAWG.0f70b7bc-dd39-11e4-a3d0-e5bdc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47156	FI34523	PCAWG.820f2112-dd3b-11e4-8b45-55fcc154ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47243	FI816610	c18b03da1b91904e1708ed289408c9e3.C0043N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47068	FI18010	PCAWG.0c1e8a2c-dd38-11e4-aef9-76afc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46826	FI816600	6e3730ba1583a047ec7c4528dd935104.C0064N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46869	FI816466	c48908859b9dc596ad7e94c9f80e237a.C0019T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI30869	PCAWG.edc5da14-dd30-11e4-802c-d583c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47108	FI816588	92db5af0923711896339f565e2aa36aa.C0056N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI816696	81389c61d2cd09be11e81785b502122e.C0079T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI742957	f85311fadbdaf473ceb55cd470702922.B00E4HL_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47159	FI12864	PCAWG.4cf1f35a-dd32-11e4-ba86-a69fc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI19154	PCAWG.6a09899e-dd32-11e4-b507-70a1c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI816500	351f962615a11da1626d008713e9c7b4.C0037N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47132	FI816568	078a581f56d9231ce7f3975d9a39c124.C0070T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI816412	37164036c45033378171e82f2dd141ce.C0036T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI816718	cf240269dc603847bf2214b18d7f5745.C0013T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI30866	PCAWG.bec08a02-dd30-11e4-911e-ff7fc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47092	FI816484	02a8f954a0a33bb0ecae12b7dbb7814d.C0048N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47156	FI742987	17ca02e33b4161c676319761b02402c5.B00EXZN_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46885	FI816698	516995c2b4c273e17c0aa4bb31e2fe25.C0025T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46992	FI816748	02461373d2dc3c97454adb8919a0dc6b.C0081T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46961	FI40040	PCAWG.2e3c96c2-dd3c-11e4-83c5-0de4c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47104	FI816366	c13c3086fc85825163aac39bdfd4f863.C0054T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI743001	ed6045819426913d9dbfc98e8e2640d4.B00E4IA_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46992	FI742883	f8f1433af12464ec701e7d485ae96330.B00EXZS_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46873	FI7752	PCAWG.abe86d64-dd44-11e4-a915-77f9c154ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46844	FI27623	PCAWG.12f95f04-dd36-11e4-98e6-a292c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47060	FI816672	c4988fd89a3721f9fd98823816f4ba90.C0030T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47072	FI743081	dfc421b84b222c475e9bd4ca0b7d33a8.B00E4JD_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46945	FI52496	PCAWG.a08814fc-dd34-11e4-a193-4b7ec254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47156	FI816414	654e1424a6c8e39c87fcb75ef13685f1.C0084T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI742897	092ead7c732c911f7c49913169904406.B00EY1B_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47132	FI9307	PCAWG.b9bf94f6-dd37-11e4-971f-fdaac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI743099	31c9e609e379b32c4bfc017696083937.B00E4HZ_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI816552	2fe7f3808d13650f7ca8c906abcfc83f.C0004N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47016	FI5242	PCAWG.c0c0d3b6-dd30-11e4-9c60-4680c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46929	FI816404	0a26187d465aeabb6659ace994fd6f8f.C0049T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46984	FI743011	769cbab3cbda4c95af61eea3c752e774.B00EXZP_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47096	FI20553	PCAWG.7d199b76-dd39-11e4-abc6-dec3c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI742945	56e0462551b81c949e30cdb842ace37c.B00E4IN_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI742917	581d56fc19669f513f8fb473a520e0c5.B00E4IR_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46897	FI816456	6d7932ebe58983c0fe8c608fab87153f.C0031N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46832	FI816416	cfaa1e9dee1b7fe3710e19b3e272574f.C0005T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI816498	b3f009f1f219824011acf8f9070fbf5d.C0068N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47052	FI816544	7a1933c518df9e7e48696e35322262ce.C0026N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46917	FI43216	PCAWG.cc51e6b6-dd30-11e4-a12d-8581c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46893	FI742947	62fa67f1d8146bcd0a9a21b88c6bddd7.B00EXZK_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI19153	PCAWG.6a09899e-dd32-11e4-b507-70a1c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI40038	PCAWG.d7f647c6-dd3c-11e4-b839-fc21c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47080	FI816564	3b2b0355a47b8075f53ae9579a2f5446.C0042T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47171	FI12034	PCAWG.2cc4814c-dd41-11e4-9754-6df6c154ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47072	FI816534	1e4651d577cb06395ea6686c322965fa.C0038T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI18011	PCAWG.0c1e8a2c-dd38-11e4-aef9-76afc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46925	FI816428	89e62e9f928e9e26b00c3b5cedca4687.C0047N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47068	FI816436	141839ea660a5eba56c81a9bfeb2c74a.C0036N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47096	FI742997	7369240f7217e3e89ae0d607b0cfe84b.B00E4J2_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46980	FI816444	0fc0600690daa9d0e50fef0c17b43e13.C0075N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46873	FI742951	85d6aaada2fd405d55ecb57c9db096ca.B00EY1D_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46905	FI816468	81ec67fbc78be877dbd737bc60dbc1b9.C0035T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47048	FI816536	e364cc88427fd30362888b44d13b1b78.C0024T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46988	FI816548	276187e88f547438f11722882ece49cc.C0079N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46893	FI816422	11b087bba8e61a238844c5d6b3f0bad8.C0029N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46913	FI742981	b944f27d87d6c5bb30ae1fa3df7cd364.B00EY1L_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI816514	8eeac796f91c3298ef2ef413500ad7a9.C0013N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46957	FI816684	28dbe707049f2566078b5309cf24163d.C0063T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46953	FI31820	PCAWG.02f756c2-dd33-11e4-ba49-b4bec254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47004	FI33547	PCAWG.38f55f38-dd3a-11e4-8250-fdd5c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46832	FI743067	2d189c2866fdcac2e467bba2f8ad9b0b.B00EXZO_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46957	FI7268	PCAWG.b667a400-dd38-11e4-b441-e4b8c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46881	FI816614	172b1e660b2b902212cad357e9f1acf1.C0023N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46881	FI816712	6a5b79f5dbbec33e14a44974e669710a.C0023T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47171	FI12037	PCAWG.b7dd85b0-dd43-11e4-b5dc-6576c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46838	FI30113	PCAWG.f5410668-dd3c-11e4-a82c-0324c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47174	FI743037	58f02d25548c847d29160be955736332.B00E4HA_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46905	FI28540	PCAWG.7d143632-dd33-11e4-9a2f-82a9c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46953	FI742935	0632098ff9f1b6b69e85f0b60ae82427.B00E4I4_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46834	FI6600	PCAWG.05caea96-dd31-11e4-8808-f884c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46984	FI41881	PCAWG.b1c3906e-dd3b-11e4-ab75-128ac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46838	FI30112	PCAWG.f5410668-dd3c-11e4-a82c-0324c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46853	FI49358	PCAWG.3f002856-dd38-11e4-951f-29b2c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46992	FI12750	PCAWG.4f86b36c-dd3c-11e4-903e-879fc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46929	FI816370	fe556f9a31f382bed44d9dcb260d2964.C0049N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47000	FI742929	20f935ff48958e15131e3d7de16a46b3.B00EXZL_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI816766	66b9ed405ccd87e56e62e478db615371.C0004T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46844	FI816516	214e97f48af38501da714e547fbb4611.C0011N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47004	FI816656	aa5cd452aacbedfde5676ccc3c546896.C0091N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47000	FI816406	6cea2de97a3ef54163e545bfb7cd9e31.C0085T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46961	FI742853	164f15dc32d6b2ff116eee9962dfd74b.B00EXZR_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI8268	PCAWG.77203c42-dd44-11e4-bfb1-1da7c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47171	FI816648	f9f7befbfb8cb5c548d1f2123a24bffd.C0098N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI742977	cdb9cd8bbcac04fc6615e9dfd2cefd96.B00E4IB_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47004	FI33549	PCAWG.fea0bed0-dd3a-11e4-a09d-2be1c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47159	FI12861	PCAWG.672047d2-dd31-11e4-a528-528cc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46827	FI6094	PCAWG.480ae108-dd37-11e4-8061-88a4c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46838	FI30115	PCAWG.9e6e8eb4-dd3c-11e4-b28a-39d4c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47159	FI742965	f7557701df0173f78cb0e7670bbfa74f.B00E4HO_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47004	FI816678	d0b13584fc43faf1c740f88958718b3d.C0091T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46905	FI28543	PCAWG.e096370e-dd34-11e4-8386-dc81c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47243	FI21011	d2089effb4731444e3a29e6b6be35263.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46909	FI816668	a4b67d69595480077b3694fd49d4bec6.C0037T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46984	FI816562	460809396e09850f5cfcfff8962e26cb.C0077T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46977	FI816634	4d194bf0d1c666f003f0051dfc0aacd3.C0073T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46844	FI27622	PCAWG.12f95f04-dd36-11e4-98e6-a292c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46980	FI9251	PCAWG.833cdc6c-dd38-11e4-8ffa-a3b5c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46834	FI816734	9a4f38969fc46454624c7d3cb4810873.C0006T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47016	FI743003	3461a4936ae9f119a7a19fb163a0fe11.B00E4GZ_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46992	FI816602	c8449a0a9635dd7f910eca653e4b0976.C0081N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46836	FI816488	6b787f2849b517e84303121bb2e81f4e.C0007N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46853	FI816410	41f2e574aa3e92af9fbfaecaf768b324.C0014N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47174	FI30867	PCAWG.bec08a02-dd30-11e4-911e-ff7fc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47004	FI33550	PCAWG.fea0bed0-dd3a-11e4-a09d-2be1c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47080	FI32683	PCAWG.8c1fb552-dd3d-11e4-bf8a-302dc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47156	FI34522	PCAWG.820f2112-dd3b-11e4-8b45-55fcc154ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47132	FI816434	ff51db564c1e519fd8d49d8c2ecb3a83.C0070N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47124	FI816702	055c752a255dbf252bc0669a79a1e330.C0066T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46827	FI6092	PCAWG.b739fca4-dd36-11e4-bdd3-639cc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46905	FI742937	48999d2c1ccdd1cdc13e517e35d53d58.B00E4I7_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47068	FI742959	77189f854a32b3eecaa3c4d9b3fd94b1.B00E4J0_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46826	FI816742	53caf4edb2462adbca3fcc2b61093bc0.C0064T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47048	FI17844	PCAWG.5c778b04-dd3d-11e4-9aa6-fd29c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46980	FI9250	PCAWG.833cdc6c-dd38-11e4-8ffa-a3b5c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46827	FI816714	f2c65dab3b411bc7d3878285f870d6e2.C0001T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47000	FI22982	PCAWG.68efeb76-dd3b-11e4-b826-78e9c154ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46925	FI32703	PCAWG.27dd46c2-dd38-11e4-afb0-c9b0c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46921	FI816480	cc3749e18c221f860e4349f1917e6302.C0045N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46834	FI6597	PCAWG.c3844876-dd30-11e4-9ea1-9b80c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47165	FI816474	8a49b2a27127c3f021e1a0c100af6f72.C0094N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47171	FI742995	90804774dea95e34ab79266426e5df89.B00EY0Q_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46873	FI7753	PCAWG.0f9810da-dd45-11e4-9f99-0cbfc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46859	FI27642	PCAWG.da2e717a-dd38-11e4-bd8b-d8bac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46905	FI28541	PCAWG.7d143632-dd33-11e4-9a2f-82a9c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47076	FI816704	9c846b33c9c172be4f7160d256b71107.C0040T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9855	PCAWG.8631d5c8-dd36-11e4-b9d1-4999c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46933	FI816506	75d42398db507ce339b188238301ee2b.C0051N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI743029	16759ead3e95e4e0af069b6a2f047b67.B00E4IG_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46830	FI30137	PCAWG.f1592852-dd35-11e4-86fb-ab90c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47072	FI743081	dfc421b84b222c475e9bd4ca0b7d33a8.B00E4JD_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47156	FI816414	654e1424a6c8e39c87fcb75ef13685f1.C0084T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI742897	092ead7c732c911f7c49913169904406.B00EY1B_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47132	FI9307	PCAWG.b9bf94f6-dd37-11e4-971f-fdaac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI743099	31c9e609e379b32c4bfc017696083937.B00E4HZ_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI816552	2fe7f3808d13650f7ca8c906abcfc83f.C0004N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46929	FI816404	0a26187d465aeabb6659ace994fd6f8f.C0049T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46984	FI743011	769cbab3cbda4c95af61eea3c752e774.B00EXZP_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI742945	56e0462551b81c949e30cdb842ace37c.B00E4IN_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI742917	581d56fc19669f513f8fb473a520e0c5.B00E4IR_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47128	FI816498	b3f009f1f219824011acf8f9070fbf5d.C0068N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI19153	PCAWG.6a09899e-dd32-11e4-b507-70a1c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI40038	PCAWG.d7f647c6-dd3c-11e4-b839-fc21c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47072	FI816534	1e4651d577cb06395ea6686c322965fa.C0038T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI18011	PCAWG.0c1e8a2c-dd38-11e4-aef9-76afc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47068	FI816436	141839ea660a5eba56c81a9bfeb2c74a.C0036N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI816548	276187e88f547438f11722882ece49cc.C0079N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46850	FI816514	8eeac796f91c3298ef2ef413500ad7a9.C0013N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46953	FI31820	PCAWG.02f756c2-dd33-11e4-ba49-b4bec254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47174	FI743037	58f02d25548c847d29160be955736332.B00E4HA_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46953	FI742935	0632098ff9f1b6b69e85f0b60ae82427.B00E4I4_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46984	FI41881	PCAWG.b1c3906e-dd3b-11e4-ab75-128ac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46992	FI12750	PCAWG.4f86b36c-dd3c-11e4-903e-879fc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46929	FI816370	fe556f9a31f382bed44d9dcb260d2964.C0049N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47000	FI742929	20f935ff48958e15131e3d7de16a46b3.B00EXZL_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI816766	66b9ed405ccd87e56e62e478db615371.C0004T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47000	FI816406	6cea2de97a3ef54163e545bfb7cd9e31.C0085T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46961	FI742853	164f15dc32d6b2ff116eee9962dfd74b.B00EXZR_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI8268	PCAWG.77203c42-dd44-11e4-bfb1-1da7c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46830	FI742977	cdb9cd8bbcac04fc6615e9dfd2cefd96.B00E4IB_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47159	FI12861	PCAWG.672047d2-dd31-11e4-a528-528cc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47159	FI742965	f7557701df0173f78cb0e7670bbfa74f.B00E4HO_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47243	FI21011	d2089effb4731444e3a29e6b6be35263.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46909	FI816668	a4b67d69595480077b3694fd49d4bec6.C0037T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46984	FI816562	460809396e09850f5cfcfff8962e26cb.C0077T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46992	FI816602	c8449a0a9635dd7f910eca653e4b0976.C0081N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47174	FI30867	PCAWG.bec08a02-dd30-11e4-911e-ff7fc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47156	FI34522	PCAWG.820f2112-dd3b-11e4-8b45-55fcc154ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47132	FI816434	ff51db564c1e519fd8d49d8c2ecb3a83.C0070N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47124	FI816702	055c752a255dbf252bc0669a79a1e330.C0066T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI742959	77189f854a32b3eecaa3c4d9b3fd94b1.B00E4J0_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46826	FI816742	53caf4edb2462adbca3fcc2b61093bc0.C0064T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47000	FI22982	PCAWG.68efeb76-dd3b-11e4-b826-78e9c154ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI816704	9c846b33c9c172be4f7160d256b71107.C0040T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9855	PCAWG.8631d5c8-dd36-11e4-b9d1-4999c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46933	FI816506	75d42398db507ce339b188238301ee2b.C0051N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI743029	16759ead3e95e4e0af069b6a2f047b67.B00E4IG_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46830	FI30137	PCAWG.f1592852-dd35-11e4-86fb-ab90c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47108	FI816618	78261b9490a2eba2a66bd7bb079fba91.C0056T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46827	FI742907	53274df62bb0abd1ac997cf418b8fcaa.B00E4J5_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47128	FI6979	PCAWG.5450eefe-dd31-11e4-a095-c18ac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46893	FI816566	60e13e7704dbf60820040f8b3bc03f41.C0029T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47096	FI20552	PCAWG.7d199b76-dd39-11e4-abc6-dec3c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46925	FI742857	0816d9799dc21f81c5210205af504766.B00E4J6_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46853	FI742867	e12f44809a132609d05534ee5b48b10a.B00E4JH_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46988	FI19152	PCAWG.7c2e0376-dd31-11e4-b027-b78fc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47128	FI6980	PCAWG.5450eefe-dd31-11e4-a095-c18ac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46856	FI38551	PCAWG.125737ba-dd31-11e4-89b6-1786c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46933	FI816624	011dac9eb2c6781c5bc6fc4d1a06f50b.C0051T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47150	FI816470	511f9ad05f53edd558dc3901f1fec8e2.C0080N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46859	FI27643	PCAWG.da2e717a-dd38-11e4-bd8b-d8bac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46844	FI27620	PCAWG.42ccd9ba-dd34-11e4-9779-7278c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46885	FI816554	3a557b8b2c9446b224c399528d538418.C0025N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46838	FI816738	cd3cb80b84241cf7481575b4e027f5f9.C0009T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46917	FI43217	PCAWG.21ed5056-dd31-11e4-9b95-a486c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46834	FI6598	PCAWG.c3844876-dd30-11e4-9ea1-9b80c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47080	FI32684	PCAWG.8c1fb552-dd3d-11e4-bf8a-302dc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46856	FI743087	39f8778afeed7ffb6c15c2d668a10b71.B00E4H3_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47096	FI20554	b14cfdd8175dc91390e9b27e5c47e307.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47080	FI816448	59a7deb5906debc6cb329a28d193e8eb.C0042N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46945	FI742943	d909bb638ff23e1fd7e61c827b8c2a43.B00E4IH_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46917	FI43215	PCAWG.cc51e6b6-dd30-11e4-a12d-8581c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46897	FI18106	f16b18ee0ee010c22a075c8d823013a6.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46961	FI40041	e5eac9b0cae00e76859b824904ba5be8.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46913	FI38162	24206c00ba336a4c6dc9c4803ec10782.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI18013	92bb14b5859183fc773780169e2a204f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46925	FI32705	1694399d77c87060ad94057954cbbb64.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47108	FI9916	890e5a5fbb30aa666567f5b8185bcd8a.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47092	FI21030	2f9794380fe8471932ae1f788ac7f423.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46917	FI43220	d5d31b088b9e8b657f5991d2cf065ad7.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47064	FI38311	3fe7a421e73dfdb611f13df9f889b931.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46844	FI27625	68076d4ceba4b3d7cc8fe0dcf9b2d6c6.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46984	FI41883	df67e502150361988165a20e8e86c9d5.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47072	FI48515	e49691f7eecd59f2e055c2d7400232b3.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46992	FI12751	b5430523f578f486c6dc60b14f35da4c.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI19156	3d2cd1ad55544244f85a61533fc7f7d8.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47052	FI50227	2a09d4304d68ec52feb6430e06bbe0a7.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47159	FI12866	d355d3945471acc8f2e93f8ce8352e84.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI8270	a966910677830bdfad0f3a160ab80eb3.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46929	FI10321	3a5f883b50d8f2a4e7d64d3cc0ac1eb5.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46977	FI30463	ab90cdbe08d4bd0bf7b489ecc0ab7116.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47060	FI28285	267ef973f15ab8e56836861a74b07925.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46929	FI10320	6a139de3603ceb8c7389bb7b02dfe1ad.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47016	FI5246	df750ba268f998ebb9c9412a421f00b7.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46827	FI6095	6e7e2e09c1b59afdda8266a5d2706de2.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46885	FI7734	0503681686d5e8ed64d81c1e9de9b6e1.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI18012	343d80944cedb830495c2b1451cd58bb.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46859	FI27645	6bd0e573cda2fd36a174232f6e0b9052.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46893	FI16929	6cbeb5a34a30d729811228aed3e03f56.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46856	FI38554	8a4e304e7b2742d2214aad519ba2f00f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46957	FI7270	95a56dafa80f508aeac37e89d0095709.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46917	FI43219	8d3ced1cc60197cb35e40849145acaa0.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46881	FI29017	c5af1a503cb477f0e2ac58f94495cb07.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46921	FI52938	8804bb2a325ef56b1f981436b9789ac6.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47048	FI17846	da8029c54facc107917f83a1fd17fb39.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47000	FI22984	660e32f5b23682e4dcc6a3fa985ef5fb.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47171	FI12038	7483d6eaed70fb1a9c6867482af11daa.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46885	FI7733	1cfa61d29b0831cf577f74612f31d63f.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47150	FI23461	5afef28b154b18f47a1ce5d6ceb7cb34.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46873	FI7755	58a21a5b49fa63c2c1a3eed59fb345f9.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47153	FI1614	e705648b8cc47e890620ec3034c7de35.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47048	FI17845	022de08f3c95ae512011a2dd9bc86338.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47132	FI9309	a050d0dd0e0b874258281562a53f484f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46913	FI38161	311d8f2f7c58b4421e535a9caa1c9c07.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46873	FI7756	8ea16ac550b2b3d510c1725df56780d7.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46980	FI9253	263c7819f789a7bc3aa64461ce6b6258.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46832	FI17511	40ce5391ee080c871e6d2f3db688b39e.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47080	FI32686	ddd43551423371e07df552bec3120dc9.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47108	FI9915	9632a84b7822b571f9cfc3568c8a2707.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47159	FI12865	b7290047215a92c04c5142b5da6b1eae.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47016	FI5245	7d24a96314f883cab1aeb9f6188962cf.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46859	FI27644	c61385994de24557c5533918a58aeba7.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46869	FI48627	de2bd386d4169d125702ad9ff6e0975f.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47124	FI31841	0c47b220a674b7279d3dd9d69b2096bc.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46893	FI16928	2723fd1041679be18c57520800aed8dc.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46953	FI31823	e2d5527b18c34c9d4a3d011d7bc547c4.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47000	FI22985	c54906b26a05a871474b6f57f834f0ae.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46881	FI29018	a5f6869b0be0cff02a716d6f3be0e70e.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47104	FI32515	378a4e066e75e3774d8fd3d2908905f6.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47080	FI32685	9d57cacab672366049c8ec929871c9d0.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46853	FI49360	f4302dd1f8bc7a028414ab256b8bbdb7.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47060	FI28284	a1088369377b091b6b655de7dfd457c1.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46992	FI12752	c26d69b48e5781cd0e82b65f7fe0f8c6.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47104	FI32516	07d087b93d98c42ce913d7a701ab676c.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46844	FI27624	0dc819c79712473ce1bff420e6ea9dd9.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46897	FI18107	04cff53effc961b358a2e3d6bd00dd31.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47088	FI43237	c505327b572f4b8fb1fb1886a00dba84.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI30139	323820a8550325f4866df8c9941be2cb.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46853	FI49359	da62d68cfe82c85b8d35305e7928ca38.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46953	FI31822	ec3a81589a4de48e9a36cff7b8c8c356.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47088	FI43238	d17f8182260946fe0afcf92801f3b584.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46869	FI48628	330dd80b8f4b5006ccb9376afcc47e6b.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47171	FI12039	34ad267ee277a17b7897ab5aff03be9f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47150	FI23462	fc1bb603af6e2f7cf13f5d19dbf3364a.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9857	29bf7e053050f300b31dc56d0f9e26ad.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46832	FI17512	2b7e042a60717181c863cad3694f6add.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46980	FI9252	c33813ec9c2d8575cf2d93824c9fef5e.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47153	FI1615	f01f09f649267fa23f7b5e29e59a008f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46945	FI52499	3e0c8b95f490893f0f8751689c69ef8d.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46826	FI51810	24cb152802fdcce3c1dd4d7d9f913ef0.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46834	FI6602	e25a121804fbe800c7e64de63214d9b2.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI6981	1f36a4f6107bf32ae1b56daa9a8eb428.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46836	FI49886	f430b540832147637ef72fcfc6dcba1a.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47004	FI33552	647d175d6d9c2be44b02fd2359e9634c.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46957	FI7269	c43a7a3c9e028b1ef501a6aa77950281.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47249	FI40638	97053d52c04a4b70431384b4caac0a86.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46937	FI42702	89dabaf2a4fac0b0a522a2d9f40923ac.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46838	FI30116	77a8732ac9b1f46f05ef87d9e2447ffc.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47165	FI4361	e57fe3ddadf4d492e70d72bffdb29c07.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI8271	f3667c8ae76e5a4cb0d125247e2c3308.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46826	FI51809	a5b92191c24f6d593a83f0657b16be91.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47076	FI52919	1450d7cb4ab8c60be86146e108979e0b.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46937	FI42703	8c604cb4ed9e2fc7c133f751ad7e8dde.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46917	FI816492	3d7cf4ad90dcaa730fa44e21222c5b4a.C0041N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47108	FI743049	39f47bb156319924a9645676e03c888b.B00E4IZ_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47108	FI816618	78261b9490a2eba2a66bd7bb079fba91.C0056T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI6979	PCAWG.5450eefe-dd31-11e4-a095-c18ac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI19152	PCAWG.7c2e0376-dd31-11e4-b027-b78fc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47128	FI6980	PCAWG.5450eefe-dd31-11e4-a095-c18ac254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46933	FI816624	011dac9eb2c6781c5bc6fc4d1a06f50b.C0051T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47150	FI816470	511f9ad05f53edd558dc3901f1fec8e2.C0080N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46885	FI816554	3a557b8b2c9446b224c399528d538418.C0025N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46961	FI40041	e5eac9b0cae00e76859b824904ba5be8.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47068	FI18013	92bb14b5859183fc773780169e2a204f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47108	FI9916	890e5a5fbb30aa666567f5b8185bcd8a.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47092	FI21030	2f9794380fe8471932ae1f788ac7f423.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46984	FI41883	df67e502150361988165a20e8e86c9d5.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47072	FI48515	e49691f7eecd59f2e055c2d7400232b3.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46992	FI12751	b5430523f578f486c6dc60b14f35da4c.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46988	FI19156	3d2cd1ad55544244f85a61533fc7f7d8.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47159	FI12866	d355d3945471acc8f2e93f8ce8352e84.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI8270	a966910677830bdfad0f3a160ab80eb3.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46929	FI10321	3a5f883b50d8f2a4e7d64d3cc0ac1eb5.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46929	FI10320	6a139de3603ceb8c7389bb7b02dfe1ad.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46885	FI7734	0503681686d5e8ed64d81c1e9de9b6e1.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47068	FI18012	343d80944cedb830495c2b1451cd58bb.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47000	FI22984	660e32f5b23682e4dcc6a3fa985ef5fb.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46885	FI7733	1cfa61d29b0831cf577f74612f31d63f.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47150	FI23461	5afef28b154b18f47a1ce5d6ceb7cb34.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47153	FI1614	e705648b8cc47e890620ec3034c7de35.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47132	FI9309	a050d0dd0e0b874258281562a53f484f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47108	FI9915	9632a84b7822b571f9cfc3568c8a2707.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47159	FI12865	b7290047215a92c04c5142b5da6b1eae.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46869	FI48627	de2bd386d4169d125702ad9ff6e0975f.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47124	FI31841	0c47b220a674b7279d3dd9d69b2096bc.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46953	FI31823	e2d5527b18c34c9d4a3d011d7bc547c4.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47000	FI22985	c54906b26a05a871474b6f57f834f0ae.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47104	FI32515	378a4e066e75e3774d8fd3d2908905f6.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46992	FI12752	c26d69b48e5781cd0e82b65f7fe0f8c6.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47104	FI32516	07d087b93d98c42ce913d7a701ab676c.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46830	FI30139	323820a8550325f4866df8c9941be2cb.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46953	FI31822	ec3a81589a4de48e9a36cff7b8c8c356.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46869	FI48628	330dd80b8f4b5006ccb9376afcc47e6b.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47150	FI23462	fc1bb603af6e2f7cf13f5d19dbf3364a.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9857	29bf7e053050f300b31dc56d0f9e26ad.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47153	FI1615	f01f09f649267fa23f7b5e29e59a008f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46826	FI51810	24cb152802fdcce3c1dd4d7d9f913ef0.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI6981	1f36a4f6107bf32ae1b56daa9a8eb428.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46850	FI8271	f3667c8ae76e5a4cb0d125247e2c3308.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46826	FI51809	a5b92191c24f6d593a83f0657b16be91.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47076	FI52919	1450d7cb4ab8c60be86146e108979e0b.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47108	FI743049	39f47bb156319924a9645676e03c888b.B00E4IZ_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46905	FI28545	a53824dd7b1e808f98c6a170fcdb8342.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47092	FI21029	a6746343467c449bccb5e2373df1155e.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47174	FI30871	d22cac613223c878fc1544ac3cee4938.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI5706	1a3771426f70969949035825ecf67d43.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46988	FI19155	6a714396fa51376b88b8aabdc2177beb.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47156	FI34525	ec10efb51a51e38c3fabe486988d5e67.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47243	FI21012	687ae3ee94e926f756b3d51d4ac74e8d.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47165	FI4360	2a79bdfef1044674c37b11db8a49c940.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI30138	5aa29984e9491dbb38e422f3f93a5a46.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47132	FI9308	1e0ae1ef3c7644f9830d7fa67304a975.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47004	FI33551	df425c5ab5a614776493950db7f142ce.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46961	FI40042	e80db04bb945bb1dfa715ea1fbb306d5.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI30870	12d60a848a03b12de5fe07fd73821f01.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47124	FI31840	469488341d674b576dba4ff2b8c0aa43.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47076	FI52920	f0742e94d0405d8301ab33633d08ffaa.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46945	FI52500	5f0fcc112b9b39ad0e26934a0b09fefd.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46827	FI6096	72fa6dda655cffe29e8ae26357ec3069.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI6982	7dafb8b9bae56eb0f793625b3238dcca.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47156	FI34524	5587d5aa03d0dfeca236d33102cf7fe9.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46984	FI41884	8bac54e44f1979da071ef5ca9ceecea5.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47052	FI50226	845107190cdd355d5305fad7bb3aae9d.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46836	FI49887	3cfcc80fc8025fa374a528d51048d1e3.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46905	FI28544	b07bf651c91c2716b639a732d50dbaf1.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47072	FI48514	34f22792309a135ccee70f4df622ee75.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46921	FI52937	284fdcc3019f8581aa27df0316d13e86.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46856	FI38553	6579a5df5ac9fa6c6f84e18cf86cea67.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46977	FI30464	6f9b91f9d6e2a9d83c751067d946fd2f.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46838	FI30117	be00837182c030c51feffb35d1e01a43.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47064	FI38312	238c894d9126985d8950d584ea2da782.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9858	8b817b8e85f5dff8f8de9270ffbc5584.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46925	FI32706	5da68fd734620bcd20fcc37088c4699d.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI5705	c52d6ea33d5990489da88930eeb779f5.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46834	FI6601	6c326562fe37a4da13dc63d30583a5a3.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47249	FI816752	c9535247db857c2ae197ea33b7ded04d.C0022T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47076	FI52915	PCAWG.57805ef4-dd34-11e4-992a-c779c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47171	FI743051	f45504c3ed2fef70368e0df19b80170a.B00EY16_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47150	FI816396	eeed1a8f6e36d9518f476d7cc26a3ef2.C0080T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47064	FI816744	4f69d466e13e0e5f1659a8a4f2965c47.C0034T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47048	FI816450	dcbc2fee633fabf67b67160b00cf8ee9.C0024N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46961	FI816620	329b897dca6f0499317cb948a8edbb20.C0065N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47159	FI12863	PCAWG.4cf1f35a-dd32-11e4-ba86-a69fc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47072	FI48512	PCAWG.0f70b7bc-dd39-11e4-a3d0-e5bdc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI743009	c3a73bbc4eee648187397cef83bade19.B00E4IM_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46957	FI7265	PCAWG.51646a30-dd23-11e4-99bf-1e4972a8e264.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46905	FI742915	785776cc75da41bccf0eb472bdd2ce4a.B00E4IJ_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI52916	PCAWG.57805ef4-dd34-11e4-992a-c779c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47171	FI816670	3546b72deb4f00b5b55568bb133fd34a.C0098T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI742921	52f942167ccfa36731aa14ce18d7b477.B00E4GY_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47128	FI6977	PCAWG.e43faa7e-dd30-11e4-ab1d-3283c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46984	FI816442	75d781804a18480957f72cff5abd25df.C0077N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47165	FI816756	bdb92aa831a76959cc0783a8699bcb34.C0094T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46850	FI8266	PCAWG.d43ed88c-dd41-11e4-9fc0-ad43c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46953	FI31821	PCAWG.02f756c2-dd33-11e4-ba49-b4bec254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI8269	PCAWG.77203c42-dd44-11e4-bfb1-1da7c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46844	FI743073	2faddada00e1965fc5e52b79ca2777d8.B00E4ID_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47076	FI52918	PCAWG.4f2ea678-dd36-11e4-9275-1f96c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47004	FI743075	a4a144c419a3d4332a405702869c8a92.B00EXZD_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47076	FI742979	3f3d5e6d1e62a7d62c890c5900c2c828.B00E4IF_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46834	FI742913	b8b1a6b96027dab0ce1e06da18fdecce.B00E4H2_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46957	FI7267	PCAWG.b667a400-dd38-11e4-b441-e4b8c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI5703	PCAWG.bddb49d8-dd35-11e4-8a0b-c68dc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46856	FI743015	84d42d0eee808b5cd776edc359db4a91.B00E4HF_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI40037	PCAWG.d7f647c6-dd3c-11e4-b839-fc21c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46917	FI816700	5f7cbf0c13fcb3e996c7fdcf13aba295.C0041T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI5702	PCAWG.0a2585da-dd34-11e4-9a98-3d75c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46937	FI816676	859d672d0e6b0730faac6a180efc9894.C0053T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47153	FI816476	08a06b284990b9682a1b83733d3868c9.C0082N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47108	FI9914	PCAWG.eb48b638-dd37-11e4-860a-a0adc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46834	FI6599	PCAWG.05caea96-dd31-11e4-8808-f884c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46913	FI38157	PCAWG.c5b68258-dd44-11e4-b71d-a98ac254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46844	FI27621	PCAWG.42ccd9ba-dd34-11e4-9779-7278c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47016	FI816716	f877282489a5502f6053e068bbd50f71.C0099T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46913	FI743025	32ba1de3220a11242cbdedfbaed9dac2.B00EY1E_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46921	FI816740	27765e09cc539301513135e23140b02e.C0045T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46859	FI816522	d78a5d29859eb972db87b0c997fcbb48.C0016T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47048	FI17843	PCAWG.5c778b04-dd3d-11e4-9aa6-fd29c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI40039	PCAWG.2e3c96c2-dd3c-11e4-83c5-0de4c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46945	FI52498	PCAWG.a3d9a13c-dd36-11e4-b04f-109bc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI52917	PCAWG.4f2ea678-dd36-11e4-9275-1f96c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47072	FI816424	4a39681281438aaa2435c370cb9d779a.C0038N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI9854	PCAWG.764a33dc-dd34-11e4-8a0c-117cc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46957	FI743089	7f7b686bd5ed9b277935a1f12a8a9246.B00E4GT_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46838	FI816532	2f31f46f38834caaba0f36638b5b679a.C0009N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46992	FI12749	PCAWG.4f86b36c-dd3c-11e4-903e-879fc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47016	FI816652	fdbf72ab953a97892f6db3042433875b.C0099N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46827	FI743095	06802dd636fab5f3d60d99f57bc44899.B00E4IV_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46850	FI8267	PCAWG.d43ed88c-dd41-11e4-9fc0-ad43c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46933	FI9853	PCAWG.764a33dc-dd34-11e4-8a0c-117cc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47060	FI816594	f36db00fad894c63b181d66d24dd3b4d.C0030N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47016	FI5244	PCAWG.f98658a6-dd30-11e4-a293-9384c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47016	FI742873	5a539c66525977a787569d4c679424c2.B00E4HB_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46945	FI816682	a7d351441ccdccabca23dd75103b07d7.C0057T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47004	FI33548	PCAWG.38f55f38-dd3a-11e4-8250-fdd5c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47096	FI816420	b5e1604fb226b4f4cac1c6e9f9d8d419.C0050T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47132	FI9306	PCAWG.b9bf94f6-dd37-11e4-971f-fdaac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46917	FI742953	8fb6a9ffdfa9728819e31275433e7afd.B00E4H4_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46873	FI816732	c7c9a7fe81de60aa9c4fafc6dfe94376.C0020T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46853	FI816570	e3c3e2ab1161a1d3041087e9efc8a8e9.C0014T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46953	FI816710	d444623b296ea1314d146b63efd32d71.C0061T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI816612	a6f4b4b39b0fbc306b187cf98a1053dd.C0100N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI30134	PCAWG.315e251c-dd34-11e4-8733-c477c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47092	FI816692	8b1f88ed5d885045d673c7ad0c1c6c8d.C0048T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47171	FI12036	PCAWG.b7dd85b0-dd43-11e4-b5dc-6576c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46988	FI19151	PCAWG.7c2e0376-dd31-11e4-b027-b78fc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46856	FI38549	PCAWG.c70f52e2-dd30-11e4-a68c-ed80c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46961	FI816630	39679caaffabd9373b42fdfd0dede0e3.C0065T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46836	FI816736	0405428a4ec9edee28bd9b4a56c4076b.C0007T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9856	PCAWG.8631d5c8-dd36-11e4-b9d1-4999c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47064	FI816508	19aa89f371211b6009a320494475b2d6.C0034N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46853	FI49357	PCAWG.3f002856-dd38-11e4-951f-29b2c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46844	FI816686	f48495bb9cc649d8bd07a3a5b5b37739.C0011T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46873	FI7751	PCAWG.abe86d64-dd44-11e4-a915-77f9c154ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46980	FI816576	08c9cf07b2af4c91f7906ecd942ac138.C0075T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47096	FI816560	1e37a6e50b661d39f021d8514396bd76.C0050N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47128	FI6978	PCAWG.e43faa7e-dd30-11e4-ab1d-3283c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46953	FI816512	ecf952dad81366b923131e5331ad0797.C0061N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46913	FI816706	f6bb87dc2b21ecd9897606232706d3d0.C0039T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47108	FI9913	PCAWG.eb48b638-dd37-11e4-860a-a0adc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47156	FI816432	02fe5797c87c11db623907c1dec36883.C0084N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47153	FI817222	0fec403b1308a07697e2cf8e3e165751.C0082T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47159	FI743053	646e99a885d9e2eb8ff3bcd898b432f2.B00E4HY_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47092	FI21029	a6746343467c449bccb5e2373df1155e.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47174	FI30871	d22cac613223c878fc1544ac3cee4938.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI5706	1a3771426f70969949035825ecf67d43.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46988	FI19155	6a714396fa51376b88b8aabdc2177beb.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47156	FI34525	ec10efb51a51e38c3fabe486988d5e67.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47243	FI21012	687ae3ee94e926f756b3d51d4ac74e8d.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46830	FI30138	5aa29984e9491dbb38e422f3f93a5a46.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47132	FI9308	1e0ae1ef3c7644f9830d7fa67304a975.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46961	FI40042	e80db04bb945bb1dfa715ea1fbb306d5.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI30870	12d60a848a03b12de5fe07fd73821f01.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47124	FI31840	469488341d674b576dba4ff2b8c0aa43.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47076	FI52920	f0742e94d0405d8301ab33633d08ffaa.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47128	FI6982	7dafb8b9bae56eb0f793625b3238dcca.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47156	FI34524	5587d5aa03d0dfeca236d33102cf7fe9.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46984	FI41884	8bac54e44f1979da071ef5ca9ceecea5.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47072	FI48514	34f22792309a135ccee70f4df622ee75.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI9858	8b817b8e85f5dff8f8de9270ffbc5584.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46909	FI5705	c52d6ea33d5990489da88930eeb779f5.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47076	FI52915	PCAWG.57805ef4-dd34-11e4-992a-c779c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47150	FI816396	eeed1a8f6e36d9518f476d7cc26a3ef2.C0080T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46961	FI816620	329b897dca6f0499317cb948a8edbb20.C0065N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47159	FI12863	PCAWG.4cf1f35a-dd32-11e4-ba86-a69fc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47072	FI48512	PCAWG.0f70b7bc-dd39-11e4-a3d0-e5bdc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46909	FI743009	c3a73bbc4eee648187397cef83bade19.B00E4IM_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI52916	PCAWG.57805ef4-dd34-11e4-992a-c779c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47174	FI742921	52f942167ccfa36731aa14ce18d7b477.B00E4GY_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47128	FI6977	PCAWG.e43faa7e-dd30-11e4-ab1d-3283c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46984	FI816442	75d781804a18480957f72cff5abd25df.C0077N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46850	FI8266	PCAWG.d43ed88c-dd41-11e4-9fc0-ad43c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46953	FI31821	PCAWG.02f756c2-dd33-11e4-ba49-b4bec254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI8269	PCAWG.77203c42-dd44-11e4-bfb1-1da7c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI52918	PCAWG.4f2ea678-dd36-11e4-9275-1f96c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI742979	3f3d5e6d1e62a7d62c890c5900c2c828.B00E4IF_accepted_hits.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46909	FI5703	PCAWG.bddb49d8-dd35-11e4-8a0b-c68dc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI40037	PCAWG.d7f647c6-dd3c-11e4-b839-fc21c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46909	FI5702	PCAWG.0a2585da-dd34-11e4-9a98-3d75c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47153	FI816476	08a06b284990b9682a1b83733d3868c9.C0082N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47108	FI9914	PCAWG.eb48b638-dd37-11e4-860a-a0adc254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46961	FI40039	PCAWG.2e3c96c2-dd3c-11e4-83c5-0de4c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47076	FI52917	PCAWG.4f2ea678-dd36-11e4-9275-1f96c254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47072	FI816424	4a39681281438aaa2435c370cb9d779a.C0038N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46933	FI9854	PCAWG.764a33dc-dd34-11e4-8a0c-117cc254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46992	FI12749	PCAWG.4f86b36c-dd3c-11e4-903e-879fc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46850	FI8267	PCAWG.d43ed88c-dd41-11e4-9fc0-ad43c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46933	FI9853	PCAWG.764a33dc-dd34-11e4-8a0c-117cc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47132	FI9306	PCAWG.b9bf94f6-dd37-11e4-971f-fdaac254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO46953	FI816710	d444623b296ea1314d146b63efd32d71.C0061T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47174	FI816612	a6f4b4b39b0fbc306b187cf98a1053dd.C0100N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO46830	FI30134	PCAWG.315e251c-dd34-11e4-8733-c477c254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO47092	FI816692	8b1f88ed5d885045d673c7ad0c1c6c8d.C0048T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46988	FI19151	PCAWG.7c2e0376-dd31-11e4-b027-b78fc254ba06.STAR.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46961	FI816630	39679caaffabd9373b42fdfd0dede0e3.C0065T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO46933	FI9856	PCAWG.8631d5c8-dd36-11e4-b9d1-4999c254ba06.TopHat2.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47128	FI6978	PCAWG.e43faa7e-dd30-11e4-ab1d-3283c254ba06.TopHat2.v1.bam	Normal - tissue adjacent to primary	RECA-EU	RNA-Seq
+kidney	DO46953	FI816512	ecf952dad81366b923131e5331ad0797.C0061N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47108	FI9913	PCAWG.eb48b638-dd37-11e4-860a-a0adc254ba06.STAR.v1.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
+kidney	DO47156	FI816432	02fe5797c87c11db623907c1dec36883.C0084N.sorted.dup.bam	Normal - blood derived	RECA-EU	WGS
+kidney	DO47153	FI817222	0fec403b1308a07697e2cf8e3e165751.C0082T.sorted.dup.bam	Primary tumour - solid tissue	RECA-EU	WGS
+kidney	DO47159	FI743053	646e99a885d9e2eb8ff3bcd898b432f2.B00E4HY_accepted_hits.bam	Primary tumour - solid tissue	RECA-EU	RNA-Seq
