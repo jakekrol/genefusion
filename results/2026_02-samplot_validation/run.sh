@@ -24,20 +24,21 @@ done
 
 # add rna file id mapping here
 # and filter out samples without corresponding RNA data
-# use results/2025_12-pcawg_donor_fid_map/icgc25k-wgs_rna-file_id-file_name_donor_map.tsv
+# diroutput='./stix_results_summary_rnainfo'
+./add_paired_rna_filename_parallel.sh
 
 # add coordinates to the top candidates to run giggle
 # need to run giggle for breakpoints
-# dout=stix_results_summary_with_coords
+# dout=stix_results_summary_rnainfo_coords
 ./add_coords2stix_summary_parallel.sh
 
 # add more info needed for giggle queries
 # outdir is stix_results_sum_coords_giggleinfo
-mkdir -p stix_results_sum_coords_giggleinfo
-ls stix_results_summary_with_coords \
-    | sed 's|^|stix_results_summary_with_coords/|' > x
-ls stix_results_summary_with_coords \
-    | sed 's|^|stix_results_sum_coords_giggleinfo/|' > y
+mkdir -p stix_results_summary_rnainfo_coords_giggleinfo
+ls stix_results_summary_rnainfo_coords \
+    | sed 's|^|stix_results_summary_rnainfo_coords/|' > x
+ls stix_results_summary_rnainfo_coords \
+    | sed 's|^|stix_results_summary_rnainfo_coords_giggleinfo/|' > y
 log="stix_summary2giggleinfo.log"
 paste x y | gargs -p 30 --log=$log \
     "./stix_summary2giggleinfo.py -i {0} -o {1}"

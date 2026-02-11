@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 din=stix_results_summary
-dout=stix_results_summary_with_coords
+dout=stix_results_summary_rnainfo_coords
 logfile=add_coords2stix_summary_parallel.log
 procs=30
 mkdir -p $dout
