@@ -42,5 +42,17 @@ ls stix_results_summary_rnainfo_coords \
 log="stix_summary2giggleinfo.log"
 paste x y | gargs -p 30 --log=$log \
     "./stix_summary2giggleinfo.py -i {0} -o {1}"
+rm x y
+
+# run giggle queries and get breakpoints
+# !note: need to have giggle in path
+./get_breakpoints_parallel.sh
+
+# get download regions for each breakpoint
+./set_download_region_parallel.sh
+
+# combine all plotting data into single table
+./combine_all_plot_data.py -i stix_results_summary_rnainfo_coords_giggleinfo_breakpoints_region \
+    -o final_plot_data.tsv
 
 
