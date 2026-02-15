@@ -55,4 +55,17 @@ rm x y
 ./combine_all_plot_data.py -i stix_results_summary_rnainfo_coords_giggleinfo_breakpoints_region \
     -o final_plot_data.tsv
 
+# get grch37 transcript file
+wget ftp://ftp.ensembl.org/pub/grch37/release-84/gff3/homo_sapiens/Homo_sapiens.GRCh37.82.gff3.gz
+# exclude pseudogenes, lincRNA, miRNA, aberrant transcripts, etc.
+# keep gene structure (exons, CDS, transcripts) for protein-coding genes
+zcat Homo_sapiens.GRCh37.82.gff3.gz |
+    awk '$1 ~ /^#/ {print; next} 
+         $3 ~ /(pseudogene|lincRNA|miRNA|aberrant|NMD|mt_gene|nc_primary_transcript)/ {next}
+         $9 ~ /biotype=(pseudogene|lincRNA|miRNA|Mt_|IG_|TR_)/ {next}
+         {print}' > Homo_sapiens.GRCh37.82.gene_only.gff3
+bedtools sort -i Homo_sapiens.GRCh37.82.gene_only.gff3 | \
+    bgzip -c > Homo_sapiens.GRCh37.82.gene_only.sort.gff3.gz
+tabix -f Homo_sapiens.GRCh37.82.gene_only.sort.gff3.gz
+
 
