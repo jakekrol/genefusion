@@ -1,0 +1,25 @@
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#f5f5f5','primaryTextColor':'#000','primaryBorderColor':'#333','lineColor':'#666','secondaryColor':'#e0e0e0','tertiaryColor':'#fafafa','fontSize':'14px'}}}%%
+flowchart TB
+    %% Tissues arranged horizontally
+    subgraph Tissues["Tissue Types"]
+        T_kidney[Kidney] --- T_liver[Liver] --- T_ovary[Ovary] --- T_ellipsis[...]
+    end
+    
+    %% Modalities arranged horizontally  
+    subgraph Modalities["Modalities"]
+        M_dna_tumor["DNA<sub>tumor</sub>"] --- M_dna_normal["DNA<sub>normal</sub>"] --- M_thousg["DNA<sub>1000G</sub>"] --- M_rna_tumor["RNA<sub>tumor</sub>"] --- M_rna_normal["RNA<sub>normal</sub>"] --- M_ellipsis[...]
+    end
+    
+    %% Processing pipeline arranged horizontally
+    subgraph Processing["Fusion Scoring Pipeline"]
+        BAM["BAM"] ==> BEDPE_excord["BEDPE<sub>sample</sub>"] ==> Ellipsis_samples["..."] ==> Giggle_db[("Giggle DB")] ==> BEDPE_gene["BEDPE<sub>gene</sub>"] ==> BEDPE_fusion["BEDPE<sub>fusion</sub>"] ==> TSV_evidence["TSV<sub>evidence</sub>"] 
+    end
+    %% Final aggregation step
+    subgraph Summarization["Tissue-wise scores"]
+        Tissue_scores["TSV<sub>scores</sub>"]
+    end
+    
+    %% Connections between subgraphs
+    Tissues -.->|"For each tissue"| Modalities
+    Modalities -.->|"For each modality"| Processing
+    Processing -.->|"Summarize evidence"| Summarization
