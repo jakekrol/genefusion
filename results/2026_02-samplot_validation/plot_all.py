@@ -30,6 +30,8 @@ os.makedirs(args.outdir, exist_ok=True)
 os.makedirs(f'{args.outdir}/bams', exist_ok=True)
 # make out subdir for plots
 os.makedirs(f'{args.outdir}/plots', exist_ok=True)
+if args.annotation_file:
+    os.makedirs(f'{args.outdir}/annotations', exist_ok=True)
 
 df = pd.read_csv(args.input, sep="\t")
 groups = df.groupby(['tissue','svtype','left','right'])
@@ -101,7 +103,12 @@ for g, df_g in groups:
         if args.transcript_file:
             cmd_plot += f' -T {args.transcript_file}'
         if args.annotation_file:
-            cmd_plot += f' -A {args.annotation_file}'
+            # subset gene bed file to only include the gene pairs in the plot
+            annotation_file_subset = f'{args.outdir}/annotations/{leftgene}--{rightgene}.bed'
+            cmd_make_annotation_subset = f'grep -wE "{leftgene}|{rightgene}" {args.annotation_file} |'\
+                f'/data/jake/bedtools.static.binary sort -i stdin | bgzip -c > {annotation_file_subset}.gz && tabix -f {annotation_file_subset}.gz'
+            subprocess.run(cmd_make_annotation_subset, shell=True, check=True)
+            cmd_plot += f' -A {annotation_file_subset}.gz'
         print(f"# running plot command: {cmd_plot}")
         subprocess.run(cmd_plot, shell=True, check=True)
 
