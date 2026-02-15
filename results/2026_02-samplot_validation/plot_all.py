@@ -18,6 +18,7 @@ parser.add_argument('-t','--transcript_file', help='Transcript file in GTF forma
 # grch37.genes.promoter_pad.bed.gz.tbi
 parser.add_argument('-a','--annotation_file', help='Annotation bed file',
                     default=None)
+parser.add_argument('-c', '--cache', help='Use cached results', action='store_true')
 args=parser.parse_args()
 if not os.environ.get('AWS_SECRET_ACCESS_KEY') or not os.environ.get('AWS_ACCESS_KEY_ID'):
     print('warning: AWS credentials not found')
@@ -67,12 +68,16 @@ for g, df_g in groups:
         if bamfileout.endswith('.bam.bam'):
             bamfileout = bamfileout[:-4]
         name_string=f'{donor_id}-{rnafile}-{specimen_type}-ev{total_read_evidence}'
-        
+        if (args.cache) and (os.path.exists(bamfileout)) and (os.path.exists(bamfileout+'.bai')):
+            print(f"Using cached BAM for {tissue}_{leftgene}--{rightgene}_{svtype} from {rnafile}")
+            subplots.append((bamfileout, name_string))
+            evidence_across_samples += total_read_evidence
+            continue
         try:
             # download
             download_cmd = f'samtools view -b {awspath} {region} -o {bamfileout}'
             subprocess.run(download_cmd, shell=True, check=True)
-            index_cmd = f'samtools index {bamfileout} {bamfileout}.bai'
+            index_cmd = f'samtools index {bamfileout}'
             subprocess.run(index_cmd, shell=True, check=True)
             print(f"Successfully processed {tissue}_{leftgene}--{rightgene}_{svtype}")
             subplots.append((bamfileout, name_string))
@@ -81,6 +86,7 @@ for g, df_g in groups:
             print(f"Skipping {tissue}_{leftgene}--{rightgene}_{svtype}: file not found or processing failed")
             continue
     
+    # plotting
     if not subplots:
         print(f"No BAM files found for {tissue}_{leftgene}--{rightgene}_{svtype}, skipping plot")
         continue
