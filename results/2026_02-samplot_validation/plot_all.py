@@ -19,6 +19,7 @@ parser.add_argument('-t','--transcript_file', help='Transcript file in GTF forma
 parser.add_argument('-a','--annotation_file', help='Annotation bed file',
                     default=None)
 parser.add_argument('-c', '--cache', help='Use cached results', action='store_true')
+parser.add_argument('--bedtools_binary', help='Path to bedtools binary', default='/data/jake/bedtools.static.binary')
 args=parser.parse_args()
 if not os.environ.get('AWS_SECRET_ACCESS_KEY') or not os.environ.get('AWS_ACCESS_KEY_ID'):
     print('warning: AWS credentials not found')
@@ -98,7 +99,8 @@ for g, df_g in groups:
         outfile_plot = f'{args.outdir}/plots/{tissue}_{leftgene}--{rightgene}_{svtype}_ev{evidence_across_samples}.png'
         cmd_plot = f'samplot plot -b {bam_string} -c {chrom} -s {start} -e {end} '\
                 f'-o {outfile_plot} '\
-                f' -n {name_string}'
+                f'-n {name_string} '\
+                f'-t {svtype}'
                     # f'-t {svtype} -T {args.transcript_file}' \
         if args.transcript_file:
             cmd_plot += f' -T {args.transcript_file}'
@@ -106,7 +108,7 @@ for g, df_g in groups:
             # subset gene bed file to only include the gene pairs in the plot
             annotation_file_subset = f'{args.outdir}/annotations/{leftgene}--{rightgene}.bed'
             cmd_make_annotation_subset = f'grep -wE "{leftgene}|{rightgene}" {args.annotation_file} |'\
-                f'/data/jake/bedtools.static.binary sort -i stdin | bgzip -c > {annotation_file_subset}.gz && tabix -f {annotation_file_subset}.gz'
+                f'{args.bedtools_binary} sort -i stdin | bgzip -c > {annotation_file_subset}.gz && tabix -f {annotation_file_subset}.gz'
             subprocess.run(cmd_make_annotation_subset, shell=True, check=True)
             cmd_plot += f' -A {annotation_file_subset}.gz'
         print(f"# running plot command: {cmd_plot}")
