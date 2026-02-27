@@ -11,8 +11,8 @@ from collections import Counter
 import ast
 import json
 import heapq
-import swifter
 import math
+import swifter
 import numba
 
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
@@ -40,12 +40,34 @@ def score_numba(
     w_tumor,
     w_dna,
     w_read,
-    upper_factor
+    cov_dna_tumor,
+    cov_rna_tumor,
+    cov_dna_normal,
+    cov_rna_normal,
+    cov_onekg
 ):
     if not (reads_dna_normal or reads_dna_tumor or reads_rna_normal or reads_rna_tumor or reads_onekg or
             samples_dna_normal or samples_dna_tumor or samples_rna_normal or samples_rna_tumor or samples_onekg):
         return 0.0
+    # normal read. case 1: reads <= m -> reads/m; case 2: reads > m -> 1.0
+    # tumor read. case 1: reads <= 2*m -> (m - abs(reads - m))/m; case 2: reads > 2*m -> 0.0
 
+    # get number of tumor modalities
+    n_T = 0
+    if pop_size_dna_tumor > 0:
+        n_T += 1
+    if pop_size_rna_tumor > 0:
+        n_T += 1
+    # get number of normal modalities
+    n_N = 0
+    if pop_size_dna_normal > 0:
+        n_N += 1
+    if pop_size_rna_normal > 0:
+        n_N += 1
+    if pop_size_dna_onekg > 0:
+        n_N += 1
+
+    # hyperparameters
     w_rna = 1.0 - w_dna
     w_normal = 1.0 - w_tumor
     w_sample = 1.0 - w_read
@@ -54,43 +76,43 @@ def score_numba(
     
     # DNA Normal
     if pop_size_dna_normal > 0:
-        m = upper_factor * pop_size_dna_normal
-        g = reads_dna_normal / m
+        m = cov_dna_normal * pop_size_dna_normal
+        g = reads_dna_normal / m if reads_dna_normal <= m else 1.0
         h = samples_dna_normal / pop_size_dna_normal
         f = ((w_read * g) + (w_sample * h))
-        score_val -= w_normal * w_dna * f
+        score_val -= w_normal * w_dna * f * (1/ n_N)  
     
     # DNA Tumor
     if pop_size_dna_tumor > 0:
-        m = upper_factor * pop_size_dna_tumor
+        m = cov_dna_tumor * pop_size_dna_tumor
         g = (m - abs(reads_dna_tumor - m)) / m if reads_dna_tumor <= 2 * m else 0.0
         h = samples_dna_tumor / pop_size_dna_tumor
         f = ((w_read * g) + (w_sample * h))
-        score_val += w_tumor * w_dna * f
+        score_val += w_tumor * w_dna * f * (1/ n_T)
     
     # RNA Normal
     if pop_size_rna_normal > 0:
-        m = upper_factor * pop_size_rna_normal
-        g = reads_rna_normal / m
+        m = cov_rna_normal * pop_size_rna_normal
+        g = reads_rna_normal / m if reads_rna_normal <= m else 1.0
         h = samples_rna_normal / pop_size_rna_normal
         f = ((w_read * g) + (w_sample * h))
-        score_val -= w_normal * w_rna * f
+        score_val -= w_normal * w_rna * f * (1/ n_N)
     
     # RNA Tumor
     if pop_size_rna_tumor > 0:
-        m = upper_factor * pop_size_rna_tumor
+        m = cov_rna_tumor * pop_size_rna_tumor
         g = (m - abs(reads_rna_tumor - m)) / m if reads_rna_tumor <= 2 * m else 0.0
         h = samples_rna_tumor / pop_size_rna_tumor
         f = ((w_read * g) + (w_sample * h))
-        score_val += w_tumor * w_rna * f
+        score_val += w_tumor * w_rna * f * (1/ n_T)
     
     # 1KG
     if pop_size_dna_onekg > 0:
-        m = upper_factor * pop_size_dna_onekg
-        g = reads_onekg / m
+        m = cov_onekg * pop_size_dna_onekg
+        g = reads_onekg / m if reads_onekg <= m else 1.0
         h = samples_onekg / pop_size_dna_onekg
         f = ((w_read * g) + (w_sample * h))
-        score_val -= w_normal * w_dna * f
+        score_val -= w_normal * w_dna * f * (1/ n_N)
 
     return score_val
 
@@ -165,6 +187,7 @@ def score_python(
     w_read=0.5,
     upper_factor=50
 ):
+    # no evidence case exits early
     if not (reads_dna_normal or reads_dna_tumor or reads_rna_normal or reads_rna_tumor or reads_onekg or
             samples_dna_normal or samples_dna_tumor or samples_rna_normal or samples_rna_tumor or samples_onekg):
         return 0.0
@@ -178,7 +201,7 @@ def score_python(
     # DNA Normal
     if pop_size_dna_normal > 0:
         m = upper_factor * pop_size_dna_normal
-        g = reads_dna_normal / m
+        g = reads_dna_normal / m if reads_dna_normal <= m else 1.0
         h = samples_dna_normal / pop_size_dna_normal
         f = ((w_read * g) + (w_sample * h))
         score_val -= w_normal * w_dna * f
@@ -194,7 +217,7 @@ def score_python(
     # RNA Normal
     if pop_size_rna_normal > 0:
         m = upper_factor * pop_size_rna_normal
-        g = reads_rna_normal / m
+        g = reads_rna_normal / m if reads_rna_normal <= m else 1.0
         h = samples_rna_normal / pop_size_rna_normal
         f = ((w_read * g) + (w_sample * h))
         score_val -= w_normal * w_rna * f
@@ -210,7 +233,7 @@ def score_python(
     # 1KG
     if pop_size_dna_onekg > 0:
         m = upper_factor * pop_size_dna_onekg
-        g = reads_onekg / m
+        g = reads_onekg / m if reads_onekg <= m else 1.0
         h = samples_onekg / pop_size_dna_onekg
         f = ((w_read * g) + (w_sample * h))
         score_val -= w_normal * w_dna * f
