@@ -5,40 +5,83 @@ import pandas as pd
 import plotly.graph_objects as go
 from genefusion.genefusion import score_numba
 
-st.set_page_config(page_title="Gene Fusion Score Calculator", layout="wide")
+st.set_page_config(
+    page_title="Gene Fusion Score Calculator", 
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items=None
+)
 
 st.title("Gene Fusion Score Calculator")
 
+# Define default parameters
+DEFAULT_PARAMS = {
+    "reads_dna_normal": 14,
+    "reads_dna_tumor": 5697,
+    "reads_rna_normal": 0,
+    "reads_rna_tumor": 0,
+    "reads_onekg": 8,
+    "samples_dna_normal": 11,
+    "samples_dna_tumor": 95,
+    "samples_rna_normal": 0,
+    "samples_rna_tumor": 0,
+    "samples_onekg": 8,
+    "pop_size_dna_normal": 114,
+    "pop_size_dna_tumor": 142,
+    "pop_size_rna_normal": 0,
+    "pop_size_rna_tumor": 0,
+    "pop_size_dna_onekg": 2535,
+    "w_tumor": 0.5,
+    "w_dna": 1.0,
+    "w_read": 0.5,
+    "cov_dna_tumor": 50.0,
+    "cov_rna_tumor": 0.0,
+    "cov_dna_normal": 50.0,
+    "cov_rna_normal": 0.0,
+    "cov_onekg": 3.0
+}
+
+RESET_PARAMS = {
+    "reads_dna_normal": 0,
+    "reads_dna_tumor": 0,
+    "reads_rna_normal": 0,
+    "reads_rna_tumor": 0,
+    "reads_onekg": 0,
+    "samples_dna_normal": 0,
+    "samples_dna_tumor": 0,
+    "samples_rna_normal": 0,
+    "samples_rna_tumor": 0,
+    "samples_onekg": 0,
+    "pop_size_dna_normal": 0,
+    "pop_size_dna_tumor": 0,
+    "pop_size_rna_normal": 0,
+    "pop_size_rna_tumor": 0,
+    "pop_size_dna_onekg": 0,
+    "w_tumor": 0.5,
+    "w_dna": 0.5,
+    "w_read": 0.5,
+    "cov_dna_tumor": 0.0,
+    "cov_rna_tumor": 0.0,
+    "cov_dna_normal": 0.0,
+    "cov_rna_normal": 0.0,
+    "cov_onekg": 0.0
+}
+
 # Initialize session state for parameters
 if 'params' not in st.session_state:
-    st.session_state.params = {
-        "reads_dna_normal": 0,
-        "reads_dna_tumor": 5000,
-        "reads_rna_normal": 0,
-        "reads_rna_tumor": 0,
-        "reads_onekg": 0,
-        "samples_dna_normal": 0,
-        "samples_dna_tumor": 100,
-        "samples_rna_normal": 0,
-        "samples_rna_tumor": 0,
-        "samples_onekg": 0,
-        "pop_size_dna_normal": 0,
-        "pop_size_dna_tumor": 100,
-        "pop_size_rna_normal": 0,
-        "pop_size_rna_tumor": 0,
-        "pop_size_dna_onekg": 0,
-        "w_tumor": 1.0,
-        "w_dna": 1.0,
-        "w_read": 0.5,
-        "cov_dna_tumor": 50.0,
-        "cov_rna_tumor": 0.0,
-        "cov_dna_normal": 0.0,
-        "cov_rna_normal": 0.0,
-        "cov_onekg": 0.0
-    }
+    st.session_state.params = DEFAULT_PARAMS.copy()
 
 # Input Section
-st.header("Input Parameters")
+col_title, col_reset = st.columns([4, 1])
+with col_title:
+    st.header("Input Parameters")
+with col_reset:
+    st.write("")  # Spacer
+    if st.button("🔄 Reset All", use_container_width=True, help="Reset all inputs to 0, hyperparameters to 0.5"):
+        st.session_state.params = RESET_PARAMS.copy()
+        if 'current_score' in st.session_state:
+            del st.session_state.current_score
+        st.rerun()
 
 col1, col2, col3 = st.columns(3)
 
@@ -61,10 +104,10 @@ with col1:
 with col2:
     with st.expander("⚙️ Parameters (Coverage & Pop Size)", expanded=True):
         st.subheader("Coverage")
-        cov_dna_tumor = st.number_input("cov_dna_tumor", min_value=0.0, value=st.session_state.params["cov_dna_tumor"], step=1.0)
-        cov_rna_tumor = st.number_input("cov_rna_tumor", min_value=0.0, value=st.session_state.params["cov_rna_tumor"], step=1.0)
         cov_dna_normal = st.number_input("cov_dna_normal", min_value=0.0, value=st.session_state.params["cov_dna_normal"], step=1.0)
+        cov_dna_tumor = st.number_input("cov_dna_tumor", min_value=0.0, value=st.session_state.params["cov_dna_tumor"], step=1.0)
         cov_rna_normal = st.number_input("cov_rna_normal", min_value=0.0, value=st.session_state.params["cov_rna_normal"], step=1.0)
+        cov_rna_tumor = st.number_input("cov_rna_tumor", min_value=0.0, value=st.session_state.params["cov_rna_tumor"], step=1.0)
         cov_onekg = st.number_input("cov_onekg", min_value=0.0, value=st.session_state.params["cov_onekg"], step=1.0)
         
         st.subheader("Population Size")
@@ -76,9 +119,9 @@ with col2:
 
 with col3:
     with st.expander("🎛️ Hyperparameters (Weights)", expanded=True):
-        w_tumor = st.slider("w_tumor", min_value=0.0, max_value=1.0, value=st.session_state.params["w_tumor"], step=0.01)
-        w_dna = st.slider("w_dna", min_value=0.0, max_value=1.0, value=st.session_state.params["w_dna"], step=0.01)
-        w_read = st.slider("w_read", min_value=0.0, max_value=1.0, value=st.session_state.params["w_read"], step=0.01)
+        w_tumor = st.slider("w_tumor (equivalently [1-w_normal])", min_value=0.0, max_value=1.0, value=st.session_state.params["w_tumor"], step=0.01)
+        w_dna = st.slider("w_dna (equivalently [1-w_rna])", min_value=0.0, max_value=1.0, value=st.session_state.params["w_dna"], step=0.01)
+        w_read = st.slider("w_read (equivalently [1-w_sample])", min_value=0.0, max_value=1.0, value=st.session_state.params["w_read"], step=0.01)
 
 # Update session state
 st.session_state.params.update({
@@ -124,8 +167,8 @@ else:
 
 st.divider()
 
-# Sensitivity Analysis Section
-st.header("Sensitivity Analysis")
+# Single variable analysis
+st.header("Single variable analysis")
 
 col_graph1, col_graph2 = st.columns([1, 2])
 
@@ -227,3 +270,4 @@ with col_graph2:
         st.warning("Min value must be less than Max value")
     else:
         st.info("Configure parameters and click 'Generate Graph' to see sensitivity analysis")
+
