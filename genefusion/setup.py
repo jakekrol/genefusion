@@ -24,7 +24,8 @@ setup(
         'gf-index_els=genefusion.index_els:main',
         'gf-el2json=genefusion.el2json:main',
         'gf-g2ewdist=genefusion.g2ewdist:main',
-        'gf-g2degst=genefusion.g2degst:main'
+        'gf-g2degst=genefusion.g2degst:main',
+        'gf-fmt_giggle_fusion=genefusion.fmt_giggle_fusion:main'
     ],
     },
     python_requires='>=3.6',       
