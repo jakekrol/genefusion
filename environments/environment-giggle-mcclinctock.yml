@@ -1,0 +1,7 @@
+name: giggle-mcclintock
+channels:
+  - ggd-genomics
+  - bioconda
+  - conda-forge
+  - defaults
+prefix: /data/jake/miniconda3/envs/giggle-mcclintock
