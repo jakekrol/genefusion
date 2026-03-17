@@ -31,14 +31,29 @@ while [[ $# -gt 0 ]]; do
             export TMPDIR="$temp_dir"
             shift 2
             ;;
+        -p|--perllib5)
+            export PERL5LIB="$2"
+            shift 2
+            ;;
+        -g|--genomelibdir)
+            export GENOME_LIB_DIR="$2"
+            shift 2
+            ;;
         *)
             echo "Unknown option: $1"
             exit 1
             ;;
     esac
 done
+
+echo "# using tmpdir: $TMPDIR"
+echo "# using genome lib dir: $GENOME_LIB_DIR"
+echo "# using PERL5LIB: $PERL5LIB"
+
+
 tmp=$(mktemp fusion_annotator_tmp.XXXXXX) || { echo "# failed to create temporary file"; exit 1; }
 trap 'rm -f "$tmp"' EXIT
+
 
 
 if [ "$header" = true ]; then

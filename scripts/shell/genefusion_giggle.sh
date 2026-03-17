@@ -40,6 +40,13 @@ done
 echo "searching  $gene ($chrm:$left-$right) in index $index"
 (
   cd $index/..
-  giggle search -v -i $index -r $chrm:$left-$right > $outfile # | cut -f 5-7 > $outfile
+  giggle search -v -i $index -r $chrm:$left-$right | \
+    gf-fmt_giggle_fusion \
+      -r "$chrm:$left-$right" \
+      -g "$gene" \
+      -o "$outfile" \
+      -m "index=$index" \
+      -z
+
 )
 

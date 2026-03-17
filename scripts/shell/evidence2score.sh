@@ -12,13 +12,14 @@ while [[ $# -gt 0 ]]; do
     -y|--score_yaml) score_yaml=$2; shift;; # yaml template for scoring
     -nt|--ntumor) ntumor=$2; shift;; # num. tumor samples
     -nn|--nnormal) nnormal=$2; shift;; # num. normal samples
+    -no|--nonekg) nonekg=2; shift;; # num. onekg samples
     -o|--outdir) outdir=$2; shift;; # output directory
   esac
   shift
 done
 
 # validation
-if [ -z "${tumor:-}" ] || [ -z "${normal:-}" ] || [ -z "${ntumor:-}" ] || [ -z "${nnormal:-}" ] || [ -z "${outdir:-}" ]; then
+if [ -z "${tumor:-}" ] || [ -z "${normal:-}" ] || [ -z "${ntumor:-}" ] || [ -z "${nnormal:-}" ] || [ -z "${nonekg:-}" ] || [ -z "${outdir:-}" ]; then
   echo "Usage: $0 -t <tumor read and sample tsv> -n <normal read and sample tsv> -nt <num tumor samples> -nn <num normal samples> -o <output dir> [-c <combine_modal.sh>] [-s <score_fusions.py>] [-y <score yaml>]"
   exit 1
 fi
@@ -57,6 +58,7 @@ ln -s ${combine_modal} ./combine_modal.sh
 cp ${score_yaml} ./score_dna1.0_t0.5_r0.5_u50.yaml 
 sed -i "s|^pop_size_dna_normal.*|pop_size_dna_normal: ${nnormal}|" score_dna1.0_t0.5_r0.5_u50.yaml
 sed -i "s|^pop_size_dna_tumor.*|pop_size_dna_tumor: ${ntumor}|" score_dna1.0_t0.5_r0.5_u50.yaml
+sed -i "s|^pop_size_dna_onekg.*|pop_size_dna_onekg: ${nonekg}|" score_dna1.0_t0.5_r0.5_u50.yaml
 # score
 ./score_fusions.py --input modal_onekg_combined_read_sample_comb_fill_no_dups.tsv \
     --output scored_dna1.0_t0.5_r0.5_u50.tsv \
