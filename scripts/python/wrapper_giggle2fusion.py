@@ -60,6 +60,26 @@ else:
 print(f"Steps to run: {args.steps}")
 time.sleep(3)
 
+def make_input_file(input_file, filenames, line_func, log_label=None):
+    """Write a two-column input file given a list of filenames and a factory for each line.
+
+    Parameters
+    ----------
+    input_file : str
+        Full path to the input file to create.
+    filenames : iterable
+        Iterable of per-file identifiers (typically template-derived basenames).
+    line_func : callable
+        Function taking a single string argument (fname) and returning one line (without trailing newline).
+    log_label : str or None
+        If provided, emits a log message of the form "{log_label}: {input_file}".
+    """
+    if log_label is not None:
+        print(f"{log_label}: {input_file}")
+    with open(input_file, 'w') as f:
+        for fname in filenames:
+            f.write(line_func(str(fname)) + "\n")
+
 ### inputs
 if 0 in args.steps:
     t = time.time()
@@ -81,8 +101,6 @@ if 0 in args.steps:
         "pop_tumor_fusion_sample_counts",
         "pop_normal_fusion_counts",
         "pop_normal_fusion_sample_counts"
-        # "clark_evans_R_tumor",
-        # "clark_evans_R_normal"
     ]
     if args.sharded:
         shards = glob.glob(os.path.join(args.giggle_index, "shards","shard_*"))
@@ -142,102 +160,102 @@ if 0 in args.steps:
 
     # make clean input file
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
-    print(f"Making clean input file: {input_file}")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleout', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'gigglecln', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleout', fname)}\t{os.path.join(args.base_dir, 'gigglecln', fname)}",
+        log_label="Making clean input file",
+    )
     # make swap input file
     input_file = os.path.join(args.base_dir, "inputs", "swap.input")
-    print(f"Making swap input file: {input_file}")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'gigglecln', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'giggleswap', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'gigglecln', fname)}\t{os.path.join(args.base_dir, 'giggleswap', fname)}",
+        log_label="Making swap input file",
+    )
     # make intersect input file
     input_file = os.path.join(args.base_dir, "inputs", "intersect.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleswap', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleswap', fname)}\t{os.path.join(args.base_dir, 'giggleinter', fname)}",
+    )
     # make unswap input file
     input_file = os.path.join(args.base_dir, "inputs", "unswap.input")
-    print(f"Making unswap input file: {input_file}")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter', fname)}\t{os.path.join(args.base_dir, 'giggleinter_unswap', fname)}",
+        log_label="Making unswap input file",
+    )
     # make clean unswap input file
     input_file = os.path.join(args.base_dir, "inputs", "unswap_cln.input")
-    print(f"Making unswap specimen input file: {input_file}")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_cln', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_unswap', fname)}\t{os.path.join(args.base_dir, 'giggleinter_unswap_cln', fname)}",
+        log_label="Making unswap specimen input file",
+    )
     # make specimen input file
     input_file = os.path.join(args.base_dir, "inputs", "unswap_specimen.input")
-    print(f"Making unswap specimen input file: {input_file}")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_cln', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_unswap_cln', fname)}\t{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}",
+        log_label="Making unswap specimen input file",
+    )
     # make specimen split input file
     input_file = os.path.join(args.base_dir, "inputs", "unswap_specimen_split.input")
-    print(f"Making unswap specimen split input file: {input_file}")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen_split')}\n") # constant output dir
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_unswap_specimen', fname)}\t{os.path.join(args.base_dir, 'giggleinter_unswap_specimen_split')}",
+        log_label="Making unswap specimen split input file",
+    )
     print(f"Finished making input files in {time.time() - t:.2f} seconds")
     # make count fusions input file for tumor
     input_file = os.path.join(args.base_dir, "inputs", "count_fusions_tumor.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_counts', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t{os.path.join(args.base_dir, 'pop_tumor_fusion_counts', fname)}",
+    )
     # make count fusions input file for normal
     input_file = os.path.join(args.base_dir, "inputs", "count_fusions_normal.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'pop_normal_fusion_counts', fname)}\n")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t{os.path.join(args.base_dir, 'pop_normal_fusion_counts', fname)}",
+    )
     # make distinct sample counts input file for tumor
-    input_file = os.path.join(args.base_dir, "inputs", f"distinct_sample_counts_tumor.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'pop_tumor_fusion_sample_counts', fname)}\n")
+    input_file = os.path.join(args.base_dir, "inputs", "distinct_sample_counts_tumor.input")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t{os.path.join(args.base_dir, 'pop_tumor_fusion_sample_counts', fname)}",
+    )
     # make distinct sample counts input file for normal
-    input_file = os.path.join(args.base_dir, "inputs", f"distinct_sample_counts_normal.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'pop_normal_fusion_sample_counts', fname)}\n")
-    # make clark evans R input file for tumor
-    input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R_tumor.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'clark_evans_R_tumor', fname)}\n")
-    # make clark evans R input file for normal
-    input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R_normal.input")
-    with open(input_file, 'w') as f:
-        for fname in fnames:
-            fname = str(fname)
-            f.write(f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t")
-            f.write(f"{os.path.join(args.base_dir, 'clark_evans_R_normal', fname)}\n")
+    input_file = os.path.join(args.base_dir, "inputs", "distinct_sample_counts_normal.input")
+    make_input_file(
+        input_file,
+        fnames,
+        lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t{os.path.join(args.base_dir, 'pop_normal_fusion_sample_counts', fname)}",
+    )
+    # # make clark evans R input file for tumor
+    # input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R_tumor.input")
+    # make_input_file(
+    #     input_file,
+    #     fnames,
+    #     lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_final_tumor', fname)}\t{os.path.join(args.base_dir, 'clark_evans_R_tumor', fname)}",
+    # )
+    # # make clark evans R input file for normal
+    # input_file = os.path.join(args.base_dir, "inputs", "clark_evans_R_normal.input")
+    # make_input_file(
+    #     input_file,
+    #     fnames,
+    #     lambda fname: f"{os.path.join(args.base_dir, 'giggleinter_final_normal', fname)}\t{os.path.join(args.base_dir, 'clark_evans_R_normal', fname)}",
+    # )
 
 ### run
 if 1 in args.steps:
@@ -288,7 +306,7 @@ if 2 in args.steps:
     "gargs",
     "-p", f"{args.processes}",
     "--log=logs/clean.log",
-    "-o", "./cln_excord.sh -i {0} -o {1}"
+    "-o", "./cln_excord.sh -i {0} -o {1} -z"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "clean.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
@@ -304,7 +322,7 @@ if 3 in args.steps:
     "gargs",
     "-p", f"{args.processes}",
     "--log=logs/swap.log",
-    "-o", "./swap_intervals.sh {0} {1}"
+    "-o", "./swap_intervals.sh -i {0} -o {1} -z"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "swap.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
@@ -320,7 +338,7 @@ if 4 in args.steps:
         "gargs",
         "-p", f"{args.processes}",
         "--log=logs/intersect.log",
-        "-o", f"./intersect_swapped.sh {{0}} {args.bed} {{1}}"
+        "-o", f"./intersect_swapped.sh -i {{0}} -g {args.bed} -o {{1}} -z"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "intersect.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
@@ -334,7 +352,7 @@ if 5 in args.steps:
         "gargs",
         "-p", f"{args.processes}",
         "--log=logs/unswap.log",
-        "-o", "./unswap_intervals.sh {0} {1}"
+        "-o", "./unswap_intervals.sh -i {0} -o {1} -z"
     ]
     input_file = os.path.join(args.base_dir, "inputs", "unswap.input")
     print(f"Running '{' '.join(cmd)}' with input file: {input_file}")
