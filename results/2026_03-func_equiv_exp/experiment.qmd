@@ -1,0 +1,160 @@
+---
+title: "Functional equivalence fusion experiment"
+date: 2026-03-17
+author: "Jacob Krol"
+jupyter: python3
+format:
+    pdf
+---
+
+## Experiment
+
+Goal: demonstrate how gene-level functional equivalence of fusion variants is a sensitive approach for discovering recurrent fusions.
+
+```{python}
+#| echo: false
+import os,sys
+import pandas as pd
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+from scipy.spatial.distance import pdist, squareform
+```
+
+```{python}
+#| echo: false
+#| include: false
+f='giggle.erg.fmt.cln.swap.intersect.unswap.tmprss2'
+df = pd.read_csv(f, sep='\t', comment='#', header=0)
+ERGSTART=39751949
+ERGEND=40033704
+TMPRSS2START=42836478
+TMPRSS2END=42903043
+df.head()
+```
+
+```{python}
+#| echo: false
+sample_ranges = (
+    df.groupby('sample').agg(
+        min_left_bp=('start_left', 'min'),
+        max_right_bp=('end_right', 'max')
+    )
+)
+print("shape: ", sample_ranges.shape)
+sample_ranges.head()
+```
+
+```{python}
+#| echo: false
+# scatter left and right bps
+
+x=sample_ranges['min_left_bp']
+y=sample_ranges['max_right_bp']
+fig = plt.figure(figsize=(8, 8))
+gs = GridSpec(4,4,wspace=0.05,hspace=0.05)
+
+ax_scatter  = fig.add_subplot(gs[1:, :-1])
+ax_histx = fig.add_subplot(gs[0, :-1], sharex=ax_scatter)
+ax_histy = fig.add_subplot(gs[1:, -1], sharey=ax_scatter)
+
+ax_scatter.scatter(x, y, color='black', s=2)
+ax_scatter.set_xlabel('ERG Breakpoint')
+ax_scatter.set_ylabel('TMPRSS2 Breakpoint')
+ax_scatter.set_title('Sample breakpoints')
+# limits based on gene coordinates
+ax_scatter.set_xlim(ERGSTART, ERGEND)
+ax_scatter.set_ylim(TMPRSS2START, TMPRSS2END)
+
+# top hist
+ax_histx.hist(x, bins=30, color='black')
+ax_histx.set_ylabel('Frequency')
+plt.setp(ax_histx.get_xticklabels(), visible=False)
+
+# right hist
+ax_histy.hist(y, bins=30, color='black', orientation='horizontal')
+
+plt.setp(ax_histy.get_yticklabels(), visible=False)
+```
+
+The upstream (ERG) and downstream (TMPRSS2) breakpoints have clear means across samples. 
+
+However, some samples are dispersed far from middling breakpoints, yet they could be recovered if the variant is considered functionally equivalent using gene resolution.
+
+Let $\epsilon$ be some deviation from a gene's breakpoint mean. Let $X,Y$, be the breakpoint distributions for ERG and TMPRSS2, respectively. Then, count the number of samples within deviation of the both genes' breakpoint means: $\text{\#samples}=\sum_i^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \land |\mu_{TMPRSS2} - y_i| \leq \epsilon)$
+
+```{python}
+mu_erg = sample_ranges['min_left_bp'].mean()
+mu_tmprss2 = sample_ranges['max_right_bp'].mean()
+esp_max = max(
+    [
+        abs(ERGSTART-mu_erg),
+        abs(ERGEND-mu_erg),
+        abs(TMPRSS2START-mu_tmprss2),
+        abs(TMPRSS2END-mu_tmprss2)
+    ]
+)
+print(
+    "mu_erg: ", mu_erg, '\n',
+    "mu_tmprss2: ", mu_tmprss2, '\n',
+    "esp_max: ", esp_max
+)
+```
+
+```{python}
+epsilons = np.linspace(0, esp_max, num=100)
+counts = []
+for eps in epsilons:
+    count = np.sum(
+        (np.abs(sample_ranges['min_left_bp'] - mu_erg) <= eps) &
+        (np.abs(sample_ranges['max_right_bp'] - mu_tmprss2) <= eps)
+    )
+    counts.append(count)
+plt.figure(figsize=(8, 6))
+plt.plot(epsilons, counts, color='black', marker='o', markersize=4)
+plt.xlabel('Epsilon (bp)')
+plt.ylabel('Num. equivalent samples')
+plt.title('Functional equivalence of ERG-TMPRSS2 fusion variants')
+```
+
+```{python}
+
+# count num samples for epsilon at 10kb
+eps_10kb = 10000
+count_10kb = np.sum(
+    (np.abs(sample_ranges['min_left_bp'] - mu_erg) <= eps_10kb) &
+    (np.abs(sample_ranges['max_right_bp'] - mu_tmprss2) <= eps_10kb)
+)
+print(f"Number of samples within 10kb of both gene means: {count_10kb}")
+```
+
+## Summary
+
+Of the 142 total prostate tumor samples, 95 have some read support for an ERG-TMPRSS2 fusion (~67% population frequency). However, when considering only samples within 10kb of mean breakpoints, only 19 samples are recovered (~13% population frequency).
+
+Given ERG-TMPRSS2 is a well-known recurrent fusion, we expect other fusions to have lower population frequencies that would be hard to discover without considering functional equivalence.
+
+```{python}
+#| echo: false
+#| include: false
+# plot the box corresponding to esp 10kb
+esp=10000
+plt.figure(figsize=(8, 8))
+plt.scatter(x, y, color='black', s=2)
+plt.xlabel('ERG Breakpoint')
+plt.ylabel('TMPRSS2 Breakpoint')
+plt.title('Sample breakpoints with 10kb functional equivalence box')
+plt.xlim(ERGSTART, ERGEND)
+plt.ylim(TMPRSS2START, TMPRSS2END)
+# add box for 10kb functional equivalence
+rect = plt.Rectangle(
+    (mu_erg - esp, mu_tmprss2 - esp), # left corner
+    2*esp, 2*esp, # width and height
+    edgecolor='red', facecolor='none', linewidth=2, label='10kb functional equivalence'
+)
+plt.gca().add_patch(rect)
+plt.legend()
+```
+
+
