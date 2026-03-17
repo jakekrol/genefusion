@@ -2,12 +2,12 @@
 """
 Format Giggle query output for gene fusion analysis.
 Adds header with metadata, column names, and extracts sample basenames.
-Outputs TSV format (optionally gzipped).
+Outputs TSV format (optionally bgzipped).
 """
 
 import sys,os
-import gzip
 import argparse
+import subprocess, io
 from datetime import datetime
 from pathlib import Path
 
@@ -42,9 +42,9 @@ def parse_args():
         help='Output file path (default: write to stdout)'
     )
     parser.add_argument(
-        '-z', '--gzip',
+        '-z', '--bgzip',
         action='store_true',
-        help='Compress output with gzip'
+        help='Compress output with bgzip'
     )
     return parser.parse_args()
 
@@ -69,19 +69,37 @@ def main():
         lines = sys.stdin.readlines()
     
     # Determine output destination and mode
+    bgzip_proc = None
+    bgzip_out_fh = None
     if args.output:
         # Write to file
         output_file = args.output
-        if args.gzip and not output_file.endswith('.gz'):
+        if args.bgzip and not output_file.endswith('.gz'):
             output_file += '.gz'
-        opener = gzip.open if args.gzip else open
-        mode = 'wt' if args.gzip else 'w'
-        out = opener(output_file, mode)
+        if args.bgzip:
+            bgzip_out_fh = open(output_file, 'wb')
+            bgzip_proc = subprocess.Popen(
+                ['bgzip', '-c'],
+                stdin=subprocess.PIPE,
+                stdout=bgzip_out_fh,
+            )
+            out = io.TextIOWrapper(bgzip_proc.stdin)
+        else:
+            out = open(output_file, 'w')
         should_close = True
     else:
         # Write to stdout
-        out = sys.stdout
-        should_close = False
+        if args.bgzip:
+            bgzip_proc = subprocess.Popen(
+                ['bgzip', '-c'],
+                stdin=subprocess.PIPE,
+                stdout=sys.stdout.buffer,
+            )
+            out = io.TextIOWrapper(bgzip_proc.stdin)
+            should_close = True
+        else:
+            out = sys.stdout
+            should_close = False
     
     try:
         # Write header
@@ -116,8 +134,22 @@ def main():
         sys.stderr.close()
     finally:
         if should_close:
-            out.close()
-            print(f"Output written to {output_file}", file=sys.stderr)
+            # Close the writer first
+            try:
+                out.close()
+            except Exception:
+                pass
+            # If we spawned bgzip, wait for it and close its file handle
+            if bgzip_proc is not None:
+                try:
+                    bgzip_proc.stdin.close()
+                except Exception:
+                    pass
+                bgzip_proc.wait()
+                if bgzip_out_fh is not None:
+                    bgzip_out_fh.close()
+            if args.output:
+                print(f"Output written to {output_file}", file=sys.stderr)
 
 
 if __name__ == '__main__':
