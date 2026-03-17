@@ -82,7 +82,7 @@ The upstream (ERG) and downstream (TMPRSS2) breakpoints have clear means across 
 
 However, some samples are dispersed far from middling breakpoints, yet they could be recovered if the variant is considered functionally equivalent using gene resolution.
 
-Let $\epsilon$ be some deviation from a gene's breakpoint mean. Let $X,Y$, be the breakpoint distributions for ERG and TMPRSS2, respectively. Then, count the number of samples within deviation of the both genes' breakpoint means: $\text{\#samples}=\sum_i^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \land |\mu_{TMPRSS2} - y_i| \leq \epsilon)$
+Let $\epsilon$ be some deviation from a gene's breakpoint mean. Let $X,Y$, be the breakpoint distributions for ERG and TMPRSS2, respectively. Then, count the number of samples within deviation of the both genes' breakpoint means: $\text{\#samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \land |\mu_{TMPRSS2} - y_i| \leq \epsilon)$
 
 ```{python}
 mu_erg = sample_ranges['min_left_bp'].mean()
