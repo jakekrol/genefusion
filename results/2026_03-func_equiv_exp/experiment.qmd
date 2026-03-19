@@ -1,6 +1,5 @@
 ---
 title: "Functional equivalence fusion experiment"
-date: 2026-03-17
 author: "Jacob Krol"
 jupyter: python3
 format:
