@@ -22,11 +22,20 @@ format:
 
 ## ERG-TMPRSS2 functional equivalence
 
-![ERG-TMPRSS2 breakpoint scatter](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png)
+:::: {.columns}
 
+::: {.column width="50%"}
+![ERG-TMPRSS2 breakpoint scatter](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png)
+:::
+
+::: {.column width="50%"}
 ![Functionally equivalent sample count](../results/2026_03-func_equiv_exp/func_equiv_samples.png)
+:::
+
+::::
 
 ## ERG-TMPRSS2 maximal score
+
 
 ![Prostate fusion score distribution](../results/2025_11-score/prostate/null_v_pcawg_hist.png)
 
@@ -36,28 +45,30 @@ format:
 - POLR3GL has [high expression](https://www.proteinatlas.org/ENSG00000121851-POLR3GL/cancer) in liver cancers
 - LIX1L is reported oncogene for liver and other cancers [1](https://pubmed.ncbi.nlm.nih.gov/34221869/), [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC4550850/)
 
-![liver POLR3GL--LIX1L_DEL_ev15](../results/2026_02-samplot_validation/plot_data/plots/liver_POLR3GL--LIX1L_DEL_ev15.png)
+![](../results/2026_02-samplot_validation/plot_data/plots/liver_POLR3GL--LIX1L_DEL_ev15.png)
 
 ## Novel fusion discovery 
 
 - Bottom sample
 
-![liver RAB9A--TRAPPC2_DEL_ev15](../results/2026_02-samplot_validation/plot_data/plots/liver_RAB9A--TRAPPC2_DEL_ev15.png)
+![](../results/2026_02-samplot_validation/plot_data/plots/liver_RAB9A--TRAPPC2_DEL_ev15.png)
 
 ## Novel fusion discovery 
 
 - Top sample
 
-![kidney SHPK--ITGAE_DEL_ev6](../results/2026_02-samplot_validation/plot_data/plots/kidney_SHPK--ITGAE_DEL_ev6.png)
+![](../results/2026_02-samplot_validation/plot_data/plots/kidney_SHPK--ITGAE_DEL_ev6.png)
 
 ## Novel fusion discovery
 
 - Top sample
 - USP49 is [lowly expressed in kidney cancer samples](https://www.proteinatlas.org/ENSG00000164663-USP49/cancer)
 
-![kidney USP49--CCND3_DEL_ev6](../results/2026_02-samplot_validation/plot_data/plots/kidney_USP49--CCND3_DEL_ev6.png)
+![](../results/2026_02-samplot_validation/plot_data/plots/kidney_USP49--CCND3_DEL_ev6.png)
 
 ## Score function evaluation
+
+- Add gnomAD for reference
 
 ![Score function evaluation](../results/2026_03-expected_score_eval/ideal_score_eval.png)
 
