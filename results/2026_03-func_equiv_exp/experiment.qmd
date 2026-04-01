@@ -6,6 +6,8 @@ format:
     pdf
 ---
 
+<!-- Render with quarto render experiment.qmd -->
+
 ## Experiment
 
 Goal: demonstrate how gene-level functional equivalence of fusion variants is a sensitive approach for discovering recurrent fusions.
@@ -33,6 +35,7 @@ TMPRSS2END=42903043
 df.head()
 ```
 
+
 ```{python}
 #| echo: false
 sample_ranges = (
@@ -46,11 +49,21 @@ sample_ranges.head()
 ```
 
 ```{python}
+# use megabase coordinates for plotting
+sample_ranges['min_left_bp_mb'] = sample_ranges['min_left_bp'] / 1000000
+sample_ranges['max_right_bp_mb'] = sample_ranges['max_right_bp'] / 1000000
+ERGSTART_MB = ERGSTART / 1000000
+ERGEND_MB = ERGEND / 1000000
+TMPRSS2START_MB = TMPRSS2START / 1000000
+TMPRSS2END_MB = TMPRSS2END / 1000000
+```
+
+```{python}
 #| echo: false
 # scatter left and right bps
 
-x=sample_ranges['min_left_bp']
-y=sample_ranges['max_right_bp']
+x=sample_ranges['min_left_bp_mb']
+y=sample_ranges['max_right_bp_mb']
 fig = plt.figure(figsize=(8, 8))
 gs = GridSpec(4,4,wspace=0.05,hspace=0.05)
 
@@ -59,13 +72,12 @@ ax_histx = fig.add_subplot(gs[0, :-1], sharex=ax_scatter)
 ax_histy = fig.add_subplot(gs[1:, -1], sharey=ax_scatter)
 
 ax_scatter.scatter(x, y, color='black', s=2)
-ax_scatter.set_xlabel('ERG Breakpoint')
-ax_scatter.set_ylabel('TMPRSS2 Breakpoint')
+ax_scatter.set_xlabel('ERG Breakpoint (Mb)')
+ax_scatter.set_ylabel('TMPRSS2 Breakpoint (Mb)')
 ax_scatter.set_title('Sample breakpoints')
 # limits based on gene coordinates
-ax_scatter.set_xlim(ERGSTART, ERGEND)
-ax_scatter.set_ylim(TMPRSS2START, TMPRSS2END)
-
+ax_scatter.set_xlim(ERGSTART_MB, ERGEND_MB)
+ax_scatter.set_ylim(TMPRSS2START_MB, TMPRSS2END_MB)
 # top hist
 ax_histx.hist(x, bins=30, color='black')
 ax_histx.set_ylabel('Frequency')
@@ -75,6 +87,7 @@ plt.setp(ax_histx.get_xticklabels(), visible=False)
 ax_histy.hist(y, bins=30, color='black', orientation='horizontal')
 
 plt.setp(ax_histy.get_yticklabels(), visible=False)
+plt.savefig('breakpoint_scatter_hist.png', dpi=300)
 ```
 
 The upstream (ERG) and downstream (TMPRSS2) breakpoints have clear means across samples. 
@@ -113,8 +126,9 @@ for eps in epsilons:
 plt.figure(figsize=(8, 6))
 plt.plot(epsilons, counts, color='black', marker='o', markersize=4)
 plt.xlabel('Epsilon (bp)')
-plt.ylabel('Num. equivalent samples')
+plt.ylabel('Num. equivalent samples\n' + r'$\text{\#samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$')
 plt.title('Functional equivalence of ERG-TMPRSS2 fusion variants')
+plt.savefig('func_equiv_samples.png', dpi=300)
 ```
 
 ```{python}
