@@ -2,34 +2,33 @@
 title: "Genefusion Experiments"
 format:
     revealjs:
-        theme: solarized
         css: theme.scss
 ---
 
 ## Outline
 
-- Workflow
 - ERG-TMPRSS2 functional equivalence
 - ERG-TMPRSS2 maximal score
 - Novel fusion discovery
 - Score function evaluation
 - Benchmark fusions recurrent in normal samples
-- Supplemental
+- Miscelleneous
 
-## Workflow
-
-- Pass
 
 ## ERG-TMPRSS2 functional equivalence
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-![ERG-TMPRSS2 breakpoint scatter](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png)
+![ERG-TMPRSS2 breakpoint scatter](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png){width="500px" height="400px"}
 :::
 
 ::: {.column width="50%"}
-![Functionally equivalent sample count](../results/2026_03-func_equiv_exp/func_equiv_samples.png)
+![Functionally equivalent sample count](../results/2026_03-func_equiv_exp/func_equiv_samples.png){width="500px" height="400px"}
+:::
+
+::: {.small}
+Key point: Recurrent fusion discovery is more sensitive when variable breakpoints are merged into equivalent variants.
 :::
 
 ::::
@@ -37,57 +36,169 @@ format:
 ## ERG-TMPRSS2 maximal score
 
 
-![Prostate fusion score distribution](../results/2025_11-score/prostate/null_v_pcawg_hist.png)
+![](../results/2025_11-score/prostate/null_v_pcawg_hist.png){width=80% fig-align="center"}
+
+::: {.small}
+
+Key point: ERG-TMPRSS2 has the highest fusion score because it has abundant tumor read & sample support with minimal normal read & sample support.
+
+:::
+
+## Novel fusion discovery
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![POLR3GL--LIX1L (liver)](../results/2026_02-samplot_validation/plot_data/plots/liver_POLR3GL--LIX1L_DEL_ev15.png){width="400px" height="200px"}
+:::
+
+::: {.column width="50%"}
+![RAB9A--TRAPPC2 (liver)](../results/2026_02-samplot_validation/plot_data/plots/liver_RAB9A--TRAPPC2_DEL_ev15.png){width="400px" height="200px"}
+:::
+
+::::
+
+:::: {.columns}
+::: {.column width="50%"}
+![SHPK--ITGAE (kidney)](../results/2026_02-samplot_validation/plot_data/plots/kidney_SHPK--ITGAE_DEL_ev6.png){width="400px" height="200px"}
+:::
+::: {.column width="50%"}
+![USP49--CCND3 (kidney)](../results/2026_02-samplot_validation/plot_data/plots/kidney_USP49--CCND3_DEL_ev6.png){width="400px" height="200px"}
+:::
+::::
+
+## Novel fusion discovery workflow
+
+
+1. Requirements: i) High score, ii) intrachromosomal
+2. Re-query stix tumor indices and find rank samples by evidence
+3. Samplot top 3 samples
+4. Check Human Protein Atlas tumor expression and literature search
+
+
 
 ## Novel fusion discovery POLR3GL--LIX1L
 
+
+![](../results/2026_02-samplot_validation/plot_data/plots/liver_POLR3GL--LIX1L_DEL_ev15.png){fig-align="center"}
+
+::: {.small}
 - Top sample
 - POLR3GL has [high expression](https://www.proteinatlas.org/ENSG00000121851-POLR3GL/cancer) in liver cancers
 - LIX1L is reported oncogene for liver and other cancers [1](https://pubmed.ncbi.nlm.nih.gov/34221869/), [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC4550850/)
 
-![](../results/2026_02-samplot_validation/plot_data/plots/liver_POLR3GL--LIX1L_DEL_ev15.png)
 
-## Novel fusion discovery 
+:::
 
-- Bottom sample
-
-![](../results/2026_02-samplot_validation/plot_data/plots/liver_RAB9A--TRAPPC2_DEL_ev15.png)
-
-## Novel fusion discovery 
-
-- Top sample
-
-![](../results/2026_02-samplot_validation/plot_data/plots/kidney_SHPK--ITGAE_DEL_ev6.png)
-
-## Novel fusion discovery
-
-- Top sample
-- USP49 is [lowly expressed in kidney cancer samples](https://www.proteinatlas.org/ENSG00000164663-USP49/cancer)
-
-![](../results/2026_02-samplot_validation/plot_data/plots/kidney_USP49--CCND3_DEL_ev6.png)
 
 ## Score function evaluation
 
-- Add gnomAD for reference
+:::: {.columns}
 
-![Score function evaluation](../results/2026_03-expected_score_eval/ideal_score_eval.png)
+::: {.column width="50%"}
+![Ideal score evaluation](../results/2026_03-expected_score_eval/ideal_score_eval.png)
+:::
+
+::: {.column width="50%"}
+![gnomAD evaluation](images/gnomad-gene-constraint-score-eval.png){width=85%}
+:::
+::::
 
 ## PCAWG tissue-wise fusions
 
-![PCAWG breast fusions](../results/2025_11-score/breast/rand_v_pcawg_hist.png)
-![PCAWG kidney fusions](../results/2025_11-score/kidney/rand_v_pcawg_hist.png)
-![PCAWG liver fusions](../results/2025_11-score/liver/rand_v_pcawg_hist.png)
-![PCAWG ovary fusions](../results/2025_11-score/ovary/rand_v_pcawg_hist.png)
-![PCAWG prostate fusions](../results/2025_11-score/prostate/null_v_pcawg_hist.png)
+:::: {.columns}
+::: {.column width="33%"}
+![](../results/2025_11-score/breast/rand_v_pcawg_hist.png){width=80%}
+:::
+::: {.column width="33%"}
+![](../results/2025_11-score/kidney/rand_v_pcawg_hist.png){width=80%}
+:::
+::: {.column width="33%"}
+![](../results/2025_11-score/liver/rand_v_pcawg_hist.png){width=80%}
+:::
+::::
 
+:::: {.columns}
+
+::: {.column width=10%}
+:::
+
+::: {.column width="40%"}
+![](../results/2025_11-score/ovary/rand_v_pcawg_hist.png){width=65%}
+:::
+
+::: {.column width="40%"}
+![](../results/2025_11-score/prostate/null_v_pcawg_hist.png){width=65%}
+:::
+
+::: {.column width=10%}
+:::
+
+::::
+
+::: {.small}
+Key point: Full PCAWG fusion callset (recurrent or not) is right-skewed compared to null. However, some calls have abundant normal evidence (left-skewed).
+:::
 
 ## Benchmark fusions recurrent in normal samples
 
+::::{.columns}
+::: {.column width="33%"}
 ![Benchmark all](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram.png)
+:::
+::: {.column width="33%"}
 ![Benchmark filtered by annotation](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram_filtered_out.png)
+:::
+::: {.column width="33%"}
 ![Benchmark post-filter](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram_filt.png)
+:::
+::::
 
-## Miscelleneous: burden
+::: {.small}
+Key point: Thousands of benchmarks fusions have >100 read depth in onekg. Hundreds remain even after an annotation filter.
+:::
+
+## Miscellaneous: machine learning
+
+![](images/ml-experiment.png){fig-align="center"}
+
+::: {.small}
+Key points: i) ML evaluation is deceptively high if you downsample a small number of negative test examples. ii) As expected RNA tumor recurrency was the most important predictor. But, model would also positively weight 1000G recurrency unless I modified labels.
+:::
+
+## Miscellaneous: burden
+
+![Gene burden in 1000 genomes](images/onekg-burden.png){fig-align="center"}
+
+$$
+\text{burden}(\text{gene}_i) = \sum_{\text{gene}_j \neq \text{gene}_i} \text{#reads}_{\text{gene}_i,\text{gene}_j}
+$$
+
+## Miscellaneous: score function parameter 
+
+![](images/score-parameter-search-heatmap.png){fig-align="center"}
+
+::: {.small}
+Key points: i) Equal weighting of tumor/normal and read/sample evidence was optimal combination for maximizing ERG-TMPRSS2 score. ii) Accounting for coverage is important.
+:::
+
+
+## Miscellaneous: scoring fusions
+
+- Add equation and reasoning here
+
+## Miscellaneous: final output example
+
+
+## To-do
+
+- Re-add RNA evidence
+- Do score evaluation experiment
+- Refine novel fusion discovery search
+- Re-evaluate score function on full PCAWG callset (updated function)
+- Apply to Anschutz cohort
+
+
 
 
 
