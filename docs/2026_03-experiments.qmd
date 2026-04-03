@@ -182,12 +182,21 @@ $$
 Key points: i) Equal weighting of tumor/normal and read/sample evidence was optimal combination for maximizing ERG-TMPRSS2 score. ii) Accounting for coverage is important.
 :::
 
+## Miscellaneous: score function
 
-## Miscellaneous: scoring fusions
+:::: {.columns}
+::: {.column width="60%"}
+![](images/score-function.png)
+:::
+::: {.column width="40%"}
+![](images/score-function-read-graph.png){width=70% height=70%}
+:::
+::::
 
-- Add equation and reasoning here
 
 ## Miscellaneous: final output example
+
+![](images/out-table-example-prostate.png){fig-align="center" width=1200px height=450px}
 
 
 ## To-do
