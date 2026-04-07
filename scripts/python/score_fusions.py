@@ -16,7 +16,7 @@ parser.add_argument('-o', '--output', type=str, required=True, help='Output scor
 parser.add_argument('--score_yaml',type=str,help='YAML file with population sizes and column names', required=True)
 # parser.add_argument('--batch_size',type=int,default=20000000,help='Number of rows to process per batch (default: 10000000)')
 parser.add_argument('--batch_size',type=int,default=80000000,help='Number of rows to process per batch')
-parser.add_argument('--n_threads',type=int,default=os.cpu_count()-10,help='Number of CPUs to use (default: all available)')
+parser.add_argument('--n_threads',type=int,default=os.cpu_count()-10,help='Number of CPUs to use (default: all -10)')
 args = parser.parse_args()
 
 conn = duckdb.connect()
@@ -103,6 +103,8 @@ for i in range(0, total_rows, batch_size):
         get_col_or_scalar(params['weight_read'], df),
         get_col_or_scalar(params['upper_factor'], df)
     )
+    print(f"hyperparameters applied: w_tumor={params['weight_tumor']}, w_dna={params['weight_dna']}, w_read={params['weight_read']}, upper_factor={params['upper_factor']}")
+    print(f"pop sizes applied: pop_size_dna_normal={params['pop_size_dna_normal']}, pop_size_dna_tumor={params['pop_size_dna_tumor']}, pop_size_rna_normal={params['pop_size_rna_normal']}, pop_size_rna_tumor={params['pop_size_rna_tumor']}, pop_size_dna_onekg={params['pop_size_dna_onekg']}")
         
     
     # Write batch to TSV
