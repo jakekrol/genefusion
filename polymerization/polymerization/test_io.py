@@ -110,3 +110,31 @@ def test_validate_stix_shardfile_fail(tmp_path):
     )
     with pytest.raises(AssertionError):
         validate_stix_shardfile(x)
+
+def test_read_stix_output_pass(tmp_path):
+    # create a dummy stix output file
+    stix_output_path = tmp_path / 'stix_output.tsv'
+    with open(stix_output_path, 'w') as f:
+        f.write("#gene_left=gene_x\n")
+        f.write("#gene_right=gene_y\n")
+        f.write("Miscellaneous header info\n")
+        f.write('Giggle_File_Id\tPairend\tSplit\n')
+        f.write('0\t1\t2\n')
+        f.write('1\t2\t4\n')
+
+    # this calls validate_stix_output, which will has an assertion check for columns
+    df_stix_output = read_stix_fusion_output(str(stix_output_path))
+
+def test_read_stix_output_fail(tmp_path):
+    # create a dummy stix output file missing split column
+    stix_output_path = tmp_path / 'stix_output.tsv'
+    with open(stix_output_path, 'w') as f:
+        f.write("#gene_left=gene_x\n")
+        f.write("#gene_right=gene_y\n")
+        f.write("Miscellaneous header info\n")
+        f.write('Giggle_File_Id\tPairend\n')
+        f.write('0\t1\n')
+        f.write('1\t2\n')
+
+    with pytest.raises(AssertionError):
+        df_stix_output = read_stix_fusion_output(str(stix_output_path))

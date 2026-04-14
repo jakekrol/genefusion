@@ -1,8 +1,0 @@
-el2json.py
-g2degst.py
-g2ewdist.py
-giggle_sharded.py
-index_els.py
-samplefusions.py
-stix.py
-stix_sharded.py

@@ -85,20 +85,58 @@ def validate_stix_shardfile(df_stix_shards):
         assert col in df_stix_shards.columns
     # verify all paths exist
     for i in df_stix_shards.index:
-        path_giggle_index = df_stix_shards.loc[i, 'giggle_index']
-        assert os.path.exists(path_giggle_index)
-        path_ped_db = df_stix_shards.loc[i, 'ped_db']
-        assert os.path.exists(path_ped_db)
+        try:
+            path_giggle_index = df_stix_shards.loc[i, 'giggle_index']
+            assert os.path.exists(path_giggle_index)
+        except AssertionError:
+            raise AssertionError(f"Path to giggle index not exist for row {i} of shard file")
+        try:
+            path_ped_db = df_stix_shards.loc[i, 'ped_db']
+            assert os.path.exists(path_ped_db)
+        except AssertionError:
+            raise AssertionError(f"Path to ped db not exist for row {i} of shard file")
     return None
 
 def read_stix_shardfile(path, sep='\t', header=None):
     '''
     read in stix shard file and return as pandas dataframe
+    alt_file_col is 1-indexed check the ped file for this
     '''
     df_stix_shards = pd.read_csv(path, sep=sep, header=header)
     if not header:
         # assign column names if not provided
-        df_stix_shards.columns = ['giggle_index', 'ped_db', 'category']
+        df_stix_shards.columns = ['giggle_index', 'ped_db', 'alt_file_col', 'category']
     validate_stix_shardfile(df_stix_shards)
     return df_stix_shards
+
+def validate_stix_fusion_output(df_stix_output):
+    '''
+    check for necessary columns in stix output file
+    '''
+    required_cols = ['Giggle_File_Id', 'Pairend', 'Split']
+    for col in required_cols:
+        assert col in df_stix_output.columns, f"Missing required column in stix output file: {col}"
+    # check column types
+    assert pd.api.types.is_integer_dtype(df_stix_output['Pairend']), "Pairend column should be of integer type"
+    assert pd.api.types.is_integer_dtype(df_stix_output['Split']), "Split column should be of integer type"
+
+def read_stix_fusion_output(path):
+    '''
+    read in stix output file and return as pandas dataframe
+    '''
+    # get the query genes from header
+    with open(path, 'r') as f:
+        for line in f:
+            # stop reading once we exhaust header lines
+            if not line.startswith('#'):
+                break
+            if line.startswith('#gene_left='):
+                gene_left = line.strip().split('=')[1]
+            if line.startswith('#gene_right='):
+                gene_right = line.strip().split('=')[1]
+
+    misc_header_line = 2
+    df_stix_output = pd.read_csv(path, sep='\t', skiprows=[misc_header_line], comment='#')
+    validate_stix_fusion_output(df_stix_output)
+    return (gene_left, gene_right, df_stix_output)
 
