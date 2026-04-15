@@ -123,7 +123,7 @@ def test_read_stix_output_pass(tmp_path):
         f.write('1\t2\t4\n')
 
     # this calls validate_stix_output, which will has an assertion check for columns
-    df_stix_output = read_stix_fusion_output(str(stix_output_path))
+    gene_left, gene_right, df_stix_output = read_stix_fusion_output(str(stix_output_path))
 
 def test_read_stix_output_fail(tmp_path):
     # create a dummy stix output file missing split column
@@ -137,4 +137,4 @@ def test_read_stix_output_fail(tmp_path):
         f.write('1\t2\n')
 
     with pytest.raises(AssertionError):
-        df_stix_output = read_stix_fusion_output(str(stix_output_path))
+        gene_left, gene_right, df_stix_output = read_stix_fusion_output(str(stix_output_path))

@@ -1,10 +1,12 @@
 import pandas as pd
+import numpy as np
 import tempfile
 import subprocess
 import shutil
 import os
 import shlex
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from polymerization.io import *
 # order
 
 # 1. load and validate fusion set and bed
@@ -84,7 +86,7 @@ def run_stix(argstring,left_gene, right_gene, outfile, timeout=60 * 60 * 2):
 
     cmd = [stix] + shlex.split(argstring)
     try:
-        with open(outfile, 'a') as f:
+        with open(outfile, 'w') as f:
             # write the genes in the header
             f.write(f"#gene_left={left_gene}\n")
             f.write(f"#gene_right={right_gene}\n")
@@ -162,6 +164,92 @@ def merge_fusion_set_bed2stix(
                     
         finally:
             os.remove(shardfile)
+
+            
+
+def stix_fusion2evidence(df_stix_output):
+    '''
+    convert stix output for a fusion query into evidence format
+    '''
+    df_stix_output['total_evidence'] = df_stix_output['Pairend'] + df_stix_output['Split']
+    reads = df_stix_output['total_evidence'].sum()
+    samples = df_stix_output['total_evidence'].gt(0).sum()
+    assert reads >= 0, "Read count should be non-negative"
+    assert samples >= 0, "Sample count should be non-negative"
+    return reads, samples
+
+
+def agg_stix_evidence_by_category(outdir_s2f, outdir_agg, df_stix_shards, outfile_suffix="-fusion_evidence.tsv"):
+    '''
+    aggregate stix fusion evidence by category
+    '''
+    # validation
+    assert os.path.exists(outdir_s2f), f"stix output directory does not exist: {outdir_s2f}"
+    categories = df_stix_shards['category'].unique()
+    k = len(categories)
+    # gather all outfile_aggs to verify they do not exist prior to aggregation
+    for cat in categories:
+        outfile_agg = os.path.join(outdir_agg, f"{cat}{outfile_suffix}")
+        assert not os.path.exists(outfile_agg), f"An aggregation file already exists: {outfile_agg}. Stopping to avoid double writes"
+    # sequentially aggregate evidence for each category
+    for i, cat in enumerate(categories):
+        # location of stix files
+        print("category:", cat)
+        outdir_cat = os.path.join(outdir_s2f, cat)
+        assert os.path.exists(outdir_cat), f"stix output category directory does not exist: {outdir_cat}"
+        # file to write all fusion evidence to
+        outfile_agg = os.path.join(outdir_agg, f"{cat}{outfile_suffix}")
+        os.makedirs(outdir_agg, exist_ok=True)
+        print(f"# aggregating evidence for category {i+1}/{len(categories)} named {cat} into file {outfile_agg}")
+        with open(outfile_agg, 'w') as f_out:
+            f_out.write(f"gene_left\tgene_right\treads_{cat}\tsamples_{cat}\n")
+            # count reads and samples for each fusion
+            n = len(os.listdir(outdir_cat))
+            for j,filename in enumerate(os.listdir(outdir_cat)):
+                filepath = os.path.join(outdir_cat, filename)
+                print(f"# processing file {j+1}/{n} named {filename}")
+                gene_left, gene_right, df_stix_output = read_stix_fusion_output(filepath)
+                reads, samples = stix_fusion2evidence(df_stix_output)
+                f_out.write(f"{gene_left}\t{gene_right}\t{reads}\t{samples}\n")
+
+def fusion_tbl2_score_input(
+    df_fusion,
+    tumor_colmap,
+    normal_colmap
+):
+    '''
+    convert fusion table to score input format
+    colmaps are dictionaries housing
+
+    sub dictionaries for each subpopulation (tumor/normal)
+    the sub dictionary requires the following keys: reads_col, samples_col, total_samples, and upper_bound
+    '''
+    M = df_fusion.shape[0]
+    n_tumor_subpops = len(tumor_colmap.keys())
+    n_normal_subpops = len(normal_colmap.keys())
+    tumor_matrices = np.empty((M, n_tumor_subpops, 4), dtype=np.float64)
+    normal_matrices = np.empty((M, n_normal_subpops, 4), dtype=np.float64)
+    # col_tumor_blood_rna = df_fusion.iloc[:,3]
+    for i,(key,subpop_dict) in enumerate(tumor_colmap.items()):
+            reads_col = subpop_dict['reads_col']
+            samples_col = subpop_dict['samples_col']
+            total_samples = subpop_dict['total_samples']
+            upper_bound = subpop_dict['upper_bound']
+            tumor_matrices[:, i, 0] = df_fusion[reads_col]
+            tumor_matrices[:, i, 1] = df_fusion[samples_col]
+            tumor_matrices[:, i, 2] = total_samples
+            tumor_matrices[:, i, 3] = upper_bound
+    for i,(key,subpop_dict) in enumerate(normal_colmap.items()):
+            reads_col = subpop_dict['reads_col']
+            samples_col = subpop_dict['samples_col']
+            total_samples = subpop_dict['total_samples']
+            upper_bound = subpop_dict['upper_bound']
+            normal_matrices[:, i, 0] = df_fusion[reads_col]
+            normal_matrices[:, i, 1] = df_fusion[samples_col]
+            normal_matrices[:, i, 2] = total_samples
+            normal_matrices[:, i, 3] = upper_bound
+    return tumor_matrices, normal_matrices
+
 
     
 

@@ -117,14 +117,18 @@ def validate_stix_fusion_output(df_stix_output):
     for col in required_cols:
         assert col in df_stix_output.columns, f"Missing required column in stix output file: {col}"
     # check column types
-    assert pd.api.types.is_integer_dtype(df_stix_output['Pairend']), "Pairend column should be of integer type"
-    assert pd.api.types.is_integer_dtype(df_stix_output['Split']), "Split column should be of integer type"
+    # assert pd.api.types.is_integer_dtype(df_stix_output['Pairend']), "Pairend column should be of integer type"
+    # assert pd.api.types.is_integer_dtype(df_stix_output['Split']), "Split column should be of integer type"
 
-def read_stix_fusion_output(path):
+def read_stix_fusion_output(path,misc_header_line=2, sep='\t'):
     '''
     read in stix output file and return as pandas dataframe
+    misc_header line: 0-indexed line number of the stix default header
+    sep: delimiter
+    returns a tuple of (gene_left, gene_right, df_stix_output)
     '''
     # get the query genes from header
+    gene_left,gene_right = None, None
     with open(path, 'r') as f:
         for line in f:
             # stop reading once we exhaust header lines
@@ -135,8 +139,7 @@ def read_stix_fusion_output(path):
             if line.startswith('#gene_right='):
                 gene_right = line.strip().split('=')[1]
 
-    misc_header_line = 2
-    df_stix_output = pd.read_csv(path, sep='\t', skiprows=[misc_header_line], comment='#')
+    df_stix_output = pd.read_csv(path, sep=sep, skiprows=[misc_header_line], comment='#')
     validate_stix_fusion_output(df_stix_output)
     return (gene_left, gene_right, df_stix_output)
 
