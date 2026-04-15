@@ -1,0 +1,80 @@
+"blood_tumor_dna":
+  reads_col: "reads_blood_tumor_dna"
+  samples_col: "samples_blood_tumor_dna"
+  total_samples: 155 
+  upper_bound: 50
+"blood_tumor_rna":
+  reads_col: "reads_blood_tumor_rna"
+  samples_col: "samples_blood_tumor_rna"
+  total_samples: 72 
+  upper_bound: 50
+"bone_tumor_dna":
+  reads_col: "reads_bone_tumor_dna"
+  samples_col: "samples_bone_tumor_dna"
+  total_samples: 60
+  upper_bound: 50
+"breast_tumor_dna":
+  reads_col: "reads_breast_tumor_dna"
+  samples_col: "samples_breast_tumor_dna"
+  total_samples: 40
+  upper_bound: 50
+"esophagus_tumor_dna":
+  reads_col: "reads_esophagus_tumor_dna"
+  samples_col: "samples_esophagus_tumor_dna"
+  total_samples: 94
+  upper_bound: 50
+"gallbladder_tumor_dna":
+  reads_col: "reads_gallbladder_tumor_dna"
+  samples_col: "samples_gallbladder_tumor_dna"
+  total_samples: 12
+  upper_bound: 50
+"headneck_tumor_dna":
+  reads_col: "reads_headneck_tumor_dna"
+  samples_col: "samples_headneck_tumor_dna"
+  total_samples: 13
+  upper_bound: 50
+"kidney_tumor_dna":
+  reads_col: "reads_kidney_tumor_dna"
+  samples_col: "samples_kidney_tumor_dna"
+  total_samples: 48
+  upper_bound: 50
+"kidney_tumor_rna":
+  reads_col: "reads_kidney_tumor_rna"
+  samples_col: "samples_kidney_tumor_rna"
+  total_samples: 42
+  upper_bound: 50
+"liver_tumor_dna":
+  reads_col: "reads_liver_tumor_dna"
+  samples_col: "samples_liver_tumor_dna"
+  total_samples: 286
+  upper_bound: 50
+"liver_tumor_rna":
+  reads_col: "reads_liver_tumor_rna"
+  samples_col: "samples_liver_tumor_rna"
+  total_samples: 53
+  upper_bound: 50
+"ovary_tumor_dna":
+  reads_col: "reads_ovary_tumor_dna"
+  samples_col: "samples_ovary_tumor_dna"
+  total_samples: 70
+  upper_bound: 50
+"ovary_tumor_rna":
+  reads_col: "reads_ovary_tumor_rna"
+  samples_col: "samples_ovary_tumor_rna"
+  total_samples: 70
+  upper_bound: 50
+"pancreas_tumor_rna":
+  reads_col: "reads_pancreas_tumor_rna"
+  samples_col: "samples_pancreas_tumor_rna"
+  total_samples: 71
+  upper_bound: 50
+"prostate_tumor_dna":
+  reads_col: "reads_prostate_tumor_dna"
+  samples_col: "samples_prostate_tumor_dna"
+  total_samples: 142
+  upper_bound: 50
+
+
+
+
+
