@@ -1,0 +1,258 @@
+gene_left	gene_right	tissue	score	label	score_column_name
+TACC3	FGFR3	['headneck']	0.0196153846153846	1	score_as_positive-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.0818661971830986	0	score_as_negative-tissue_pancreas-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.0232456896551724	0	score_as_negative-tissue_bone-wnormal_0.25
+TACC3	FGFR3	['headneck']	-0.0095624999999999	0	score_as_negative-tissue_breast-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.0138043478260869	0	score_as_negative-tissue_kidney-wnormal_0.25
+TACC3	FGFR3	['headneck']	-0.0002083333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.038654867803311	0	score_as_negative-tissue_prostate-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.0316376946698837	0	score_as_negative-tissue_esophagus-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.030188845697902	0	score_as_negative-tissue_liver-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.0473032719909052	0	score_as_negative-tissue_blood-wnormal_0.25
+TACC3	FGFR3	['headneck']	0.1096090085287846	0	score_as_negative-tissue_ovary-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.5720441067457375	1	score_as_positive-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.0	0	score_as_negative-tissue_pancreas-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.2292198275862069	0	score_as_negative-tissue_bone-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.200625	0	score_as_negative-tissue_breast-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.0955217391304347	0	score_as_negative-tissue_kidney-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.1989583333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.1973311033121298	0	score_as_negative-tissue_esophagus-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.1579450969040333	0	score_as_negative-tissue_liver-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.0984486464402444	0	score_as_negative-tissue_blood-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.0591831023454157	0	score_as_negative-tissue_ovary-wnormal_0.25
+ERG	TMPRSS2	['prostate']	0.2357692307692307	0	score_as_negative-tissue_headneck-wnormal_0.25
+RET	CCDC6	['pancreas']	0.0	1	score_as_positive-wnormal_0.25
+RET	CCDC6	['pancreas']	0.1202974137931034	0	score_as_negative-tissue_bone-wnormal_0.25
+RET	CCDC6	['pancreas']	0.2324375	0	score_as_negative-tissue_breast-wnormal_0.25
+RET	CCDC6	['pancreas']	0.1000471014492753	0	score_as_negative-tissue_kidney-wnormal_0.25
+RET	CCDC6	['pancreas']	0.155625	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+RET	CCDC6	['pancreas']	0.2268501359031381	0	score_as_negative-tissue_prostate-wnormal_0.25
+RET	CCDC6	['pancreas']	0.2161534876069313	0	score_as_negative-tissue_esophagus-wnormal_0.25
+RET	CCDC6	['pancreas']	0.1398209411959308	0	score_as_negative-tissue_liver-wnormal_0.25
+RET	CCDC6	['pancreas']	0.0827894521813272	0	score_as_negative-tissue_blood-wnormal_0.25
+RET	CCDC6	['pancreas']	0.0506183368869936	0	score_as_negative-tissue_ovary-wnormal_0.25
+RET	CCDC6	['pancreas']	0.1569230769230769	0	score_as_negative-tissue_headneck-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.2326875	1	score_as_positive-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.3713028169014084	0	score_as_negative-tissue_pancreas-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.1788620689655172	0	score_as_negative-tissue_bone-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.196536231884058	0	score_as_negative-tissue_kidney-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.265	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.2522618606375092	0	score_as_negative-tissue_prostate-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.2259747203334064	0	score_as_negative-tissue_esophagus-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.2251721666253135	0	score_as_negative-tissue_liver-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.228368090095211	0	score_as_negative-tissue_blood-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.2624517590618337	0	score_as_negative-tissue_ovary-wnormal_0.25
+VMP1	RPS6KB1	['breast']	0.3176923076923077	0	score_as_negative-tissue_headneck-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2763347547974414	1	score_as_positive-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.4400704225352113	0	score_as_negative-tissue_pancreas-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2840862068965517	0	score_as_negative-tissue_bone-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2881249999999999	0	score_as_negative-tissue_breast-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2309384057971014	0	score_as_negative-tissue_kidney-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2954166666666666	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.3112824314306894	0	score_as_negative-tissue_prostate-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.3000828032463259	0	score_as_negative-tissue_esophagus-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2727382626195793	0	score_as_negative-tissue_liver-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.2866634396759983	0	score_as_negative-tissue_blood-wnormal_0.25
+NUMB	HEATR4	['ovary']	0.3251923076923076	0	score_as_negative-tissue_headneck-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2555926791277259	1	score_as_positive-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2766549295774648	0	score_as_negative-tissue_pancreas-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2335258620689655	0	score_as_negative-tissue_bone-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.171713768115942	0	score_as_negative-tissue_kidney-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2177083333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2548403138127008	0	score_as_negative-tissue_prostate-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2255014805878482	0	score_as_negative-tissue_esophagus-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2118369724037162	0	score_as_negative-tissue_liver-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.2219138127042774	0	score_as_negative-tissue_blood-wnormal_0.25
+CCDC170	ESR1	['ovary', 'breast']	0.3005769230769231	0	score_as_negative-tissue_headneck-wnormal_0.25
+FBF1	AFM	['liver']	0.0326481129214567	1	score_as_positive-wnormal_0.25
+FBF1	AFM	['liver']	0.0377112676056338	0	score_as_negative-tissue_pancreas-wnormal_0.25
+FBF1	AFM	['liver']	0.0279396551724137	0	score_as_negative-tissue_bone-wnormal_0.25
+FBF1	AFM	['liver']	0.0518125	0	score_as_negative-tissue_breast-wnormal_0.25
+FBF1	AFM	['liver']	0.0316340579710145	0	score_as_negative-tissue_kidney-wnormal_0.25
+FBF1	AFM	['liver']	-0.0106249999999999	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+FBF1	AFM	['liver']	0.0396506671608598	0	score_as_negative-tissue_prostate-wnormal_0.25
+FBF1	AFM	['liver']	0.0297148497477516	0	score_as_negative-tissue_esophagus-wnormal_0.25
+FBF1	AFM	['liver']	0.0713643065226659	0	score_as_negative-tissue_blood-wnormal_0.25
+FBF1	AFM	['liver']	0.0708699360341151	0	score_as_negative-tissue_ovary-wnormal_0.25
+FBF1	AFM	['liver']	0.0194230769230769	0	score_as_negative-tissue_headneck-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2357884321621997	1	score_as_positive-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.4858098591549296	0	score_as_negative-tissue_pancreas-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2077887931034482	0	score_as_negative-tissue_bone-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2281920289855072	0	score_as_negative-tissue_kidney-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.295625	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2445447244872745	0	score_as_negative-tissue_prostate-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2557803246325948	0	score_as_negative-tissue_esophagus-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2473514104021599	0	score_as_negative-tissue_blood-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2761847014925373	0	score_as_negative-tissue_ovary-wnormal_0.25
+GTF2IRD1	GTF2I	['breast', 'liver']	0.2607692307692307	0	score_as_negative-tissue_headneck-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0857241379310344	1	score_as_positive-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0708802816901408	0	score_as_negative-tissue_pancreas-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0453125	0	score_as_negative-tissue_breast-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0584710144927536	0	score_as_negative-tissue_kidney-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.06625	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0584476155176673	0	score_as_negative-tissue_prostate-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0539737332748409	0	score_as_negative-tissue_esophagus-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0924513412179858	0	score_as_negative-tissue_liver-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0450614608497939	0	score_as_negative-tissue_blood-wnormal_0.25
+ACTG2	DGUOK	['bone']	0.0655940831556503	0	score_as_negative-tissue_ovary-wnormal_0.25
+ACTG2	DGUOK	['bone']	-0.02	0	score_as_negative-tissue_headneck-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.2561625799573561	1	score_as_positive-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.3601056338028169	0	score_as_negative-tissue_pancreas-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.213301724137931	0	score_as_negative-tissue_bone-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.194375	0	score_as_negative-tissue_breast-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.2024384057971014	0	score_as_negative-tissue_kidney-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.215	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.2585229799851742	0	score_as_negative-tissue_prostate-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.2518680083351612	0	score_as_negative-tissue_esophagus-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.2114448763543131	0	score_as_negative-tissue_liver-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.2149607432144379	0	score_as_negative-tissue_blood-wnormal_0.25
+AKIRIN1	MACF1	['ovary']	0.3119230769230769	0	score_as_negative-tissue_headneck-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2917507788161994	1	score_as_positive-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.3821830985915493	0	score_as_negative-tissue_pancreas-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.262146551724138	0	score_as_negative-tissue_bone-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2681884057971014	0	score_as_negative-tissue_kidney-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2270833333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2801272547566098	0	score_as_negative-tissue_prostate-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2877963917525773	0	score_as_negative-tissue_esophagus-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2435249359027375	0	score_as_negative-tissue_liver-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.244071603666335	0	score_as_negative-tissue_blood-wnormal_0.25
+AKAP12	ESR1	['ovary', 'breast']	0.2898076923076922	0	score_as_negative-tissue_headneck-wnormal_0.25
+AHCY	ITCH	['ovary']	0.2324426972281449	1	score_as_positive-wnormal_0.25
+AHCY	ITCH	['ovary']	0.3573591549295775	0	score_as_negative-tissue_pancreas-wnormal_0.25
+AHCY	ITCH	['ovary']	0.1106637931034482	0	score_as_negative-tissue_bone-wnormal_0.25
+AHCY	ITCH	['ovary']	0.1823125	0	score_as_negative-tissue_breast-wnormal_0.25
+AHCY	ITCH	['ovary']	0.1295688405797101	0	score_as_negative-tissue_kidney-wnormal_0.25
+AHCY	ITCH	['ovary']	0.2497916666666667	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+AHCY	ITCH	['ovary']	0.1577230046948357	0	score_as_negative-tissue_prostate-wnormal_0.25
+AHCY	ITCH	['ovary']	0.146432331651678	0	score_as_negative-tissue_esophagus-wnormal_0.25
+AHCY	ITCH	['ovary']	0.1283589722383039	0	score_as_negative-tissue_liver-wnormal_0.25
+AHCY	ITCH	['ovary']	0.1437944081284638	0	score_as_negative-tissue_blood-wnormal_0.25
+AHCY	ITCH	['ovary']	0.0913461538461538	0	score_as_negative-tissue_headneck-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.1673089019189765	1	score_as_positive-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.3157394366197182	0	score_as_negative-tissue_pancreas-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.1812543103448276	0	score_as_negative-tissue_bone-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.17325	0	score_as_negative-tissue_breast-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.1666014492753623	0	score_as_negative-tissue_kidney-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.16	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.123629231529528	0	score_as_negative-tissue_prostate-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.1306311691160342	0	score_as_negative-tissue_esophagus-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.1144899098503018	0	score_as_negative-tissue_liver-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.1188408590308369	0	score_as_negative-tissue_blood-wnormal_0.25
+TRAF3IP2	FYN	['ovary']	0.3103846153846153	0	score_as_negative-tissue_headneck-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.243183368869936	1	score_as_positive-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.3605281690140845	0	score_as_negative-tissue_pancreas-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.1573232758620689	0	score_as_negative-tissue_bone-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.2026874999999999	0	score_as_negative-tissue_breast-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.1813695652173912	0	score_as_negative-tissue_kidney-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.1689583333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.2116033481591301	0	score_as_negative-tissue_prostate-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.1875038385610879	0	score_as_negative-tissue_esophagus-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.156087654729413	0	score_as_negative-tissue_liver-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.1118646973141963	0	score_as_negative-tissue_blood-wnormal_0.25
+SMCO2	PPFIBP1	['ovary']	0.1775	0	score_as_negative-tissue_headneck-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0311109813084112	1	score_as_positive-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0	0	score_as_negative-tissue_pancreas-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.049103448275862	0	score_as_negative-tissue_bone-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0482971014492753	0	score_as_negative-tissue_kidney-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0852083333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.1094514455151964	0	score_as_negative-tissue_prostate-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0556018315420048	0	score_as_negative-tissue_esophagus-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.045567777685882	0	score_as_negative-tissue_liver-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0314308298991047	0	score_as_negative-tissue_blood-wnormal_0.25
+PMEPA1	MSL2	['ovary', 'breast']	0.0403846153846153	0	score_as_negative-tissue_headneck-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2435335820895522	1	score_as_positive-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.4318309859154929	0	score_as_negative-tissue_pancreas-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2589137931034482	0	score_as_negative-tissue_bone-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.27	0	score_as_negative-tissue_breast-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2280362318840579	0	score_as_negative-tissue_kidney-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2474999999999999	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2693164689893748	0	score_as_negative-tissue_prostate-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2796912700153542	0	score_as_negative-tissue_esophagus-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2522494693022358	0	score_as_negative-tissue_liver-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2438985895978399	0	score_as_negative-tissue_blood-wnormal_0.25
+SPAG9	MBTD1	['ovary']	0.2573076923076923	0	score_as_negative-tissue_headneck-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1335474137931034	1	score_as_positive-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.310669014084507	0	score_as_negative-tissue_pancreas-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1725625	0	score_as_negative-tissue_breast-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.0822934782608695	0	score_as_negative-tissue_kidney-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1814583333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1858333333333333	0	score_as_negative-tissue_prostate-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1821112085983768	0	score_as_negative-tissue_esophagus-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1265472941306206	0	score_as_negative-tissue_liver-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1836817891146795	0	score_as_negative-tissue_blood-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.161705223880597	0	score_as_negative-tissue_ovary-wnormal_0.25
+NDC80	SMCHD1	['bone']	0.1873076923076923	0	score_as_negative-tissue_headneck-wnormal_0.25
+TERT	TRIO	['bone']	0.1880215517241378	1	score_as_positive-wnormal_0.25
+TERT	TRIO	['bone']	0.0	0	score_as_negative-tissue_pancreas-wnormal_0.25
+TERT	TRIO	['bone']	0.2591875	0	score_as_negative-tissue_breast-wnormal_0.25
+TERT	TRIO	['bone']	0.0916449275362319	0	score_as_negative-tissue_kidney-wnormal_0.25
+TERT	TRIO	['bone']	0.1889583333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+TERT	TRIO	['bone']	0.204905485544848	0	score_as_negative-tissue_prostate-wnormal_0.25
+TERT	TRIO	['bone']	0.1772249945163413	0	score_as_negative-tissue_esophagus-wnormal_0.25
+TERT	TRIO	['bone']	0.1470771648333471	0	score_as_negative-tissue_liver-wnormal_0.25
+TERT	TRIO	['bone']	0.0990294159442944	0	score_as_negative-tissue_blood-wnormal_0.25
+TERT	TRIO	['bone']	0.0653030383795309	0	score_as_negative-tissue_ovary-wnormal_0.25
+TERT	TRIO	['bone']	0.2498076923076923	0	score_as_negative-tissue_headneck-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.1057158016592706	1	score_as_positive-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.0	0	score_as_negative-tissue_pancreas-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.120875	0	score_as_negative-tissue_breast-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.0424021739130434	0	score_as_negative-tissue_kidney-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.0360416666666666	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.1722834815913022	0	score_as_negative-tissue_prostate-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.158967975433209	0	score_as_negative-tissue_esophagus-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.0920671711741515	0	score_as_negative-tissue_liver-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.064570218132727	0	score_as_negative-tissue_blood-wnormal_0.25
+GNS	NUP107	['bone', 'headneck']	0.0399525586353944	0	score_as_negative-tissue_ovary-wnormal_0.25
+STAT3	PTRF	['breast']	0.0691875	1	score_as_positive-wnormal_0.25
+STAT3	PTRF	['breast']	0.368556338028169	0	score_as_negative-tissue_pancreas-wnormal_0.25
+STAT3	PTRF	['breast']	0.1133793103448275	0	score_as_negative-tissue_bone-wnormal_0.25
+STAT3	PTRF	['breast']	0.1649673913043478	0	score_as_negative-tissue_kidney-wnormal_0.25
+STAT3	PTRF	['breast']	0.0449999999999999	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+STAT3	PTRF	['breast']	0.114419014084507	0	score_as_negative-tissue_prostate-wnormal_0.25
+STAT3	PTRF	['breast']	0.0721994955033998	0	score_as_negative-tissue_esophagus-wnormal_0.25
+STAT3	PTRF	['breast']	0.1264209604940314	0	score_as_negative-tissue_liver-wnormal_0.25
+STAT3	PTRF	['breast']	0.1402472644592866	0	score_as_negative-tissue_blood-wnormal_0.25
+STAT3	PTRF	['breast']	0.2042763859275053	0	score_as_negative-tissue_ovary-wnormal_0.25
+STAT3	PTRF	['breast']	0.0201923076923076	0	score_as_negative-tissue_headneck-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3130952316897316	1	score_as_positive-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.5930281690140844	0	score_as_negative-tissue_pancreas-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3173922413793103	0	score_as_negative-tissue_bone-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.39575	0	score_as_negative-tissue_breast-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.2561340579710144	0	score_as_negative-tissue_kidney-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3710416666666667	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3792173214726958	0	score_as_negative-tissue_prostate-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3557816955472691	0	score_as_negative-tissue_esophagus-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3094171877220406	0	score_as_negative-tissue_blood-wnormal_0.25
+VTI1A	TCF7L2	['ovary', 'liver']	0.3667307692307692	0	score_as_negative-tissue_headneck-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.1780476578545377	1	score_as_positive-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.4279225352112676	0	score_as_negative-tissue_pancreas-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.1716594827586207	0	score_as_negative-tissue_bone-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.2118913043478261	0	score_as_negative-tissue_kidney-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.2347916666666666	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.1789992587101556	0	score_as_negative-tissue_prostate-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.2179853037946918	0	score_as_negative-tissue_esophagus-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.1927428236464402	0	score_as_negative-tissue_blood-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.2751775053304904	0	score_as_negative-tissue_ovary-wnormal_0.25
+CBFA2T2	CHMP4B	['breast', 'liver']	0.2205769230769231	0	score_as_negative-tissue_headneck-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.1269374999999999	1	score_as_positive-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.4048943661971831	0	score_as_negative-tissue_pancreas-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.0874094827586206	0	score_as_negative-tissue_bone-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.0940760869565217	0	score_as_negative-tissue_kidney-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.0995833333333333	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.1247556832221398	0	score_as_negative-tissue_prostate-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.1227341522263654	0	score_as_negative-tissue_esophagus-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.1257269870151352	0	score_as_negative-tissue_liver-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.1264125337501776	0	score_as_negative-tissue_blood-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.2301183368869936	0	score_as_negative-tissue_ovary-wnormal_0.25
+MPZL1	DCAF6	['breast']	0.0017307692307692	0	score_as_negative-tissue_headneck-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.4529999999999999	1	score_as_positive-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.3794366197183099	0	score_as_negative-tissue_pancreas-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.44025	0	score_as_negative-tissue_bone-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.2744420289855073	0	score_as_negative-tissue_kidney-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.399375	0	score_as_negative-tissue_gallbladder-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.534681554237707	0	score_as_negative-tissue_prostate-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.4814553630182058	0	score_as_negative-tissue_esophagus-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.4211832492487525	0	score_as_negative-tissue_liver-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.3368774868551938	0	score_as_negative-tissue_blood-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.2742009594882729	0	score_as_negative-tissue_ovary-wnormal_0.25
+MIPOL1	TTC6	['breast']	0.4796153846153846	0	score_as_negative-tissue_headneck-wnormal_0.25
