@@ -8,9 +8,10 @@ import glob
 parser = argparse.ArgumentParser()
 parser.add_argument("--roc-script", default="/data/jake/rl-tools/plot/roc.py",
                     help="Path to roc plotting script")
-parser.add_argument("--score-table", default="score_negs_tissue_specific.tsv", help="Path to score table tsv file")
-parser.add_argument("--outdir", default="roc_negs_tissue_specific")
-parser.add_argument("--w_normals", default="0.25,0.5,0.75", type=str, help="csv string of w_normal weights to try")
+parser.add_argument("--score-table", default="score-neg_tissue_specific.tsv", help="Path to score table tsv file")
+parser.add_argument("--outdir", default="roc_data-neg_tissue_specific")
+parser.add_argument("--w_normals", default="0,0.25,0.5,0.75,1", type=str, help="csv string of w_normal weights to try")
+parser.add_argument("--title", default="", help="Title for ROC curve plot")
 args = parser.parse_args()
 w_normals = [float(w) for w in args.w_normals.split(",")]
 os.makedirs(args.outdir, exist_ok=True)
@@ -27,11 +28,9 @@ for w_normal in w_normals:
 			outfile += ".tsv"
 		with open(outfile, "w") as f:
 			f.write("gene_left\tgene_right\ttissue\tscore\tlabel\tscore_column_name\n")
-			for i,row in df.iterrows():
-				# drop nan values
-				# these are the negative score columns for the tissue that the fusion is recurrent in.
-				mask = row.isna()
-				row = row[~mask]
+			for row_i, row in df.iterrows():
+				# remove NaNs for this row (non-applicable tissue-specific score columns)
+				row = row.dropna()
 				gene_left=row["gene_left"]
 				gene_right=row["gene_right"]
 				tissue=row['tissue_w_data']
@@ -57,5 +56,6 @@ print(rocfiles)
 rocfiles = [os.path.basename(f) for f in rocfiles]
 rocfiles = ",".join(rocfiles)
 cmd = f"cd {args.outdir} && python {args.roc_script} --scores {rocfiles} " \
-    f"--output roc_curves.png --score_col 3 --label_col 4 --header"
+    f"--output roc_curves.png --score_col 3 --label_col 4 --header" \
+    f" --title '{args.title}'"
 subprocess.run(cmd, shell=True)

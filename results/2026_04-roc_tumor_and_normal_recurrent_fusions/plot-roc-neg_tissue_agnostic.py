@@ -15,7 +15,7 @@ parser.add_argument("--score-table", default="score-neg_tissue_agnostic.tsv", he
 parser.add_argument("--outdir", default="roc_data-neg_tissue_agnostic")
 parser.add_argument("--w_normals", default="0.0,0.25,0.5,0.75,1.0", help="Comma-separated list of w_normal values")
 parser.add_argument("--thousg-only", action="store_true", help="Whether to also plot ROC curves for 1000G-only scoring (no normal evidence)")
-parser.add_argument("--title", default="ROC tissue-agnostic negative scoring", help="Title for ROC plot")
+parser.add_argument("--title", default="", help="Title for ROC plot")
 
 W_NORMALS = [float(x) for x in parser.parse_args().w_normals.split(",")]
 

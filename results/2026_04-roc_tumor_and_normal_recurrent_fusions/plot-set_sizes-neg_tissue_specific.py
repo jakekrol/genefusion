@@ -7,8 +7,8 @@ import tempfile
 import os
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--input", '-i', default='roc_data-neg_tissue_agnostic/roc_input-neg1-wnormal_0.0.tsv')
-parser.add_argument("--output", '-o', default='set_sizes-neg_tissue_agnostic.bar.png')
+parser.add_argument("--input", '-i', default='roc_data-neg_tissue_specific/roc_input-neg2-w_normal_0.0.tsv')
+parser.add_argument("--output", '-o', default='set_sizes-neg_tissue_specific.bar.png')
 parser.add_argument("--bar_script", default="/data/jake/rl-tools/plot/bars.py")
 parser.add_argument("--title", default="Set sizes")
 args= parser.parse_args()
