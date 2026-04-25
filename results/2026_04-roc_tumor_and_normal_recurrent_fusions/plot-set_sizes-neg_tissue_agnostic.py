@@ -11,6 +11,7 @@ parser.add_argument("--input", '-i', default='roc_data-neg_tissue_agnostic/roc_i
 parser.add_argument("--output", '-o', default='set_sizes-neg_tissue_agnostic.bar.png')
 parser.add_argument("--bar_script", default="/data/jake/rl-tools/plot/bars.py")
 parser.add_argument("--title", default="Set sizes")
+parser.add_argument("--include-count", action="store_true")
 args= parser.parse_args()
 
 df = pd.read_csv(args.input, sep="\t")
@@ -27,6 +28,8 @@ with tempfile.NamedTemporaryFile(mode='w', delete=False) as tmp:
 
 cmd = f"cat {tmp_path} | " \
     f"{args.bar_script} -o {args.output} --title '{args.title}'"
+if args.include_count:
+	cmd += " --include-count"
 subprocess.run(cmd, shell=True)
 
 os.remove(tmp_path)

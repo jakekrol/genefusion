@@ -77,7 +77,11 @@ def main() -> None:
             outfile=outfile_w_1000g,
         )
         roc_files.append(str(outfile_w_1000g))
-        names.append(f"Wnormal={w_normal};1000G")
+        if args.thousg_only:
+            name = f"Wnormal={w_normal}"
+        else:
+            name = f"Wnormal={w_normal};w_1000G"
+        names.append(name)
 
 
     print("ROC files:", ",".join(roc_files))
