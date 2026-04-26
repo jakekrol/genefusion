@@ -1,0 +1,21 @@
+---
+title: "2026 DBMI Symposium"
+format:
+  revealjs:
+    css: theme.scss
+---
+
+## Notes
+
+- Use abstract as guideline
+- No more than 20 slides
+- Intro (<3min)
+- Data and methods (~2 min)
+- Results (<4 min)
+- Conclusion (<2 min)
+- Acknowledgements (<1 min)
+
+## Introduction
+		
+- test
+![](./images/filtering-w-pop-sv-databases.png)
