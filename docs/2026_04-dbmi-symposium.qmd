@@ -129,7 +129,7 @@ STIX & GIGGLE developed by Layer Lab
 ## Adjacent work
 
 ::: {.small}
-- Population databases are already used for *filtering* unlikely tumor-driving structural variants (SV)s
+- Large control cohorts are used for *filtering* structural variants (SV)s
 :::
 
 ![](./images/filtering-w-pop-sv-databases.png)
@@ -186,8 +186,30 @@ Need a large cancer cohort to find recurrent fusions
 
 :::aside
 Variability in tissue, sequencing technology, and disease state across samples
-
 :::
+
+## Feasibility enabled by databases
+
+::: {.very-small}
+- Competing databases are usually summary statistics
+- GIGGLE and STIX retain sample-wise read-level evidence
+:::
+
+![](../results/2026_04-pcawg_sample_counts/sample_counts_tissue.png){fig-align="center" width=30%}
+
+:::: {.columns}
+::: {.column width="33%"}
+![](./images/database-solid.png){fig-align="center" width=40%}
+:::
+::: {.column width="33%"}
+![](./images/stix-cropped.png){fig-align="center" width=40%}
+:::
+::: {.column width="34%"}
+![](./images/giggle.png){fig-align="center" width=40%}
+:::
+::::
+
+
 
 ## Fusion prioritization
 
@@ -323,9 +345,11 @@ Optional mixing parameters: $W_{normal} \in [0,1]$ and $W_{tumor} = 1 - W_{norma
 ::::
 
 
-## Results
+## Novel fusion discovery
 
-- Using score prioritization, discovered a potential novel fusion in kidney cancer: SHPK--ITGAE
+::: {.small}
+- Discovered a potential novel fusion in kidney cancer: SHPK--ITGAE
+:::
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -364,13 +388,12 @@ Large normal cohort (data-driven) filtering supplements annotation (gene name) f
 ## Conclusions
 
 ::: {.small}
-- Intuitive scoring collapses and ranks multimodal, multi-sample fusion evidence
-- Score evaluation
-  - Separation of recurrent tumor & recurrent normal fusions
-  - Demonstrated tissue specificity of recurrent tumor fusions
+- Developed a fusion ranking metric for population-scale data
+- Evaluation
+  - Separation of recurrent tumor and normal fusions
+  - Tissue specificity
 - Potential novel fusion discovery: SHPK--ITGAE in kidney cancer
   - Not reported in primary PCAWG publication
-  - Visual confirmation of read support
 :::
 
 :::: {.columns}
@@ -390,10 +413,9 @@ Large normal cohort (data-driven) filtering supplements annotation (gene name) f
 
 ::: {.small}
 - Potential collaboration with Anschutz Children's hospital
-- More visual verification and functional analysis of putative overlooked PCAWG fusions
-- Probabilistic score interpretation
-  - Random gene pairs as null distribution
-  - No assumption about what score values are "good/bad"
+- Further visual verification 
+  - Multiple samples
+- Add probabilistic score interpretation
 :::
 
 :::: {.columns}
