@@ -19,151 +19,88 @@ Layer lab
 :::
 ![](./images/cu-boulder-logo.png){fig-align="center"}
 
-
-<!-- ## Outline
-
-- Genefusion structural variants (SV)s
-- Human genome population databases
-- Polymerization: population-scale discovery of tumor driving genefusions
-- Evaluation and novel fusion discovery using Polymerization -->
-
-<!-- talk about fusion -->
-
-<!-- :::: {.columns}
-::: {.column width="25%"}
-![](./images/genefusion-diagram.png){fig-align="center"}
-:::
-::: {.column width="25%"}
-![](./images/stix-cropped.png){fig-align="center" width=60%}
-:::
-::: {.column width="25%"}
-![](../results/2025_11-score/prostate/null_v_pcawg_hist.png){fig-align="center" width=85%}
-:::
-::: {.column width="25%"}
-![](../results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center"}
-:::
-:::: -->
-
-
-
 ## Genefusions
 
 
-- Genefusions are mutations joining two genes together
+- Genefusion mutations merge genes together
 
 ![](./images/gene-fusion-cartoon.png){fig-align="center"}
 
-<!-- ::: {.column width="70%"}
-![](./images/sv-del-diagram.png){fig-align="center"}
-::: -->
 
 ## Recurrent tumor fusions
 
 ::: {.small}
-- In human cancer, some fusions are known to drive tumor progression
 - **Recurrent** fusions are potential diagnostic and therapeutic targets
 :::
 
-
 :::: {.columns}
-
-::: {.column width="30%"}
-![](./images/blue-person-group-icon.png){fig-align="center"}
+::: {.column width="50%"}
+::: {.center}
+![PCAWG recurrent fusions](./images/pcawg-recurrent-fusions-heatmap-and-legend.png){fig-align="center"}
 :::
-
-::: {.column width="70%"}
-![](./images/chimerdb-recurrent-fusions-cropped.png){fig-align="center"}
+:::
+::: {.column width="50%"}
+![](./images/erg-tmprss2.png){fig-align="center"}
+![](./images/pcawg-logo-cropped.png){fig-align="center" width=80%}
 :::
 ::::
 
-:::aside
-E.g., ERG-TMPRSS2 is a diagnostic marker, occuring in ~50% of prostate cancer cases
+## Gaps in recurrent fusion discovery
+
+::: {.small}
+- RNA-seq focused, **not DNA-seq**
+- Assume short, paired-end read sequencing data, not **long read**
+- Single-sample, **not multi-sample**
 :::
-
-## Genomic interval databases
-
-- Storage and retrieval of fusions across populations is enabled by genomic interval databases (STIX & GIGGLE)
-
 
 :::: {.columns}
 ::: {.column width="33%"}
-![](./images/database-solid.png){fig-align="center"}
+![](./images/rna-molecule.png){fig-align="center" width=80%}
 :::
 ::: {.column width="33%"}
-![](./images/stix-cropped.png){fig-align="center"}
+
+<br><br>
+
+![](./images/paired-end-read-sequencing.jpg){fig-align="center"}
 :::
 ::: {.column width="34%"}
-![](./images/giggle.png){fig-align="center"}
+![](./images/black-person-cropped.png){fig-align="center" width=65%}
 :::
 ::::
 
-:::aside
-STIX & GIGGLE developed by Layer Lab
-:::
 
+## Multiple samples increase sensitivity
 
+- Sample aggregation amplifies fusion signal
 
-<!-- ## Problem statement
-
-::: {.small}
-- How discover novel recurrent fusions driving human cancer?
-- Can population recurrency be used to amplify low fusion signal overlooked by single-sample fusion callers?
-:::
+<br>
 
 :::: {.columns}
-::: {.column width="50%"}
-![](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png){width=70% fig-align="center"}
+::: {.column width="25%"}
+![](./images/black-person-cropped.png){fig-align="center" width=60%}
 :::
-::: {.column width="50%"}
-![](../results/2026_03-func_equiv_exp/func_equiv_samples.png){width=90% fig-align="center"}
+::: {.column width="25%"}
+![](./images/fractional-tumor-cells.png){fig-align="center" width=30%}
 :::
-::::
-<!-- add star at mean breakpoint -->
-
-<!-- :::{.small}
-"Functionally equivalent" variants are necessary to identify recurrency
-::: -->
-
-
-
-## Adjacent work
-
-::: {.small}
-- Large control cohorts are used for *filtering* structural variants (SV)s
+::: {.column width="25%"}
+![](./images/black-person-cohort.png){fig-align="center" width=80%}
 :::
-
-![](./images/filtering-w-pop-sv-databases.png)
-
-:::: {.columns}
-::: {.column width="35%"}
-:::
-::: {.column width="35%"}
-![](./images/gnomad-logo.png){fig-align="center" width=35%}
-![](./images/1000-genomes.jpg){fig-align="center" width=35%}
-:::
-::: {.column width="30%"}
+::: {.column width="25%"}
+![](./images/fractiona-tumor-cells-grid.png){fig-align="center"}
 :::
 ::::
 
-::: aside
-Fusions are a special case of SVs
-:::
-
-<!-- Population databases for *discovery* of SV-disease-association is underexplored -->
-
-  
-## Current approach
-
-::: {.small}
-- Here, population databases are used for *discovery* of tumor-driving fusions
-:::
-
-![](./images/discovery-w-pop-sv-databases.png){fig-align="center" width=70%}
 
 
-:::aside
-Need a large cancer cohort to find recurrent fusions
-:::
+## Addressing gaps
+
+![](./images/addressing-gaps.png){fig-align="center" width=70%}
+
+## Approach
+
+- Sample-level fusion evidence from various cancer types
+
+![](./images/tissue-type-databases.png){fig-align="center" width=70%}
 
 
 
@@ -188,118 +125,22 @@ Need a large cancer cohort to find recurrent fusions
 Variability in tissue, sequencing technology, and disease state across samples
 :::
 
-## Feasibility enabled by databases
-
-::: {.very-small}
-- Competing databases are usually summary statistics
-- GIGGLE and STIX retain sample-wise read-level evidence
-:::
-
-![](../results/2026_04-pcawg_sample_counts/sample_counts_tissue.png){fig-align="center" width=30%}
-
-:::: {.columns}
-::: {.column width="33%"}
-![](./images/database-solid.png){fig-align="center" width=40%}
-:::
-::: {.column width="33%"}
-![](./images/stix-cropped.png){fig-align="center" width=40%}
-:::
-::: {.column width="34%"}
-![](./images/giggle.png){fig-align="center" width=40%}
-:::
-::::
 
 
 
 ## Fusion prioritization
 
-
-- How prioritize most likely tumor-driving fusions given the multimodal evidence ($\mathbf{x}$)?
-
-:::: {.columns}
-::: {.column width="50%"}
-![](../results/2026_04-pcawg_sample_counts/sample_counts_tissue.png){fig-align="center"}
-:::
-::: {.column width="50%"}
-$$
-f(\mathbf{x}) = \text{?}
-$$
-:::
-::::
-
-
-
-
-
-
-## Fundamental units of fusion evidence
-
-![](./images/fundamental-units-of-genefusion-evidence-w-cohort.png)
-
-$$
-\text{score} = {\color{skyblue}{\text{#reads}}} + {\color{skyblue}{\text{#samples}}} - \text{#reads} - \text{#samples}
-$$
-
-
-## Normalization
-
-
-
-::: {.small}
-- Normalization accounts for population size and sequencing parameters (coverage)
-:::
+**Polymerization** score ranks fusions given multimodal data
 
 :::: {.columns}
-::: {.column width="50%"}
-![](./images/sample-normalization.png){fig-align="center" width=60%}
-:::
-::: {.column width="50%"}
-![](../results/2026_01-toy-score-plots/tumor_read_score.png){fig-align="center" width=80%}
-:::
-::::
+::: {.column width="33%"}
 
-
-:::: {.columns}
-::: {.column width="30%"}
-::: {.very-small}
-$$
-\text{score}_{\text{sample}} \in [0,1] = \frac{\text{#samples}}{\text{Population size}} 
-$$
+![](./images/fusion-search-space.png){fig-align="center" width=80%}
 :::
-:::
-
-::: {.column width="40%"}
-::: {.very-small}
-$$
-\text{score}_{\text{reads}} \in [0,1] =
-\begin{cases}
-  \frac{\mathbb{E}[\text{max reads]} - |\text{#reads} - \mathbb{E}[\text{max reads}]|}{\mathbb{E}[\text{max reads}]} & \text{if #reads} \leq 2\cdot \mathbb{E}[\text{max reads}] \\[6pt]
-  0 & \text{else}
-\end{cases} 
-$$
-:::
-:::
-
-::: {.column width="30%"}
-
+::: {.column width="66%"}
+![](./images/score-cartoon.png){fig-align="center" width=100%}
 :::
 ::::
-
-## Score sign interpretation
-
-- score $\in \mathbb{R}_{++} \rightarrow$ [tumor]{style="color: skyblue;"} evidence $>$ normal evidence
-
-$$
-\text{score} = \frac{1}{2} ({\color{skyblue}{\text{score}_{\text{reads}}}} + {\color{skyblue}{\text{score}_{\text{samples}}}} - \text{score}_{\text{reads}} - \text{score}_{\text{samples}})
-$$
-
-:::aside
-$\frac{1}{2}$ scales score to [-1,1] range
-
-Optional mixing parameters: $W_{normal} \in [0,1]$ and $W_{tumor} = 1 - W_{normal}$
-:::
-
-
 
 ## Prostate ERG-TMPRSS2 evaluation
 
@@ -434,7 +275,7 @@ Large normal cohort (data-driven) filtering supplements annotation (gene name) f
 - Ben Braun
 - Simon Walker
 - Anton Avramov, Ph.D.
-- Eric Johnson, Ph.D.
+- Erik Johnson, Ph.D.
 - Funding: NIH 5R01HG011774-04
 
 ## References
@@ -452,7 +293,239 @@ Large normal cohort (data-driven) filtering supplements annotation (gene name) f
 - ChimerDB
   - [Ye Eun Jang, Insu Jang, Sunkyu Kim, Subin Cho, Daehan Kim, Keonwoo Kim, Jaewon Kim, Jimin Hwang, Sangok Kim, Jaesang Kim, Jaewoo Kang, Byungwook Lee, Sanghyuk Lee, ChimerDB 4.0: an updated and expanded database of fusion genes, Nucleic Acids Research, Volume 48, Issue D1, 08 January 2020, Pages D817–D824, https://doi.org/10.1093/nar/gkz1013] -->
 
-## Notes
+## Appendix
+
+## Read-level resolution
+
+- Read-level fusion evidence is stored for each sample
+
+:::: {.columns}
+::: {.column width="33%"}
+![](./images/database-solid.png){fig-align="center" width=55%}
+![](./images/stix-cropped.png){fig-align="center" width=55%}
+:::
+::: {.column width="66%"}
+
+<br>
+
+![](./images/fundamental-units-of-genefusion-evidence.png){fig-align="center" width=100%}
+:::
+::::
+
+## Fundamental units of fusion evidence
+
+![](./images/fundamental-units-of-genefusion-evidence-w-cohort.png)
+
+$$
+\text{score} = {\color{skyblue}{\text{#reads}}} + {\color{skyblue}{\text{#samples}}} - \text{#reads} - \text{#samples}
+$$
+
+
+## Normalization
+
+
+
+::: {.small}
+- Normalization accounts for population size and sequencing parameters (coverage)
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+![](./images/sample-normalization.png){fig-align="center" width=60%}
+:::
+::: {.column width="50%"}
+![](../results/2026_01-toy-score-plots/tumor_read_score.png){fig-align="center" width=80%}
+:::
+::::
+
+
+:::: {.columns}
+::: {.column width="30%"}
+::: {.very-small}
+$$
+\text{score}_{\text{sample}} \in [0,1] = \frac{\text{#samples}}{\text{Population size}} 
+$$
+:::
+:::
+
+::: {.column width="40%"}
+::: {.very-small}
+$$
+\text{score}_{\text{reads}} \in [0,1] =
+\begin{cases}
+  \frac{\mathbb{E}[\text{max reads]} - |\text{#reads} - \mathbb{E}[\text{max reads}]|}{\mathbb{E}[\text{max reads}]} & \text{if #reads} \leq 2\cdot \mathbb{E}[\text{max reads}] \\[6pt]
+  0 & \text{else}
+\end{cases} 
+$$
+:::
+:::
+
+::: {.column width="30%"}
+
+:::
+::::
+
+## Score sign interpretation
+
+- score $\in \mathbb{R}_{++} \rightarrow$ [tumor]{style="color: skyblue;"} evidence $>$ normal evidence
+
+$$
+\text{score} = \frac{1}{2} ({\color{skyblue}{\text{score}_{\text{reads}}}} + {\color{skyblue}{\text{score}_{\text{samples}}}} - \text{score}_{\text{reads}} - \text{score}_{\text{samples}})
+$$
+
+:::aside
+$\frac{1}{2}$ scales score to [-1,1] range
+
+Optional mixing parameters: $W_{normal} \in [0,1]$ and $W_{tumor} = 1 - W_{normal}$
+:::
+
+
+
+<!-- ## Graveyard -->
+
+
+<!-- ## Problem statement
+
+::: {.small}
+- How discover novel recurrent fusions driving human cancer?
+- Can population recurrency be used to amplify low fusion signal overlooked by single-sample fusion callers?
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+![](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png){width=70% fig-align="center"}
+:::
+::: {.column width="50%"}
+![](../results/2026_03-func_equiv_exp/func_equiv_samples.png){width=90% fig-align="center"}
+:::
+::::
+<!-- add star at mean breakpoint -->
+
+<!-- :::{.small}
+"Functionally equivalent" variants are necessary to identify recurrency
+::: -->
+
+
+<!-- ## Outline
+
+- Genefusion structural variants (SV)s
+- Human genome population databases
+- Polymerization: population-scale discovery of tumor driving genefusions
+- Evaluation and novel fusion discovery using Polymerization -->
+
+<!-- talk about fusion -->
+
+<!-- :::: {.columns}
+::: {.column width="25%"}
+![](./images/genefusion-diagram.png){fig-align="center"}
+:::
+::: {.column width="25%"}
+![](./images/stix-cropped.png){fig-align="center" width=60%}
+:::
+::: {.column width="25%"}
+![](../results/2025_11-score/prostate/null_v_pcawg_hist.png){fig-align="center" width=85%}
+:::
+::: {.column width="25%"}
+![](../results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center"}
+:::
+:::: -->
+
+<!-- ::: {.column width="70%"}
+![](./images/sv-del-diagram.png){fig-align="center"}
+::: -->
+
+<!-- Population databases for *discovery* of SV-disease-association is underexplored -->
+
+
+<!-- ## Adjacent work
+
+::: {.small}
+- Large control cohorts are used for *filtering* structural variants (SV)s
+:::
+
+![](./images/filtering-w-pop-sv-databases.png)
+
+:::: {.columns}
+::: {.column width="35%"}
+:::
+::: {.column width="35%"}
+![](./images/gnomad-logo.png){fig-align="center" width=35%}
+![](./images/1000-genomes.jpg){fig-align="center" width=35%}
+:::
+::: {.column width="30%"}
+:::
+::::
+
+::: aside
+Fusions are a special case of SVs
+::: -->
+
+
+<!-- ## Genomic interval databases
+
+- Storage and retrieval of fusions across populations is enabled by genomic interval databases (STIX & GIGGLE)
+
+
+:::: {.columns}
+::: {.column width="33%"}
+![](./images/database-solid.png){fig-align="center"}
+:::
+::: {.column width="33%"}
+![](./images/stix-cropped.png){fig-align="center"}
+:::
+::: {.column width="34%"}
+![](./images/giggle.png){fig-align="center"}
+:::
+::::
+
+:::aside
+STIX & GIGGLE developed by Layer Lab
+:::
+
+
+
+
+
+
+
+  
+## Current approach
+
+::: {.small}
+- Here, population databases are used for *discovery* of tumor-driving fusions
+:::
+
+![](./images/discovery-w-pop-sv-databases.png){fig-align="center" width=70%}
+
+
+:::aside
+Need a large cancer cohort to find recurrent fusions
+::: -->
+
+
+<!-- ## Feasibility enabled by databases
+
+::: {.very-small}
+- Competing databases are usually summary statistics
+- GIGGLE and STIX retain sample-wise read-level evidence
+:::
+
+![](../results/2026_04-pcawg_sample_counts/sample_counts_tissue.png){fig-align="center" width=30%}
+
+:::: {.columns}
+::: {.column width="33%"}
+![](./images/database-solid.png){fig-align="center" width=40%}
+:::
+::: {.column width="33%"}
+![](./images/stix-cropped.png){fig-align="center" width=40%}
+:::
+::: {.column width="34%"}
+![](./images/giggle.png){fig-align="center" width=40%}
+:::
+:::: -->
+
+
+<!-- ## Notes
 
 - Text -> Header
 - Ask for extension
@@ -473,5 +546,20 @@ Large normal cohort (data-driven) filtering supplements annotation (gene name) f
 - remove the pcawg heatmap and just talk about it
 
 ** in general, text -> header**
-- center format other text
+- center format other text -->
 
+<!-- ## Fusion prioritization
+
+
+- How prioritize most likely tumor-driving fusions given the multimodal evidence ($\mathbf{x}$)?
+
+:::: {.columns}
+::: {.column width="50%"}
+![](../results/2026_04-pcawg_sample_counts/sample_counts_tissue.png){fig-align="center"}
+:::
+::: {.column width="50%"}
+$$
+f(\mathbf{x}) = \text{?}
+$$
+:::
+:::: -->
