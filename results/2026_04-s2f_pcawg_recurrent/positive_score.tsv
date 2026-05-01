@@ -1,0 +1,25 @@
+gene_x	gene_y	projects	tissues	tissue_w_data	score	score_w_1000g
+ESR1	CCDC170	Ovary-AdenoCA,Breast-AdenoCA	ovary,breast	['ovary', 'breast']	0.08131723779854622	0.11895252989488915
+MACF1	AKIRIN1	Ovary-AdenoCA,Uterus-AdenoCA	ovary,uterus	['ovary']	0.07893816631130067	0.1907854642440407
+TRAF3IP2	FYN	Ovary-AdenoCA,Lymph-BNHL	ovary,lymph	['ovary']	0.06224253731343285	0.20873133022170362
+DCAF6	MPZL1	Breast-AdenoCA	breast	['breast']	0.046625	0.15175353773584907
+FGFR3	TACC3	CNS-GBM,Bladder-TCC,Head-SCC	brain,bladder,headneck	['bladder', 'headneck']	0.04653846153846153	0.26624568320039116
+SPAG9	MBTD1	Ovary-AdenoCA,Stomach-AdenoCA	ovary,stomach	['ovary']	0.04385554371002129	0.24229328499194305
+RPS6KB1	VMP1	Breast-AdenoCA,Uterus-AdenoCA	breast,uterus	['breast']	0.03225	0.07691155660377358
+MSL2	PMEPA1	Ovary-AdenoCA,Breast-AdenoCA	ovary,breast	['ovary', 'breast']	0.03221677050882657	0.06230995999829779
+STAT3	PTRF	Breast-AdenoCA,Lymph-BNHL	breast,lymph	['breast']	0.031875000000000014	0.20517177672955975
+CCDC6	RET	Lung-AdenoCA,Panc-AdenoCA,Thy-AdenoCA	lung,pancreas,thyroid	['pancreas']	0.025140845070422534	0.024515845070422534
+TTC6	MIPOL1	Breast-AdenoCA	breast	['breast']	0.02487499999999998	0.4536584119496855
+TRIO	TERT	Bone-Leiomyo	bone	['bone']	0.024448275862068963	0.06737002341920374
+DGUOK	ACTG2	Bone-Leiomyo,Bladder-TCC	bone,bladder	['bone', 'bladder']	0.013499999999999956	0.3076100702576112
+ITCH	AHCY	Ovary-AdenoCA,Bladder-TCC	ovary,bladder	['ovary', 'bladder']	0.010067164179104499	0.16881310774017894
+TMPRSS2	ERG	Prost-AdenoCA	prostate	['prostate']	0.00828020756115641	0.15704975844371039
+CHMP4B	CBFA2T2	Breast-AdenoCA,Liver-HCC	breast,liver,uterus	['breast', 'liver']	0.007902995928927958	0.24985472010019938
+GNS	NUP107	Bone-Leiomyo,CNS-GBM	bone,headneck	['bone', 'headneck']	0.005144703839475184	0.1784183535044554
+GTF2I	GTF2IRD1	Breast-AdenoCA,Liver-HCC,Uterus-AdenoCA	breast,liver,uterus	['breast', 'liver']	-0.0028337803959976454	0.02135689124038183
+SMCHD1	NDC80	Bone-Leiomyo,Lymph-BNHL	bone,lymph	['bone']	-0.002844827586206883	0.1007377049180328
+TCF7L2	VTI1A	Ovary-AdenoCA,Liver-HCC	ovary,liver	['ovary', 'liver']	-0.00795140757161611	0.12621782572036602
+AFM	FBF1	Liver-HCC	liver	['liver']	-0.00867752874038541	0.12597522123893806
+PPFIBP1	SMCO2	Ovary-AdenoCA,Uterus-AdenoCA	ovary,uterus	['ovary']	-0.022329424307036244	0.018939406567761295
+NUMB	HEATR4	Ovary-AdenoCA,Lymph-BNHL,Uterus-AdenoCA	ovary,lymph,uterus	['ovary']	-0.05590618336886993	0.0700611212979941
+ESR1	AKAP12	Ovary-AdenoCA,Breast-AdenoCA	ovary,breast	['ovary', 'breast']	-0.06775882658359295	0.07275936210051491

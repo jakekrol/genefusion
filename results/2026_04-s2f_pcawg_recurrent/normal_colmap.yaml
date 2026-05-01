@@ -1,0 +1,70 @@
+"blood_normal_dna":
+  reads_col: "reads_blood_normal_dna"
+  samples_col: "samples_blood_normal_dna"
+  total_samples: 124 
+  upper_bound: 50
+"bone_normal_dna":
+  reads_col: "reads_bone_normal_dna"
+  samples_col: "samples_bone_normal_dna"
+  total_samples: 58
+  upper_bound: 50
+"breast_normal_dna":
+  reads_col: "reads_breast_normal_dna"
+  samples_col: "samples_breast_normal_dna"
+  total_samples: 40
+  upper_bound: 50
+"esophagus_normal_dna":
+  reads_col: "reads_esophagus_normal_dna"
+  samples_col: "samples_esophagus_normal_dna"
+  total_samples: 97
+  upper_bound: 50
+"gallbladder_normal_dna":
+  reads_col: "reads_gallbladder_normal_dna"
+  samples_col: "samples_gallbladder_normal_dna"
+  total_samples: 12
+  upper_bound: 50
+"headneck_normal_dna":
+  reads_col: "reads_headneck_normal_dna"
+  samples_col: "samples_headneck_normal_dna"
+  total_samples: 13
+  upper_bound: 50
+"high_coverage_1000g_dna":
+  reads_col: "reads_high_coverage_1000g_dna"
+  samples_col: "samples_high_coverage_1000g_dna"
+  total_samples: 2504
+  upper_bound: 50
+"kidney_normal_dna":
+  reads_col: "reads_kidney_normal_dna"
+  samples_col: "samples_kidney_normal_dna"
+  total_samples: 45
+  upper_bound: 50
+"kidney_normal_rna":
+  reads_col: "reads_kidney_normal_rna"
+  samples_col: "samples_kidney_normal_rna"
+  total_samples: 24
+  upper_bound: 50
+"liver_normal_dna":
+  reads_col: "reads_liver_normal_dna"
+  samples_col: "samples_liver_normal_dna"
+  total_samples: 276
+  upper_bound: 50
+"liver_normal_rna":
+  reads_col: "reads_liver_normal_rna"
+  samples_col: "samples_liver_normal_rna"
+  total_samples: 45
+  upper_bound: 50
+# "low_coverage_1000g_dna":
+#   reads_col: "reads_low_coverage_1000g_dna"
+#   samples_col: "samples_low_coverage_1000g_dna"
+#   total_samples: 2535
+#   upper_bound: 50
+"ovary_normal_dna":
+  reads_col: "reads_ovary_normal_dna"
+  samples_col: "samples_ovary_normal_dna"
+  total_samples: 67
+  upper_bound: 50
+"prostate_normal_dna":
+  reads_col: "reads_prostate_normal_dna"
+  samples_col: "samples_prostate_normal_dna"
+  total_samples: 114
+  upper_bound: 50
