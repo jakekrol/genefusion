@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+FONTSIZE=20
 # bam=../2026_02-samplot_validation/plot_data/bams/liver_POLR3GL--LIX1L_DEL_PCAWG.4dd18422-e203-11e4-93ca-dd97a5ed4642.STAR.v1.bam
 bam=../2026_02-samplot_validation/plot_data/bams/kidney_SHPK--ITGAE_DEL_PCAWG.8631d5c8-dd36-11e4-b9d1-4999c254ba06.STAR.v1.bam
 cp $bam ${bam}.bai .
@@ -20,7 +21,7 @@ name=SHPK--ITGAE
 
 W=12
 H=6
-annotation_fontsize=20
+annotation_fontsize=$FONTSIZE
 annotation_filenames="."
 
 
@@ -31,4 +32,6 @@ samplot plot \
 	--window $window \
 	-W $W -H $H \
 	--annotation_fontsize $annotation_fontsize \
-	--annotation_filenames $annotation_filenames
+	--annotation_filenames $annotation_filenames \
+	--xaxis_label_fontsize $((FONTSIZE-10)) \
+	--yaxis_label_fontsize $((FONTSIZE-10))
