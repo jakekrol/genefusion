@@ -18,7 +18,7 @@ length=$((end - start))
 window=$((length / 100))
 name=SHPK--ITGAE
 
-W=10
+W=12
 H=6
 annotation_fontsize=20
 annotation_filenames="."
