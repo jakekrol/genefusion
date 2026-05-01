@@ -18,9 +18,17 @@ length=$((end - start))
 window=$((length / 100))
 name=SHPK--ITGAE
 
+W=10
+H=6
+annotation_fontsize=20
+annotation_filenames="."
+
+
 samplot plot \
 	-b $bam -c $chr -s $start -e $end -o plot.png -n $name \
 	-A $transcript_file \
 	--max_coverage 100  \
 	--window $window \
-	-W 7 -H 4
+	-W $W -H $H \
+	--annotation_fontsize $annotation_fontsize \
+	--annotation_filenames $annotation_filenames
