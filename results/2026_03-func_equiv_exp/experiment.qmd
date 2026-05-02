@@ -21,6 +21,7 @@ import math
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 from scipy.spatial.distance import pdist, squareform
+FONTSIZE=14
 ```
 
 ```{python}
@@ -72,8 +73,8 @@ ax_histx = fig.add_subplot(gs[0, :-1], sharex=ax_scatter)
 ax_histy = fig.add_subplot(gs[1:, -1], sharey=ax_scatter)
 
 ax_scatter.scatter(x, y, color='black', s=2)
-ax_scatter.set_xlabel('ERG Breakpoint (Mb)')
-ax_scatter.set_ylabel('TMPRSS2 Breakpoint (Mb)')
+ax_scatter.set_xlabel('ERG Breakpoint (Mbp)', fontsize=FONTSIZE)
+ax_scatter.set_ylabel('TMPRSS2 Breakpoint (Mbp)', fontsize=FONTSIZE)
 ax_scatter.set_title('Sample breakpoints')
 # limits based on gene coordinates
 ax_scatter.set_xlim(ERGSTART_MB, ERGEND_MB)
@@ -132,9 +133,10 @@ for eps in epsilons:
     counts.append(count)
 plt.figure(figsize=(8, 6))
 plt.plot(epsilons, counts, color='black', marker='o', markersize=4)
-plt.xlabel('Epsilon (bp)')
-plt.ylabel('Num. equivalent samples\n' + r'$\text{\#samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$')
-plt.title('Functional equivalence of ERG-TMPRSS2 fusion variants')
+plt.xlabel('Epsilon (bp)', fontsize=FONTSIZE)
+plt.ylabel(r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE)
+#plt.ylabel('Num. equivalent samples\n' + r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE)
+#plt.title('Functional equivalence of ERG-TMPRSS2 fusion variants')
 plt.savefig('func_equiv_samples.png', dpi=300)
 ```
 
@@ -164,7 +166,7 @@ plt.figure(figsize=(8, 8))
 plt.scatter(x, y, color='black', s=2)
 plt.xlabel('ERG Breakpoint')
 plt.ylabel('TMPRSS2 Breakpoint')
-plt.title('Sample breakpoints with 10kb functional equivalence box')
+#plt.title('Sample breakpoints with 10kb functional equivalence box')
 plt.xlim(ERGSTART, ERGEND)
 plt.ylim(TMPRSS2START, TMPRSS2END)
 # add box for 10kb functional equivalence
