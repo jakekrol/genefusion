@@ -89,7 +89,7 @@ ax_histy.hist(y, bins=30, color='black', orientation='horizontal')
 # plot star at mean x and y
 mu_erg_mb = sample_ranges['min_left_bp_mb'].mean()
 mu_tmprss2_mb = sample_ranges['max_right_bp_mb'].mean()
-ax_scatter.scatter(mu_erg_mb, mu_tmprss2_mb, color='red', marker='*', s=50, label='Mean breakpoint')
+ax_scatter.scatter(mu_erg_mb, mu_tmprss2_mb, color='red', marker='*', s=100, label='Mean breakpoint')
 
 
 
