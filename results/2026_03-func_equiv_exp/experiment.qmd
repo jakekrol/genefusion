@@ -21,7 +21,7 @@ import math
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 from scipy.spatial.distance import pdist, squareform
-FONTSIZE=14
+FONTSIZE=18
 ```
 
 ```{python}
@@ -125,16 +125,19 @@ print(
 ```{python}
 epsilons = np.linspace(0, esp_max, num=100)
 counts = []
+NSAMPLES=142
 for eps in epsilons:
     count = np.sum(
         (np.abs(sample_ranges['min_left_bp'] - mu_erg) <= eps) &
         (np.abs(sample_ranges['max_right_bp'] - mu_tmprss2) <= eps)
     )
     counts.append(count)
+fraction = [round(x/NSAMPLES,2) for x in counts]
 plt.figure(figsize=(8, 6))
 plt.plot(epsilons, counts, color='black', marker='o', markersize=4)
-plt.xlabel('Epsilon (bp)', fontsize=FONTSIZE)
-plt.ylabel(r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE)
+plt.xlabel(r'$\epsilon$ base pairs', fontsize=FONTSIZE)
+plt.ylabel("#Samples in box",fontsize=FONTSIZE )
+#plt.ylabel(r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE-2)
 #plt.ylabel('Num. equivalent samples\n' + r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE)
 #plt.title('Functional equivalence of ERG-TMPRSS2 fusion variants')
 plt.savefig('func_equiv_samples.png', dpi=300)
