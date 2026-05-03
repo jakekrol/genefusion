@@ -135,7 +135,7 @@ for eps in epsilons:
 fraction = [round(x/NSAMPLES,2) for x in counts]
 plt.figure(figsize=(8, 6))
 plt.plot(epsilons, counts, color='black', marker='o', markersize=4)
-plt.xlabel(r'$\epsilon$ base pairs (side length of box)', fontsize=FONTSIZE)
+plt.xlabel('Side length of box (base pairs)', fontsize=FONTSIZE)
 plt.ylabel("#Samples in box",fontsize=FONTSIZE )
 #plt.ylabel(r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE-2)
 #plt.ylabel('Num. equivalent samples\n' + r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{ERG} - x_i| \leq \epsilon \wedge |\mu_{TMPRSS2} - y_i| \leq \epsilon)$', fontsize=FONTSIZE)
