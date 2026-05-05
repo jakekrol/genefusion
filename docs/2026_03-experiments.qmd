@@ -7,12 +7,9 @@ format:
 
 ## Outline
 
-- ERG-TMPRSS2 functional equivalence
-- ERG-TMPRSS2 maximal score
-- Novel fusion discovery
-- Score function evaluation
-- Benchmark fusions recurrent in normal samples
-- Miscelleneous
+- Experiments
+- To-do and timelines
+- Paper outline
 
 
 ## ERG-TMPRSS2 functional equivalence
@@ -40,7 +37,7 @@ Key point: Recurrent fusion discovery is more sensitive when variable breakpoint
 
 ::: {.small}
 
-Key point: ERG-TMPRSS2 has the highest fusion score because it has abundant tumor read & sample support with minimal normal read & sample support.
+Key point: ERG-TMPRSS2 can easily be isolated by its higher read and sample support in tumor samples compared to normal samples.
 
 :::
 
@@ -70,9 +67,9 @@ Key point: ERG-TMPRSS2 has the highest fusion score because it has abundant tumo
 ## Novel fusion discovery workflow
 
 
-1. Requirements: i) High score, ii) intrachromosomal
-2. Re-query stix tumor indices and find rank samples by evidence
-3. Samplot top 3 samples
+1. Requirements: i) high score and ii) intrachromosomal
+2. Rank samples by tumor evidence
+3. Samplot top 1-3 samples with most evidence
 4. Check Human Protein Atlas tumor expression and literature search
 
 
@@ -100,9 +97,14 @@ Key point: ERG-TMPRSS2 has the highest fusion score because it has abundant tumo
 :::
 
 ::: {.column width="50%"}
-![gnomAD evaluation](images/gnomad-gene-constraint-score-eval.png){width=85%}
+![Inspired by gnomAD evaluation](images/gnomad-gene-constraint-score-eval.png){width=85%}
 :::
 ::::
+
+::: {.small}
+- [Recurrent normal](https://docs.google.com/spreadsheets/d/1dzicCSrs1n17duJuIK8EGy1iSvLQ8JhW/edit?usp=sharing&ouid=101461873359205527846&rtpof=true&sd=true)
+- [Recurrent tumor](https://docs.google.com/spreadsheets/d/1RdTHFn_eBJyH6fzipkFxHERNsaOK5OoEVIvxKmuDQ64/edit?usp=sharing) 
+:::
 
 ## PCAWG tissue-wise fusions
 
@@ -137,7 +139,7 @@ Key point: ERG-TMPRSS2 has the highest fusion score because it has abundant tumo
 ::::
 
 ::: {.small}
-Key point: Full PCAWG fusion callset (recurrent or not) is right-skewed compared to null. However, some calls have abundant normal evidence (left-skewed).
+Key point: Tissue-wise PCAWG fusion callsets (not necessarily recurrent) evaluation shows some right-skewness (potential driver) but also some left-skewness (likely non-driver). (NEEDS RE-RUN WITH UPDATED SCORE FUNCTION AND RNA)
 :::
 
 ## Benchmark fusions recurrent in normal samples
@@ -155,7 +157,7 @@ Key point: Full PCAWG fusion callset (recurrent or not) is right-skewed compared
 ::::
 
 ::: {.small}
-Key point: Thousands of benchmarks fusions have >100 read depth in onekg. Hundreds remain even after an annotation filter.
+Key point: Thousands of [benchmarks fusions](https://doi.org/10.1186/s13059-019-1842-9) called on tumor cell lines have >100 read depth in 1000 Genomes. Hundreds remain even after an annotation filter.
 :::
 
 ## Miscellaneous: machine learning
@@ -166,21 +168,7 @@ Key point: Thousands of benchmarks fusions have >100 read depth in onekg. Hundre
 Key points: i) ML evaluation is deceptively high if you downsample a small number of negative test examples. ii) As expected RNA tumor recurrency was the most important predictor. But, model would also positively weight 1000G recurrency unless I modified labels.
 :::
 
-## Miscellaneous: burden
 
-![Gene burden in 1000 genomes](images/onekg-burden.png){fig-align="center"}
-
-$$
-\text{burden}(\text{gene}_i) = \sum_{\text{gene}_j \neq \text{gene}_i} \text{#reads}_{\text{gene}_i,\text{gene}_j}
-$$
-
-## Miscellaneous: score function parameter 
-
-![](images/score-parameter-search-heatmap.png){fig-align="center"}
-
-::: {.small}
-Key points: i) Equal weighting of tumor/normal and read/sample evidence was optimal combination for maximizing ERG-TMPRSS2 score. ii) Accounting for coverage is important.
-:::
 
 ## Miscellaneous: score function
 
@@ -193,21 +181,45 @@ Key points: i) Equal weighting of tumor/normal and read/sample evidence was opti
 :::
 ::::
 
+## Miscellaneous: score function tuning parameters
+
+![](images/score-parameter-search-heatmap.png){fig-align="center"}
+
+::: {.small}
+Key points: i) Equal weighting of tumor/normal and read/sample evidence was optimal combination for maximizing ERG-TMPRSS2 score. ii) Accounting for coverage is important. ALSO CAN WEIGH DNA/RNA EVIDENCE.
+:::
+
+## Miscellaneous: burden
+
+![Gene burden in 1000 genomes](images/onekg-burden.png){fig-align="center"}
+
+$$
+\text{burden}(\text{gene}_i) = \sum_{\text{gene}_j \neq \text{gene}_i} \text{#reads}_{\text{gene}_i,\text{gene}_j}
+$$
+
 
 ## Miscellaneous: final output example
 
 ![](images/out-table-example-prostate.png){fig-align="center" width=1200px height=450px}
 
 
-## To-do
+## To-do and timelines
 
-- Re-add RNA evidence
-- Do score evaluation experiment
-- Refine novel fusion discovery search
-- Re-evaluate score function on full PCAWG callset (updated function)
-- Apply to Anschutz cohort
+- Re-add RNA evidence (Next Fri.)
+- Do score evaluation experiment (Next Fri.)
+- Re-evaluate score function on full PCAWG callset using updated function (2 weeks)
+- Investigate PCAWG calls with high normal evidence in 1000 genomes RNA (Next Fri.)
+- Refine novel fusion discovery search (?)
+- Apply to Anschutz cohort (? hours)
 
+## Paper outline
 
+1. Workflow
+2. Functional equivalence and score demonstration with ERG-TMPRSS2 PCAWG
+3. Novel fusion discovery workflow and examples
+4. Score function evaluation
+5. False positive control demonstration using benchmark fusions and PCAWG callset investigation
+6. Application to Anschutz cohort
 
 
 

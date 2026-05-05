@@ -1,12 +1,12 @@
 ---
-title: "Population-scale discovery of tumor driving genefusions"
+title: "Population-scale discovery of tumor driving gene fusions"
 author: "2026 Jacob Krol DBMI Symposium"
 format:
   revealjs:
     css: theme.scss
 ---
 
-## Population-scale discovery of tumor driving genefusions
+## Population-scale discovery of tumor driving gene fusions
 
 <br>
 
@@ -17,40 +17,57 @@ Jacob Krol
 ::: {.center}
 Layer lab
 :::
+
+
+::: {.center}
+Department of Computer Science
+:::
+
+::: {.center}
+BioFrontiers Institute
+:::
+
 ![](./images/cu-boulder-logo.png){fig-align="center"}
 
-## Genefusions
+::: {.center .small}
+jacob.krol@colorado.edu
+:::
+
+## Fusions
 
 
-- Genefusion mutations merge genes together
+<br>
 
 ![](./images/gene-fusion-cartoon.png){fig-align="center"}
 
+## Cancer fusions
 
-## Recurrent tumor fusions
-
-::: {.small}
-- **Recurrent** fusions are potential diagnostic and therapeutic targets
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
 ::: {.center}
-![PCAWG recurrent fusions](./images/pcawg-recurrent-fusions-heatmap-and-legend.png){fig-align="center"}
+- **Recurrent** fusions occur in multiple samples
 :::
-:::
-::: {.column width="50%"}
-![](./images/erg-tmprss2.png){fig-align="center"}
-![](./images/pcawg-logo-cropped.png){fig-align="center" width=80%}
-:::
-::::
 
-## Gaps in recurrent fusion discovery
+![](./images/erg-tmprss2.png){fig-align="center" width=45%}
+
+![](./images/pcawg-erg-tmprss2-frequency.png){fig-align="center" width=45%}
+
+
+
+## Search for recurrent tumor fusions
+
+<br><br>
+
+![](./images/novel-fusion-search.png){fig-align="center" width=60%}
+
+## Gaps in current approaches
+
+::: {.center}
 
 ::: {.small}
 - RNA-seq focused, **not DNA-seq**
 - Assume short, paired-end read sequencing data, not **long read**
-- Single-sample, **not multi-sample**
+- [Single-sample, **not multi-sample**]{.underline}
+:::
+
 :::
 
 :::: {.columns}
@@ -64,44 +81,262 @@ Layer lab
 ![](./images/paired-end-read-sequencing.jpg){fig-align="center"}
 :::
 ::: {.column width="34%"}
-![](./images/black-person-cropped.png){fig-align="center" width=65%}
+![](./images/blue-person-cropped.png){fig-align="center" width=65%}
+:::
+::::
+
+
+## Tumor heterogeneity
+
+::: {.center}
+- Low fusion signal
+:::
+
+<br>
+
+
+:::: {.columns}
+::: {.column width="10%"}
+:::
+::: {.column width="40%"}
+::: {.center}
+![**Single-sample**](./images/blue-person-cropped.png){fig-align="center" width=50%}
+:::
+:::
+::: {.column width="40%"}
+![](./images/fractional-tumor-cells.png){fig-align="center" width=30%}
+:::
+::: {.column width="10%"}
 :::
 ::::
 
 
 ## Multiple samples increase sensitivity
 
-- Sample aggregation amplifies fusion signal
+::: {.center}
+- High aggregate fusion signal
+:::
 
 <br>
 
 :::: {.columns}
 ::: {.column width="25%"}
-![](./images/black-person-cropped.png){fig-align="center" width=60%}
+::: {.center}
+![**Single-sample**](./images/blue-person-cropped.png){fig-align="center" width=65%}
+:::
 :::
 ::: {.column width="25%"}
 ![](./images/fractional-tumor-cells.png){fig-align="center" width=30%}
 :::
 ::: {.column width="25%"}
-![](./images/black-person-cohort.png){fig-align="center" width=80%}
+::: {.center}
+![**Multi-sample**](./images/blue-person-cohort.png){fig-align="center" width=80%}
+:::
 :::
 ::: {.column width="25%"}
 ![](./images/fractiona-tumor-cells-grid.png){fig-align="center"}
 :::
 ::::
 
+<!-- ## Leveraging corroborating evidence
+
+![](./images/corroborating-dna-and-rna-evidence.png){fig-align="center" width=40%} -->
 
 
 ## Addressing gaps
 
 ![](./images/addressing-gaps.png){fig-align="center" width=70%}
 
-## Approach
 
-- Sample-level fusion evidence from various cancer types
+
+
+## Tumor and control databases
+
+::: {.center}
+- 4,647 total human genome samples
+:::
 
 ![](./images/tissue-type-databases.png){fig-align="center" width=70%}
 
+## Fundamental units of fusion evidence
+
+<br><br>
+
+![](./images/fundamental-units-of-genefusion-evidence-w-cohort.png){fig-align="center" width=80%}
+
+## Fusion equivalence
+
+::: {.center}
+
+- Equivalence is required for recurrency detection
+
+:::
+
+<br><br>
+
+![](./images/erg-tmprss2-breakpoints.png){fig-align="center" width=35%}
+
+
+## Fusion equivalence
+
+![](./images/erg-tmprss2-breakpoints.png){fig-align="center" width=35%}
+
+![](../results/2026_03-func_equiv_exp/breakpoint_scatter_hist.png){fig-align="center" width=40%}
+
+## Fusion equivalence
+
+![](./images/erg-tmprss2-breakpoints.png){fig-align="center" width=35%}
+
+![](./images/breakpoint-scatter-w-box.png){fig-align="center" width=40%}
+
+## Fusion equivalence
+
+![](./images/erg-tmprss2-breakpoints.png){fig-align="center" width=35%}
+
+:::: {.columns}
+::: {.column width="45%"}
+![](./images/breakpoint-scatter-w-box.png){fig-align="center" width=90%}
+:::
+::: {.column width="55%"}
+![](../results/2026_03-func_equiv_exp/func_equiv_samples.png){fig-align="center" width=90%}
+:::
+::::
+
+
+
+
+
+
+
+## Fusion prioritization
+
+<!-- - **Polymerization** score ranks fusions given multimodal data -->
+
+<br>
+
+:::: {.columns}
+::: {.column width="33%"}
+
+![](./images/fusion-search-space.png){fig-align="center" width=80%}
+:::
+::: {.column width="66%"}
+![](./images/score-cartoon.png){fig-align="center" width=100%}
+:::
+::::
+
+## Prostate ERG-TMPRSS2 evaluation
+
+<!-- ::: {.small}
+- Recurrent tumor fusion score is higher than random gene pairs
+- PCAWG prostate fusion call (not recurrent) scores are right-skewed
+::: -->
+
+![](../results/2025_11-score/prostate/null_v_pcawg_hist.log.no_pcawg.png){fig-align="center"}
+
+
+
+
+## Recurrent tissue classification
+
+:::: {.columns}
+::: {.column width="40%"}
+<br>
+![](./images/tissue-specific-labels.png){fig-align="center"}
+:::
+::: {.column width="60%"}
+:::{.center}
+![**PCAWG recurrent fusions**](./images/pcawg-recurrent-fusion-heatmap-legened-erg-tmprss2-box.png){fig-align="center" width=80%}
+:::
+:::
+::::
+
+## Tissue specificity score evaluation
+
+
+:::: {.columns}
+::: {.column width="60%"}
+<br>
+![](./images/score-threshold-tissue-specific-labels.png){fig-align="center"}
+:::
+::: {.column width="40%"}
+<br>
+![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_tissue_agnostic/roc-best.png){fig-align="center"}
+:::
+::::
+
+## Novel kidney fusion discovery
+
+
+![](../results/2025_11-score/kidney/null_v_pcawg_hist.log.no_pcawg.png){fig-align="center" width=40%}
+
+![](..//results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center" width=50%}
+
+<!-- :::: {.columns}
+::: {.column width="50%"}
+![](../results/2025_11-score/kidney/null_v_pcawg_hist.log.png){width=80% fig-align="center"}
+:::
+::: {.column width="50%"}
+![](..//results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center"}
+:::
+:::: -->
+
+## Discovery potential
+
+![](./images/discovery-potential.png){fig-align="center" width=80%}
+
+## Filtering with control cohort
+
+::: {.center}
+- 59,117 benchmark cancer cell line fusions
+:::
+
+
+:::: {.columns}
+::: {.column width="50%"}
+![](./images/haas-publication.png){fig-align="center" width=100%}
+:::
+::: {.column width="50%"}
+![](./images/haas-onekg-depth-no-title.png){fig-align="center" width=100%}
+:::
+::::
+
+
+
+<!-- :::: {.columns}
+::: {.column width="33%"}
+![](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram.png){fig-align="center" width=80%}
+:::
+::: {.column width="33%"}
+:::
+::: {.column width="34%"}
+![](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram_filt.png){fig-align="center" width=80%}
+:::
+:::: -->
+
+## Acknowledgements
+
+::: {.small}
+::: {.center}
+- Ryan Layer, Ph.D. 
+- Murad Chowdhury
+- Ben Braun
+- Simon Walker
+- Anton Avramov, Ph.D.
+- Erik Johnson, Ph.D.
+- Funding: NIH 5R01HG011774-04
+
+![](./images/cu-boulder-logo.png){fig-align="center" width=40%}
+
+Department of Computer Science
+
+BioFrontiers Institute
+
+**jacob.krol@colorado.edu**
+:::
+:::
+
+
+## Appendix
 
 
 ## Data
@@ -124,176 +359,6 @@ Layer lab
 :::aside
 Variability in tissue, sequencing technology, and disease state across samples
 :::
-
-
-
-
-## Fusion prioritization
-
-**Polymerization** score ranks fusions given multimodal data
-
-:::: {.columns}
-::: {.column width="33%"}
-
-![](./images/fusion-search-space.png){fig-align="center" width=80%}
-:::
-::: {.column width="66%"}
-![](./images/score-cartoon.png){fig-align="center" width=100%}
-:::
-::::
-
-## Prostate ERG-TMPRSS2 evaluation
-
-::: {.small}
-- Recurrent tumor fusion score is higher than random gene pairs
-- PCAWG prostate fusion call (not recurrent) scores are right-skewed
-:::
-
-![](../results/2025_11-score/prostate/null_v_pcawg_hist.png){fig-align="center"}
-
-
-
-## Recurrent normal vs. recurrent tumor classification {.small}
-
-- Score threshold separated recurrent tumor fusions from recurrent normal fusions
-
-![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_normal/roc-best.png){fig-align="center" width=35%}
-
-
-:::: {.columns}
-::: {.column width="50%"}
-![](./images/paper-pcawg-recurrent-fusion.png){fig-align="center" width=65%}
-:::
-::: {.column width="50%"}
-![](./images/normal-fusion-paper.png){fig-align="center" width=65%}
-:::
-::::
-
-## Tissue specificity score evaluation
-
-::: {.small}
-- Positives scored using "in-tissue" samples
-- Negatives scored using "off-tissue" samples
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
-![](./images/pcawg-recurrent-fusions.png){fig-align="center"}
-:::
-::: {.column width="50%"}
-![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_tissue_agnostic/roc-best.png){fig-align="center"}
-:::
-::::
-
-
-## Novel fusion discovery
-
-::: {.small}
-- Discovered a potential novel fusion in kidney cancer: SHPK--ITGAE
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
-![](../results/2025_11-score/kidney/null_v_pcawg_hist.png){width=80% fig-align="center"}
-:::
-::: {.column width="50%"}
-![](..//results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center"}
-:::
-::::
-
-<!-- ## Results
-
-::: {.small}
-Benchmark study called 59,117 fusions in cancer cell lines using 23 different methods
-:::
-
-
-![](./images/haas-publication.png){fig-align="center" width=25%}
-
-:::: {.columns}
-::: {.column width="33%"}
-![](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram.png){fig-align="center" width=80%}
-:::
-::: {.column width="33%"}
-![](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram_filtered_out.png){fig-align="center" width=80%}
-:::
-::: {.column width="34%"}
-![](../results/2025_09-haas_onekg/haas_onekg_readcount_histogram_filt.png){fig-align="center" width=80%}
-:::
-::::
-
-::: {.small}
-Large normal cohort (data-driven) filtering supplements annotation (gene name) filtering
-::: -->
-
-## Conclusions
-
-::: {.small}
-- Developed a fusion ranking metric for population-scale data
-- Evaluation
-  - Separation of recurrent tumor and normal fusions
-  - Tissue specificity
-- Potential novel fusion discovery: SHPK--ITGAE in kidney cancer
-  - Not reported in primary PCAWG publication
-:::
-
-:::: {.columns}
-::: {.column width="33%"}
-![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_normal/roc-best.png){fig-align="center" width=70%}
-::: 
-::: {.column width="33%"}
-![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_tissue_agnostic/roc-best.png){fig-align="center" width=70%}
-:::
-::: {.column width="34%"}
-![](../results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center" width=90%}
-:::
-::::
-
-
-## Next steps
-
-::: {.small}
-- Potential collaboration with Anschutz Children's hospital
-- Further visual verification 
-  - Multiple samples
-- Add probabilistic score interpretation
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
-![](../results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center" width=80%}
-:::
-::: {.column width="50%"}
-![](../results/2025_11-score/kidney/null_v_pcawg_hist.png){fig-align="center" width=80%}
-:::
-::::
-
-## Acknowledgements
-
-- Ryan Layer, Ph.D. 
-- Murad Chowdhury
-- Ben Braun
-- Simon Walker
-- Anton Avramov, Ph.D.
-- Erik Johnson, Ph.D.
-- Funding: NIH 5R01HG011774-04
-
-## References
-
-- Publication and figure refernces
-  - https://github.com/jakekrol/genefusion/blob/main/docs/2026_04-dbmi-symposium.qmd
-
-<!-- 
-- SV calling long and short of it
-  - [Mahmoud, M., Gobet, N., Cruz-Dávalos, D.I. et al. Structural variant calling: the long and the short of it. Genome Biol 20, 246 (2019). https://doi.org/10.1186/s13059-019-1828-7]
-- Genefusion simple diagram 
-  - [Cmero, M., Schmidt, B., Majewski, I.J. et al. MINTIE: identifying novel structural and splice variants in transcriptomes using RNA-seq data. Genome Biol 22, 296 (2021). https://doi.org/10.1186/s13059-021-02507-8]
-- Genefusion mechanism diagram
-  - [Giovanna Dashi, Markku Varjosalo, Oncofusions – shaping cancer care, The Oncologist, Volume 30, Issue 1, January 2025, oyae126, https://doi.org/10.1093/oncolo/oyae126]
-- ChimerDB
-  - [Ye Eun Jang, Insu Jang, Sunkyu Kim, Subin Cho, Daehan Kim, Keonwoo Kim, Jaewon Kim, Jimin Hwang, Sangok Kim, Jaesang Kim, Jaewoo Kang, Byungwook Lee, Sanghyuk Lee, ChimerDB 4.0: an updated and expanded database of fusion genes, Nucleic Acids Research, Volume 48, Issue D1, 08 January 2020, Pages D817–D824, https://doi.org/10.1093/nar/gkz1013] -->
-
-## Appendix
 
 ## Read-level resolution
 
@@ -340,7 +405,7 @@ $$
 
 
 :::: {.columns}
-::: {.column width="30%"}
+::: {.column width="40%"}
 ::: {.very-small}
 $$
 \text{score}_{\text{sample}} \in [0,1] = \frac{\text{#samples}}{\text{Population size}} 
@@ -367,17 +432,17 @@ $$
 
 ## Score sign interpretation
 
-- score $\in \mathbb{R}_{++} \rightarrow$ [tumor]{style="color: skyblue;"} evidence $>$ normal evidence
+score $\in \mathbb{R}_{++} \rightarrow$ [tumor]{style="color: skyblue;"} evidence $>$ normal evidence
 
 $$
 \text{score} = \frac{1}{2} ({\color{skyblue}{\text{score}_{\text{reads}}}} + {\color{skyblue}{\text{score}_{\text{samples}}}} - \text{score}_{\text{reads}} - \text{score}_{\text{samples}})
 $$
 
-:::aside
+
 $\frac{1}{2}$ scales score to [-1,1] range
 
 Optional mixing parameters: $W_{normal} \in [0,1]$ and $W_{tumor} = 1 - W_{normal}$
-:::
+
 
 
 
@@ -561,5 +626,109 @@ Need a large cancer cohort to find recurrent fusions
 $$
 f(\mathbf{x}) = \text{?}
 $$
+:::
+:::: -->
+
+<!-- ## Conclusions
+
+::: {.small}
+- Developed a fusion ranking metric for population-scale data
+- Evaluation
+  - Separation of recurrent tumor and normal fusions
+  - Tissue specificity
+- Potential novel fusion discovery: SHPK--ITGAE in kidney cancer
+  - Not reported in primary PCAWG publication
+:::
+
+:::: {.columns}
+::: {.column width="33%"}
+![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_normal/roc-best.png){fig-align="center" width=70%}
+::: 
+::: {.column width="33%"}
+![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_tissue_agnostic/roc-best.png){fig-align="center" width=70%}
+:::
+::: {.column width="34%"}
+![](../results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center" width=90%}
+:::
+::::
+
+
+## Next steps
+
+::: {.small}
+- Potential collaboration with Anschutz Children's hospital
+- Further visual verification 
+  - Multiple samples
+- Add probabilistic score interpretation
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+![](../results/2026_04-kidney_shpk_itgae_viz/plot.png){fig-align="center" width=80%}
+:::
+::: {.column width="50%"}
+![](../results/2025_11-score/kidney/null_v_pcawg_hist.log.png){fig-align="center" width=80%}
+:::
+:::: -->
+
+<!-- ## Recurrent normal vs. tumor classification {.small}
+
+<!-- - Score threshold separated recurrent tumor fusions from recurrent normal fusions -->
+
+<!-- <br><br>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](./images/score-threshold.png)
+:::
+::: {.column width="40%"}
+![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/roc_data-neg_normal/roc-best.png){fig-align="center"}
+:::
+::::
+
+## Low scoring recurrent tumor fusions
+
+<br>
+
+:::: {.columns}
+::: {.column width="50%"}
+![](./images/roc-tumor-v-normal-red-box.png){fig-align="center" width=80%}
+:::
+::: {.column width="50%"}
+![](../results/2026_04-s2f_pcawg_recurrent/scatter-tumor_reads_score.png){fig-align="center" width=90%}
+:::
+::: -->
+
+
+<!-- :::: {.columns}
+::: {.column width="50%"}
+![](./images/paper-pcawg-recurrent-fusion.png){fig-align="center" width=65%}
+:::
+::: {.column width="50%"}
+![](./images/normal-fusion-paper.png){fig-align="center" width=65%}
+:::
+:::: --> 
+
+<!-- ## Fusions in human cancer
+
+::: {.center}
+
+::: {.small}
+:::
+
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+
+::: {.center}
+![PCAWG recurrent fusions](./images/pcawg-recurrent-fusion-heatmap-legened-erg-tmprss2-box.png){fig-align="center"}
+:::
+
+:::
+::: {.column width="50%"}
+![](./images/erg-tmprss2.png){fig-align="center"}
+![](./images/pcawg-logo-cropped.png){fig-align="center" width=80%}
 :::
 :::: -->
