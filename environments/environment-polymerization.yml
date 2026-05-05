@@ -21,16 +21,23 @@ dependencies:
   - bzip2
   - xz
   - curl
-  - openssl
-  - htslib
+  - openssl>=1.1
+  - htslib>=1.19
 
   # Testing/utilities
   - bedtools
   - ruby
 
-  - python
+  # python
+  - python>=3.10
   - pip
   - pytest
   - pandas
   - numpy
   - numba
+  - matplotlib
+  - ipython
+  - duckdb
+  - scikit-learn
+
+  - quarto
