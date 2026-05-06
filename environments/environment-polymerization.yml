@@ -39,5 +39,6 @@ dependencies:
   - ipython
   - duckdb
   - scikit-learn
+  - pysam
 
   - quarto
