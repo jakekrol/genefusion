@@ -111,6 +111,38 @@ def test_validate_stix_shardfile_fail(tmp_path):
     with pytest.raises(AssertionError):
         validate_stix_shardfile(x)
 
+def test_read_giggle_shardfile_pass(tmp_path):
+    index1 = tmp_path / 'index1'
+    index2 = tmp_path / 'index2'
+    index1.mkdir()
+    index2.mkdir()
+
+    shardfile_path = tmp_path / 'shardfile.tsv'
+    with open(shardfile_path, 'w') as f:
+        f.write('giggle_index\tcategory\n')
+        f.write(f'{str(index1)}\tcat1\n')
+        f.write(f'{str(index2)}\tcat2\n')
+
+    df_giggle_shards = read_giggle_shardfile(str(shardfile_path), header=0)
+    assert df_giggle_shards.shape[0] == 2
+    assert set(df_giggle_shards['giggle_index']) == set([str(index1), str(index2)])
+    assert set(df_giggle_shards['category']) == set(['cat1', 'cat2'])
+
+def test_read_giggle_shardfile_fail(tmp_path):
+    # index 2 path does not exist
+    index1 = tmp_path / 'index1'
+    index1.mkdir()
+
+    shardfile_path = tmp_path / 'shardfile.tsv'
+    with open(shardfile_path, 'w') as f:
+        f.write('giggle_index\tcategory\n')
+        f.write(f'{str(index1)}\tcat1\n')
+        f.write(f'{str(tmp_path / "missing_index")}\tcat2\n')
+
+    with pytest.raises(AssertionError):
+        df_giggle_shards = read_giggle_shardfile(str(shardfile_path), header=0)
+
+
 def test_read_stix_output_pass(tmp_path):
     # create a dummy stix output file
     stix_output_path = tmp_path / 'stix_output.tsv'

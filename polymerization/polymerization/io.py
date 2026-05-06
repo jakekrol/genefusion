@@ -109,6 +109,41 @@ def read_stix_shardfile(path, sep='\t', header=None):
     validate_stix_shardfile(df_stix_shards)
     return df_stix_shards
 
+def validate_giggle_shardfile(df_giggle_shards):
+
+    '''
+    raise assertion error if giggle shard file is not in correct format
+    otherwise, return None
+    df_giggle_shards: a pandas dataframe of giggle shard file, with 2 columns of giggle_index and category
+    '''
+    # check for duplicate rows
+    series_bool = df_giggle_shards.duplicated(keep=False)
+    assert not(any(series_bool))
+    # check for essential columns
+    assert len(df_giggle_shards.columns) >= 2
+    required_cols = ['giggle_index', 'category']
+    for col in required_cols:
+        assert col in df_giggle_shards.columns
+    # verify all paths exist
+    for i in df_giggle_shards.index:
+        try:
+            path_giggle_index = df_giggle_shards.loc[i, 'giggle_index']
+            assert os.path.exists(path_giggle_index)
+        except AssertionError:
+            raise AssertionError(f"Path to giggle index not exist for row {i} of shard file")
+    return None
+
+def read_giggle_shardfile(path, sep='\t', header=None):
+    '''
+    read in giggle shard file and return as pandas dataframe
+    '''
+    df_giggle_shards = pd.read_csv(path, sep=sep, header=header)
+    if not header:
+        # assign column names if not provided
+        df_giggle_shards.columns = ['giggle_index', 'category']
+    validate_giggle_shardfile(df_giggle_shards)
+    return df_giggle_shards
+
 def validate_stix_fusion_output(df_stix_output):
     '''
     check for necessary columns in stix output file

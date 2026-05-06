@@ -51,7 +51,8 @@ def left_sort_fusion_set(df_fusion, df_bed):
         else:
             # swap gene_x and gene_y
             df_fusion.loc[row.name, ['gene_x', 'gene_y']] = [gene_y, gene_x]
-    df_fusion.columns = ['gene_left', 'gene_right']
+    cols = df_fusion.columns.tolist()
+    df_fusion.columns = ['gene_left', 'gene_right'] + cols[2:]
     return df_fusion
 
 def merge_fusion_set_with_bed(df_fusion, df_bed):
@@ -96,10 +97,13 @@ def run_stix(argstring,left_gene, right_gene, outfile, timeout=60 * 60 * 2):
     except subprocess.CalledProcessError as e:
         print(f"Error running stix: {e}")
         print(f"Stderr: {e.stderr}")
-        raise
+        raise e
+    except subprocess.TimeoutExpired as e:
+        print(f"Stix command timed out after {timeout} seconds")
+        raise e
     return True
 
-def shard_tbl2tmp(df_shard):
+def stix_shard_tbl2tmp(df_shard):
     '''
     write stix shard table to temporary tsv files for stix
     '''
@@ -137,7 +141,7 @@ def merge_fusion_set_bed2stix(
         alt_file_col = group['alt_file_col'].iloc[0]
         try:
             # the shardfile is used to aggregate queries across shards (still within same category)
-            shardfile = shard_tbl2tmp(group)
+            shardfile = stix_shard_tbl2tmp(group)
             # parallel stix queries
             with ThreadPoolExecutor(max_workers=max_workers) as ex:
                 # for each fusion
