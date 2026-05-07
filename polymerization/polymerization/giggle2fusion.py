@@ -32,6 +32,9 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
     output_path = outfile if not bgzip or outfile.endswith('.gz') else f"{outfile}.gz"
     if bgzip:
         bgzip_cmd = validate_bgzip()
+        assert path_input.endswith('.gz'), f"Input file {path_input} must be gzipped when bgzip=True"
+        assert outfile.endswith('.gz'), f"Output file {outfile} must end with .gz when bgzip=True"
+
         try:
             with open(output_path, 'wb') as out_handle:
                 with subprocess.Popen([bgzip_cmd, '-c'], stdin=subprocess.PIPE, stdout=out_handle, stderr=subprocess.PIPE) as bgzip_proc:
@@ -194,4 +197,95 @@ def giggle2swap(df_giggle, bgzip=False, outfile_column_giggle='outfile_giggle', 
         df_swap.at[idx, outfile_column_swap] = outfile
     return df_swap
 
-        
+def validate_bedtools():
+    bedtools = shutil.which('bedtools')
+    if not bedtools:
+        raise FileNotFoundError("bedtools command not found in PATH")
+    return bedtools
+
+def bedtools_intersect(path_input, path_bedfile, outfile, bgzip=False, bedtools_bin=None):
+    # output columns:
+    # c1-5 are from bed file
+    # c6-15 are from swap file
+    # validation
+    if bedtools_bin:
+        bedtools = bedtools_bin
+    else:
+        bedtools = validate_bedtools()
+    assert os.path.exists(path_input), f"Input file {path_input} does not exist"
+    assert os.path.exists(path_bedfile), f"Bed file {path_bedfile} does not exist"
+    if bgzip:
+        bgzip_cmd = validate_bgzip()
+        assert path_input.endswith('.gz'), f"Input file {path_input} must be gzipped when bgzip=True"
+        assert outfile.endswith('.gz'), f"Output file {outfile} must end with .gz when bgzip=True"
+
+        with open(outfile, 'wb') as f_out:
+            with subprocess.Popen([bgzip_cmd, '-c'], stdin=subprocess.PIPE, stdout=f_out, stderr=subprocess.PIPE) as bgzip_proc:
+                # write input header
+                with gzip.open(path_input, 'rt') as f_in:
+                    for line in f_in:
+                        if line.startswith('#'):
+                            bgzip_proc.stdin.write(line.encode())
+                        else:
+                            break
+                bgzip_proc.stdin.flush()
+
+                # run bedtools intersect and pipe output to bgzip
+                cmd = f"{bedtools} intersect -a <(grep -v '^#' {path_bedfile}) " \
+                      f"-b <(zcat {path_input} | grep -v '^#') -wb -wa"
+                bedtools_proc = subprocess.Popen(cmd, shell=True, stdout=bgzip_proc.stdin, stderr=subprocess.PIPE)
+                bedtools_stderr = bedtools_proc.communicate()[1]
+                if bedtools_proc.returncode != 0:
+                    print(f"bedtools command failed with error code {bedtools_proc.returncode}")
+                    if bedtools_stderr:
+                        print(f"Stderr: {bedtools_stderr.decode()}")
+                    raise subprocess.CalledProcessError(bedtools_proc.returncode, cmd, stderr=bedtools_stderr)
+
+                bgzip_proc.stdin.close()
+                bgzip_stderr = bgzip_proc.communicate()[1]
+                if bgzip_proc.returncode != 0:
+                    print(f"bgzip command failed with error code {bgzip_proc.returncode}")
+                    if bgzip_stderr:
+                        print(f"Stderr: {bgzip_stderr.decode()}")
+                    raise subprocess.CalledProcessError(bgzip_proc.returncode, [bgzip_cmd, '-c'], stderr=bgzip_stderr)
+    else:
+        cmd = bedtools + " "\
+            f"intersect -a {path_bedfile} " \
+            f"-a <(grep -v '^#' {path_bedfile}) " \
+            f"-b <(grep -v '^#' {path_input}) " \
+            f"-wb -wa"
+        try:
+            with open(outfile, 'w') as f_out:
+                subprocess.run(cmd, shell=True, text=True, check=True, stdout=f_out, stderr=subprocess.PIPE)
+        except subprocess.CalledProcessError as e:
+            print(f"bedtools command failed with error code {e.returncode}")
+            print(f"Stderr: {e.stderr.decode()}")
+            raise e
+
+def intersect2evidence(path_intersect, outfile, right_gene_col=3, sample_column=14, bgzip=False):
+    # get left gene from header
+    if bgzip:
+        with gzip.open(path_intersect, 'rt') as f:
+            for line in f:
+                if line.startswith('#gene_left='):
+                    gene_left = line.strip().split('=')[1]
+                    break
+    else:
+        with open(path_intersect, 'r') as f:
+            for line in f:
+                if line.startswith('#gene_left='):
+                    gene_left = line.strip().split('=')[1]
+                    break
+    # handles bgzipped or not automatically
+    df = pd.read_csv(path_intersect, sep='\t', header=None, comment='#', usecols=[right_gene_col, sample_column])
+    df.columns=['gene_right', 'sample_id']
+    # read counts
+    right_gene_counts = df.groupby('gene_right').size().reset_index(name='reads')
+    # sample counts
+    sample_counts = df.groupby('gene_right').agg(samples=('sample_id', 'nunique')).reset_index()
+    # merge counts
+    df_evidence = pd.merge(right_gene_counts, sample_counts, on='gene_right', how='outer')
+    df_evidence['gene_left'] = gene_left
+    df_evidence = df_evidence[['gene_left', 'gene_right', 'reads', 'samples']]
+    # write output
+    df_evidence.to_csv(outfile, sep='\t', index=False)
