@@ -14,8 +14,21 @@ import heapq
 import math
 import swifter
 import numba
+from polymerization.stix2fusion import verify_fusion_set_in_bed
 
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
+
+def subset_bed_by_fusion_set(df_fusionset, df_bed, gene_col_idx=3):
+    verify_fusion_set_in_bed(df_fusionset, df_bed)
+    genes = set()
+    # make no assumption of fusionset columns here
+    # only columns 1 and 2 are gene pairs
+    for i,row in df_fusionset.iterrows():
+        genes.add(row.iloc[0])
+        genes.add(row.iloc[1])
+    # subset bed file to only genes in fusion set
+    df_bed_subset = df_bed[df_bed.iloc[:, gene_col_idx].isin(genes)].copy()
+    return df_bed_subset
 
 
 

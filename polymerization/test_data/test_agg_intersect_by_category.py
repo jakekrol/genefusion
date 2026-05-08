@@ -21,10 +21,19 @@ import time
 # df_swap = giggle2swap(df_giggle, bgzip=True)
 # print(df_swap.head())
 
-# bedtools intersect
-path_bed='grch37.genes.bed.added'
-path_giggle_swap='g2f_output/low_coverage_1000g/TMEM120A.giggle.swap.gz'
-outfile='TMEM120A.giggle.swap.intersect.bed.gz'
-bedtools_bin='/data/jake/bedtools.static.binary'
-bedtools_intersect(path_giggle_swap, path_bed, outfile, gene_col_idx=3, bgzip=True, bedtools_bin=bedtools_bin)
+# # bedtools intersect
+# path_bed='grch37.genes.bed.added'
+# path_giggle_swap='g2f_output/low_coverage_1000g/TMEM120A.giggle.swap.gz'
+# outfile='TMEM120A.giggle.swap.intersect.bed.gz'
+# bedtools_bin='/data/jake/bedtools.static.binary'
+# bedtools_intersect(path_giggle_swap, path_bed, outfile, gene_col_idx=3, bgzip=True, bedtools_bin=bedtools_bin)
+
+df_giggle_shards = read_giggle_shardfile('shardfile.giggle.tsv')
+agg_intersect_by_category(
+    outdir_g2f='g2f_output',
+    outdir_agg='g2f_output_agg',
+    df_giggle_shards=df_giggle_shards,
+    outfile_suffix='-fusion_evidence.tsv',
+    intersect_pattern='*.intersect.*'
+)
 

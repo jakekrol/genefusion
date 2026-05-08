@@ -9,6 +9,7 @@ import os
 import pandas as pd
 import numpy as np
 import pysam
+import glob
 
 def validate_bgzip():
     bgzip = shutil.which('bgzip')
@@ -32,7 +33,6 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
     output_path = outfile if not bgzip or outfile.endswith('.gz') else f"{outfile}.gz"
     if bgzip:
         bgzip_cmd = validate_bgzip()
-        assert path_input.endswith('.gz'), f"Input file {path_input} must be gzipped when bgzip=True"
         assert outfile.endswith('.gz'), f"Output file {outfile} must end with .gz when bgzip=True"
 
         try:
@@ -90,7 +90,7 @@ def merge_fusion_set_bed2giggle(
     gene_delim='--',
     timeout=60 * 60 * 2,
     bgzip=True,
-    outfile_column_giggle = 'outfile_giggle'
+    outfile_column_giggle_prefix = 'outfile_giggle'
 ):
     # similar to stix2fusion.merge_fusion_set_bed2stix() but for giggle instead of stix
 
@@ -99,15 +99,17 @@ def merge_fusion_set_bed2giggle(
     genes = set(df_merged['gene_left'])
     max_workers=min(max_workers, len(genes), os.cpu_count())
     print(f"# giggle searching for {len(genes)} genes using {max_workers} workers")
-
-    df_merged[outfile_column_giggle] = '' # initialize outfile column
-    for cat,group in df_shard.groupby('category'):
+    for i, (cat, group) in enumerate(df_shard.groupby('category')):
+        # make outfile column for each category
+        col_name = f"{outfile_column_giggle_prefix}_{cat}"
+        df_merged[col_name] = '' # initialize outfile column for this category
         # each category get its own directory
         outdir_cat = os.path.join(outdir, cat)
         os.makedirs(outdir_cat, exist_ok=True)
         giggle_index = group['giggle_index'].iloc[0]
         # parallel giggle queries
         with ThreadPoolExecutor(max_workers=max_workers) as ex:
+            futures = []
             # for each gene
             for gene in genes:
                 row = df_merged[df_merged['gene_left'] == gene]
@@ -127,9 +129,11 @@ def merge_fusion_set_bed2giggle(
                 )
                 if bgzip and not outfile.endswith('.gz'):
                     outfile += '.gz'
-                df_merged.loc[df_merged['gene_left'] == gene, outfile_column_giggle] = outfile
+                df_merged.loc[df_merged['gene_left'] == gene, col_name] = outfile
                 # run giggle
-                ex.submit(run_giggle, argstring, gene_left, outfile, timeout, bgzip)
+                futures.append(ex.submit(run_giggle, argstring, gene_left, outfile, timeout, bgzip))
+            for future in as_completed(futures):
+                future.result()
     # includes giggle outfile column
     df_giggle = df_merged.copy()
     return df_giggle
@@ -186,15 +190,32 @@ def swap_intervals(path_gigglefile, outfile, bgzip=False):
                             fields[8], fields[9]
                         ]) + '\n')
 
-def giggle2swap(df_giggle, bgzip=False, outfile_column_giggle='outfile_giggle', outfile_column_swap='outfile_swap'):
-    breakpoint()
+def giggle2swap(
+    df_giggle,
+    df_shard,
+    bgzip=False,
+    outfile_column_giggle_prefix='outfile_giggle',
+    outfile_column_swap_prefix='outfile_swap',
+    max_workers=4
+):
     df_swap = df_giggle.copy()
-    # swap left and right intervals in giggle output
-    for idx, row in df_giggle.iterrows():
-        infile = row[outfile_column_giggle]
-        outfile = infile.replace('.giggle', '.giggle.swap')
-        swap_intervals(infile, outfile, bgzip)
-        df_swap.at[idx, outfile_column_swap] = outfile
+    for cat in df_shard['category'].unique():
+        col_giggle = f"{outfile_column_giggle_prefix}_{cat}"
+        col_swap = f"{outfile_column_swap_prefix}_{cat}"
+        df_swap[col_swap] = '' # initialize swap outfile column for this category
+        # parallel swap left and right intervals in giggle output
+        workers = min(max_workers, os.cpu_count() or 1, len(df_giggle))
+        futures = {}
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            for idx, row in df_giggle.iterrows():
+                infile = row[f"{col_giggle}"]
+                outfile = infile.replace('.giggle', '.giggle.swap')
+                fut = ex.submit(swap_intervals, infile, outfile, bgzip)
+                futures[fut] = (idx, outfile, col_swap)
+            for fut in as_completed(futures):
+                idx, outfile, col = futures[fut]
+                fut.result()
+                df_swap.at[idx, col] = outfile
     return df_swap
 
 def validate_bedtools():
@@ -203,7 +224,7 @@ def validate_bedtools():
         raise FileNotFoundError("bedtools command not found in PATH")
     return bedtools
 
-def bedtools_intersect(path_input, path_bedfile, outfile, bgzip=False, bedtools_bin=None):
+def bedtools_intersect(path_input, path_bedfile, outfile, gene_col_idx=3, bgzip=False, bedtools_bin=None):
     # output columns:
     # c1-5 are from bed file
     # c6-15 are from swap file
@@ -214,6 +235,7 @@ def bedtools_intersect(path_input, path_bedfile, outfile, bgzip=False, bedtools_
         bedtools = validate_bedtools()
     assert os.path.exists(path_input), f"Input file {path_input} does not exist"
     assert os.path.exists(path_bedfile), f"Bed file {path_bedfile} does not exist"
+    _ = read_bed(path_bedfile, gene_col_idx=gene_col_idx) # validate bed file format
     if bgzip:
         bgzip_cmd = validate_bgzip()
         assert path_input.endswith('.gz'), f"Input file {path_input} must be gzipped when bgzip=True"
@@ -262,7 +284,48 @@ def bedtools_intersect(path_input, path_bedfile, outfile, bgzip=False, bedtools_
             print(f"Stderr: {e.stderr.decode()}")
             raise e
 
-def intersect2evidence(path_intersect, outfile, right_gene_col=3, sample_column=14, bgzip=False):
+def swap2intersect(
+    df_swap,
+    df_shard,
+    path_bedfile,
+    gene_col_idx=3,
+    outfile_column_swap_prefix='outfile_swap',
+    outfile_column_intersect_prefix='outfile_intersect',
+    bgzip=False,
+    bedtools_bin=None,
+    max_workers=4
+):
+    df_intersect = df_swap.copy()
+    for cat in df_shard['category'].unique():
+        col_swap = f"{outfile_column_swap_prefix}_{cat}"
+        col_intersect = f"{outfile_column_intersect_prefix}_{cat}"
+        df_intersect[col_intersect] = '' # initialize intersect outfile column for this category
+        workers = min(max_workers, os.cpu_count() or 1, len(df_swap))
+        futures = {}
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            for idx, row in df_swap.iterrows():
+                infile = row[col_swap]
+                if bgzip:
+                    outfile = infile.replace('.giggle.swap.gz', '.giggle.swap.intersect.bed.gz')
+                else:
+                    outfile = infile.replace('.giggle.swap', '.giggle.swap.intersect.bed')
+                fut = ex.submit(bedtools_intersect, infile, path_bedfile, outfile, gene_col_idx, bgzip, bedtools_bin)
+                futures[fut] = (idx, outfile, col_intersect)
+            for fut in as_completed(futures):
+                idx, outfile, col = futures[fut]
+                fut.result()
+                df_intersect.at[idx, col] = outfile
+    return df_intersect
+
+    
+def intersect2evidence(
+    path_intersect,
+    outfile,
+    right_gene_col=3,
+    sample_column=14,
+    bgzip=False,
+    burden=False
+):
     # get left gene from header
     if bgzip:
         with gzip.open(path_intersect, 'rt') as f:
@@ -287,5 +350,91 @@ def intersect2evidence(path_intersect, outfile, right_gene_col=3, sample_column=
     df_evidence = pd.merge(right_gene_counts, sample_counts, on='gene_right', how='outer')
     df_evidence['gene_left'] = gene_left
     df_evidence = df_evidence[['gene_left', 'gene_right', 'reads', 'samples']]
+    if burden:
+
+        burden_outfile = os.path.join(
+            os.path.dirname(outfile),
+            gene_left + '.burden.txt'
+        )
+        # rm selfies
+        total_burden = df_evidence[df_evidence['gene_left'] != df_evidence['gene_right']]['reads'].sum()
+        with open(burden_outfile, 'w') as f:
+            f.write(f"{total_burden}\n")
     # write output
-    df_evidence.to_csv(outfile, sep='\t', index=False)
+    df_evidence.to_csv(outfile, sep='\t', index=False, compression=None)
+
+def df_intersect2df_evidence(
+    df_intersect,
+    df_shard,
+    right_gene_col=3,
+    sample_column=14,
+    outfile_column_intersect_prefix='outfile_intersect',
+    outfile_column_evidence_prefix='outfile_evidence',
+    bgzip=False,
+    burden=False,
+    max_workers=4
+):
+    df_evidence = df_intersect.copy()
+    for cat in df_shard['category'].unique():
+        col_intersect = f"{outfile_column_intersect_prefix}_{cat}"
+        col_evidence = f"{outfile_column_evidence_prefix}_{cat}"
+        df_evidence[col_evidence] = '' # initialize evidence outfile column for this category
+        workers = min(max_workers, os.cpu_count() or 1, len(df_intersect))
+        futures = {}
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            for idx, row in df_intersect.iterrows():
+                infile = row[col_intersect]
+                if bgzip:
+                    outfile = infile.replace('.giggle.swap.intersect.bed.gz', '.evidence.tsv')
+                else:
+                    outfile = infile.replace('.giggle.swap.intersect.bed', '.evidence.tsv')
+                fut = ex.submit(intersect2evidence, infile, outfile, right_gene_col, sample_column, bgzip, burden)
+                futures[fut] = (idx, outfile, col_evidence)
+            for fut in as_completed(futures):
+                idx, outfile, col = futures[fut]
+                fut.result()
+                df_evidence.at[idx, col] = outfile
+    return df_evidence
+
+
+def agg_evidence_by_category(outdir_g2f, outdir_agg, df_giggle_shards, outfile_suffix='-fusion_evidence.tsv', evidence_pattern='*.evidence.tsv'):
+    '''
+    aggregate giggle+bedtools evidence by category
+    '''
+    # validation
+    assert os.path.exists(outdir_g2f), f"Input directory {outdir_g2f} does not exist"
+    os.makedirs(outdir_agg, exist_ok=True)
+    # parse categories
+    categories = df_giggle_shards['category'].unique()
+    k = len(categories)
+    # verify no prior aggregation files exist
+    for cat in categories:
+        outfile_agg = os.path.join(outdir_agg, f"{cat}{outfile_suffix}")
+        assert not os.path.exists(outfile_agg), f"Aggregation file {outfile_agg} already exists, please remove before running aggregation"
+    # sequentially aggregate evidence within each category
+    for i, cat in enumerate(categories):
+        print(f"# category: {cat} ({i+1}/{k})")
+        outdir_cat = os.path.join(outdir_g2f, cat)
+        outfile_agg = os.path.join(outdir_agg, f"{cat}{outfile_suffix}")
+        with open(outfile_agg, 'w') as f_out:
+            # write header
+            f_out.write(f'gene_left\tgene_right\treads_{cat}\tsamples_{cat}\n')
+            # write all fusion evidence in category to single file
+            evidence_files = glob.glob(os.path.join(outdir_cat, evidence_pattern))
+            n = len(evidence_files)
+            for j, path_evidence in enumerate(evidence_files):
+                print(f"# processing file {j+1}/{n}: {path_evidence}")
+                with open(path_evidence, 'r') as f_in:
+                    # skip header
+                    # gracefully handle empty evidence files
+                    try:
+                        next(f_in)
+                    except StopIteration:
+                        continue
+                    # don't expect any comment lines, but just incase
+                    for line in f_in:
+                        if line.startswith('#'):
+                            continue
+                        else:
+                            f_out.write(line)
+    return outdir_agg
