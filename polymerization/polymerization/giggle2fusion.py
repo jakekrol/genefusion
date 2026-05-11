@@ -17,7 +17,7 @@ def validate_bgzip():
         raise FileNotFoundError("bgzip command not found in PATH")
     return bgzip
 
-def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False):
+def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False, append=False):
     '''
     run giggle with given arguments and return the output as a pandas dataframe
     argstring: string of arguments to pass to giggle, should include {left_gene} and as placeholders for the gene names
@@ -31,16 +31,19 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
         raise FileNotFoundError("giggle command not found in PATH")
     cmd = [giggle] + shlex.split(argstring)
     output_path = outfile if not bgzip or outfile.endswith('.gz') else f"{outfile}.gz"
+    write_header = (not append) or (not os.path.exists(output_path)) or (os.path.getsize(output_path) == 0)
     if bgzip:
         bgzip_cmd = validate_bgzip()
         assert outfile.endswith('.gz'), f"Output file {outfile} must end with .gz when bgzip=True"
 
         try:
-            with open(output_path, 'wb') as out_handle:
+            out_mode = 'ab' if append else 'wb'
+            with open(output_path, out_mode) as out_handle:
                 with subprocess.Popen([bgzip_cmd, '-c'], stdin=subprocess.PIPE, stdout=out_handle, stderr=subprocess.PIPE) as bgzip_proc:
-                    header = f"#gene_left={left_gene}\n".encode()
-                    bgzip_proc.stdin.write(header)
-                    bgzip_proc.stdin.flush()
+                    if write_header:
+                        header = f"#gene_left={left_gene}\n".encode()
+                        bgzip_proc.stdin.write(header)
+                        bgzip_proc.stdin.flush()
 
                     print(f"Running command: {' '.join(cmd)}")
                     giggle_proc = subprocess.Popen(cmd, stdout=bgzip_proc.stdin, stderr=subprocess.PIPE)
@@ -65,15 +68,17 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
     else:
         # run the command using subprocess.run with a timeout
         try:
-            with open(output_path, 'w') as f:
-                # write genes in the header
-                f.write(f"#gene_left={left_gene}\n")
-                f.flush()
+            out_mode = 'a' if append else 'w'
+            with open(output_path, out_mode) as f:
+                # write genes in the header once
+                if write_header:
+                    f.write(f"#gene_left={left_gene}\n")
+                    f.flush()
                 print(f"Running command: {' '.join(cmd)}")
                 subprocess.run(cmd, text=True, check=True, stdout=f, stderr=subprocess.PIPE, timeout=timeout)
         except subprocess.CalledProcessError as e:
             print(f"Giggle command failed with error code {e.returncode}")
-            print(f"Stderr: {e.stderr.decode()}")
+            print(f"Stderr: {e.stderr}")
             raise e
         except subprocess.TimeoutExpired as e:
             print(f"Giggle command timed out after {timeout} seconds")
@@ -106,35 +111,35 @@ def merge_fusion_set_bed2giggle(
         # each category get its own directory
         outdir_cat = os.path.join(outdir, cat)
         os.makedirs(outdir_cat, exist_ok=True)
-        giggle_index = group['giggle_index'].iloc[0]
-        breakpoint()
-        # parallel giggle queries
-        with ThreadPoolExecutor(max_workers=max_workers) as ex:
-            futures = []
-            # for each gene
-            for gene in genes:
-                row = df_merged[df_merged['gene_left'] == gene]
-                # query data
-                gene_left = row['gene_left'].iloc[0]
+        # loop over different indices in same group
+        for giggle_index in group['giggle_index'].unique():
+            # parallel giggle queries
+            with ThreadPoolExecutor(max_workers=max_workers) as ex:
+                futures = []
+                # for each gene
+                for gene in genes:
+                    row = df_merged[df_merged['gene_left'] == gene]
+                    # query data
+                    gene_left = row['gene_left'].iloc[0]
 
-                chromosome_left = row['chromosome_left'].iloc[0]
-                start_left = row['start_left'].iloc[0]
-                end_left = row['end_left'].iloc[0]
-                region_left = f"{chromosome_left}:{start_left}-{end_left}"
+                    chromosome_left = row['chromosome_left'].iloc[0]
+                    start_left = row['start_left'].iloc[0]
+                    end_left = row['end_left'].iloc[0]
+                    region_left = f"{chromosome_left}:{start_left}-{end_left}"
 
-                # construct giggle command arguments
-                argstring = f"search -i {giggle_index} -r {region_left} -v"
-                outfile = os.path.join(
-                    outdir_cat, f"{outfile_prefix}{gene_left}{outfile_suffix}"
+                    # construct giggle command arguments
+                    argstring = f"search -i {giggle_index} -r {region_left} -v"
+                    outfile = os.path.join(
+                        outdir_cat, f"{outfile_prefix}{gene_left}{outfile_suffix}"
 
-                )
-                if bgzip and not outfile.endswith('.gz'):
-                    outfile += '.gz'
-                df_merged.loc[df_merged['gene_left'] == gene, col_name] = outfile
-                # run giggle
-                futures.append(ex.submit(run_giggle, argstring, gene_left, outfile, timeout, bgzip))
-            for future in as_completed(futures):
-                future.result()
+                    )
+                    if bgzip and not outfile.endswith('.gz'):
+                        outfile += '.gz'
+                    df_merged.loc[df_merged['gene_left'] == gene, col_name] = outfile
+                    # run giggle
+                    futures.append(ex.submit(run_giggle, argstring, gene_left, outfile, timeout, bgzip, append=True))
+                for future in as_completed(futures):
+                    future.result()
     # includes giggle outfile column
     df_giggle = df_merged.copy()
     return df_giggle
