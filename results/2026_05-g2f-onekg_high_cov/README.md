@@ -1,0 +1,1 @@
+run polymerization's giggle2fusion (g2f) pipeline to gather all fusion evidence in high coverage onekg

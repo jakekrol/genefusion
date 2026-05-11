@@ -1,0 +1,1 @@
+index='/data/jake/1kg_high_coverage_2025' high_coverage_1000g_dna
