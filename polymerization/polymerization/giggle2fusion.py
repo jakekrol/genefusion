@@ -107,6 +107,7 @@ def merge_fusion_set_bed2giggle(
         outdir_cat = os.path.join(outdir, cat)
         os.makedirs(outdir_cat, exist_ok=True)
         giggle_index = group['giggle_index'].iloc[0]
+        breakpoint()
         # parallel giggle queries
         with ThreadPoolExecutor(max_workers=max_workers) as ex:
             futures = []

@@ -1,4 +1,5 @@
 import pandas as pd
+import polars as pl
 import numpy as np
 import tempfile
 import subprocess
@@ -21,8 +22,16 @@ def verify_fusion_set_in_bed(df_fusion, df_bed):
     df_fusion: a 2 col tsv of gene names
     df_bed: a pandas dataframe of bed file, with at least 4 columns of chrom, start, end, and gene_name
     '''
-    set_fusion_genes = set(df_fusion.iloc[:, 0]).union(set(df_fusion.iloc[:, 1]))
-    set_bed_genes = set(df_bed['gene_name'])
+    if isinstance(df_fusion, pl.DataFrame):
+        fusion_cols = df_fusion.columns[:2]
+        bed_col = 'gene_name'
+        set_fusion_genes = set(df_fusion.select(fusion_cols).to_series(0).to_list()).union(
+            set(df_fusion.select(fusion_cols).to_series(1).to_list())
+        )
+        set_bed_genes = set(df_bed.get_column(bed_col).to_list())
+    else:
+        set_fusion_genes = set(df_fusion.iloc[:, 0]).union(set(df_fusion.iloc[:, 1]))
+        set_bed_genes = set(df_bed['gene_name'])
     test_subset = set_fusion_genes.issubset(set_bed_genes)
     if test_subset:
         return None
@@ -55,25 +64,27 @@ def left_sort_fusion_set(df_fusion, df_bed):
     df_fusion.columns = ['gene_left', 'gene_right'] + cols[2:]
     return df_fusion
 
-def merge_fusion_set_with_bed(df_fusion, df_bed):
+def merge_fusion_set_with_bed(df_fusion, df_bed, merger='pandas'):
     '''
     merge fusion set with bed file data
     '''
     # check that all fusion set genes are in bed file
     verify_fusion_set_in_bed(df_fusion, df_bed)
-    df_bed_to_merge = df_bed.copy()
-    cols = df_bed_to_merge.columns.tolist()
-    cols = [str(col) for col in cols]
-    # track gene data for left and right genes separately
-    left_cols = [col + '_left' for col in cols]
-    right_cols = [col + '_right' for col in cols]
-    # left gene
-    df_bed_to_merge.columns = left_cols
-    df_merged = pd.merge(df_fusion, df_bed_to_merge, left_on='gene_left', right_on='gene_name_left', how='left')
-    # right gene
-    df_bed_to_merge.columns = right_cols
-    df_merged = pd.merge(df_merged, df_bed_to_merge, left_on='gene_right', right_on='gene_name_right', how='left', suffixes=('_left', '_right'))
-    df_merged = df_merged.drop(columns=['gene_name_left', 'gene_name_right'])
+    if merger == 'pandas':
+        df_bed_to_merge = df_bed.copy()
+        cols = [str(col) for col in df_bed_to_merge.columns.tolist()]
+        left_cols = [col + '_left' for col in cols]
+        right_cols = [col + '_right' for col in cols]
+        df_bed_to_merge.columns = left_cols
+        df_merged = pd.merge(df_fusion, df_bed_to_merge, left_on='gene_left', right_on='gene_name_left', how='left')
+        df_bed_to_merge.columns = right_cols
+        df_merged = pd.merge(df_merged, df_bed_to_merge, left_on='gene_right', right_on='gene_name_right', how='left', suffixes=('_left', '_right'))
+        df_merged = df_merged.drop(columns=['gene_name_left', 'gene_name_right'])
+    elif merger == 'polars':
+        df_bed_left = df_bed.rename({col: f"{col}_left" for col in df_bed.columns})
+        df_bed_right = df_bed.rename({col: f"{col}_right" for col in df_bed.columns})
+        df_merged = df_fusion.join(df_bed_left, left_on='gene_left', right_on='gene_name_left', how='left')
+        df_merged = df_merged.join(df_bed_right, left_on='gene_right', right_on='gene_name_right', how='left')
     return df_merged
 
 def run_stix(argstring,left_gene, right_gene, outfile, timeout=60 * 60 * 2):

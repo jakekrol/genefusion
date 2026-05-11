@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import polars as pl
 
 def validate_fusion_set(df_fusion):
     '''
@@ -21,13 +22,19 @@ def validate_fusion_set(df_fusion):
         assert col in df_fusion.columns
     return None
 
-def read_fusion_set(path, header=None, sep='\t'):
+def read_fusion_set(path, header=None, sep='\t', reader='pandas'):
     '''
     read in fusion set from tsv file and return as pandas dataframe
     path_fusion_set: path to tsv file of fusion set, with 2 columns of gene names
     '''
-    df_fusion = pd.read_csv(path, sep=sep, header=header)
-    df_fusion.columns=['gene_x', 'gene_y']
+    if reader == 'pandas':
+        df_fusion = pd.read_csv(path, sep=sep, header=header, dtype=str, usecols=[0,1], engine='c', memory_map=True, low_memory=False)
+        df_fusion.columns=['gene_x', 'gene_y']
+    elif reader == 'polars':
+        df_fusion = pl.read_parquet(path, columns=[0,1], memory_map=True, missing_columns='raise').to_pandas()
+    else:
+        raise ValueError("Invalid reader specified. Use 'pandas' or 'polars'.")
+
     return df_fusion
 
 def validate_bed(df_bed):
