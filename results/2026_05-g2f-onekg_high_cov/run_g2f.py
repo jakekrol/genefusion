@@ -14,10 +14,15 @@ parser = argparse.ArgumentParser(description='Get gene fusion evidence 1000 Geno
 parser.add_argument('--shardfile', default='./shardfile.giggle.tsv', help='path to giggle shardfile')
 parser.add_argument('--bedfile', default='../2025_04-gene_bedfile_cln/grch37.genes.promoter_pad.bed')
 parser.add_argument('--fusion_set', default='../2025_11-fusion_lexicographic_key/gene_pairs_sorted_by_genomic_position.parquet')
-parser.add_argument('--outdir', default='./g2f_out', help='output directory')
+parser.add_argument('--outdir_g2f', default='./g2f_out', help='output directory')
+parser.add_argument('--outdir_agg', default='./g2f_agg', help='aggregated output directory')
+parser.add_argument('--logdir', default='./g2f_log', help='giggle2fusion log directory')
+parser.add_argument('--max_workers', type=int, default=50, help='number of parallel workers for giggle2fusion')
 args = parser.parse_args()
 
-os.makedirs(args.outdir, exist_ok=True)
+os.makedirs(args.outdir_g2f, exist_ok=True)
+os.makedirs(args.outdir_agg, exist_ok=True)
+os.makedirs(args.logdir, exist_ok=True)
 
 ### read inputs
 print(f"# reading giggle shard file: {args.shardfile}")
@@ -54,8 +59,17 @@ df_merge_pd = df_merge.to_pandas()
 print(f"# time to convert merged dataframe back to pandas dataframe: {time.time() - t_0:.2f} seconds")
 print(f"# shape of merged dataframe: {df_merge_pd.shape}")
 
-df_giggle = merge_fusion_set_bed2giggle(
-    df_merge_pd, df_shard, outdir=args.outdir, max_workers=30, timeout=60*60*2, bgzip=True
+df_evidence = giggle2fusion(
+    df_merge_pd, df_shard, outdir=args.outdir_g2f, logdir=args.logdir, max_workers=args.max_workers, timeout=60*60*2, bgzip=True,
+    sample_clean_func=lambda x: os.path.basename(x),
+    path_bedfile=args.bedfile,
+    gene_col_idx=3,
+    evidence_right_gene_col=3,
+    evidence_sample_col=14,
+    outfile_prefix='',
+    burden=True,
+    bedtools_bin='/data/jake/bedtools.static.binary',
+    verbose=True
 )
 
-df_giggle.to_csv(os.path.join(args.outdir, 'g2f_giggle.tsv'), sep='\t', index=False)
+agg_evidence_by_category(args.outdir_g2f, args.outdir_agg, df_shard)
