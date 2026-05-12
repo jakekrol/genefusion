@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import pysam
 import glob
+import time
 
 def validate_bgzip():
     bgzip = shutil.which('bgzip')
@@ -85,6 +86,19 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
             raise e
     return output_path
 
+
+def _is_bad_chrom_token(token):
+    token = token.lower()
+    return (
+        token == "0"
+        or token.startswith("hs")
+        or token.startswith("gl")
+        or token.startswith("nc")
+        or token.startswith("mt")
+        or token.startswith("-1")
+        or token.startswith("*")
+    )
+
 def merge_fusion_set_bed2giggle(
     df_merged,
     df_shard,
@@ -100,7 +114,11 @@ def merge_fusion_set_bed2giggle(
 
     # only left-genes are searched
     # significant reduction in complexity
+    right_gene_cols = [df_merged.columns.get_loc(col) for col in df_merged.columns if 'right' in col]
+    df_merged.drop(columns=[df_merged.columns[i] for i in right_gene_cols], inplace=True)
+    df_merged = df_merged.drop_duplicates(subset='gene_left', keep='first')
     genes = set(df_merged['gene_left'])
+
     max_workers=min(max_workers, len(genes), os.cpu_count())
     print(f"# giggle searching for {len(genes)} genes using {max_workers} workers")
     for i, (cat, group) in enumerate(df_shard.groupby('category')):
@@ -148,55 +166,35 @@ def clean_excord(path_excord, outfile, bgzip=False):
     if not os.path.exists(path_excord) or os.path.getsize(path_excord) == 0:
         print(f"Warning: Excord file {path_excord} does not exist or is empty, skipping cleaning")
         return None
-    if bgzip:
-        mode='rt'
-        with gzip.open(path_excord, mode) as f_in:
-            with pysam.BGZFile(outfile, 'wb') as f_out:
-                for line in f_in:
-                    # skip these patterns
-                    if line.lower().startswith("hs"):
-                        continue
-                    elif line.lower().startswith("gl"):
-                        continue
-                    elif line.lower().startswith("nc"):
-                        continue
-                    elif line.lower().startswith("mt"):
-                        continue
-                    elif line.lower().startswith("-1"):
-                        continue
-                    elif line.lower().startswith("*"):
-                        continue
-                    else:
-                        fields = line.strip().split('\t')
-                        # empty file or malformed line
-                        if len(fields) < 10:
-                            continue
-                        left_chrom = fields[0]
-                        left_start = fields[1]
-                        left_end = fields[2]
-                        # left_strand = fields[3]
-                        right_chrom = fields[4]
-                        right_start = fields[5]
-                        right_end = fields[6]
-                        # right_strand = fields[7]
-                        if (left_chrom.lower() == "0") and (left_start == "0"):
-                            continue
-                        elif (right_chrom.lower() == "0") and (right_start == "0"):
-                            continue
-                        elif right_chrom.lower().startswith("hs"):
-                            continue
-                        elif right_chrom.lower().startswith("gl"):
-                            continue
-                        elif right_chrom.lower().startswith("nc"):
-                            continue
-                        elif right_chrom.lower().startswith("mt"):
-                            continue
-                        elif right_chrom.lower().startswith("-1"):
-                            continue
-                        elif right_chrom.lower().startswith("*"):
-                            continue
-                        else:
-                            f_out.write(line.encode())
+    input_open = gzip.open if bgzip else open
+    output_open = pysam.BGZFile if bgzip else open
+    input_mode = 'rt' if bgzip else 'r'
+    output_mode = 'wb' if bgzip else 'w'
+
+    with input_open(path_excord, input_mode) as f_in:
+        with output_open(outfile, output_mode) as f_out:
+            for line in f_in:
+                if line.startswith('#'):
+                    f_out.write(line.encode() if bgzip else line)
+                    continue
+
+                fields = line.rstrip('\n').split('\t')
+                if len(fields) < 10:
+                    continue
+
+                left_chrom = fields[0]
+                left_start = fields[1]
+                right_chrom = fields[4]
+                right_start = fields[5]
+
+                if _is_bad_chrom_token(left_chrom) or _is_bad_chrom_token(right_chrom):
+                    continue
+                if (left_chrom.lower() == "0") and (left_start == "0"):
+                    continue
+                if (right_chrom.lower() == "0") and (right_start == "0"):
+                    continue
+
+                f_out.write(line.encode() if bgzip else line)
     return outfile
 
 def giggle2clean(
@@ -296,25 +294,25 @@ def swap_intervals(path_gigglefile, outfile, bgzip=False):
     return outfile
 
 def clean2swap(
-    df_giggle,
+    df_clean,
     df_shard,
     bgzip=False,
-    outfile_column_giggle_prefix='outfile_clean',
+    outfile_column_clean_prefix='outfile_clean',
     outfile_column_swap_prefix='outfile_swap',
     max_workers=4
 ):
-    df_swap = df_giggle.copy()
+    df_swap = df_clean.copy()
     for cat in df_shard['category'].unique():
-        col_giggle = f"{outfile_column_giggle_prefix}_{cat}"
+        col_clean = f"{outfile_column_clean_prefix}_{cat}"
         col_swap = f"{outfile_column_swap_prefix}_{cat}"
         df_swap[col_swap] = '' # initialize swap outfile column for this category
         # parallel swap left and right intervals in giggle output
-        workers = min(max_workers, os.cpu_count() or 1, len(df_giggle))
+        workers = min(max_workers, os.cpu_count() or 1, len(df_clean))
         futures = {}
         with ThreadPoolExecutor(max_workers=workers) as ex:
-            for idx, row in df_giggle.iterrows():
-                infile = row[f"{col_giggle}"]
-                outfile = infile.replace('.giggle.clean', 'giggle.clean.swap')
+            for idx, row in df_clean.iterrows():
+                infile = row[col_clean]
+                outfile = infile.replace('.giggle.clean', '.giggle.clean.swap')
                 fut = ex.submit(swap_intervals, infile, outfile, bgzip)
                 futures[fut] = (idx, outfile, col_swap)
             for fut in as_completed(futures):
@@ -322,7 +320,7 @@ def clean2swap(
                 try:
                     res = fut.result()
                 except Exception as e:
-                    print(f"clean2swap: worker failed for idx={idx}, infile={df_giggle.at[idx, col_giggle]}: {e}")
+                    print(f"clean2swap: worker failed for idx={idx}, infile={df_clean.at[idx, col_clean]}: {e}")
                     df_swap.at[idx, col] = pd.NA
                     continue
                 if res is None:
@@ -489,6 +487,7 @@ def intersect2evidence(
         # rm selfies
         total_burden = df_evidence[df_evidence['gene_left'] != df_evidence['gene_right']]['reads'].sum()
         with open(burden_outfile, 'w') as f:
+            f.write("#gene_left={}\n".format(gene_left))
             f.write(f"{total_burden}\n")
     # write output
     df_evidence.to_csv(outfile, sep='\t', index=False, compression=None)
@@ -514,8 +513,8 @@ def df_intersect2df_evidence(
         futures = {}
         with ThreadPoolExecutor(max_workers=workers) as ex:
             for idx, row in df_intersect.iterrows():
-                infile = row[col_intersect]
-                outfile = infile.replace('.giggle.clean.swap.intersect.bed', '.evidence.tsv')
+                infile = str(row[col_intersect])
+                outfile = infile.replace('.giggle.clean.swap.intersect.bed.gz', '.evidence.tsv')
                 fut = ex.submit(intersect2evidence, infile, outfile, right_gene_col, sample_column, bgzip, burden)
                 futures[fut] = (idx, outfile, col_evidence)
             for fut in as_completed(futures):
@@ -593,45 +592,97 @@ def giggle2fusion(
     burden=True,
     verbose=False
 ):
+    os.makedirs(outdir, exist_ok=True)
+    os.makedirs(logdir, exist_ok=True)
+    with open(os.path.join(logdir, 'giggle2fusion_parameters.txt'), 'w') as f:
+        f.write(f"outdir: {outdir}\n")
+        f.write(f"logdir: {logdir}\n")
+        f.write(f"path_bedfile: {path_bedfile}\n")
+        f.write(f"gene_col_idx: {gene_col_idx}\n")
+        f.write(f"sample_clean_func: {sample_clean_func}\n")
+        f.write(f"evidence_right_gene_col: {evidence_right_gene_col}\n")
+        f.write(f"evidence_sample_col: {evidence_sample_col}\n")
+        f.write(f"outfile_prefix: {outfile_prefix}\n")
+        f.write(f"max_workers: {max_workers}\n")
+        f.write(f"timeout: {timeout}\n")
+        f.write(f"bgzip: {bgzip}\n")
+        f.write(f"bedtools_bin: {bedtools_bin}\n")
+        f.write(f"burden: {burden}\n")
+        f.write(f"verbose: {verbose}\n")
+    with open(os.path.join(logdir, 'NA_counter.tsv'), 'w') as f:
+        f.write(f"step\tNA_count\n")
+
     # giggle search
     if verbose:
         print("# running giggle search")
+    t_0= time.time()
     df_giggle = merge_fusion_set_bed2giggle(
         df_merged, df_shard, outdir, outfile_prefix, max_workers, gene_delim='--', timeout=timeout, bgzip=bgzip
     )
+    with open (os.path.join(logdir, 'giggle_time.txt'), 'w') as f:
+        f.write(f"{time.time() - t_0}\n")
+    df_giggle.to_csv(os.path.join(logdir, 'giggle_output.tsv'), sep='\t', index=False)
+    with open(os.path.join(logdir, 'NA_counter.tsv'), 'a') as f:
+        f.write(f"giggle_output\t{df_giggle.isnull().sum().sum()}\n")
 
     # clean
-    df_giggle.to_csv(os.path.join(logdir, 'giggle_output.tsv'), sep='\t', index=False)
     if verbose:
         print("# cleaning giggle output")
-    df_giggle = giggle2clean(
+    t_0=    time.time()
+    df_clean = giggle2clean(
         df_giggle, df_shard, bgzip=bgzip, outfile_column_giggle_prefix='outfile_giggle', outfile_column_clean_prefix='outfile_clean', max_workers=max_workers
     )
-    df_giggle.to_csv(os.path.join(logdir, 'giggle_clean_output.tsv'), sep='\t', index=False)
+    with open(os.path.join(logdir, 'giggle_clean_time.txt'), 'w') as f:
+        f.write(f"{time.time() - t_0}\n")
+    df_clean.to_csv(os.path.join(logdir, 'giggle_clean_output.tsv'), sep='\t', index=False)
+    with open(os.path.join(logdir, 'NA_counter.tsv'), 'a') as f:
+        f.write(f"giggle_clean_output\t{df_clean.isnull().sum().sum()}\n")
 
     # swap
     if verbose:
         print("# swapping intervals in giggle output")
+    t_0= time.time()
     df_swap = clean2swap(
-        df_giggle, df_shard, bgzip=bgzip, outfile_column_giggle_prefix='outfile_giggle', outfile_column_swap_prefix='outfile_swap', max_workers=max_workers
+        df_clean,
+        df_shard,
+        bgzip=bgzip,
+        outfile_column_clean_prefix='outfile_clean',
+        outfile_column_swap_prefix='outfile_swap',
+        max_workers=max_workers
     )
+    with open(os.path.join(logdir, 'giggle_swap_time.txt'), 'w') as f:
+        f.write(f"{time.time() - t_0}\n")
     df_swap.to_csv(os.path.join(logdir, 'giggle_swap_output.tsv'), sep='\t', index=False)
+    with open(os.path.join(logdir, 'NA_counter.tsv'), 'a') as f:
+        f.write(f"giggle_swap_output\t{df_swap.isnull().sum().sum()}\n")
 
     # bedtools intersect
     if verbose:
         print("# intersecting swapped intervals with bed file")
+    t_0= time.time()
     df_intersect = swap2intersect(
         df_swap, df_shard, path_bedfile, gene_col_idx, outfile_column_swap_prefix='outfile_swap', outfile_column_intersect_prefix='outfile_intersect', bgzip=bgzip, bedtools_bin=bedtools_bin, max_workers=max_workers
     )
+    with open(os.path.join(logdir, 'giggle_intersect_time.txt'), 'w') as f:
+        f.write(f"{time.time() - t_0}\n")
     df_intersect.to_csv(os.path.join(logdir, 'giggle_intersect_output.tsv'), sep='\t', index=False)
+    with open(os.path.join(logdir, 'NA_counter.tsv'), 'a') as f:
+        f.write(f"giggle_intersect_output\t{df_intersect.isnull().sum().sum()}\n")
+
     # intersect to evidence
     if verbose:
         print("# converting intersect files to evidence files")
+    t_0= time.time()
     df_evidence = df_intersect2df_evidence(
         df_intersect, df_shard, evidence_right_gene_col, evidence_sample_col,
         outfile_column_intersect_prefix='outfile_intersect', outfile_column_evidence_prefix='outfile_evidence',
         bgzip=bgzip, burden=burden, max_workers=max_workers
     )
+    with open(os.path.join(logdir, 'giggle_evidence_time.txt'), 'w') as f:
+        f.write(f"{time.time() - t_0}\n")
     df_evidence.to_csv(os.path.join(logdir, 'giggle_evidence_output.tsv'), sep='\t', index=False)
+    with open(os.path.join(logdir, 'NA_counter.tsv'), 'a') as f:
+        f.write(f"giggle_evidence_output\t{df_evidence.isnull().sum().sum()}\n")
+
     return df_evidence
     
