@@ -26,6 +26,7 @@ dependencies:
 
   # Testing/utilities
   - bedtools
+  - star
   - ruby
 
   # python
@@ -40,5 +41,8 @@ dependencies:
   - duckdb
   - scikit-learn
   - pysam
+  - filelock
+  - networkx
+  - swifter
 
   - quarto
