@@ -148,15 +148,21 @@ def merge_fusion_set_bed2giggle(
                     argstring = f"search -i {giggle_index} -r {region_left} -v"
                     outfile = os.path.join(
                         outdir_cat, f"{outfile_prefix}{gene_left}.giggle"
-
                     )
                     if bgzip and not outfile.endswith('.gz'):
                         outfile += '.gz'
-                    df_merged.loc[df_merged['gene_left'] == gene, col_name] = outfile
                     # run giggle
                     futures.append(ex.submit(run_giggle, argstring, gene_left, outfile, timeout, bgzip, append=True))
                 for future in as_completed(futures):
-                    future.result()
+                    try:
+                        res = future.result()
+                    except Exception as e:
+                        print(f"Error in giggle search: {e}")
+                        continue
+                    if res is not None:
+                        df_merged.loc[df_merged['gene_left'] == gene, col_name] = outfile
+                    else:
+                        df_merged.loc[df_merged['gene_left'] == gene, col_name] = pd.NA
     # includes giggle outfile column
     df_giggle = df_merged.copy()
     return df_giggle
