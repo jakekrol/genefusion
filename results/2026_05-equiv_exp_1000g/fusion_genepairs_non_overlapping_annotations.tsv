@@ -1,0 +1,6 @@
+gene_left	gene_right	chromosome_left	start_left	end_left	4_left	chromosome_right	start_right	end_right	4_right	overlap
+C20orf112	RP11-410N8.4	20	31030862	31172876	neg	20	31175281	31196695	pos	False
+RP11-192H23.4	C20orf112	17	26782770	26941215	neg	20	31030862	31172876	neg	False
+NLK	RP11-192H23.4	17	26368763	26523407	pos	17	26782770	26941215	neg	False
+NLK	PIGS	17	26368763	26523407	pos	17	26880401	26898890	neg	False
+DAB1	TTC27	1	57460451	59012406	neg	2	32853099	33046118	pos	False

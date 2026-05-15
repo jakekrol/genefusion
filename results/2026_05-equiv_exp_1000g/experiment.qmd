@@ -1,0 +1,185 @@
+---
+title: "Equivalence normal fusion experiment"
+author: "Jacob Krol"
+jupyter: python3
+format:
+    pdf
+---
+
+<!-- Render with quarto render experiment.qmd -->
+
+## Experiment
+
+Goal: demonstrate how gene-level functional equivalence of fusion variants is a sensitive approach for discovering recurrent fusions.
+
+```{python}
+#| echo: false
+import os,sys
+import pandas as pd
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+from scipy.spatial.distance import pdist, squareform
+FONTSIZE=18
+```
+
+```{python}
+#| echo: false
+f='nlk_pigs_intersect.bed'
+df = pd.read_csv(f, sep='\t',header=0)
+NLK_START=26368763
+NLK_END=26523407
+PIGS_START=26880401
+PIGS_END=26898890
+df = df[['start_left', 'end_right', 'sample']]
+df.head()
+```
+
+
+```{python}
+#| echo: false
+sample_ranges = (
+    df.groupby('sample').agg(
+        min_left_bp=('start_left', 'min'),
+        max_right_bp=('end_right', 'max')
+    )
+)
+print("shape: ", sample_ranges.shape)
+sample_ranges.head()
+```
+
+```{python}
+# use megabase coordinates for plotting
+sample_ranges['min_left_bp_mb'] = sample_ranges['min_left_bp'] / 1000000
+sample_ranges['max_right_bp_mb'] = sample_ranges['max_right_bp'] / 1000000
+NLK_START_MB = NLK_START / 1000000
+NLK_END_MB = NLK_END / 1000000
+PIGS_START_MB = PIGS_START / 1000000
+PIGS_END_MB = PIGS_END/ 1000000
+```
+
+```{python}
+#| echo: false
+# scatter left and right bps
+
+x=sample_ranges['min_left_bp_mb']
+y=sample_ranges['max_right_bp_mb']
+fig = plt.figure(figsize=(8, 8))
+gs = GridSpec(4,4,wspace=0.05,hspace=0.05)
+
+ax_scatter  = fig.add_subplot(gs[1:, :-1])
+ax_histx = fig.add_subplot(gs[0, :-1], sharex=ax_scatter)
+ax_histy = fig.add_subplot(gs[1:, -1], sharey=ax_scatter)
+
+ax_scatter.scatter(x, y, color='black', s=2)
+ax_scatter.set_xlabel('NLK Breakpoint (Mbp)', fontsize=FONTSIZE)
+ax_scatter.set_ylabel('PIGS Breakpoint (Mbp)', fontsize=FONTSIZE)
+ax_scatter.set_title('Sample breakpoints')
+# limits based on gene coordinates
+ax_scatter.set_xlim(NLK_START_MB, NLK_END_MB)
+ax_scatter.set_ylim(PIGS_START_MB, PIGS_END_MB)
+# top hist
+ax_histx.hist(x, bins=30, color='black')
+ax_histx.set_ylabel('Frequency')
+plt.setp(ax_histx.get_xticklabels(), visible=False)
+
+# right hist
+ax_histy.hist(y, bins=30, color='black', orientation='horizontal')
+
+# plot star at mean x and y
+mu_nlk_mb = sample_ranges['min_left_bp_mb'].mean()
+mu_pigs_mb = sample_ranges['max_right_bp_mb'].mean()
+ax_scatter.scatter(mu_nlk_mb, mu_pigs_mb, color='red', marker='*', s=100, label='Mean breakpoint')
+
+
+
+plt.setp(ax_histy.get_yticklabels(), visible=False)
+plt.savefig('breakpoint_scatter_hist.png', dpi=300)
+```
+
+The upstream (NLK) and downstream (PIGS) breakpoints have clear means across samples. 
+
+However, some samples are dispersed far from middling breakpoints, yet they could be recovered if the variant is considered functionally equivalent using gene resolution.
+
+Let $\epsilon$ be some deviation from a gene's breakpoint mean. Let $X,Y$, be the breakpoint distributions for NLK and PIGS, respectively. Then, count the number of samples within deviation of the both genes' breakpoint means: $\text{\#samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{NLK} - x_i| \leq \epsilon \land |\mu_{PIGS} - y_i| \leq \epsilon)$
+
+```{python}
+mu_nlk = sample_ranges['min_left_bp'].mean()
+mu_pigs = sample_ranges['max_right_bp'].mean()
+esp_max = max(
+    [
+        abs(NLK_START-mu_nlk),
+        abs(NLK_END-mu_nlk),
+        abs(PIGS_START-mu_pigs),
+        abs(PIGS_END-mu_pigs)
+    ]
+)
+print(
+    "mu_nlk: ", mu_nlk, '\n',
+    "mu_pigs: ", mu_pigs, '\n',
+    "esp_max: ", esp_max
+)
+```
+
+```{python}
+epsilons = np.linspace(0, esp_max, num=100)
+counts = []
+NSAMPLES=142
+for eps in epsilons:
+    count = np.sum(
+        (np.abs(sample_ranges['min_left_bp'] - mu_nlk) <= eps) &
+        (np.abs(sample_ranges['max_right_bp'] - mu_pigs) <= eps)
+    )
+    counts.append(count)
+fraction = [round(x/NSAMPLES,2) for x in counts]
+plt.figure(figsize=(8, 6))
+plt.plot(epsilons, counts, color='black', marker='o', markersize=4)
+plt.xlabel('Side length of box (base pairs)', fontsize=FONTSIZE)
+plt.ylabel("#Samples in box",fontsize=FONTSIZE )
+#plt.ylabel(r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{NLK} - x_i| \leq \epsilon \wedge |\mu_{PIGS} - y_i| \leq \epsilon)$', fontsize=FONTSIZE-2)
+#plt.ylabel('Num. equivalent samples\n' + r'$\text{\#Samples}=\sum_{i=1}^n \mathbf{1}(|\mu_{NLK} - x_i| \leq \epsilon \wedge |\mu_{PIGS} - y_i| \leq \epsilon)$', fontsize=FONTSIZE)
+#plt.title('Functional equivalence of NLK-PIGS fusion variants')
+plt.savefig('func_equiv_samples.png', dpi=300)
+```
+
+```{python}
+
+# count num samples for epsilon at 10kb
+eps_10kb = 10000
+count_10kb = np.sum(
+    (np.abs(sample_ranges['min_left_bp'] - mu_nlk) <= eps_10kb) &
+    (np.abs(sample_ranges['max_right_bp'] - mu_pigs) <= eps_10kb)
+)
+print(f"Number of samples within 10kb of both gene means: {count_10kb}")
+```
+
+## Summary
+
+Of the 142 total prostate tumor samples, 95 have some read support for an NLK-PIGS fusion (~67% population frequency). However, when considering only samples within 10kb of mean breakpoints, only 19 samples are recovered (~13% population frequency).
+
+Given NLK-PIGS is a well-known recurrent fusion, we expect other fusions to have lower population frequencies that would be hard to discover without considering functional equivalence.
+
+```{python}
+#| echo: false
+#| include: false
+# plot the box corresponding to esp 10kb
+esp=10000
+plt.figure(figsize=(8, 8))
+plt.scatter(x, y, color='black', s=2)
+plt.xlabel('NLK Breakpoint')
+plt.ylabel('PIGS Breakpoint')
+#plt.title('Sample breakpoints with 10kb functional equivalence box')
+plt.xlim(NLK_START, NLK_END)
+plt.ylim(PIGS_START, PIGS_END)
+# add box for 10kb functional equivalence
+rect = plt.Rectangle(
+    (mu_nlk - esp, mu_pigs - esp), # left corner
+    2*esp, 2*esp, # width and height
+    edgecolor='red', facecolor='none', linewidth=2, label='10kb functional equivalence'
+)
+plt.gca().add_patch(rect)
+plt.legend()
+```
+
+
