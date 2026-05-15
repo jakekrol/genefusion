@@ -1,0 +1,130 @@
+Blast4-request ::= {
+  body queue-search {
+    program "blastn",
+    service "megablast",
+    queries seq-loc-list {
+      whole other {
+        accession "NM_016231"
+      }
+    },
+    subject sequences {
+      {
+        id {
+          other {
+            accession "NM_033198"
+          }
+        },
+        inst {
+          repr raw,
+          mol dna,
+          length 2529
+        }
+      }
+    },
+    algorithm-options {
+      {
+        name "EvalueThreshold",
+        value cutoff e-value { 5, 10, -2 }
+      },
+      {
+        name "MBTemplateType",
+        value integer 0
+      },
+      {
+        name "MBTemplateLength",
+        value integer 18
+      },
+      {
+        name "WordSize",
+        value integer 11
+      },
+      {
+        name "WindowSize",
+        value integer 40
+      },
+      {
+        name "UngappedMode",
+        value boolean FALSE
+      },
+      {
+        name "PercentIdentity",
+        value real { 0, 10, 0 }
+      },
+      {
+        name "HitlistSize",
+        value integer 100
+      },
+      {
+        name "EffectiveSearchSpace",
+        value big-integer 0
+      },
+      {
+        name "DbLength",
+        value big-integer 0
+      },
+      {
+        name "DustFiltering",
+        value boolean FALSE
+      },
+      {
+        name "RepeatFiltering",
+        value boolean FALSE
+      },
+      {
+        name "MaskAtHash",
+        value boolean FALSE
+      },
+      {
+        name "GapXDropoff",
+        value real { 6, 10, 1 }
+      },
+      {
+        name "GapXDropoffFinal",
+        value real { 1, 10, 2 }
+      },
+      {
+        name "GapExtnAlgorithm",
+        value integer 0
+      },
+      {
+        name "MismatchPenalty",
+        value integer -3
+      },
+      {
+        name "MatchReward",
+        value integer 2
+      },
+      {
+        name "GapOpeningCost",
+        value integer 5
+      },
+      {
+        name "GapExtensionCost",
+        value integer 2
+      },
+      {
+        name "StrandOption",
+        value strand-type both-strands
+      },
+      {
+        name "GapTracebackAlgorithm",
+        value integer 0
+      }
+    },
+    format-options {
+      {
+        name "Web_JobTitle",
+        value string "NM_016231:Homo sapiens nemo like kinase (NLK),..."
+      },
+      {
+        name "Web_BlastSpecialPage",
+        value string "blast2seq"
+      },
+      {
+        name "Web_ShortQueryAdjust",
+        value boolean TRUE
+      }
+    }
+  }
+}
+
