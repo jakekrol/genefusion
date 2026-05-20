@@ -67,7 +67,8 @@ df_bed_pl=None
 
 # steps=['giggle', 'clean', 'swap', 'intersect', 'evidence']
 # steps=['clean', 'swap', 'intersect', 'evidence']
-steps=['swap', 'intersect', 'evidence']
+# steps=['swap', 'intersect', 'evidence']
+steps=['evidence']
 df_evidence = giggle2fusion(
     df_merge_pd, df_shard, outdir=args.outdir_g2f, logdir=args.logdir, max_workers=args.max_workers, timeout=60*60*2, bgzip=True,
     sample_clean_func=lambda x: os.path.basename(x),
@@ -85,4 +86,4 @@ df_evidence = giggle2fusion(
 # free memory
 df_merge_pd=None
 
-agg_evidence_by_category(args.outdir_g2f, args.outdir_agg, df_shard)
+# agg_evidence_by_category(args.outdir_g2f, args.outdir_agg, df_shard)
