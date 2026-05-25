@@ -33,20 +33,39 @@ df_prostate_normal['cohort'] = 'prostate_normal'
 
 df_concat = pd.concat([df_1kg, df_prostate_tumor, df_prostate_normal], ignore_index=True)
 # barplot strand configs by cohort
+color_map = {
+    '1,1': 'lightblue',
+    '1,-1': 'red',
+    '-1,1': 'green',
+    '-1,-1': 'purple'
+}
 strand_config_counts = df_concat.groupby(['cohort', 'strand_config']).size().reset_index(name='count')
+strand_config_counts['color'] = strand_config_counts['strand_config'].map(color_map)
 fig, ax = plt.subplots(1,3,figsize=(10, 5))
 
-ax[0].bar(strand_config_counts[strand_config_counts['cohort'] == '1kg']['strand_config'], strand_config_counts[strand_config_counts['cohort'] == '1kg']['count'])
+ax[0].bar(
+    strand_config_counts[strand_config_counts['cohort'] == '1kg']['strand_config'],
+    strand_config_counts[strand_config_counts['cohort'] == '1kg']['count'],
+    color=strand_config_counts[strand_config_counts['cohort'] == '1kg']['color']
+)
 ax[0].set_title('1kg')
 ax[0].set_xlabel('Strand Configuration')
 ax[0].set_ylabel('Count')
 
-ax[1].bar(strand_config_counts[strand_config_counts['cohort'] == 'prostate_tumor']['strand_config'], strand_config_counts[strand_config_counts['cohort'] == 'prostate_tumor']['count'])
+ax[1].bar(
+    strand_config_counts[strand_config_counts['cohort'] == 'prostate_tumor']['strand_config'],
+    strand_config_counts[strand_config_counts['cohort'] == 'prostate_tumor']['count'],
+    color=strand_config_counts[strand_config_counts['cohort'] == 'prostate_tumor']['color']
+)
 ax[1].set_title('Prostate Tumor')
 ax[1].set_xlabel('Strand Configuration')
 ax[1].set_ylabel('Count')
 
-ax[2].bar(strand_config_counts[strand_config_counts['cohort'] == 'prostate_normal']['strand_config'], strand_config_counts[strand_config_counts['cohort'] == 'prostate_normal']['count'])
+ax[2].bar(
+    strand_config_counts[strand_config_counts['cohort'] == 'prostate_normal']['strand_config'],
+    strand_config_counts[strand_config_counts['cohort'] == 'prostate_normal']['count'],
+    color=strand_config_counts[strand_config_counts['cohort'] == 'prostate_normal']['color']
+)
 ax[2].set_title('Prostate Normal')
 ax[2].set_xlabel('Strand Configuration')
 ax[2].set_ylabel('Count')
