@@ -10,15 +10,15 @@ import numpy as np
 SEED=0
 np.random.seed(SEED)
 
-def get_sample_breakpoints(df):
-    sample_ranges = (
-        df.groupby('sample').agg(
-            left_bp=('left_start', 'min'),
-            right_bp=('right_start', 'max')
-        )
-    )
-    sample_ranges.reset_index(inplace=True)
-    return sample_ranges
+# def get_sample_breakpoints(df):
+#     sample_ranges = (
+#         df.groupby('sample').agg(
+#             left_bp=('left_start', 'min'),
+#             right_bp=('right_start', 'max')
+#         )
+#     )
+#     sample_ranges.reset_index(inplace=True)
+#     return sample_ranges
 
 filename_intersect='ERG.giggle.clean.swap.intersect.bed.gz'
 intervals_1kg_file = f'./g2f_out/high_coverage_1000g_dna/{filename_intersect}'
@@ -34,16 +34,16 @@ df_1kg.columns = columns
 df_1kg = df_1kg[df_1kg['right_gene'] == 'TMPRSS2']
 df_1kg['strand_config'] = df_1kg.apply(lambda row: f"{row['left_strand']},{row['right_strand']}", axis=1)
 df_1kg['cohort'] = '1kg'
-breakpoints_1kg = get_sample_breakpoints(df_1kg)
-df_1kg = pd.merge(df_1kg, breakpoints_1kg, on='sample', how='left')
+# breakpoints_1kg = get_sample_breakpoints(df_1kg)
+# df_1kg = pd.merge(df_1kg, breakpoints_1kg, on='sample', how='left')
 
 df_prostate_tumor = pd.read_csv(intervals_prostate_tumor_file, sep='\t', header=None, usecols=col_idxs, comment='#')
 df_prostate_tumor.columns = columns
 df_prostate_tumor = df_prostate_tumor[df_prostate_tumor['right_gene'] == 'TMPRSS2']
 df_prostate_tumor['strand_config'] = df_prostate_tumor.apply(lambda row: f"{row['left_strand']},{row['right_strand']}", axis=1)
 df_prostate_tumor['cohort'] = 'prostate_tumor'
-breakpoints_prostate_tumor = get_sample_breakpoints(df_prostate_tumor)
-df_prostate_tumor = pd.merge(df_prostate_tumor, breakpoints_prostate_tumor, on='sample', how='left')
+# breakpoints_prostate_tumor = get_sample_breakpoints(df_prostate_tumor)
+# df_prostate_tumor = pd.merge(df_prostate_tumor, breakpoints_prostate_tumor, on='sample', how='left')
 
 
 df_prostate_normal = pd.read_csv(intervals_prostate_normal_file, sep='\t', header=None, usecols=col_idxs, comment='#')
@@ -51,14 +51,14 @@ df_prostate_normal.columns = columns
 df_prostate_normal = df_prostate_normal[df_prostate_normal['right_gene'] == 'TMPRSS2']
 df_prostate_normal['strand_config'] = df_prostate_normal.apply(lambda row: f"{row['left_strand']},{row['right_strand']}", axis=1)
 df_prostate_normal['cohort'] = 'prostate_normal'
-breakpoints_prostate_normal = get_sample_breakpoints(df_prostate_normal)
-df_prostate_normal = pd.merge(df_prostate_normal, breakpoints_prostate_normal, on='sample', how='left')
+# breakpoints_prostate_normal = get_sample_breakpoints(df_prostate_normal)
+# df_prostate_normal = pd.merge(df_prostate_normal, breakpoints_prostate_normal, on='sample', how='left')
 
 df_concat = pd.concat([df_1kg, df_prostate_tumor, df_prostate_normal], ignore_index=True)
 
 # scatter plot of left and right breakpoints colored by strand config
 color_map = {
-    '1,1': 'lightblue',
+    '1,1': 'blue',
     '1,-1': 'red',
     '-1,1': 'green',
     '-1,-1': 'purple'
@@ -71,8 +71,8 @@ marker_map = {
 }
 df_concat['color'] = df_concat['strand_config'].map(color_map)
 # add jitter
-df_concat['left_bp'] = df_concat['left_bp'] + np.random.normal(0, 1000, size=len(df_concat))
-df_concat['right_bp'] = df_concat['right_bp'] + np.random.normal(0, 1000, size=len(df_concat))
+df_concat['left_start_jitter'] = df_concat['left_start'] #+ np.random.normal(0, 1000, size=len(df_concat))
+df_concat['right_end_jitter'] = df_concat['right_end'] #+ np.random.normal(0, 1000, size=len(df_concat))
 cohorts = ['1kg', 'prostate_tumor', 'prostate_normal']
 strand_configs = ['1,1', '1,-1', '-1,1', '-1,-1']
 fig, ax = plt.subplots(len(cohorts), len(strand_configs), figsize=(14, 9), sharex=True, sharey=True)
@@ -83,8 +83,8 @@ for row_index, cohort in enumerate(cohorts):
         strand_df = cohort_df[cohort_df['strand_config'] == strand_config]
         if not strand_df.empty:
             axis.scatter(
-                strand_df['left_bp'],
-                strand_df['right_bp'],
+                strand_df['left_start_jitter'],
+                strand_df['right_end_jitter'],
                 alpha=0.7,
                 c=color_map.get(strand_config, 'gray'),
                 s=3,
@@ -103,3 +103,11 @@ fig.legend(handles=[plt.Line2D([0], [0], marker='.', color='w', label='1,1', mar
 					plt.Line2D([0], [0], marker='^', color='w', label='-1,1', markerfacecolor='green', markersize=5),
 					plt.Line2D([0], [0], marker='<', color='w', label='-1,-1', markerfacecolor='purple', markersize=5)], loc='upper center', ncol=4, frameon=False, bbox_to_anchor=(0.5, 1.02))
 plt.savefig('breakpoint_scatter_strand_config.png')
+
+# test binning breakpoints and subtracting out normal signal
+bins=5
+x = df_prostate_tumor['left_start']
+y = df_prostate_tumor['right_end']
+counts, x_edges, y_edges = np.histogram2d(x, y, bins=bins,
+                                          range=[[x.min(), x.max()], [y.min(), y.max()]])
+

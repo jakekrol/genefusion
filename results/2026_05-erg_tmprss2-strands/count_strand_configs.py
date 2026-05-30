@@ -34,7 +34,7 @@ df_prostate_normal['cohort'] = 'prostate_normal'
 df_concat = pd.concat([df_1kg, df_prostate_tumor, df_prostate_normal], ignore_index=True)
 # barplot strand configs by cohort
 color_map = {
-    '1,1': 'lightblue',
+    '1,1': 'blue',
     '1,-1': 'red',
     '-1,1': 'green',
     '-1,-1': 'purple'
