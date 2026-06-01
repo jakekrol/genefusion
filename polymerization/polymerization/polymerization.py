@@ -14,7 +14,7 @@ import heapq
 import math
 import swifter
 import numba
-from polymerization.stix2fusion import verify_fusion_set_in_bed
+# from polymerization.stix2fusion import verify_fusion_set_in_bed
 
 BEDFILE='/data/jake/genefusion/results/2025_09-gene_bed/grch37.bed'
 

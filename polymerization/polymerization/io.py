@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import polars as pl
+import gzip
 
 def validate_fusion_set(df_fusion):
     '''
@@ -184,4 +185,65 @@ def read_stix_fusion_output(path,misc_header_line=2, sep='\t'):
     df_stix_output = pd.read_csv(path, sep=sep, skiprows=[misc_header_line], comment='#')
     validate_stix_fusion_output(df_stix_output)
     return (gene_left, gene_right, df_stix_output)
+
+def read_g2f_intersect(path,sep='\t', header=None, bgzip=False):
+    '''
+    read g2f intersect file and return pandas dataframe and left query gene if in header
+    '''
+    # parse gene_left from header
+    gene_left=None
+    if bgzip:
+        with gzip.open(path, 'rt') as f:
+            for line in f:
+                if not line.startswith('#'):
+                    break
+                if line.startswith('#gene_left='):
+                    gene_left=line.strip().split('=')[1]
+    else:
+        with open(path, 'r') as f:
+            for line in f:
+                if not line.startswith('#'):
+                    break
+                if line.startswith('#gene_left='):
+                    gene_left=line.strip().split('=')[1]
+    df_g2f_intersect = pd.read_csv(path, sep=sep, header=header, comment='#')
+    columns = [
+        'gene_right_chromosome',
+        'gene_right_start',
+        'gene_right_end',
+        'gene_right_name',
+        'gene_right_strand',
+        'right_chromosome',
+        'right_start',
+        'right_end',
+        'right_strand',
+        'left_chromosome',
+        'left_start',
+        'left_end',
+        'left_strand',
+        'evidence_type',
+        'sample'
+    ]
+    df_g2f_intersect.columns = columns
+    df_g2f_intersect = df_g2f_intersect[
+        [
+            'left_chromosome',
+            'left_start',
+            'left_end',
+            'left_strand',
+            'right_chromosome',
+            'right_start',
+            'right_end',
+            'right_strand',
+            'gene_right_chromosome',
+            'gene_right_start',
+            'gene_right_end',
+            'gene_right_name',
+            'gene_right_strand',
+            'evidence_type',
+            'sample'
+        ]
+    ]
+    df_g2f_intersect = df_g2f_intersect.sort_values(by=['left_chromosome', 'left_start', 'left_end']).reset_index(drop=True)
+    return gene_left, df_g2f_intersect
 
