@@ -1,0 +1,42 @@
+---
+title: "2026-05 Mentor Orientation"
+author: "Jacob Krol"
+format:
+  revealjs:
+    css: theme.scss
+---
+
+## Fusions
+
+
+<br>
+
+![](./images/gene-fusion-cartoon.png){fig-align="center"}
+
+## Visually prioritizing gene fusions
+
+![](./images/three-samplots.png){fig-align="center" width=80%}
+
+
+## Skills
+
+::: {.small}
+
+:::: {.columns}
+::: {.column width="50%"}
+- **Sequence analysis**
+    - Sequence file formats and processing tools
+- **Data visualization**
+    - Matplotlib
+- **Statistics**
+    - Develop fusion prioritization model
+:::
+::: {.column width="50%"}
+- **Programming**
+    - Python and Bash
+- **Version control**
+    - Git
+:::
+::::
+
+:::

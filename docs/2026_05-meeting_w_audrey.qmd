@@ -1,10 +1,18 @@
 ---
-title: "Population-scale discovery of tumor driving gene fusions"
-author: "2026 Jacob Krol DBMI Symposium"
+title: "2026-05 meeting with Audrey"
+author: "Jacob Krol"
 format:
   revealjs:
     css: theme.scss
 ---
+
+## Themes of Ph.D.
+
+![](./images/phd-themes-wordcloud.png){fig-align="center" width=80%}
+
+## Thesis chapters
+
+![](./images/phd-thesis-chapters.png){fig-align="center" width=80%}
 
 ## Population-scale discovery of tumor driving gene fusions
 
@@ -262,9 +270,9 @@ jacob.krol@colorado.edu
 :::
 ::::
 
-## Tumor fusion signal high in normal
+<!-- ## Tumor fusion signal high in normal
 
-![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/scatter-evidence_score.png){fig-align="center" width=80%}
+![](../results/2026_04-roc_tumor_and_normal_recurrent_fusions/scatter-evidence_score.png){fig-align="center" width=80%} -->
 
 
 ## Recurrent tissue classification
@@ -473,6 +481,20 @@ $$
 $\frac{1}{2}$ scales score to [-1,1] range
 
 Optional mixing parameters: $W_{normal} \in [0,1]$ and $W_{tumor} = 1 - W_{normal}$
+
+## Mosaics
+
+## Non-mosaic nulls
+
+![](./images/non-mosaic-nulls.png){fig-align="center" width=80%}
+
+## Mosaic classification rules
+
+![](./images/mosaic-classification-rules.png){fig-align="center" width=80%}
+
+## Classified mosaics
+
+![](./images/mosaics-classified.png){fig-align="center" width=80%}
 
 
 
