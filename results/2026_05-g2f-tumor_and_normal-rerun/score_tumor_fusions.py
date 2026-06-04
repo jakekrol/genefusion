@@ -152,6 +152,11 @@ for i, row in df_evidence_tumor_norm.iterrows():
     n_tumor_subpops = 0
     n_normal_subpops = 0
     for col in column_map.keys():
+        # manually add 1000g normal evidence if relevant
+        if '1000g' in col:
+            evidence_cols_normal.append(col)
+            n_normal_subpops += 1
+            continue
         tissue_key = col.split("_")[1].lower()
         if tissue_key in tissues:
             if 'tumor' in col:

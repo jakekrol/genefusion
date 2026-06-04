@@ -1,0 +1,229 @@
+gene_left	gene_right	tissues
+A2ML1	PHC1	esophagus,testis
+ACAD8	GLB1L3	esc,lymph_node,prostate,skin,spleen,thyroid
+KANSL1L	ACADL	gall bladder,kidney,thyroid
+ACCS	EXT2	lymph_node,bladder,endometrium,gall bladder,ovary
+ACOT11	MROH7	colon,stomach
+APMAP	ACSS1	cortex,esophagus,testis,thyroid
+IGHG1	ACTB	lymph_node,bladder
+ADAP2	RNF135	adrenal_gland,bladder,gall bladder,placenta
+NUMBL	ADCK4	esc,placenta
+ADSL	SGSM3	esc,lymph_node,mcf10,gall bladder,skin,spleen,testis
+AKAP8	AKAP8L	lymph_node,esophagus,testis
+ALOX12	RNASEK	esophagus,skin
+ALOX12	RNASEK-C17orf49	esophagus,skin
+MTATP6P1	ANKRD1	adrenal_gland,heart
+AP5S1	MAVS	lymph_node,gall bladder,skin
+DCTN3	ARID3C	esc,testis
+SMCO3	ART4	lymph_node,adrenal_gland,gall bladder
+GJC3	AZGP1	cortex,kidney,liver,pancreas,prostate,salivary_gland,skin,testis
+CALR	BRD2	testis,thyroid
+BTN2A3P	BTN3A3	esc,bladder
+C11orf31	CTNND1	esc,testis
+C15orf57	CBX3	esc,lymph_node,adrenal_gland,esophagus,heart,placenta,spleen
+IGF2	C5orf45	liver,placenta
+SPINK1	C5orf46	msc,heart,skin
+IGHG1	CD74	lymph_node,bladder
+CDR2L	ICT1	msc,testis
+CECR7	IL17RA	lymph_node,msc
+CFI	RADIL	bladder,kidney,liver
+PHKG1	CHCHD2	gall bladder,testis
+NOP2	CHD4	msc,bone_marrow,testis,thyroid
+CIRBP	C19orf24	esc,lymph_node,msc,cortex,endometrium,skin,thyroid
+CKMT2	ZCCHC9	adrenal_gland,esophagus,heart
+HSPA8	CLMP	esc,msc
+UCN2	COL7A1	mcf10,msc,skin
+CRYAB	DES	adrenal_gland,heart
+GNG5	CTBS	lymph_node,mcf10,msc,adrenal_gland,bladder,bone_marrow,endometrium,esophagus,gall bladder,heart,lung,skin,spleen,testis,thyroid
+CLSTN1	CTNNBIP1	esc,adrenal_gland,cortex,endometrium,esophagus,skin
+RAB38	CTSC	esc,lymph_node,mcf10,msc,esophagus,placenta,thyroid
+DEF6	PPARD	lymph_node,bone_marrow
+BCAS2	DENND2C	esophagus,testis
+RABGGTA	DHRS1	esc,lymph_node,mcf10,msc,adipose_tissue,bone_marrow,colon,gall bladder,kidney,placenta,thyroid
+KRTDAP	DMKN	esc,skin
+DNAH14	CARKD	esophagus,ovary
+PIP5KL1	DPM2	esc,msc
+DRAXIN	AGTRAP	esc,testis
+DUS4L	BCAP29	bladder,endometrium,esophagus,heart,testis,thyroid
+NAPRT1	EEF1D	esc,mcf10
+EEF1DP3	FRY	esc,adrenal_gland,bladder,bone_marrow,heart,skin,stomach,testis,thyroid
+EIF3K	ACTN4	gall bladder,skin
+C4orf3	FABP2	colon,duodenum,small_intestine
+SLC35B1	FAM117A	lymph_node,bladder,bone_marrow
+FAM129C	COLGALT1	lymph_node,bone_marrow
+ZUFSP	FAM162B	esophagus,gall bladder,lung
+HELQ	FAM175A	lymph_node,bladder,esophagus,gall bladder,ovary,skin,thyroid
+SYCE2	FARSA	esc,bone_marrow
+SDCBP2	FKBP1A	esc,msc,placenta
+FLNC	ATP6V1F	adrenal_gland,heart
+C1orf227	FLVCR1	esc,lymph_node
+FTH1	FTH1P3	bone_marrow,lung
+PHF23	GABARAP	msc,bone_marrow
+GALT	IL11RA	lymph_node,adrenal_gland,esophagus,gall bladder,skin,testis,thyroid
+GKAP1	KIF27	esc,lymph_node,bladder,cortex,endometrium,prostate,testis,thyroid
+GLYCTK	DNAH1	esc,mcf10
+KISS1	GOLT1A	esc,duodenum
+MPV17	GTF3C2	testis,thyroid
+COLQ	HACL1	lymph_node,bladder,bone_marrow,endometrium,gall bladder,skin,testis,thyroid
+HARS2	ZMAT2	lymph_node,testis
+PRMT5	HAUS4	lymph_node,gall bladder
+HEPHL1	PANX1	esc,colon
+HERC3	FAM13A-AS1	lymph_node,bone_marrow,lung
+IGHG1	HLA-A	lymph_node,bladder
+IGKC	HLA-B	lymph_node,bladder
+MTATP6P1	HSPB1	adrenal_gland,esophagus,heart,skin
+HSPB2	C11orf52	gall bladder,heart
+HSPE1	MOB4	msc,endometrium
+NDUFV1	ICA1L	skin,thyroid
+MTATP8P1	IGHA1	bladder,duodenum,small_intestine,stomach
+IGHG1	IGLL5	lymph_node,bladder
+IGHV3-30	IGKC	lymph_node,bladder
+IGHA1	IGHV3OR16-13	bladder,spleen
+IGHA1	IGHV3OR16-9	lymph_node,bladder,duodenum,salivary_gland,small_intestine
+IGHA2	IGKC	lymph_node,gall bladder
+IGHG1	IGKC	lymph_node,bladder
+IGHG2	IGKC	lymph_node,bladder
+IGHG3	IGKC	lymph_node,bladder
+IGHG4	IGKC	lymph_node,bladder
+IGHG1	IGKV3-11	lymph_node,bladder
+IGHG1	IGKV3-20	lymph_node,bladder
+IGHG1	IGLC2	lymph_node,bladder
+IGHA1	IGLC3	lymph_node,bladder
+IGHG1	IGLC3	lymph_node,bladder
+IGSF5	PCP4	esc,heart
+CXorf65	IL2RG	lymph_node,bone_marrow
+IL34	FLJ00418	esophagus,skin,spleen
+INTS3	SLC27A3	lymph_node,msc,bladder,gall bladder
+C1orf74	IRF6	esophagus,skin
+ITCH	DYNLRB1	msc,bladder,testis
+INSL3	JAK3	esc,lymph_node
+KANSL1	ARL17A	lymph_node,adrenal_gland,bladder,cortex,esophagus,gall bladder,thyroid
+KANSL1	ARL17B	lymph_node,adrenal_gland,bladder,cortex,esophagus,gall bladder,skin,thyroid
+KANSL1	LRRC37A	appendix,lung,stomach
+KANSL1	LRRC37A2	appendix,lung,stomach
+PITPNM3	KIAA0753	testis,thyroid
+KSR1	LGALS9	esc,lymph_node,msc,endometrium,esophagus,gall bladder,skin,testis,thyroid
+LASP1	LINC00672	lymph_node,placenta
+LINC00493	DTD1	esc,testis,thyroid
+LINC00545	MEDAG	esc,msc
+GUSBP4	LINC00680	esc,bone_marrow,ovary,prostate,thyroid
+MXD3	LMAN2	esc,msc,bone_marrow
+LRP10	REM2	msc,bone_marrow
+LRRC8B	LRRC8C	esc,lymph_node
+STK40	LSM10	esc,bladder,esophagus,ovary,skin,small_intestine,testis,thyroid
+LSP1	TNNT3	lymph_node,gall bladder
+LYZ	ABHD2	bone_marrow,gall bladder
+MANBA	UBE2D3	esc,bone_marrow
+MAPK7	RNF112	esc,testis
+MARCHF2	HNRNPM	placenta,thyroid
+CCDC11	MBD1	mcf10,bone_marrow,endometrium,skin,testis
+CHMP4A	MDP1	endometrium,testis
+USP49	MED20	esc,skin,testis
+SURF6	MED22	esc,lymph_node,msc,esophagus,gall bladder
+ELOVL1	MED8	lymph_node,msc,bladder,endometrium,gall bladder,skin,testis,thyroid
+MEF2B	MEF2BNB	esc,skin
+FAM53B	METTL10	esc,lymph_node,adrenal_gland,esophagus,lung,testis,thyroid
+METTL23	MFSD11	lymph_node,appendix
+HAPLN3	MFGE8	esc,msc,gall bladder,skin
+ATP5I	MFSD7	esc,msc
+MICALL1	POLR2F	bladder,gall bladder
+TLCD2	MIR22HG	esophagus,thyroid
+MLYCD	OSGIN1	esc,thyroid
+MRPL34	DDA1	esc,testis
+GUCA1B	MRPS10	esc,lymph_node,adrenal_gland,bladder
+LYZ	MRPS30	salivary_gland,stomach
+MSANTD3-TMEFF1	MURC	esc,testis
+MTATP6P1	ACTA1	adrenal_gland,heart
+MTATP6P1	MTCYBP4	heart,salivary_gland
+MTATP6P1	MTRNR2L2	esophagus,heart
+MTATP6P1	MTRNR2L8	mcf10,kidney
+NFATC2IP	SPNS1	esc,msc
+NFYA	ADCY10P1	esc,bone_marrow,gall bladder,prostate,testis,thyroid
+SFTA3	NKX2-1	lung,thyroid
+NOTCH2NL	NBPF10	bladder,bone_marrow,endometrium,esophagus,skin,thyroid
+NCL	NPM1	esc,mcf10
+NSFP1	LRRC37A2	lymph_node,testis
+NSUN4	FAAH	esc,lymph_node,esophagus,testis,thyroid
+GLOD4	NXN	esc,msc
+OTUD6B	LRRC69	lymph_node,mcf10
+PAGR1	MVP	esc,lymph_node,gall bladder
+MAP6D1	PARL	lung,testis
+PMVK	PBXIP1	esc,msc,esophagus,gall bladder
+PIGV	ZDHHC18	esc,testis
+PLEKHO2	ANKDD1A	msc,bone_marrow,endometrium,esophagus,gall bladder,placenta,skin,thyroid
+POLA2	CDC42EP2	esc,msc,bladder,esophagus,gall bladder,skin
+PPCS	CCDC30	lymph_node,placenta,thyroid
+CLK1	PPIL3	ovary,skin
+PPP1R21	STON1	esc,lymph_node,gall bladder,thyroid
+NACA	PRIM1	lymph_node,thyroid
+TTC33	PRKAA1	lymph_node,mcf10,msc,bladder,bone_marrow,gall bladder,placenta,salivary_gland,testis,thyroid
+PRR11	SMG8	esc,msc
+PSMA4	CHRNA5	bladder,testis
+RASSF4	ZNF22	msc,bladder,gall bladder
+OAZ2	RBPMS2	esc,bladder
+GJA9	RHBDL2	colon,skin
+MYCBP	RHBDL2	colon,skin
+RPL11	TCEB3	esc,mcf10,msc,bladder,spleen,thyroid
+RPL37A	IGFBP2	esc,msc
+RPL38	TTYH2	esc,msc,gall bladder,testis
+RRM2	C2orf48	esc,lymph_node,bone_marrow,skin
+DMWD	RSPH6A	testis,thyroid
+TNFRSF1A	SCNN1A	esc,mcf10,bladder,gall bladder,lung,stomach,thyroid
+SDHAF2	PPP1R32	lymph_node,gall bladder,spleen
+SEPTIN7P2	PSPH	esc,msc,bone_marrow,heart,small_intestine,spleen
+SFT2D2	TBX19	lymph_node,esophagus,gall bladder,ovary,testis
+SH3BP2	ADD1	bladder,esophagus
+SHANK3	ACR	adrenal_gland,salivary_gland,skin
+SIDT2	TAGLN	lymph_node,msc,bladder,bone_marrow,endometrium,esophagus,gall bladder,lung,pancreas,skin,testis,thyroid
+NSFL1C	SIRPB2	mcf10,bone_marrow
+DNA2	SLC25A16	esc,lymph_node,bladder
+SLC25A44	PMF1	esc,testis
+SLC29A1	HSP90AB1	esc,lymph_node,msc,bladder,endometrium,gall bladder,lung,skin,thyroid
+SLC35A3	HIAT1	lymph_node,mcf10,appendix,bladder,esophagus,gall bladder,testis,thyroid
+CRTC2	SLC39A1	esc,lymph_node,mcf10,bladder,colon,gall bladder,placenta
+ARL6IP1	SMG1	bone_marrow,skin
+PAQR6	SMG5	esc,mcf10,msc,bone_marrow,skin
+SMURF2P1	LRRC37BP1	lymph_node,msc,bladder,gall bladder,thyroid
+SRGAP2B	SRGAP2	lymph_node,msc,esophagus,lung,skin,thyroid
+SRGAP2C	SRGAP2B	esc,lymph_node,mcf10,msc,esophagus,gall bladder,lung,placenta,skin,spleen,testis,thyroid
+SRP9	EPHX1	esc,testis
+STARD3	TCAP	bone_marrow,gall bladder
+TMEM120A	STYXL1	esc,lymph_node,mcf10,msc,bladder,cortex,esophagus,gall bladder,lung,skin,testis,thyroid
+NOL6	SUGT1P	testis,thyroid
+COX16	SYNJ2BP	esc,mcf10,esophagus,gall bladder
+MYOZ1	SYNPO2L	esc,testis
+SYT8	TNNI2	mcf10,skin
+TBCEL	TECTA	adrenal_gland,bladder,endometrium,testis
+TCF25	MC1R	testis,thyroid
+LINC00843	TIMM23	msc,appendix,lung,prostate,spleen,testis,thyroid
+TIMM23B	LINC00843	esc,lymph_node,mcf10,msc,adrenal_gland,appendix,bladder,bone_marrow,colon,cortex,endometrium,esophagus,gall bladder,heart,kidney,liver,lung,placenta,prostate,salivary_gland,skin,small_intestine,spleen,stomach,testis,thyroid
+TMC5	CCP110	gall bladder,lung
+DDX56	TMED4	esc,lymph_node,salivary_gland,testis,thyroid
+TMEFF1	MURC	esc,testis
+TMEM219	TAOK2	bladder,testis,thyroid
+EOGT	TMF1	testis,thyroid
+TMSB4Y	KALP	esc,lung,testis
+TMX2	CTNND1	esc,mcf10,msc,esophagus
+DDX58	TOPORS	esc,msc
+SLC13A3	TP53RK	esc,msc,bladder
+TPD52L2	DNAJC5	esc,bone_marrow,esophagus,gall bladder
+TRIM2	MND1	bladder,gall bladder,thyroid
+GNB2L1	TRIM52	lymph_node,bone_marrow,thyroid
+TRIM58	OR2T8	testis,thyroid
+IFT80	TRIM59	cortex,testis
+TTTY15	USP9Y	esc,esophagus,gall bladder
+AIFM2	TYSND1	esc,spleen
+UBA2	WTIP	esc,lymph_node,bladder,esophagus,prostate,testis
+CYTH1	USP36	esc,testis
+C3orf62	USP4	bone_marrow,testis,thyroid
+UVSSA	CRIPAK	esc,salivary_gland,thyroid
+CD27-AS1	VAMP1	esc,lymph_node,msc,bladder,bone_marrow,esophagus,heart,skin
+VPS45	PLEKHO1	msc,gall bladder,skin,testis,thyroid
+WRB	SH3BGR	esc,msc,bladder,skin,thyroid
+C8orf76	ZHX1	lymph_node,adrenal_gland,heart,lung
+C3ORF86	ZNF445	bone_marrow,gall bladder
+ZNF485	ZNF32-AS2	esc,testis
+CHFR	ZNF605	endometrium,gall bladder
+C19orf18	ZNF606	lymph_node,testis
+ZNF674	CHST7	esc,msc,thyroid
+ZNF765	TPM3P9	msc,adrenal_gland,ovary
