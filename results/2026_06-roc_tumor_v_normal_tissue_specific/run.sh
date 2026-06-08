@@ -40,4 +40,26 @@ roc.py \
 	--output roc.png \
 	--reference
 
+### scatter
+
+# join evidence and score
+tumor_evidence=../2026_05-g2f-tumor_and_normal-rerun/query-evidence-filled.tsv
+normal_evidence=../2026_06-g2f-normal_fusions_tissue_specific/query-evidence-filled.tsv
+
+cat $tumor_evidence <(tail -n +2 $normal_evidence ) > all_evidence.tsv
+script="import pandas as pd
+df=pd.read_csv('all_evidence.tsv', sep='\t')
+df['fusion'] = df['gene_left'] + '--' + df['gene_right']
+df.to_csv('all_evidence.tsv', sep='\t', index=False)
+"
+python -c "$script"
+join.py \
+	-x score.in_tissue.tsv \
+	-y all_evidence.tsv \
+	--keys fusion \
+	--type left \
+	--output all_evidence_with_score.tsv
+
+# join tissues
+
 
