@@ -13,6 +13,7 @@ parser.add_argument('--colmap', default='score_column_map.yaml')
 parser.add_argument('--output', default='tumor-scored.tsv')
 parser.add_argument('--tumor_fusion_tissues', default='../2026_04-s2f_pcawg_recurrent/recurrent_tumor_fusions.tsv')
 parser.add_argument('--shardfile', default='./shardfile.tsv')
+parser.add_argument('--include_rna', action='store_true', help='whether to include rna evidence columns in scoring')
 
 args = parser.parse_args()
 
@@ -29,7 +30,13 @@ def tissue_w_data(tissues):
 
 # readinputs
 df_evidence = pd.read_csv(args.fusion_evidence, sep='\t')
+# use high cov 1000g, not low cov
 drop_cols = ['reads_low_coverage_1000g_dna', 'samples_low_coverage_1000g_dna']
+# optionally exclude rna
+if not args.include_rna:
+    for c in df_evidence.columns:
+        if c.endswith('_rna'):
+            drop_cols.append(c)
 df_evidence = df_evidence.drop(columns=drop_cols)
 df_tumor = pd.read_csv(args.tumor_fusions, sep='\t')
 df_tumor_fusion_tissues = pd.read_csv(args.tumor_fusion_tissues, sep='\t')
@@ -58,6 +65,9 @@ df_tumor = df_tumor[df_tumor['tissue_w_data'].apply(len) > 0].reset_index(drop=T
 # normalize evidence
 with open(args.colmap) as f:
     column_map = yaml.safe_load(f)
+if not args.include_rna:
+    # remove rna evidence columns from column map
+    column_map = {k:v for k,v in column_map.items() if not k.endswith('_rna')}
 df_evidence_tumor = pd.merge(
     df_tumor,
     df_evidence,

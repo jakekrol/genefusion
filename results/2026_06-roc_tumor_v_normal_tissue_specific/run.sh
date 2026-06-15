@@ -60,6 +60,7 @@ join.py \
 	--type left \
 	--output all_evidence_with_score.tsv
 
-# join tissues
+./scatter_evidence_score.py
+
 
 

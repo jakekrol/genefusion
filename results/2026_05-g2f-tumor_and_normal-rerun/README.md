@@ -10,3 +10,7 @@ this may change the tumor v normal fusion classification experiment results
 
 use score to classify tumor v normal fusions for evaluation
 
+# details
+
+note: this directory only processes tumor fusions, not normal fusions
+
