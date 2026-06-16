@@ -60,7 +60,7 @@ def validate_bed(df_bed):
     assert all(series_bool)
     return None
 
-def read_bed(path, gene_col_idx, header=None, sep='\t'):
+def read_bed(path, gene_col_idx, header=None, sep='\t', uppercase=False):
     '''
     read in bed file and return as pandas dataframe
     path_bed: path to bed file, with 4 columns of chromosome, start, end, and gene_name
@@ -75,6 +75,8 @@ def read_bed(path, gene_col_idx, header=None, sep='\t'):
     df_bed['chromosome'] = df_bed['chromosome'].astype(str)
     df_bed = df_bed.sort_values(by=['chromosome', 'start']).reset_index(drop=True)
     validate_bed(df_bed)
+    if uppercase:
+        df_bed['gene_name'] = df_bed['gene_name'].str.upper()
     return df_bed
 
 def validate_stix_shardfile(df_stix_shards):
