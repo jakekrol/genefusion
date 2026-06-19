@@ -1,5 +1,17 @@
 import pandas as pd
 
+def intersect2chromosome_count(df_intersect):
+    '''
+    df_intersect: dataframe from read_g2f_intersect
+    return count of intra and inter chromosomal fusion supporting reads
+    '''
+    left_gene_chrom = str(df_intersect['left_chromosome'].values[0])
+    df_intersect['right_chromosome'] = df_intersect['right_chromosome'].astype(str)
+    intra_count = (df_intersect['right_chromosome'] == left_gene_chrom).sum()
+    inter_count = (df_intersect['right_chromosome'] != left_gene_chrom).sum()
+    return {'intra': intra_count, 'inter': inter_count}
+
+
 def intersect2breakpoints(df_intersect, gene_right, group_by_sample=False):
     '''
     extract left and right breakpoint positions from g2f intersect dataframe
