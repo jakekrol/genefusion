@@ -11,8 +11,7 @@ awk -F'\t' 'BEGIN {OFS="\t"} $3 == "exon" {print $1, $4, $5, $7, $9 ,$10}' genco
 # produces gencode.v19.annotation.gtf.exons.bed
 ./extract_gene_name.py
 
-gzip -k gencode.v19.annotation.gtf.exons.bed
+sort -t$'\t' -k1,1 -k2,2n -k3,3n gencode.v19.annotation.gtf.exons.bed -o gencode.v19.annotation.gtf.exons.bed.sorted
 
-
-
+gzip -k gencode.v19.annotation.gtf.exons.bed.sorted
 
