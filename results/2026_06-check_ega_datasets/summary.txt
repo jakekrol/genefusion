@@ -1,0 +1,6 @@
+# file formats
+BAM: 4913
+FASTQ: 82
+# experimental strategies
+RNA-Seq: 1062
+WGS: 3778
