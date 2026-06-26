@@ -1,0 +1,6 @@
+fusion	score	label	gene_left	gene_right	projects	tissues	reported_previously
+AKAP12--ESR1	0.0448113043295617	1	AKAP12	ESR1	Ovary-AdenoCA,Breast-AdenoCA	ovary,breast	False
+NUMB--HEATR4	0.0061105714864745	1	NUMB	HEATR4	Ovary-AdenoCA,Lymph-BNHL,Uterus-AdenoCA	ovary,lymph,uterus	False
+TRAF3IP2--FYN	0.0048006447679448	1	TRAF3IP2	FYN	Ovary-AdenoCA,Lymph-BNHL	ovary,lymph	False
+FBF1--AFM	0.0008916083916083	1	FBF1	AFM	Liver-HCC	liver	False
+STAT3--PTRF	-0.0036345846645367	1	STAT3	PTRF	Breast-AdenoCA,Lymph-BNHL	breast,lymph	False

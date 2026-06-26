@@ -18,6 +18,7 @@ parser.add_argument('--marker_size', type=float, default=5, help='marker size fo
 args = parser.parse_args()
 
 df = pd.read_csv(args.data, sep='\t')
+df.drop(columns=['reads_low_coverage_1000g_dna', 'samples_low_coverage_1000g_dna'], inplace=True)
 df_tumor_bed = read_bed(args.tumor_bed, gene_col_idx=3)
 df_tumor_tissues = pd.read_csv(args.tumor_tissues, sep='\t')
 df_tumor_tissues = left_sort_fusion_set(df_tumor_tissues, df_tumor_bed)
@@ -27,16 +28,18 @@ def rename_tissues(str_tissues):
     for t in str_tissues.split(","):
         if t == 'gall bladder':
             tissues.append('gallbladder')
+        elif t == 'bone_marrow':
+            tissues.append('bone')
         else:
             tissues.append(t)
     return ",".join(tissues)
 df_normal_tissues['tissues'] = df_normal_tissues['tissues'].apply(rename_tissues)
 df_tissues = pd.concat([df_tumor_tissues[['gene_left', 'gene_right', 'tissues']], df_normal_tissues], ignore_index=True)
 df = pd.merge(
-	df,
-	df_tissues,
-	on=['gene_left', 'gene_right'],
-	how='left'
+    df,
+    df_tissues,
+    on=['gene_left', 'gene_right'],
+    how='left'
 )
 df.drop_duplicates(subset=['gene_left', 'gene_right', 'label'], inplace=True)
 df = df.sort_values(by='score', ascending=False)
@@ -52,19 +55,41 @@ sample_cols = [c for c in cols if c.startswith('samples_')]
 tumor_sample_cols = [c for c in sample_cols if 'tumor' in c]
 normal_sample_cols = [c for c in sample_cols if 'normal' in c]
 normal_sample_cols = normal_sample_cols + [c for c in sample_cols if '1000g' in c]
-def fusion2evidence(row, evidence_cols):
+def fusion2evidence(row, evidence_cols, normal=False):
+    # get tissues
     tissues = row['tissues'].split(",") if pd.notna(row['tissues']) else []
+    # subset columns
+    row = row[evidence_cols]
     evidence = 0
+    # sum evidence across relevant columns
     for idx, val in row.items():
-        if idx in evidence_cols and val > 0:
-            for t in tissues:
-                if t in idx:
-                    evidence += val
+        # for normal evidence always include 1000g
+        if '1000g' in idx and normal:
+            evidence += val
+            continue
+        idx_tissue = idx.split("_")[1]
+        for t in tissues:
+            if t == idx_tissue:
+                evidence += val
     return evidence
-df['tumor_read_evidence'] = df.apply(lambda row: fusion2evidence(row, tumor_read_cols), axis=1)
-df['normal_read_evidence'] = df.apply(lambda row: fusion2evidence(row, normal_read_cols), axis=1)
-df['tumor_sample_evidence'] = df.apply(lambda row: fusion2evidence(row, tumor_sample_cols), axis=1)
-df['normal_sample_evidence'] = df.apply(lambda row: fusion2evidence(row, normal_sample_cols), axis=1)
+def fusion2evidence_data(row, evidence_cols):
+    tissues = row['tissues'].split(",") if pd.notna(row['tissues']) else []
+    data = dict()
+    for idx, val in row.items():
+        # always include 1000g
+        if '1000g' in idx:
+            data[idx] = val
+            continue
+        if idx in evidence_cols:
+            idx_tissue = idx.split("_")[1]
+            for t in tissues:
+                if t == idx_tissue:
+                    data[idx] = val
+    return data
+df['tumor_read_evidence'] = df.apply(lambda row: fusion2evidence(row, tumor_read_cols, normal=False), axis=1)
+df['normal_read_evidence'] = df.apply(lambda row: fusion2evidence(row, normal_read_cols, normal=True), axis=1)
+df['tumor_sample_evidence'] = df.apply(lambda row: fusion2evidence(row, tumor_sample_cols, normal=False), axis=1)
+df['normal_sample_evidence'] = df.apply(lambda row: fusion2evidence(row, normal_sample_cols, normal=True), axis=1)
 
 fig, ax = plt.subplots(2,2, figsize=(10,10))
 
@@ -88,4 +113,5 @@ ax[1,1].set_title('Normal Sample Evidence vs Score')
 plt.tight_layout()
 plt.savefig(args.output_scatter)
 
+df['data'] = df.apply(lambda row: fusion2evidence_data(row, tumor_read_cols + normal_read_cols + tumor_sample_cols + normal_sample_cols), axis=1)   
 df.to_csv(args.output_data, sep='\t', index=False)
