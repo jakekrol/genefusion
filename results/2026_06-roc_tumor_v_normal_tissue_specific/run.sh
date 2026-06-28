@@ -31,22 +31,22 @@ cat tumor_score.agg.subpop.uniform.tsv \
 cat tumor_score.in_tissue.tsv \
 	<(tail -n +2 normal_score.in_tissue.tsv) > score.in_tissue.tsv
 
-# toggle this block to in/ex-clude unreported fusions in the ROC analysis
-unreported_fusions=(AKAP12--ESR1 NUMB--HEATR4 TRAF3IP2--FYN FBF1--AFM STAT3--PTRF)
-for f in "${unreported_fusions[@]}"; do
-	grep -v "$f" score.agg.subpop.weighted.tsv > tmp && mv tmp score.agg.subpop.weighted.tsv
-	grep -v "$f" score.agg.subpop.uniform.tsv > tmp && mv tmp score.agg.subpop.uniform.tsv
-	grep -v "$f" score.in_tissue.tsv > tmp && mv tmp score.in_tissue.tsv
-done
+# # toggle this block to in/ex-clude unreported fusions in the ROC analysis
+# unreported_fusions=(AKAP12--ESR1 NUMB--HEATR4 TRAF3IP2--FYN FBF1--AFM STAT3--PTRF)
+# for f in "${unreported_fusions[@]}"; do
+# 	grep -v "$f" score.agg.subpop.weighted.tsv > tmp && mv tmp score.agg.subpop.weighted.tsv
+# 	grep -v "$f" score.agg.subpop.uniform.tsv > tmp && mv tmp score.agg.subpop.uniform.tsv
+# 	grep -v "$f" score.in_tissue.tsv > tmp && mv tmp score.in_tissue.tsv
+# done
 
-roc.py \
-	--scores "score.agg.subpop.weighted.tsv,score.agg.subpop.uniform.tsv,score.in_tissue.tsv" \
-	--names "agg_subpop_weighted,agg_subpop_uniform,in_tissue" \
-	--header \
-	--score_col 1 \
-	--label_col 2 \
-	--output roc.w_rna.unreported_dropped.png \
-	--reference
+# roc.py \
+# 	--scores "score.agg.subpop.weighted.tsv,score.agg.subpop.uniform.tsv,score.in_tissue.tsv" \
+# 	--names "agg_subpop_weighted,agg_subpop_uniform,in_tissue" \
+# 	--header \
+# 	--score_col 1 \
+# 	--label_col 2 \
+# 	--output roc.w_rna.unreported_dropped.png \
+# 	--reference
 
 ### scatter
 
