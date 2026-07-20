@@ -60,19 +60,19 @@ for i,row in df_normal.iterrows():
 print("# sampling with shuf using seed", args.seed)
 
 # Use shuf with openssl deterministic random source
-cmd = (
-    "tail -n +2 {score} | "
-    "shuf --random-source=<(openssl enc -aes-256-ctr -pass pass:{seed} -nosalt </dev/zero 2>/dev/null) "
-    "-n {sample_size} | "
-    "cut -f3 > {out_data}"
-).format(
-    score=args.score,
-    seed=args.seed,
-    sample_size=args.sample_size,
-    out_data=args.out_data
-)
+# cmd = (
+#     "tail -n +2 {score} | "
+#     "shuf --random-source=<(openssl enc -aes-256-ctr -pass pass:{seed} -nosalt </dev/zero 2>/dev/null) "
+#     "-n {sample_size} | "
+#     "cut -f3 > {out_data}"
+# ).format(
+#     score=args.score,
+#     seed=args.seed,
+#     sample_size=args.sample_size,
+#     out_data=args.out_data
+# )
 
-subprocess.run(cmd, shell=True, executable='/bin/bash', check=True)
+# subprocess.run(cmd, shell=True, executable='/bin/bash', check=True)
 
 print("# plotting histogram")
 x = []
@@ -129,7 +129,7 @@ for score in r1_normal:
 axes[1].hist(region2, bins=args.bins, color='black', edgecolor='black')
 axes[1].set_yscale('log')
 axes[1].set_xlabel('Score')
-axes[1].set_ylabel('log(Count)')
+axes[1].set_ylabel('log10(Count)')
 axes[1].set_title(f'[-0.1, 0.1) (n={len(region2)})')
 axes[1].set_xlim([-0.1, 0.1])
 for score in r2_tumor:

@@ -24,63 +24,67 @@ def main():
 	df['region_bam'] = ''
 	fail=0
 	success=0
-	with open(args.log, 'w') as log_f:
-		for i, row in df.iterrows():
-			fusion = row['fusion']
-			score = row['score_uniform']
-			sample = row['sample']
-			filename = row['filename']
-			specimen = row['specimen']
-			left_chromosome = row['left_chromosome']
-			right_chromosome = row['right_chromosome']
-			left_breakpoint = row['left_breakpoint']
-			right_breakpoint = row['right_breakpoint']
-			left_start = int(max(0, left_breakpoint - args.padding))
-			left_end = int(left_breakpoint + args.padding)
-			right_start = int(max(0, right_breakpoint - args.padding))
-			right_end = int(right_breakpoint + args.padding)
-			region1 = f"{left_chromosome}:{left_start}-{left_end}"
-			region2 = f"{right_chromosome}:{right_start}-{right_end}"
-			outfile=os.path.join(dir_tissue, f"{fusion}.{sample}.{specimen}.bam")
-			df.at[i, 'region_bam'] = outfile
-			try:
-				# download index
-				cmd = [
-					"aws", "s3", "cp",
-					f"s3://{args.bucket}/rna_cancerdata/{args.tissue}/{filename}.bai",
-					f"{outfile}.bai"
-				]
-				print("# running command: {}".format(' '.join(cmd)))
-				result = subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	for i, row in df.iterrows():
+		fusion = row['fusion']
+		score = row['score_uniform']
+		sample = row['sample']
+		filename = row['filename']
+		specimen = row['specimen']
+		left_chromosome = row['left_chromosome']
+		right_chromosome = row['right_chromosome']
+		left_breakpoint = row['left_breakpoint']
+		right_breakpoint = row['right_breakpoint']
+		left_start = int(max(0, left_breakpoint - args.padding))
+		left_end = int(left_breakpoint + args.padding)
+		right_start = int(max(0, right_breakpoint - args.padding))
+		right_end = int(right_breakpoint + args.padding)
+		region1 = f"{left_chromosome}:{left_start}-{left_end}"
+		region2 = f"{right_chromosome}:{right_start}-{right_end}"
+		outfile=os.path.join(dir_tissue, f"{fusion}.{sample}.{specimen}.bam")
+		df.at[i, 'region_bam'] = outfile
+		try:
+			# download index
+			cmd = [
+				"aws", "s3", "cp",
+				f"s3://{args.bucket}/rna_cancerdata/{args.tissue}/{filename}.bai",
+				f"{outfile}.bai"
+			]
+			print("# running command: {}".format(' '.join(cmd)))
+			result = subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+			with open(args.log, 'a') as log_f:
 				log_f.write(f"# command: {' '.join(cmd)}\n")
 				log_f.write(f"# return code: {result.returncode}\n")
 				log_f.write(f"# stdout: {result.stdout.decode('utf-8')}\n")
 				log_f.write(f"# stderr: {result.stderr.decode('utf-8')}\n")
-				cmd = [
-					"samtools", "view", "-b", "-o", outfile,
-					f"s3://{args.bucket}/rna_cancerdata/{args.tissue}/{filename}",
-					f"{region1}", f"{region2}"
-				]
-				print("# running command: {}".format(' '.join(cmd)))
-				result = subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-				# log the result
-				retcode = result.returncode
-				stdout = result.stdout.decode('utf-8')
-				stderr = result.stderr.decode('utf-8')
+			cmd = [
+				"samtools", "view", "-b", "-o", outfile,
+				f"s3://{args.bucket}/rna_cancerdata/{args.tissue}/{filename}",
+				f"{region1}", f"{region2}"
+			]
+			print("# running command: {}".format(' '.join(cmd)))
+			result = subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+			# log the result
+			retcode = result.returncode
+			stdout = result.stdout.decode('utf-8')
+			stderr = result.stderr.decode('utf-8')
+			with open(args.log, 'a') as log_f:
 				log_f.write(f"# command: {' '.join(cmd)}\n")
 				log_f.write(f"# return code: {retcode}\n")
 				log_f.write(f"# stdout: {stdout}\n")
 				log_f.write(f"# stderr: {stderr}\n")
-				success += 1
-			except subprocess.CalledProcessError as e:
+			success += 1
+		except subprocess.CalledProcessError as e:
+			with open(args.log, 'a') as log_f:
 				log_f.write(f"# command: {' '.join(e.cmd)}\n")
 				log_f.write(f"# return code: {e.returncode}\n")
 				log_f.write(f"# stdout: {e.stdout.decode('utf-8') if e.stdout else ''}\n")
 				log_f.write(f"# stderr: {e.stderr.decode('utf-8') if e.stderr else ''}\n")
 				log_f.write(f"# error downloading BAM for fusion {fusion}, sample {sample}, specimen {specimen}\n")
-				fail += 1
+			fail += 1
+	with open(args.log, 'a') as log_f:
 		log_f.write(f"# total successful downloads: {success}\n")
 		log_f.write(f"# total failed downloads: {fail}\n")
+	df.to_csv(args.out_tbl, sep='\t', index=False)
 
 
 if __name__ == "__main__":
