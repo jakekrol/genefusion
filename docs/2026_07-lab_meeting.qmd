@@ -15,12 +15,11 @@ format:
 ## Tumor-driving fusions
 
 ::: {.center}
-- **Recurrent** fusions occur in multiple samples
+**Recurrent** fusions can drive tumor progression
 :::
 
-![](./images/erg-tmprss2.png){fig-align="center" width=45%}
+![](./images/erg-tmprss2.png){fig-align="center" width=5%}
 
-![](./images/pcawg-erg-tmprss2-frequency.png){fig-align="center" width=45%}
 
 
 ## Differential recurrency
@@ -38,7 +37,7 @@ format:
 ## Tumor heterogeneity
 
 ::: {.center}
-- Low fusion signal
+Low fusion signal
 :::
 
 <br>
@@ -63,7 +62,7 @@ format:
 ## Multiple samples increase sensitivity
 
 ::: {.center}
-- High aggregate fusion signal
+High aggregate fusion signal
 :::
 
 <br>
@@ -90,7 +89,7 @@ format:
 ## Multiple samples increase specificity
 
 ::: {.center}
-- Ignore fusions with high normal signal
+Ignore fusions with high normal signal
 :::
 
 <br>
@@ -128,7 +127,7 @@ format:
 ## Population fusion dataset
 
 ::: {.center}
-- 4,647 total human genome samples
+4,647 total human genome samples
 :::
 
 ![](./images/tissue-type-databases.png){fig-align="center" width=70%}
@@ -180,23 +179,6 @@ Prostate
 ![](./images/prostate-score-distribution.png){fig-align="center" width=70%}
 
 
-## Tissue dependence
-
-:::{.center}
-:::{.small}
-Prostate
-:::
-:::
-
-![](./images/prostate-score-distribution.png){fig-align="center" width=50%}
-
-:::{.small}
-:::{.center}
-Blood
-:::
-:::
-
-![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/blood_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=50%}
 
 
 
@@ -223,39 +205,30 @@ Tumor confidence order: ChimerKB > ChimerPub > ChimerSeq
 
 ![](./images/density-score-tumor-v-normal.png){fig-align="center" width=50%}
 
+
+## Tissue dependence
+
+:::{.center}
+:::{.small}
+Prostate
+:::
+:::
+
 :::{.aside}
 :::{.center}
 Directly comparing scores across tissues is not a good idea; p-value is more informative
 :::
 :::
 
-## Tissue dependence
+![](./images/prostate-score-distribution.png){fig-align="center" width=50%}
 
-::::{.columns}
-::: {.column width="80%"}
-![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/liver_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
-![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/ovary_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
-![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/prostate_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
-:::
-::: {.column width="20%"}
-
+:::{.small}
 :::{.center}
-<br>
-Liver
-
-<br>
-<br>
-
-Ovary
-
-<br>
-<br>
-
-Prostate
+Blood
+:::
 :::
 
-:::
-::::
+![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/blood_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=50%}
 
 
 
@@ -388,7 +361,7 @@ Lung cancer (LC2AD) fusion
 - Prioritize fusions with high partner fraction (STAR-Fusion inspired)
 
 $$
-\text{partner_fraction}(x,y) = \frac{\text{#reads with gene}_y}{\text{#total reads gene}_x} > 0.2
+\text{partner_fraction}(x,y) = \frac{\text{#fusion reads}_{xy}}{\text{#fusion reads}_x} > 0.2
 $$
 
 - Guided alignment verification (FusionInspector; input is FASTQ)
@@ -443,14 +416,27 @@ How to narrow search space by orders of magnitude?
 ![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/blood_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
 
 
+## Next steps
 
+:::{.center}
+:::{.small}
+What can be learned from well-studied fusions?
+:::
 
+![](./images/TMPRSS2--ERG.png){fig-align="center" width=40%}
 
+![](./images/lc2ad-CCDC6--RET.png){fig-align="center" width=40%}
+<!-- ![](./images/ALK--PTPN3.png){fig-align="center" width=40%} -->
 
+:::
 
+## Breakpoint awareness
 
+![](./images/et2-breakpoint-scatter-by-strand.png){fig-align="center" width=70%}
 
+## Breakpoint awareness
 
+![](./images/et2-breakpoint-binned.png){fig-align="center" width=70%}
 
 
 
@@ -660,3 +646,31 @@ $$
 <!-- ## Single-sample caller low depth
 
 ![](images/k562-fusion-calls-v-depth-colored.png){fig-align="center" width=70%} -->
+
+<!-- ## Tissue dependence
+
+::::{.columns}
+::: {.column width="80%"}
+![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/liver_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
+![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/ovary_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
+![](../results/2026_06-g2f-all_gene_pairs/chunks_scored/prostate_scored.tsv.sorted.no_selfie.hist.png){fig-align="center" width=70%}
+:::
+::: {.column width="20%"}
+
+:::{.center}
+<br>
+Liver
+
+<br>
+<br>
+
+Ovary
+
+<br>
+<br>
+
+Prostate
+:::
+
+:::
+:::: -->
