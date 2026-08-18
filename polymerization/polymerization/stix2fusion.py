@@ -46,8 +46,8 @@ def left_sort_fusion_set(df_fusion, df_bed):
     determined by start coordinate
     '''
     for i,row in df_fusion.iterrows():
-        gene_x = row['gene_x']
-        gene_y = row['gene_y']
+        gene_x = row.iloc[0]
+        gene_y = row.iloc[1]
         # read_bed already sorts the bed file by chromosome and start position
         # therefore, we can compare index in bed_file
         try:
@@ -239,6 +239,8 @@ def fusion_tbl2_score_input(
     sub dictionaries for each subpopulation (tumor/normal)
     the sub dictionary requires the following keys: reads_col, samples_col, total_samples, and upper_bound
     '''
+    print("fusion_tbl2_score_input is DEPRECATED")
+    sys.exit()
     M = df_fusion.shape[0]
     n_tumor_subpops = len(tumor_colmap.keys())
     n_normal_subpops = len(normal_colmap.keys())

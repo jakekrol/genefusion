@@ -61,7 +61,7 @@ def fusiontsv2bedpe(path_fusion_tsv, path_bedpe_out, bgzip=False, pad=True, usec
 
     
 
-def chimeric2bedpe(path_star_chimeric, path_bedpe_out, has_header=False, bgzip=False, pad=True):
+def chimeric2bedpe(path_star_chimeric: str, path_bedpe_out: str, has_header: bool = False, bgzip: bool = False, pad: bool = True):
     """
     Convert STAR Chimeric.out.junction format to sorted BEDPE format.
     
@@ -72,27 +72,35 @@ def chimeric2bedpe(path_star_chimeric, path_bedpe_out, has_header=False, bgzip=F
     
     Input columns:
     - c1: chrA
-    - c2: bpA (end)
+    - c2: bpA
     - c3: strand_donorA
     - c4: chrB
-    - c5: bpB (end)
+    - c5: bpB
     - c6: strand_acceptorB
-    - c11: start_alnA (start)
-    - c13: start_alnB (start)
+    - c11: start_alnA
+    - c13: start_alnB
     
-    Output: BEDPE format with intervals sorted lexicographically by chr, start, end
+    Output: BEDPE format with left and right invervals resolved
     """
+    # notes:
+    # comparing breakpoint (bp) and start_aln requires caution
+    # it is not always the case that start_aln is less than bp
     
     if not os.path.exists(path_star_chimeric):
         raise FileNotFoundError(f"Input file {path_star_chimeric} does not exist")
+
     
     awk_script = r"""
     BEGIN { OFS="\t" }
     NR==1 && has_header { next }
     /^#/ { next }
     {
-        chrA = $1;    startA = $11;  endA = $2;   strandA = $3
-        chrB = $4;    startB = $13;  endB = $5;   strandB = $6
+        chrA = $1;    alnA = $11;  bpA = $2;   strandA = $3
+        chrB = $4;    alnB = $13;  bpB = $5;   strandB = $6
+        startA = (alnA < bpA) ? alnA : bpA
+        endA   = (alnA > bpA) ? alnA : bpA
+        startB = (alnB < bpB) ? alnB : bpB
+        endB   = (alnB > bpB) ? alnB : bpB
         
         # Determine which interval goes "left" using cascading comparisons
         # Left = smaller chr lexicographically, or same chr with smaller start, or same chr/start with smaller end

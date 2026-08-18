@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def intersect2chromosome_count(df_intersect):
     '''
@@ -64,8 +65,8 @@ def count_breakpoint_aware_normal_evidence(list_df_bp_tumor,list_df_bp_normal, x
 	bins_per_dim: number of bins per dimension for histogram
 	return number of breakpoint aware reads and samples in normal that are also in tumor
 	'''
-	T= np.zeros((bins_per_dim, bins_per_dim), dtype=np.int32)
-	N= np.zeros((bins_per_dim, bins_per_dim), dtype=np.int32)
+	T= np.zeros((bins_per_dim, bins_per_dim))
+	N= np.zeros((bins_per_dim, bins_per_dim))
 	for df_bp in list_df_bp_tumor:
 		T += bin_breakpoints(df_bp, x_edges, y_edges)
 	for df_bp in list_df_bp_normal:
