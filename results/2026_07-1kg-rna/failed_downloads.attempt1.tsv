@@ -1,0 +1,358 @@
+ftp_host	ftp_path	out_path	status	retries	message
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/096/SRR19762196/SRR19762196_2.fastq.gz	output/SRR19762196_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/012/SRR19762312/SRR19762312_2.fastq.gz	output/SRR19762312_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/043/SRR19762743/SRR19762743_1.fastq.gz	output/SRR19762743_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/038/SRR19762838/SRR19762838_1.fastq.gz	output/SRR19762838_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/069/SRR19762769/SRR19762769_1.fastq.gz	output/SRR19762769_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/069/SRR19762769/SRR19762769_2.fastq.gz	output/SRR19762769_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/070/SRR19762770/SRR19762770_1.fastq.gz	output/SRR19762770_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/042/SRR19762842/SRR19762842_1.fastq.gz	output/SRR19762842_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/093/SRR19762293/SRR19762293_2.fastq.gz	output/SRR19762293_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762294/SRR19762294_2.fastq.gz	output/SRR19762294_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/096/SRR19762296/SRR19762296_1.fastq.gz	output/SRR19762296_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/038/SRR19762238/SRR19762238_2.fastq.gz	output/SRR19762238_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762895/SRR19762895_1.fastq.gz	output/SRR19762895_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762895/SRR19762895_2.fastq.gz	output/SRR19762895_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/070/SRR19762770/SRR19762770_2.fastq.gz	output/SRR19762770_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/039/SRR19762239/SRR19762239_1.fastq.gz	output/SRR19762239_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/042/SRR19762842/SRR19762842_2.fastq.gz	output/SRR19762842_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/083/SRR19762183/SRR19762183_1.fastq.gz	output/SRR19762183_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/039/SRR19762239/SRR19762239_2.fastq.gz	output/SRR19762239_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/001/SRR19762901/SRR19762901_1.fastq.gz	output/SRR19762901_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/001/SRR19762901/SRR19762901_2.fastq.gz	output/SRR19762901_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/040/SRR19762240/SRR19762240_1.fastq.gz	output/SRR19762240_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/096/SRR19762296/SRR19762296_2.fastq.gz	output/SRR19762296_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/097/SRR19762297/SRR19762297_1.fastq.gz	output/SRR19762297_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/097/SRR19762297/SRR19762297_2.fastq.gz	output/SRR19762297_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/099/SRR19762299/SRR19762299_1.fastq.gz	output/SRR19762299_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/099/SRR19762299/SRR19762299_2.fastq.gz	output/SRR19762299_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/001/SRR19762301/SRR19762301_1.fastq.gz	output/SRR19762301_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/001/SRR19762301/SRR19762301_2.fastq.gz	output/SRR19762301_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/006/SRR19762306/SRR19762306_1.fastq.gz	output/SRR19762306_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/006/SRR19762306/SRR19762306_2.fastq.gz	output/SRR19762306_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/009/SRR19762309/SRR19762309_1.fastq.gz	output/SRR19762309_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/009/SRR19762309/SRR19762309_2.fastq.gz	output/SRR19762309_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/013/SRR19762313/SRR19762313_1.fastq.gz	output/SRR19762313_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/013/SRR19762313/SRR19762313_2.fastq.gz	output/SRR19762313_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/014/SRR19762314/SRR19762314_1.fastq.gz	output/SRR19762314_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/014/SRR19762314/SRR19762314_2.fastq.gz	output/SRR19762314_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762317/SRR19762317_1.fastq.gz	output/SRR19762317_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762317/SRR19762317_2.fastq.gz	output/SRR19762317_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/021/SRR19762321/SRR19762321_1.fastq.gz	output/SRR19762321_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/021/SRR19762321/SRR19762321_2.fastq.gz	output/SRR19762321_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/024/SRR19762324/SRR19762324_1.fastq.gz	output/SRR19762324_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/024/SRR19762324/SRR19762324_2.fastq.gz	output/SRR19762324_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/027/SRR19762327/SRR19762327_1.fastq.gz	output/SRR19762327_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/027/SRR19762327/SRR19762327_2.fastq.gz	output/SRR19762327_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/083/SRR19762183/SRR19762183_2.fastq.gz	output/SRR19762183_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/028/SRR19762328/SRR19762328_1.fastq.gz	output/SRR19762328_1.fastq.gz	FAIL_DOWNLOAD	0	550 Failed to open file.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/028/SRR19762328/SRR19762328_2.fastq.gz	output/SRR19762328_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/043/SRR19762843/SRR19762843_1.fastq.gz	output/SRR19762843_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/030/SRR19762330/SRR19762330_1.fastq.gz	output/SRR19762330_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/043/SRR19762843/SRR19762843_2.fastq.gz	output/SRR19762843_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/030/SRR19762330/SRR19762330_2.fastq.gz	output/SRR19762330_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/088/SRR19762188/SRR19762188_1.fastq.gz	output/SRR19762188_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/032/SRR19762332/SRR19762332_1.fastq.gz	output/SRR19762332_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/088/SRR19762188/SRR19762188_2.fastq.gz	output/SRR19762188_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/032/SRR19762332/SRR19762332_2.fastq.gz	output/SRR19762332_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/044/SRR19762844/SRR19762844_1.fastq.gz	output/SRR19762844_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/033/SRR19762333/SRR19762333_1.fastq.gz	output/SRR19762333_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/033/SRR19762333/SRR19762333_2.fastq.gz	output/SRR19762333_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/034/SRR19762334/SRR19762334_1.fastq.gz	output/SRR19762334_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/034/SRR19762334/SRR19762334_2.fastq.gz	output/SRR19762334_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/040/SRR19762340/SRR19762340_1.fastq.gz	output/SRR19762340_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/040/SRR19762340/SRR19762340_2.fastq.gz	output/SRR19762340_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/040/SRR19762240/SRR19762240_2.fastq.gz	output/SRR19762240_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/004/SRR19762904/SRR19762904_1.fastq.gz	output/SRR19762904_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/004/SRR19762904/SRR19762904_2.fastq.gz	output/SRR19762904_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/045/SRR19762245/SRR19762245_1.fastq.gz	output/SRR19762245_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/045/SRR19762245/SRR19762245_2.fastq.gz	output/SRR19762245_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/006/SRR19762906/SRR19762906_1.fastq.gz	output/SRR19762906_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/006/SRR19762906/SRR19762906_2.fastq.gz	output/SRR19762906_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/044/SRR19762844/SRR19762844_2.fastq.gz	output/SRR19762844_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/093/SRR19762193/SRR19762193_1.fastq.gz	output/SRR19762193_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/093/SRR19762193/SRR19762193_2.fastq.gz	output/SRR19762193_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/045/SRR19762845/SRR19762845_1.fastq.gz	output/SRR19762845_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/045/SRR19762845/SRR19762845_2.fastq.gz	output/SRR19762845_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762195/SRR19762195_1.fastq.gz	output/SRR19762195_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762195/SRR19762195_2.fastq.gz	output/SRR19762195_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/047/SRR19762847/SRR19762847_1.fastq.gz	output/SRR19762847_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/047/SRR19762847/SRR19762847_2.fastq.gz	output/SRR19762847_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/097/SRR19762197/SRR19762197_1.fastq.gz	output/SRR19762197_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/097/SRR19762197/SRR19762197_2.fastq.gz	output/SRR19762197_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/071/SRR19762771/SRR19762771_1.fastq.gz	output/SRR19762771_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/072/SRR19762772/SRR19762772_1.fastq.gz	output/SRR19762772_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/072/SRR19762772/SRR19762772_2.fastq.gz	output/SRR19762772_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762774/SRR19762774_1.fastq.gz	output/SRR19762774_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762774/SRR19762774_2.fastq.gz	output/SRR19762774_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/076/SRR19762776/SRR19762776_1.fastq.gz	output/SRR19762776_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/076/SRR19762776/SRR19762776_2.fastq.gz	output/SRR19762776_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/077/SRR19762777/SRR19762777_1.fastq.gz	output/SRR19762777_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/077/SRR19762777/SRR19762777_2.fastq.gz	output/SRR19762777_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/079/SRR19762779/SRR19762779_1.fastq.gz	output/SRR19762779_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/079/SRR19762779/SRR19762779_2.fastq.gz	output/SRR19762779_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/081/SRR19762781/SRR19762781_1.fastq.gz	output/SRR19762781_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/081/SRR19762781/SRR19762781_2.fastq.gz	output/SRR19762781_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/082/SRR19762782/SRR19762782_1.fastq.gz	output/SRR19762782_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/082/SRR19762782/SRR19762782_2.fastq.gz	output/SRR19762782_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/084/SRR19762784/SRR19762784_1.fastq.gz	output/SRR19762784_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/084/SRR19762784/SRR19762784_2.fastq.gz	output/SRR19762784_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/086/SRR19762786/SRR19762786_1.fastq.gz	output/SRR19762786_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/086/SRR19762786/SRR19762786_2.fastq.gz	output/SRR19762786_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/089/SRR19762789/SRR19762789_1.fastq.gz	output/SRR19762789_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/089/SRR19762789/SRR19762789_2.fastq.gz	output/SRR19762789_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/091/SRR19762791/SRR19762791_1.fastq.gz	output/SRR19762791_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/091/SRR19762791/SRR19762791_2.fastq.gz	output/SRR19762791_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/050/SRR19762250/SRR19762250_1.fastq.gz	output/SRR19762250_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/050/SRR19762250/SRR19762250_2.fastq.gz	output/SRR19762250_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/007/SRR19762907/SRR19762907_1.fastq.gz	output/SRR19762907_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/007/SRR19762907/SRR19762907_2.fastq.gz	output/SRR19762907_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/051/SRR19762251/SRR19762251_1.fastq.gz	output/SRR19762251_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/051/SRR19762251/SRR19762251_2.fastq.gz	output/SRR19762251_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/011/SRR19762911/SRR19762911_1.fastq.gz	output/SRR19762911_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/008/SRR19762408/SRR19762408_2.fastq.gz	output/SRR19762408_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/011/SRR19762911/SRR19762911_2.fastq.gz	output/SRR19762911_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/015/SRR19762415/SRR19762415_1.fastq.gz	output/SRR19762415_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/052/SRR19762252/SRR19762252_1.fastq.gz	output/SRR19762252_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/052/SRR19762252/SRR19762252_2.fastq.gz	output/SRR19762252_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/012/SRR19762912/SRR19762912_1.fastq.gz	output/SRR19762912_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/049/SRR19762349/SRR19762349_1.fastq.gz	output/SRR19762349_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762794/SRR19762794_1.fastq.gz	output/SRR19762794_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762794/SRR19762794_2.fastq.gz	output/SRR19762794_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/097/SRR19762797/SRR19762797_1.fastq.gz	output/SRR19762797_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/097/SRR19762797/SRR19762797_2.fastq.gz	output/SRR19762797_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/099/SRR19762799/SRR19762799_1.fastq.gz	output/SRR19762799_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/099/SRR19762799/SRR19762799_2.fastq.gz	output/SRR19762799_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/002/SRR19762802/SRR19762802_1.fastq.gz	output/SRR19762802_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/002/SRR19762802/SRR19762802_2.fastq.gz	output/SRR19762802_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/004/SRR19762804/SRR19762804_1.fastq.gz	output/SRR19762804_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/015/SRR19762415/SRR19762415_2.fastq.gz	output/SRR19762415_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/051/SRR19762851/SRR19762851_1.fastq.gz	output/SRR19762851_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762417/SRR19762417_1.fastq.gz	output/SRR19762417_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/051/SRR19762851/SRR19762851_2.fastq.gz	output/SRR19762851_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/012/SRR19762912/SRR19762912_2.fastq.gz	output/SRR19762912_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762417/SRR19762417_2.fastq.gz	output/SRR19762417_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/098/SRR19762198/SRR19762198_1.fastq.gz	output/SRR19762198_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/054/SRR19762254/SRR19762254_1.fastq.gz	output/SRR19762254_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/018/SRR19762418/SRR19762418_1.fastq.gz	output/SRR19762418_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/098/SRR19762198/SRR19762198_2.fastq.gz	output/SRR19762198_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/054/SRR19762254/SRR19762254_2.fastq.gz	output/SRR19762254_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/004/SRR19762804/SRR19762804_2.fastq.gz	output/SRR19762804_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/018/SRR19762418/SRR19762418_2.fastq.gz	output/SRR19762418_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/052/SRR19762852/SRR19762852_1.fastq.gz	output/SRR19762852_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/013/SRR19762913/SRR19762913_1.fastq.gz	output/SRR19762913_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/009/SRR19762809/SRR19762809_1.fastq.gz	output/SRR19762809_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/022/SRR19762422/SRR19762422_1.fastq.gz	output/SRR19762422_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/052/SRR19762852/SRR19762852_2.fastq.gz	output/SRR19762852_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/013/SRR19762913/SRR19762913_2.fastq.gz	output/SRR19762913_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/009/SRR19762809/SRR19762809_2.fastq.gz	output/SRR19762809_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/022/SRR19762422/SRR19762422_2.fastq.gz	output/SRR19762422_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/002/SRR19762202/SRR19762202_1.fastq.gz	output/SRR19762202_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/056/SRR19762256/SRR19762256_1.fastq.gz	output/SRR19762256_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/011/SRR19762811/SRR19762811_1.fastq.gz	output/SRR19762811_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/023/SRR19762423/SRR19762423_1.fastq.gz	output/SRR19762423_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/002/SRR19762202/SRR19762202_2.fastq.gz	output/SRR19762202_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/056/SRR19762256/SRR19762256_2.fastq.gz	output/SRR19762256_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/011/SRR19762811/SRR19762811_2.fastq.gz	output/SRR19762811_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/023/SRR19762423/SRR19762423_2.fastq.gz	output/SRR19762423_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/057/SRR19762857/SRR19762857_1.fastq.gz	output/SRR19762857_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/015/SRR19762815/SRR19762815_1.fastq.gz	output/SRR19762815_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/027/SRR19762427/SRR19762427_1.fastq.gz	output/SRR19762427_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/057/SRR19762857/SRR19762857_2.fastq.gz	output/SRR19762857_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/015/SRR19762815/SRR19762815_2.fastq.gz	output/SRR19762815_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/027/SRR19762427/SRR19762427_2.fastq.gz	output/SRR19762427_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/019/SRR19762819/SRR19762819_1.fastq.gz	output/SRR19762819_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/030/SRR19762430/SRR19762430_1.fastq.gz	output/SRR19762430_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/004/SRR19762204/SRR19762204_1.fastq.gz	output/SRR19762204_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/019/SRR19762819/SRR19762819_2.fastq.gz	output/SRR19762819_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/030/SRR19762430/SRR19762430_2.fastq.gz	output/SRR19762430_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762167/SRR19762167_1.fastq.gz	output/SRR19762167_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/033/SRR19762433/SRR19762433_1.fastq.gz	output/SRR19762433_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762167/SRR19762167_2.fastq.gz	output/SRR19762167_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/033/SRR19762433/SRR19762433_2.fastq.gz	output/SRR19762433_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/024/SRR19762824/SRR19762824_1.fastq.gz	output/SRR19762824_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/034/SRR19762434/SRR19762434_1.fastq.gz	output/SRR19762434_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/034/SRR19762434/SRR19762434_2.fastq.gz	output/SRR19762434_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/024/SRR19762824/SRR19762824_2.fastq.gz	output/SRR19762824_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/044/SRR19762444/SRR19762444_1.fastq.gz	output/SRR19762444_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/072/SRR19762172/SRR19762172_1.fastq.gz	output/SRR19762172_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/049/SRR19762349/SRR19762349_2.fastq.gz	output/SRR19762349_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/072/SRR19762172/SRR19762172_2.fastq.gz	output/SRR19762172_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/052/SRR19762352/SRR19762352_1.fastq.gz	output/SRR19762352_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/027/SRR19762827/SRR19762827_1.fastq.gz	output/SRR19762827_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/052/SRR19762352/SRR19762352_2.fastq.gz	output/SRR19762352_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/027/SRR19762827/SRR19762827_2.fastq.gz	output/SRR19762827_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/055/SRR19762355/SRR19762355_1.fastq.gz	output/SRR19762355_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/073/SRR19762173/SRR19762173_1.fastq.gz	output/SRR19762173_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/055/SRR19762355/SRR19762355_2.fastq.gz	output/SRR19762355_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/073/SRR19762173/SRR19762173_2.fastq.gz	output/SRR19762173_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/063/SRR19762363/SRR19762363_1.fastq.gz	output/SRR19762363_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/031/SRR19762831/SRR19762831_1.fastq.gz	output/SRR19762831_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/063/SRR19762363/SRR19762363_2.fastq.gz	output/SRR19762363_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/031/SRR19762831/SRR19762831_2.fastq.gz	output/SRR19762831_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/064/SRR19762364/SRR19762364_1.fastq.gz	output/SRR19762364_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762174/SRR19762174_1.fastq.gz	output/SRR19762174_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/064/SRR19762364/SRR19762364_2.fastq.gz	output/SRR19762364_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762174/SRR19762174_2.fastq.gz	output/SRR19762174_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/069/SRR19762369/SRR19762369_1.fastq.gz	output/SRR19762369_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/032/SRR19762832/SRR19762832_1.fastq.gz	output/SRR19762832_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/069/SRR19762369/SRR19762369_2.fastq.gz	output/SRR19762369_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/032/SRR19762832/SRR19762832_2.fastq.gz	output/SRR19762832_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/071/SRR19762371/SRR19762371_1.fastq.gz	output/SRR19762371_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/092/SRR19762192/SRR19762192_1.fastq.gz	output/SRR19762192_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/071/SRR19762371/SRR19762371_2.fastq.gz	output/SRR19762371_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/092/SRR19762192/SRR19762192_2.fastq.gz	output/SRR19762192_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762374/SRR19762374_1.fastq.gz	output/SRR19762374_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/005/SRR19762505/SRR19762505_1.fastq.gz	output/SRR19762505_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762374/SRR19762374_2.fastq.gz	output/SRR19762374_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/005/SRR19762505/SRR19762505_2.fastq.gz	output/SRR19762505_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/076/SRR19762376/SRR19762376_1.fastq.gz	output/SRR19762376_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762194/SRR19762194_1.fastq.gz	output/SRR19762194_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/076/SRR19762376/SRR19762376_2.fastq.gz	output/SRR19762376_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762194/SRR19762194_2.fastq.gz	output/SRR19762194_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/079/SRR19762379/SRR19762379_1.fastq.gz	output/SRR19762379_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/007/SRR19762507/SRR19762507_1.fastq.gz	output/SRR19762507_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/079/SRR19762379/SRR19762379_2.fastq.gz	output/SRR19762379_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/007/SRR19762507/SRR19762507_2.fastq.gz	output/SRR19762507_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/080/SRR19762380/SRR19762380_1.fastq.gz	output/SRR19762380_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/001/SRR19762201/SRR19762201_1.fastq.gz	output/SRR19762201_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/080/SRR19762380/SRR19762380_2.fastq.gz	output/SRR19762380_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/001/SRR19762201/SRR19762201_2.fastq.gz	output/SRR19762201_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/086/SRR19762386/SRR19762386_1.fastq.gz	output/SRR19762386_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/010/SRR19762510/SRR19762510_1.fastq.gz	output/SRR19762510_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/086/SRR19762386/SRR19762386_2.fastq.gz	output/SRR19762386_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/010/SRR19762510/SRR19762510_2.fastq.gz	output/SRR19762510_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/087/SRR19762387/SRR19762387_1.fastq.gz	output/SRR19762387_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/003/SRR19762203/SRR19762203_1.fastq.gz	output/SRR19762203_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/087/SRR19762387/SRR19762387_2.fastq.gz	output/SRR19762387_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/003/SRR19762203/SRR19762203_2.fastq.gz	output/SRR19762203_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/088/SRR19762388/SRR19762388_1.fastq.gz	output/SRR19762388_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/012/SRR19762512/SRR19762512_1.fastq.gz	output/SRR19762512_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/088/SRR19762388/SRR19762388_2.fastq.gz	output/SRR19762388_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/012/SRR19762512/SRR19762512_2.fastq.gz	output/SRR19762512_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/092/SRR19762392/SRR19762392_1.fastq.gz	output/SRR19762392_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/005/SRR19762205/SRR19762205_1.fastq.gz	output/SRR19762205_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/092/SRR19762392/SRR19762392_2.fastq.gz	output/SRR19762392_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/005/SRR19762205/SRR19762205_2.fastq.gz	output/SRR19762205_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/096/SRR19762396/SRR19762396_1.fastq.gz	output/SRR19762396_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/013/SRR19762513/SRR19762513_1.fastq.gz	output/SRR19762513_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/096/SRR19762396/SRR19762396_2.fastq.gz	output/SRR19762396_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/013/SRR19762513/SRR19762513_2.fastq.gz	output/SRR19762513_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/048/SRR19762248/SRR19762248_1.fastq.gz	output/SRR19762248_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/014/SRR19762514/SRR19762514_1.fastq.gz	output/SRR19762514_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/048/SRR19762248/SRR19762248_2.fastq.gz	output/SRR19762248_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/014/SRR19762514/SRR19762514_2.fastq.gz	output/SRR19762514_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762567/SRR19762567_1.fastq.gz	output/SRR19762567_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/016/SRR19762516/SRR19762516_1.fastq.gz	output/SRR19762516_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762567/SRR19762567_2.fastq.gz	output/SRR19762567_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/016/SRR19762516/SRR19762516_2.fastq.gz	output/SRR19762516_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/077/SRR19762577/SRR19762577_1.fastq.gz	output/SRR19762577_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762517/SRR19762517_1.fastq.gz	output/SRR19762517_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/077/SRR19762577/SRR19762577_2.fastq.gz	output/SRR19762577_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762517/SRR19762517_2.fastq.gz	output/SRR19762517_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/053/SRR19762253/SRR19762253_1.fastq.gz	output/SRR19762253_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/008/SRR19762208/SRR19762208_2.fastq.gz	output/SRR19762208_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/020/SRR19762520/SRR19762520_1.fastq.gz	output/SRR19762520_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/014/SRR19762914/SRR19762914_1.fastq.gz	output/SRR19762914_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/014/SRR19762914/SRR19762914_2.fastq.gz	output/SRR19762914_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/066/SRR19762266/SRR19762266_1.fastq.gz	output/SRR19762266_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/066/SRR19762266/SRR19762266_2.fastq.gz	output/SRR19762266_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/004/SRR19762204/SRR19762204_2.fastq.gz	output/SRR19762204_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762917/SRR19762917_1.fastq.gz	output/SRR19762917_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/059/SRR19762859/SRR19762859_1.fastq.gz	output/SRR19762859_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/059/SRR19762859/SRR19762859_2.fastq.gz	output/SRR19762859_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/007/SRR19762207/SRR19762207_1.fastq.gz	output/SRR19762207_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/007/SRR19762207/SRR19762207_2.fastq.gz	output/SRR19762207_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/060/SRR19762860/SRR19762860_1.fastq.gz	output/SRR19762860_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/060/SRR19762860/SRR19762860_2.fastq.gz	output/SRR19762860_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/010/SRR19762210/SRR19762210_1.fastq.gz	output/SRR19762210_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/010/SRR19762210/SRR19762210_2.fastq.gz	output/SRR19762210_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/044/SRR19762444/SRR19762444_2.fastq.gz	output/SRR19762444_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/070/SRR19762870/SRR19762870_1.fastq.gz	output/SRR19762870_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/050/SRR19762450/SRR19762450_1.fastq.gz	output/SRR19762450_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/050/SRR19762450/SRR19762450_2.fastq.gz	output/SRR19762450_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/011/SRR19762211/SRR19762211_1.fastq.gz	output/SRR19762211_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/054/SRR19762454/SRR19762454_1.fastq.gz	output/SRR19762454_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/054/SRR19762454/SRR19762454_2.fastq.gz	output/SRR19762454_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/011/SRR19762211/SRR19762211_2.fastq.gz	output/SRR19762211_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/053/SRR19762253/SRR19762253_2.fastq.gz	output/SRR19762253_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/083/SRR19762583/SRR19762583_1.fastq.gz	output/SRR19762583_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/083/SRR19762583/SRR19762583_2.fastq.gz	output/SRR19762583_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/085/SRR19762585/SRR19762585_1.fastq.gz	output/SRR19762585_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/085/SRR19762585/SRR19762585_2.fastq.gz	output/SRR19762585_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/057/SRR19762257/SRR19762257_1.fastq.gz	output/SRR19762257_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/057/SRR19762257/SRR19762257_2.fastq.gz	output/SRR19762257_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/093/SRR19762593/SRR19762593_1.fastq.gz	output/SRR19762593_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/093/SRR19762593/SRR19762593_2.fastq.gz	output/SRR19762593_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/020/SRR19762520/SRR19762520_2.fastq.gz	output/SRR19762520_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/060/SRR19762260/SRR19762260_1.fastq.gz	output/SRR19762260_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/009/SRR19762209/SRR19762209_1.fastq.gz	output/SRR19762209_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/060/SRR19762260/SRR19762260_2.fastq.gz	output/SRR19762260_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/009/SRR19762209/SRR19762209_2.fastq.gz	output/SRR19762209_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762595/SRR19762595_1.fastq.gz	output/SRR19762595_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/023/SRR19762523/SRR19762523_1.fastq.gz	output/SRR19762523_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762595/SRR19762595_2.fastq.gz	output/SRR19762595_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/023/SRR19762523/SRR19762523_2.fastq.gz	output/SRR19762523_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/003/SRR19762603/SRR19762603_1.fastq.gz	output/SRR19762603_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/018/SRR19762218/SRR19762218_1.fastq.gz	output/SRR19762218_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/003/SRR19762603/SRR19762603_2.fastq.gz	output/SRR19762603_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/018/SRR19762218/SRR19762218_2.fastq.gz	output/SRR19762218_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/064/SRR19762264/SRR19762264_1.fastq.gz	output/SRR19762264_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/025/SRR19762525/SRR19762525_1.fastq.gz	output/SRR19762525_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/064/SRR19762264/SRR19762264_2.fastq.gz	output/SRR19762264_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/060/SRR19762460/SRR19762460_1.fastq.gz	output/SRR19762460_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/060/SRR19762460/SRR19762460_2.fastq.gz	output/SRR19762460_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762467/SRR19762467_1.fastq.gz	output/SRR19762467_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762467/SRR19762467_2.fastq.gz	output/SRR19762467_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/072/SRR19762472/SRR19762472_1.fastq.gz	output/SRR19762472_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/072/SRR19762472/SRR19762472_2.fastq.gz	output/SRR19762472_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/073/SRR19762473/SRR19762473_1.fastq.gz	output/SRR19762473_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/073/SRR19762473/SRR19762473_2.fastq.gz	output/SRR19762473_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762474/SRR19762474_1.fastq.gz	output/SRR19762474_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/074/SRR19762474/SRR19762474_2.fastq.gz	output/SRR19762474_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/075/SRR19762475/SRR19762475_1.fastq.gz	output/SRR19762475_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/075/SRR19762475/SRR19762475_2.fastq.gz	output/SRR19762475_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/079/SRR19762479/SRR19762479_1.fastq.gz	output/SRR19762479_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/079/SRR19762479/SRR19762479_2.fastq.gz	output/SRR19762479_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/081/SRR19762481/SRR19762481_1.fastq.gz	output/SRR19762481_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/081/SRR19762481/SRR19762481_2.fastq.gz	output/SRR19762481_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/083/SRR19762483/SRR19762483_1.fastq.gz	output/SRR19762483_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/083/SRR19762483/SRR19762483_2.fastq.gz	output/SRR19762483_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/085/SRR19762485/SRR19762485_1.fastq.gz	output/SRR19762485_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/085/SRR19762485/SRR19762485_2.fastq.gz	output/SRR19762485_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/087/SRR19762487/SRR19762487_1.fastq.gz	output/SRR19762487_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/087/SRR19762487/SRR19762487_2.fastq.gz	output/SRR19762487_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/089/SRR19762489/SRR19762489_1.fastq.gz	output/SRR19762489_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/089/SRR19762489/SRR19762489_2.fastq.gz	output/SRR19762489_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/090/SRR19762490/SRR19762490_1.fastq.gz	output/SRR19762490_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/090/SRR19762490/SRR19762490_2.fastq.gz	output/SRR19762490_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/080/SRR19762180/SRR19762180_1.fastq.gz	output/SRR19762180_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/080/SRR19762180/SRR19762180_2.fastq.gz	output/SRR19762180_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/017/SRR19762917/SRR19762917_2.fastq.gz	output/SRR19762917_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/092/SRR19762492/SRR19762492_1.fastq.gz	output/SRR19762492_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762267/SRR19762267_1.fastq.gz	output/SRR19762267_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/092/SRR19762492/SRR19762492_2.fastq.gz	output/SRR19762492_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/067/SRR19762267/SRR19762267_2.fastq.gz	output/SRR19762267_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/084/SRR19762184/SRR19762184_1.fastq.gz	output/SRR19762184_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/018/SRR19762918/SRR19762918_1.fastq.gz	output/SRR19762918_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/084/SRR19762184/SRR19762184_2.fastq.gz	output/SRR19762184_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/018/SRR19762918/SRR19762918_2.fastq.gz	output/SRR19762918_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762494/SRR19762494_1.fastq.gz	output/SRR19762494_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/068/SRR19762268/SRR19762268_1.fastq.gz	output/SRR19762268_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/094/SRR19762494/SRR19762494_2.fastq.gz	output/SRR19762494_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/086/SRR19762186/SRR19762186_1.fastq.gz	output/SRR19762186_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/086/SRR19762186/SRR19762186_2.fastq.gz	output/SRR19762186_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762495/SRR19762495_1.fastq.gz	output/SRR19762495_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/095/SRR19762495/SRR19762495_2.fastq.gz	output/SRR19762495_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/087/SRR19762187/SRR19762187_1.fastq.gz	output/SRR19762187_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/087/SRR19762187/SRR19762187_2.fastq.gz	output/SRR19762187_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/099/SRR19762499/SRR19762499_1.fastq.gz	output/SRR19762499_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/099/SRR19762499/SRR19762499_2.fastq.gz	output/SRR19762499_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/089/SRR19762189/SRR19762189_1.fastq.gz	output/SRR19762189_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/089/SRR19762189/SRR19762189_2.fastq.gz	output/SRR19762189_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/000/SRR19762500/SRR19762500_1.fastq.gz	output/SRR19762500_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/000/SRR19762500/SRR19762500_2.fastq.gz	output/SRR19762500_2.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/090/SRR19762190/SRR19762190_1.fastq.gz	output/SRR19762190_1.fastq.gz	FAIL_DOWNLOAD	0	450 Temporarily failed to open file
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/073/SRR19762873/SRR19762873_1.fastq.gz	output/SRR19762873_1.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/026/SRR19762526/SRR19762526_2.fastq.gz	output/SRR19762526_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.
+ftp.sra.ebi.ac.uk	/vol1/fastq/SRR197/016/SRR19762416/SRR19762416_2.fastq.gz	output/SRR19762416_2.fastq.gz	FAIL_DOWNLOAD	0	426 Failure writing network stream.

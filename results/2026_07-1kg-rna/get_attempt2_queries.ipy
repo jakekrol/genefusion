@@ -1,0 +1,50 @@
+# coding: utf-8
+import pandas as pd
+get_ipython().run_line_magic('ls', '')
+f='ftp_queries.log'
+df=pd.read_csv(f,sep='\t', skiprows=0, header=None)
+get_ipython().run_line_magic('pinfo', 'pd.read_csv')
+df=pd.read_csv(f,sep='\t', skiprows=1, header=None)
+df
+df.iloc[0,:]
+df
+df
+df=df.drop(columns=[0])
+df
+df.columns = ['ftp_host', 'ftp_path','out_path', 'status', 'retries', 'message']
+df
+mask=df['status']!='PASS_DOWNLOAD'
+df[mask]
+df_fail=df[mask]
+df_fail.to_csv('failed_downloads.tsv',sep='\t',index=False)
+l
+get_ipython().run_line_magic('ls', '')
+f='ftp_queries.tsv'
+df_query=pd.read_csv(f,sep='\t')
+df_query
+mask=df['status']=='PASS_DOWNLOAD'
+df_success=df[mask]
+df_success.to_csv('successful_downloads.tsv',sep='\t',index=False)
+successes = set(df_sucess.values())
+successes = set(df_success.values())
+successes = set(df_success.values)
+successes = set(df_success.tolist())
+successes = set(df_success['out_path'].tolist())
+successes
+len(success)
+len(successes)
+get_ipython().run_line_magic('clear', '')
+get_ipython().run_line_magic('hist', '')
+# new queries are query - successes
+df_query.head()
+df_success.head()
+queries_out_paths = set(df_query['out_path'].tolist())
+queries_out_paths
+queries_out_paths.difference(successes)
+new_query_out_paths = queries_out_paths.difference(successes)
+mask = df_query['out_path'].isin(new_query_out_paths)
+mask.sum()
+df_new_queries=df_query[mask]
+df_new_queries
+df_new_queries.to_csv('ftp_queries.attempt2.tsv',sep='\t',index=False)
+df_new_queries

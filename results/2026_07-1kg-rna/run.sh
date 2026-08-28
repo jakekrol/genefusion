@@ -32,9 +32,30 @@ sed -i '1i\ftp_host\tftp_path\tout_path\tmd5' ftp_queries.tsv
 rm fastq_paths.txt outnames.txt
 
 
+# ftp_reliable \
+#     --query ftp_queries.tsv \
+#     --logfile ftp_queries.log \
+#     --cpus 5 \
+#     --retries 0
+
+# see get_attempt2_queries.ipy for getting attempt2 queries
+
 ftp_reliable \
-    --query ftp_queries.tsv \
-    --logfile ftp_queries.log \
+    --query ftp_queries.attempt2.tsv \
+    --logfile ftp_queries.attempt2.log \
     --cpus 5 \
-    --algo md5 \
-    --retries 3
+    --retries 0
+
+./get_fastq_stats.sh
+
+./setup_star_fusion_queries.py
+
+./star_fusion-parallel.sh
+
+./chimeric2bedpe.sh
+
+mkdir -p thousg_rna_bed_sort
+./sort_bed bed thousg_rna_bed_sort 16
+
+# conda activate giggle-dev
+giggle index -s -i "thousg_rna_bed_sort/*.bed.gz" -o thousg_rna_giggle_index
