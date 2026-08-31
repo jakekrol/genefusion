@@ -32,6 +32,9 @@ def main():
 	df_meta = pd.read_csv(args.metadata, sep="\t")
 	df_samples = thousg_rna_short_read_samples()
 	df_samples['srr_id'] = df_samples['url'].apply(ftp_url2srr_id)
+	# clean sample columns
+	df_meta['Sample name'] = df_meta['Sample name'].apply(lambda x: x.strip())
+	df_samples['Sample'] = df_samples['Sample'].apply(lambda x: x.strip())
 	bed_files = glob.glob(os.path.join(args.dir_bed, "*.bed.gz"))
 	srr2sample = dict(zip(df_samples["srr_id"], df_samples["Sample"]))
 	# sub srrid to sample id in bed file name
@@ -40,7 +43,7 @@ def main():
 			shutil.move(f, rename_bed(f, srr2sample))
 	alt_files = glob.glob(os.path.join(args.dir_bed, "*.bed.gz"))
 	# select relevant metadata
-	cols_samples = ['Sample', 'srr_id', 'Data collection', 'Population', 'url']
+	cols_samples = ['Sample', 'srr_id', 'Data collection', 'Population']
 	cols_meta =['Sample name', 'Sex', 'Biosample ID', 'Population code', 'Population name', 'Superpopulation code', 'Superpopulation name']
 	df_samples = df_samples[cols_samples]
 	df_samples.columns = map(lambda x: x.lower().replace(' ', '_'), df_samples.columns.tolist())
@@ -49,12 +52,12 @@ def main():
 	df_merge = pd.merge(df_meta, df_samples, left_on='sample_name', right_on='sample', how = 'outer')
 	na_values_metadata = df_merge.isna().sum().sum()
 	print(f"# na_values_metadata={na_values_metadata}")
-	order = ['sample', 'srr_id', 'biosample_id', 'sex', 'population_code', 'population_name', 'population', 'superpopulation_code', 'superpopulation_name', 'data_collection', 'url']
+	order = ['sample', 'srr_id', 'biosample_id', 'sex', 'population_code', 'population_name', 'population', 'superpopulation_code', 'superpopulation_name', 'data_collection']
 	df_merge = df_merge[order]
 	df_merge['alt_file'] = ''
 	n = len(alt_files)
 	for i,f in enumerate(alt_files):
-		if i % 100 == 0:
+		if (i+1) % 100 == 0:
 			print(f"# setting alt_file {i+1}/{n}")
 		f=os.path.basename(f)
 		sample = f.split('.')[0]
@@ -66,6 +69,10 @@ def main():
 	cols.remove('alt_file')
 	cols = ['alt_file'] + cols
 	df_merge = df_merge[cols]
+	df_merge = df_merge.reset_index(drop=True)
+	mask = df_merge['alt_file'] == ''
+	df_merge = df_merge[~mask]
+	df_merge.drop_duplicates(inplace=True)
 	df_merge.to_csv(args.output, index=False, sep="\t")
 
 if __name__ == "__main__":

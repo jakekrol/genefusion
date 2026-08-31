@@ -62,8 +62,6 @@ mkdir -p thousg_rna_bed_sort_cln
 # side effect of renaming bed files
 ./make_ped.py --rename
 
-
-
 # conda activate polymerization
-giggle index -s -i "thousg_rna_bed_sort/*.bed.gz" -o thousg_rna_giggle_index
+giggle index -s -i "thousg_rna_bed_sort_cln/*.bed.gz" -o thousg_rna_giggle_index
 

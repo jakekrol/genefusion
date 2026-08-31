@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-CPUS=8
+CPUS=16
 INDIR=bed
 OUTDIR=bed_clean
 mkdir -p $OUTDIR
