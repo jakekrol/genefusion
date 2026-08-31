@@ -1,0 +1,732 @@
+Sample name	Sex	Biosample ID	Population code	Population name	Superpopulation code	Superpopulation name	Population elastic ID	Data collections
+HG00096	M	SAME123268	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00100	F	SAME125154	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00105	M	SAME123949	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00108	M	SAME125161	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00110	F	SAME125339	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00113	M	SAME125342	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00114	M	SAME125343	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00121	F	SAME122873	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00122	F	SAME122876	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00127	F	SAME122871	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00130	F	SAME123063	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00132	F	SAME123061	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00141	M	SAME124395	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00142	M	SAME124818	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00146	F	SAME124390	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00148	M	SAME124388	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00151	M	SAME124592	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00160	M	SAME124780	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00177	F	SAME124957	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00179	F	SAME124965	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00183	M	SAME123642	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00185	M	SAME123648	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00186	M	SAME123647	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00188	M	SAME123641	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00189	M	SAME123640	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00190	M	SAME123856	FIN	Finnish,Finnish	EUR	European Ancestry,West Eurasia (SGDP)	FIN,FinnishSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00233	F	SAME124127	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00237	F	SAME124124	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00243	M	SAME123224	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00244	M	SAME123217	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00250	F	SAME123054	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00254	F	SAME123050	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00260	M	SAME123582	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00265	M	SAME123579	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00269	F	SAME123575	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00277	M	SAME123423	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00285	F	SAME122836	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00290	M	SAME1839057	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG00304	F	SAME1840118	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00311	M	SAME124339	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00318	F	SAME124333	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00320	F	SAME123797	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00325	M	SAME123793	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00326	F	SAME123792	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00327	F	SAME123791	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00331	F	SAME123986	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00335	M	SAME123982	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00337	F	SAME123984	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00342	M	SAME124924	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00355	F	SAME125125	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00360	M	SAME124539	FIN	Finnish,Finnish	EUR	European Ancestry,West Eurasia (SGDP)	FIN,FinnishSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00368	F	SAME124535	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00372	M	SAME124748	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00382	M	SAME123033	FIN	Finnish	EUR	European Ancestry	FIN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+HG00404	F	SAME123158	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00410	F	SAME1839734	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00442	M	SAME124912	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00463	M	SAME123496	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00473	F	SAME123338	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00475	M	SAME123342	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00513	F	SAME123526	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,The Human Genome Structural Variation Consortium,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00525	F	SAME123242	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00533	M	SAME124353	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00537	F	SAME124345	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00551	F	SAME124252	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00553	M	SAME124254	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00556	M	SAME123971	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00565	M	SAME124452	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00581	F	SAME124831	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00583	M	SAME124829	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00589	M	SAME124824	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00590	F	SAME125009	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00596	F	SAME125007	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00607	M	SAME125373	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00625	M	SAME123080	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00628	M	SAME123085	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00631	M	SAME1839060	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00641	F	SAME123435	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00653	M	SAME123251	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00657	F	SAME123255	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00663	F	SAME123813	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+HG00693	F	SAME123683	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00704	M	SAME122928	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00705	F	SAME122927	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00728	M	SAME1840267	CHS	Southern Han Chinese	EAS	East Asian Ancestry	CHS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00731	M	SAME125390	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,The Human Genome Structural Variation Consortium,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00737	F	SAME125416	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00740	F	SAME124834	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG00844	M	SAME123952	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00851	F	SAME123756	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00864	F	SAME123547	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00956	F	SAME124319	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG00978	F	SAME124727	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01029	F	SAME123523	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01031	M	SAME123728	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01047	M	SAME123166	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01052	F	SAME123368	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01055	F	SAME123638	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01060	M	SAME123015	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01061	F	SAME122821	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01073	F	SAME124095	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01092	F	SAME1839489	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01108	F	SAME123103	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01113	F	SAME123484	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01125	F	SAME124054	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01131	F	SAME1839985	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01137	F	SAME123888	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01161	M	SAME1839615	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01162	F	SAME1839707	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01164	M	SAME1839690	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01170	M	SAME124623	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01173	M	SAME124624	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01174	F	SAME124619	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01188	F	SAME124927	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01190	M	SAME123654	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01204	M	SAME124297	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01242	F	SAME125064	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01250	M	SAME125281	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01251	F	SAME125282	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01260	F	SAME122815	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01271	M	SAME122998	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01277	M	SAME123000	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01284	F	SAME1839191	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01312	F	SAME1839791	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01341	M	SAME124859	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01342	F	SAME124856	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01345	F	SAME124863	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01348	F	SAME124864	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01363	F	SAME1839059	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01365	M	SAME124508	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01372	F	SAME1840339	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01383	M	SAME122971	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01389	M	SAME122972	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01390	F	SAME122805	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01392	M	SAME1840234	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01393	F	SAME1840222	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01395	M	SAME1840207	PUR	Puerto Rican	AMR	American Ancestry	PUR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01447	F	SAME1839099	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01461	M	SAME122879	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01468	F	SAME1840382	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01479	M	SAME1840251	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01488	M	SAME123973	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01489	F	SAME123972	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01492	F	SAME124137	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01494	M	SAME124135	CLM	Colombian	AMR	American Ancestry	CLM	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01501	F	SAME124942	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01503	M	SAME124944	IBS	Iberian,Spanish	EUR	European Ancestry,West Eurasia (SGDP)	IBS,SpanishSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01506	M	SAME124947	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01509	M	SAME124940	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01515	M	SAME124774	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01518	M	SAME124766	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01522	F	SAME125321	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+HG01524	M	SAME125327	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01527	M	SAME125326	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01578	F	SAME124351	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01589	M	SAME1839859	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01593	F	SAME1839634	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01597	F	SAME125226	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01598	F	SAME125239	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01600	F	SAME123456	KHV	Kinh Vietnamese,Kinh	EAS	East Asian Ancestry,East Asia (SGDP)	KHV,KinhSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01606	M	SAME123458	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01607	F	SAME123457	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01610	M	SAME123623	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01613	F	SAME123626	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01615	M	SAME123628	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01630	M	SAME124034	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01669	M	SAME123110	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01682	M	SAME124654	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01684	F	SAME124660	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01686	M	SAME124658	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01695	F	SAME124845	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01762	F	SAME124811	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01765	M	SAME1839681	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01771	M	SAME124637	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01785	M	SAME1839313	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG01790	F	SAME124222	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Geuvadis
+HG01797	F	SAME124219	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01800	F	SAME124306	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01806	F	SAME124304	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01809	F	SAME124299	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01812	F	SAME124517	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01817	F	SAME124522	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01843	F	SAME123553	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01844	M	SAME123556	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01846	M	SAME123558	KHV	Kinh Vietnamese,Kinh	EAS	East Asian Ancestry,East Asia (SGDP)	KHV,KinhSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01849	M	SAME125110	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01851	F	SAME123753	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01853	F	SAME123751	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01858	F	SAME123754	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01862	F	SAME123199	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01863	F	SAME123198	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01870	F	SAME123397	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01872	M	SAME123995	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01878	F	SAME123394	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01879	M	SAME1839037	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01890	M	SAME123028	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01893	F	SAME123027	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01912	M	SAME1839779	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01918	F	SAME123240	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01920	M	SAME123789	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01921	F	SAME123790	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01932	M	SAME123587	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01939	F	SAME123592	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01945	F	SAME124153	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01950	M	SAME123977	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01951	F	SAME123976	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01953	M	SAME123974	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01965	F	SAME1839145	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01970	M	SAME124327	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01973	F	SAME124328	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG01988	M	SAME1840175	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02023	M	SAME125307	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02025	F	SAME125335	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02026	M	SAME125315	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02031	F	SAME1839964	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02052	F	SAME1839545	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02053	M	SAME1839543	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02058	M	SAME125319	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02067	M	SAME1839388	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02069	F	SAME123375	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02089	F	SAME124821	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02090	M	SAME124651	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02102	F	SAME1840155	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02104	M	SAME123874	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02105	F	SAME123873	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02121	F	SAME123479	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02128	M	SAME123475	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02134	M	SAME1839875	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02136	F	SAME1839865	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02142	F	SAME124614	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02150	M	SAME1839407	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02155	F	SAME124795	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG02156	F	SAME124793	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02165	F	SAME124208	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG02166	F	SAME124207	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02178	F	SAME124414	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG02182	F	SAME125035	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02185	F	SAME123215	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02188	F	SAME122829	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02215	F	SAME123904	GBR	British	EUR	European Ancestry	GBR	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Geuvadis
+HG02220	F	SAME123715	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02230	F	SAME1839383	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02232	F	SAME1839374	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02236	M	SAME123520	IBS	Iberian	EUR	European Ancestry	IBS	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02250	M	SAME1839268	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02265	M	SAME1839117	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02271	M	SAME1840319	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02274	M	SAME1840306	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02281	M	SAME1840094	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02282	F	SAME1840177	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 3,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02283	M	SAME1840173	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02292	F	SAME1839943	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02301	F	SAME124280	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02307	M	SAME1839535	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02312	F	SAME1839684	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02323	M	SAME1839440	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02332	M	SAME1839315	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02334	M	SAME1839307	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02337	F	SAME1839296	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02348	F	SAME1839063	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02355	M	SAME1840269	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02364	M	SAME1840125	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02373	M	SAME124104	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02389	M	SAME1840085	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02394	M	SAME123305	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02396	M	SAME125357	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02409	M	SAME1839457	CDX	Dai Chinese	EAS	East Asian Ancestry	CDX	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02425	F	SAME1839043	PEL	Peruvian	AMR	American Ancestry	PEL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02429	M	SAME1839021	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02439	M	SAME1840297	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02449	M	SAME1840404	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02450	F	SAME1840144	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02471	F	SAME1839741	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02479	F	SAME1839798	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02481	M	SAME1839870	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02489	M	SAME1839546	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02491	F	SAME1839617	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02494	F	SAME1839698	PJL	Punjabi,Punjabi	SAS	South Asian Ancestry,South Asia (SGDP)	PJL,PunjabiSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02497	F	SAME1839682	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02502	F	SAME1839272	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02511	F	SAME1839150	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02513	F	SAME1839138	KHV	Kinh Vietnamese	EAS	East Asian Ancestry	KHV	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02536	M	SAME1840172	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02545	M	SAME1839939	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02568	F	SAME1839899	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02574	F	SAME1839652	GWD	Gambian Mandinka,Gambian	AFR	African Ancestry,Africa (SGDP)	GWD,GambianSGDP	1000 Genomes on GRCh38,Simons Genome Diversity Project,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02580	F	SAME1839366	ACB	African Caribbean	AFR	African Ancestry	ACB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02583	F	SAME1839429	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02597	M	SAME1839199	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02601	F	SAME1840293	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02611	F	SAME1840401	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02613	M	SAME1840390	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02614	F	SAME1840385	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02620	M	SAME1840191	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02623	M	SAME1840182	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02624	F	SAME1840259	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02628	M	SAME1840238	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02643	F	SAME1839785	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02649	F	SAME1839852	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02654	M	SAME1839530	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02660	M	SAME1839672	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02678	M	SAME1839477	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02681	M	SAME1839304	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02694	F	SAME1839065	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02697	F	SAME1839142	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02703	F	SAME1840142	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02715	M	SAME1839987	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02728	F	SAME1839722	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02731	F	SAME1839886	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02733	M	SAME1839874	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02737	F	SAME1839857	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02768	M	SAME1839235	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02789	M	SAME1840280	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02792	M	SAME1840416	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02799	F	SAME1840384	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02804	M	SAME1840084	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02814	F	SAME1839837	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02816	M	SAME1839822	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02817	F	SAME1839819	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02839	M	SAME1839413	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02851	M	SAME1839352	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02855	F	SAME1839330	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02884	M	SAME1840161	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02888	F	SAME1840139	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02896	F	SAME1839916	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG02941	M	SAME1839096	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02946	F	SAME1839068	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02968	M	SAME1840108	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02970	F	SAME1840260	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG02977	M	SAME1840221	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02979	F	SAME1840209	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02981	M	SAME1840024	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG02983	F	SAME1840009	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG03018	M	SAME1840053	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03019	F	SAME1840060	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03058	F	SAME1839442	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03060	M	SAME1839211	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03064	F	SAME1839228	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03069	M	SAME1839340	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03077	M	SAME1839044	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03082	F	SAME1840316	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03084	M	SAME1840324	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03091	F	SAME1840360	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03097	F	SAME1840130	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03105	F	SAME1840041	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03117	F	SAME1839821	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03118	M	SAME1839830	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03127	M	SAME1839686	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03129	F	SAME1839699	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03135	F	SAME1839385	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03157	M	SAME1839083	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03160	M	SAME1839192	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03166	M	SAME1839127	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03209	M	SAME1839551	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG03225	M	SAME1839460	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG03235	F	SAME1839360	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03247	F	SAME1839174	GWD	Gambian Mandinka	AFR	African Ancestry	GWD	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,Gambian Genome Variation Project (GRCh38)
+HG03268	M	SAME1840093	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03271	M	SAME1840195	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03279	F	SAME1839972	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03294	F	SAME1839877	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03301	M	SAME1839472	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03311	M	SAME1839206	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03313	M	SAME1839213	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03372	F	SAME1839716	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG03380	F	SAME1839569	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03382	M	SAME1839580	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03397	M	SAME1839400	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03401	F	SAME1839299	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03419	F	SAME1839130	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03445	M	SAME1839996	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG03446	F	SAME1839911	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03460	M	SAME1839908	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03461	F	SAME1839808	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03478	M	SAME1839618	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03485	F	SAME1839469	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03491	F	SAME1839264	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03499	F	SAME1839219	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03514	F	SAME1840150	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03520	F	SAME1840186	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 3,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03521	M	SAME1840190	ESN	Esan	AFR	African Ancestry	ESN	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG03548	F	SAME1839883	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03556	M	SAME1839553	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03557	F	SAME1839556	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03558	F	SAME1839561	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03563	F	SAME1839421	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03578	F	SAME1839245	MSL	Mende	AFR	African Ancestry	MSL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03585	M	SAME1839293	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03589	F	SAME1839311	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03593	M	SAME1839171	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03594	M	SAME1839181	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03595	F	SAME1839185	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03598	F	SAME1839194	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03604	F	SAME1840236	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03616	F	SAME1839955	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03631	F	SAME1839855	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03646	M	SAME1839643	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03660	M	SAME1839218	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03667	M	SAME1839331	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03668	F	SAME1839338	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03673	F	SAME1839030	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03692	F	SAME1840371	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03695	M	SAME1840128	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03696	M	SAME1840135	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03697	M	SAME1840137	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03709	F	SAME1839780	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03711	M	SAME1839894	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03714	F	SAME1839809	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03717	F	SAME1839831	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03727	M	SAME1839695	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03730	F	SAME1839369	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03736	F	SAME1839389	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03738	M	SAME1839473	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03741	F	SAME1839251	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03743	M	SAME1839261	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03765	F	SAME1839131	PJL	Punjabi	SAS	South Asian Ancestry	PJL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03770	F	SAME1840388	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03778	M	SAME1840344	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+HG03780	F	SAME1840112	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03781	F	SAME1840117	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03782	F	SAME1840119	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03803	M	SAME1839527	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03815	M	SAME1839419	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03823	F	SAME1839456	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03826	F	SAME1839465	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03857	F	SAME1840294	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03858	F	SAME1840301	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03861	F	SAME1840156	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03862	F	SAME1840158	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03864	M	SAME1840170	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03866	M	SAME1840087	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03868	F	SAME1840097	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03885	M	SAME1840013	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03888	F	SAME1840039	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03896	M	SAME1839898	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03897	F	SAME1839906	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03898	F	SAME1839806	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03900	M	SAME1839476	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03902	M	SAME1839484	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03910	F	SAME1839205	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03922	F	SAME1839103	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03934	F	SAME1840318	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03971	M	SAME1839718	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03976	M	SAME1839739	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03977	F	SAME1839746	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03978	M	SAME1839748	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03989	F	SAME1839532	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG03998	M	SAME1839408	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04002	M	SAME1839769	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04025	F	SAME1839614	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04029	F	SAME1839630	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04033	M	SAME1839466	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04047	F	SAME1839221	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04054	F	SAME1839094	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04059	F	SAME1839031	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04060	M	SAME1839126	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04061	M	SAME1839140	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04062	F	SAME1839147	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04063	F	SAME1839155	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04075	F	SAME1840359	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04100	M	SAME1839536	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04107	M	SAME1839660	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04141	F	SAME1839178	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04152	M	SAME1840300	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04155	M	SAME1840381	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04156	F	SAME1840389	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04158	M	SAME1840400	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04164	M	SAME1840102	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04171	F	SAME1839968	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04177	F	SAME1839992	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04185	M	SAME1839756	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04188	M	SAME1839771	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04194	M	SAME1839818	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04195	F	SAME1839823	BEB	Bengali	SAS	South Asian Ancestry	BEB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04216	F	SAME1839339	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04227	F	SAME1839056	STU	Tamil	SAS	South Asian Ancestry	STU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+HG04235	M	SAME1840263	ITU	Telugu	SAS	South Asian Ancestry	ITU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA06985	F	SAME124762	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA07000	F	SAME124963	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA11919	M	SAME122834	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA11930	M	SAME125095	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA11932	M	SAME125097	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA11933	F	SAME125098	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12003	M	SAME125142	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12046	F	SAME123213	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12058	F	SAME123416	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12154	M	SAME124959	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12275	F	SAME125263	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12286	M	SAME124642	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12287	F	SAME124641	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12348	F	SAME125163	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12399	M	SAME124193	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12413	M	SAME124055	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12414	F	SAME124057	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12546	M	SAME124777	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12717	F	SAME123911	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12718	F	SAME124454	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12748	M	SAME124827	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12762	M	SAME125109	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12778	F	SAME124249	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12812	M	SAME123023	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12815	F	SAME123022	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Long-read direct RNA sequencing (ONT) of 60 EUR,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12828	F	SAME125076	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12843	F	SAME123541	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12874	M	SAME123389	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA12878	F	SAME123392	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,1KG_ONT_VIENNA,MAGE RNA-seq,Illumina Platinum pedigree,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA12889	M	SAME123951	CEU	CEPH	EUR	European Ancestry	CEU	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Illumina Platinum pedigree,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA18486	M	SAME124099	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA18501	M	SAME124991	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18504	M	SAME125061	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18507	M	SAME125060	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18508	F	SAME124318	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA18516	M	SAME124884	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18522	M	SAME124669	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18528	F	SAME124661	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18531	F	SAME124483	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18535	F	SAME124487	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18536	M	SAME124486	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18541	F	SAME124270	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18542	F	SAME124267	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18544	M	SAME124265	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18545	F	SAME124266	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18548	M	SAME124261	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18553	F	SAME124088	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18555	F	SAME124090	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18557	M	SAME124092	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18558	M	SAME124094	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18561	M	SAME123926	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18574	F	SAME123737	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18596	F	SAME123718	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18608	M	SAME124779	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18609	M	SAME124867	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18610	F	SAME123222	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18621	M	SAME124509	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18622	M	SAME125260	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18626	F	SAME125250	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18636	M	SAME124320	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,90 Han Chinese high coverage genomes
+NA18639	M	SAME124694	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18645	M	SAME122975	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18646	F	SAME122978	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18745	M	SAME123914	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18749	M	SAME123910	CHB	Han Chinese	EAS	East Asian Ancestry	CHB	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18853	M	SAME124733	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18856	M	SAME124736	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18861	F	SAME124905	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA18864	F	SAME124903	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18865	M	SAME124902	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18874	M	SAME125105	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18876	F	SAME125103	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18877	M	SAME125104	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18878	F	SAME125107	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18879	M	SAME125108	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+NA18881	F	SAME125308	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18915	M	SAME123405	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA18924	F	SAME123202	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18934	M	SAME123036	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA18942	F	SAME124308	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18948	M	SAME124316	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18951	F	SAME124111	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18953	M	SAME124113	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18954	F	SAME124108	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18956	F	SAME124110	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18962	M	SAME123958	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18963	F	SAME123959	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18969	F	SAME123954	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18970	M	SAME123764	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18971	M	SAME123763	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18972	F	SAME123762	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18977	M	SAME123765	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18982	M	SAME125073	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18987	F	SAME125070	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18995	M	SAME124896	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA18997	F	SAME124898	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19009	M	SAME125133	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19010	F	SAME123989	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19025	M	SAME124852	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA19026	M	SAME124849	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA19028	M	SAME124848	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19038	F	SAME124668	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19054	F	SAME125028	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19055	M	SAME125027	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19062	M	SAME123005	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19064	F	SAME123010	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19068	M	SAME123012	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19075	M	SAME122816	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19077	F	SAME122818	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19080	F	SAME125313	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19081	F	SAME123369	JPT	Japanese	EAS	East Asian Ancestry	JPT	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19095	F	SAME123170	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA19116	F	SAME124911	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA19117	M	SAME124914	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA19129	F	SAME125021	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA19143	F	SAME124609	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA19238	F	SAME124999	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,The Human Genome Structural Variation Consortium,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19239	M	SAME125081	YRI	Yoruba	AFR	African Ancestry	YRI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,MAGE RNA-seq,The Human Genome Structural Variation Consortium,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19308	M	SAME124985	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19312	M	SAME123315	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19317	M	SAME123312	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 3,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19323	F	SAME123471	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA19332	F	SAME123723	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19334	M	SAME123722	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19338	F	SAME123274	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19346	M	SAME124341	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19351	F	SAME122854	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19355	F	SAME124077	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19374	M	SAME125115	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19377	F	SAME124470	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19385	M	SAME124271	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19393	M	SAME124496	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19397	M	SAME124492	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19401	F	SAME123634	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19404	F	SAME123637	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19430	M	SAME123854	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19438	F	SAME123848	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19443	M	SAME122954	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19449	F	SAME122946	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19451	M	SAME125415	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19454	M	SAME125412	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA19475	F	SAME123121	LWK	Luhya	AFR	African Ancestry	LWK	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA19625	F	SAME123655	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19648	F	SAME123307	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19649	M	SAME123442	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19654	F	SAME123128	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19657	F	SAME123129	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19663	F	SAME122961	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19670	M	SAME122795	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19676	M	SAME122790	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19682	M	SAME122935	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19704	F	SAME124236	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19711	M	SAME124446	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19713	F	SAME124448	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19717	M	SAME124451	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19719	F	SAME124445	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19723	M	SAME124695	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19726	M	SAME124692	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19731	F	SAME124870	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19732	M	SAME124778	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19741	M	SAME124718	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19752	F	SAME123700	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19758	F	SAME123706	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19759	M	SAME123707	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19761	F	SAME123894	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19762	M	SAME123897	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19764	F	SAME123898	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19770	F	SAME124068	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19773	F	SAME124067	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19774	M	SAME124064	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19780	M	SAME123147	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19785	F	SAME123150	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19788	F	SAME123153	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19789	M	SAME123152	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19795	M	SAME123329	MXL	Mexican Ancestry	AMR	American Ancestry	MXL	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19818	M	SAME124677	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19835	F	SAME125029	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19901	F	SAME125049	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19904	M	SAME125047	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19908	M	SAME125053	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19913	F	SAME124432	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA19917	F	SAME125272	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19922	M	SAME124711	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19923	F	SAME124710	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA19982	M	SAME124293	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20278	M	SAME123617	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20287	F	SAME124580	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20294	F	SAME124776	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20298	M	SAME124382	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20314	F	SAME125304	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20317	F	SAME123943	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20318	M	SAME123802	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20320	F	SAME123997	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20332	F	SAME124198	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20334	F	SAME124196	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20342	M	SAME124398	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20351	M	SAME124596	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20359	F	SAME124601	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20412	F	SAME124002	ASW	African Ancestry SW	AFR	African Ancestry	ASW	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20502	F	SAME124358	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20507	F	SAME124361	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20511	M	SAME124563	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20513	M	SAME124561	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20522	F	SAME124017	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20525	M	SAME124015	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20532	M	SAME124171	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20533	F	SAME124172	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20536	M	SAME124167	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20543	M	SAME125149	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20587	F	SAME123481	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20755	M	SAME124174	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20762	M	SAME124744	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+NA20763	M	SAME124365	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20764	F	SAME124368	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20767	M	SAME124369	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20771	F	SAME124577	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20775	F	SAME124573	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release
+NA20778	M	SAME124571	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20790	F	SAME123815	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20792	M	SAME123817	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20797	F	SAME123820	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20811	M	SAME123069	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20815	M	SAME125187	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release,1000 Genomes phase 1 release,Geuvadis
+NA20821	F	SAME123075	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20822	F	SAME123073	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20827	M	SAME123071	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+NA20832	F	SAME122894	TSI	Toscani	EUR	European Ancestry	TSI	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20847	F	SAME123432	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,Human Genome Structural Variation Consortium, Phase 2,Human Genome Structural Variation Consortium, Phase 3,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20850	M	SAME123246	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+NA20856	F	SAME123247	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20859	F	SAME123249	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20862	F	SAME123804	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20866	M	SAME123808	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20867	M	SAME123809	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20870	M	SAME122839	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+NA20872	F	SAME122842	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20875	F	SAME123596	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20876	F	SAME123599	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20878	F	SAME123595	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20884	M	SAME124514	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20886	F	SAME123878	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20888	F	SAME125258	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20889	M	SAME125305	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20896	F	SAME123665	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA20902	F	SAME122922	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21098	M	SAME123324	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21110	F	SAME124180	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,Human Pangenome Reference Consortium, Phase 2,1000 Genomes phase 3 release
+NA21111	M	SAME124179	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21112	M	SAME124182	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21120	F	SAME124028	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21124	M	SAME124024	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21127	M	SAME124027	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,1KG_ONT_VIENNA,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21129	M	SAME124023	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
+NA21130	M	SAME123834	GIH	Gujarati	SAS	South Asian Ancestry	GIH	1000 Genomes on GRCh38,1000 Genomes 30x on GRCh38,MAGE RNA-seq,1000 Genomes phase 3 release
