@@ -12,6 +12,7 @@ import pysam
 import glob
 import time
 import tempfile
+from polymerization.analysis import *
 
 def validate_bgzip():
     bgzip = shutil.which('bgzip')
@@ -70,9 +71,6 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
                         # raise subprocess.CalledProcessError(bgzip_proc.returncode, [bgzip_cmd, '-c'], stderr=bgzip_stderr)
         except subprocess.TimeoutExpired as e:
             print(f"Giggle command timed out after {timeout} seconds")
-            return output_path
-        finally:
-            return output_path
     else:
         # run the command using subprocess.run with a timeout
         try:
@@ -168,14 +166,13 @@ def clean_excord(path_excord, outfile, bgzip=False):
     
     # use awk for fast line filtering instead of Python loop
     # awk is 10-100x faster than Python for per-line operations
-    bad_chrom_pattern = "^(0|hs|gl|nc|mt|-1|\\*)"
+    # inclusion pattern: keep only autosomes (1-22) and sex chromosomes (X, Y)
+    include_chrom_pattern = "^(([1-9]|1[0-9]|2[0-2])|[xXyY])$"
     awk_script = f"""
-    BEGIN {{ bad_pattern = "{bad_chrom_pattern}" }}
+    BEGIN {{ include_pattern = "{include_chrom_pattern}" }}
     /^#/ {{ print; next }}
     NF < 9 {{ next }}
-    (tolower($1) ~ bad_pattern || tolower($5) ~ bad_pattern) {{ next }}
-    (tolower($1) == "0" && $2 == "0") {{ next }}
-    (tolower($5) == "0" && $6 == "0") {{ next }}
+    (tolower($1) !~ include_pattern || tolower($5) !~ include_pattern) {{ next }}
     {{ print }}
     """
     
@@ -431,7 +428,7 @@ def intersect2evidence(
     right_gene_col=3,
     sample_column=14,
     bgzip=False,
-    burden=False,
+    burden=False
 ):
     """
     Convert bedtools intersect output to gene fusion evidence file.
@@ -531,6 +528,113 @@ def intersect2evidence(
         # Clean up tempfile
         if os.path.exists(tmp_path):
             os.unlink(tmp_path)
+
+# not scalable. used for refining final candidate set
+def _process_right_gene_breakpoint_aware(
+    right_gene,
+    gene_left,
+    paths_intersect_tumor,
+    paths_intersect_normal,
+    df_bed,
+    x_edges,
+    bins_per_dim
+):
+    """Worker function to process a single right gene in parallel."""
+    # lookup coords
+    try:
+        right_gene_start = df_bed[df_bed['gene_name'] == right_gene]['start'].iloc[0]
+        right_gene_end = df_bed[df_bed['gene_name'] == right_gene]['end'].iloc[0]
+    except IndexError:
+        print(f"# warning: right gene {right_gene} not found in bed file, skipping")
+        return None
+    
+    y_edges = np.linspace(right_gene_start, right_gene_end, num=bins_per_dim + 1)
+    
+    # read counts
+    l_df_bp_tumor = []
+    for path in paths_intersect_tumor:
+        _, df_intersect = read_g2f_intersect(path, bgzip=True)
+        df_bp = intersect2breakpoints(df_intersect, gene_right=right_gene, group_by_sample=False)
+        l_df_bp_tumor.append(df_bp)
+    l_df_bp_normal = []
+    for path in paths_intersect_normal:
+        _, df_intersect = read_g2f_intersect(path, bgzip=True)
+        df_bp = intersect2breakpoints(df_intersect, gene_right=right_gene, group_by_sample=False)
+        l_df_bp_normal.append(df_bp)
+    normal_read_count = count_breakpoint_aware_normal_evidence(l_df_bp_tumor, l_df_bp_normal, x_edges, y_edges, bins_per_dim=bins_per_dim)
+    
+    # sample count
+    l_df_bp_tumor = []
+    for path in paths_intersect_tumor:
+        _, df_intersect = read_g2f_intersect(path, bgzip=True)
+        df_bp = intersect2breakpoints(df_intersect, gene_right=right_gene, group_by_sample=True)
+        l_df_bp_tumor.append(df_bp)
+    l_df_bp_normal = []
+    for path in paths_intersect_normal:
+        _, df_intersect = read_g2f_intersect(path, bgzip=True)
+        df_bp = intersect2breakpoints(df_intersect, gene_right=right_gene, group_by_sample=True)
+        l_df_bp_normal.append(df_bp)
+    normal_sample_count = count_breakpoint_aware_normal_evidence(l_df_bp_tumor, l_df_bp_normal, x_edges, y_edges, bins_per_dim=bins_per_dim)
+    
+    return (gene_left, right_gene, normal_read_count, normal_sample_count)
+
+
+def intersect2evidence_breakpoint_aware(
+    gene_left,
+    paths_intersect_tumor,
+    paths_intersect_normal,
+    df_bed,
+    outfile,
+    bins_per_dim=10,
+    max_workers=4
+):
+    # left gene edges for binning
+    left_gene_start = df_bed[df_bed['gene_name'] == gene_left]['start'].iloc[0]
+    left_gene_end = df_bed[df_bed['gene_name'] == gene_left]['end'].iloc[0]
+    x_edges = np.linspace(left_gene_start, left_gene_end, num=bins_per_dim + 1)
+
+    # get unique right genes
+    right_genes = set()
+    for path in paths_intersect_tumor + paths_intersect_normal:
+        _, df_intersect = read_g2f_intersect(path, bgzip=True)
+        # .update() is in-place union
+        right_genes.update(df_intersect['gene_right_name'].unique())
+
+    # process each right gene in parallel
+    results = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(
+                _process_right_gene_breakpoint_aware,
+                right_gene,
+                gene_left,
+                paths_intersect_tumor,
+                paths_intersect_normal,
+                df_bed,
+                x_edges,
+                bins_per_dim
+            ): right_gene
+            for right_gene in right_genes
+        }
+        
+        for future in as_completed(futures):
+            try:
+                result = future.result()
+                if result is not None:
+                    results.append(result)
+            except Exception as e:
+                right_gene = futures[future]
+                print(f"# error processing right gene {right_gene}: {e}")
+                continue
+    
+    # write all results at once to avoid file conflicts
+    with open(outfile, 'w') as f_out:
+        f_out.write('gene_left\tgene_right\treads\tsamples\n')
+        for gene_left_result, right_gene, normal_read_count, normal_sample_count in sorted(results):
+            f_out.write(f"{gene_left_result}\t{right_gene}\t{normal_read_count}\t{normal_sample_count}\n")
+    
+    return outfile
+
 
 def df_intersect2df_evidence(
     df_intersect,
