@@ -54,8 +54,15 @@ ftp_reliable \
 
 ./chimeric2bedpe.sh
 
-mkdir -p thousg_rna_bed_sort
-./sort_bed bed thousg_rna_bed_sort 16
+./clean_bedpe.sh
+
+mkdir -p thousg_rna_bed_sort_cln
+./sort_bed bed_clean thousg_rna_bed_sort_cln 16
+
+# side effect of renaming bed files
+./make_ped.py --rename
+
+
 
 # conda activate polymerization
 giggle index -s -i "thousg_rna_bed_sort/*.bed.gz" -o thousg_rna_giggle_index

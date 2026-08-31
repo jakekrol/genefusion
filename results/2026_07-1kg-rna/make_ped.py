@@ -9,7 +9,7 @@ import shutil
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--metadata", default="../../data/2026_08-thousg-rna-metadata/thousg-mage-sample-metadata.tsv")
-parser.add_argument("--dir_bed", default="thousg_rna_bed_sort")
+parser.add_argument("--dir_bed", default="thousg_rna_bed_sort_cln")
 parser.add_argument("--output", default="thousg_rna.ped")
 parser.add_argument("--rename", action='store_true')
 args = parser.parse_args()

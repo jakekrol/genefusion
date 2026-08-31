@@ -7,4 +7,4 @@ trap "rm -f $x" EXIT
 for f in "${fastqs[@]}"; do
 	echo $f >> $x
 done
-seqkit stats --seq-type rna -j $CPUS -T --infile-list $x > fastq_stats.tsv
+seqkit stats --skip-err --seq-type rna -j $CPUS -T --infile-list $x > fastq_stats.tsv
