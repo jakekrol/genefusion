@@ -61,7 +61,7 @@ def fusiontsv2bedpe(path_fusion_tsv, path_bedpe_out, bgzip=False, pad=True, usec
 
     
 
-def chimeric2bedpe(path_star_chimeric: str, path_bedpe_out: str, has_header: bool = False, bgzip: bool = False, pad: bool = True):
+def chimeric2bedpe(path_star_chimeric: str, path_bedpe_out: str, has_header: bool = True, bgzip: bool = False, pad: bool = True):
     """
     Convert STAR Chimeric.out.junction format to sorted BEDPE format.
     
@@ -88,6 +88,12 @@ def chimeric2bedpe(path_star_chimeric: str, path_bedpe_out: str, has_header: boo
     
     if not os.path.exists(path_star_chimeric):
         raise FileNotFoundError(f"Input file {path_star_chimeric} does not exist")
+
+    # check if the file has no chimeric reads
+    with open(path_star_chimeric) as f:
+        only_one_line = next(f, None) is not None and next(f, None) is None
+        if only_one_line:
+            return False
 
     
     awk_script = r"""
@@ -127,9 +133,9 @@ def chimeric2bedpe(path_star_chimeric: str, path_bedpe_out: str, has_header: boo
         if not bgzip_cmd:
             raise FileNotFoundError("bgzip command not found in PATH")
         assert path_bedpe_out.endswith('.gz'), f"Output file {path_bedpe_out} must end with .gz when bgzip=True"
-        cmd = f"awk -v has_header={1 if has_header else 0} -v pad={1 if pad else 0} '{awk_script}' '{path_star_chimeric}' | sed 's|\t-\t|\t-1\t|g' | sed 's|\t+\t|\t1\t|g' | {bgzip_cmd} -c > '{path_bedpe_out}'"
+        cmd = f"awk -v has_header={1 if has_header else 0} -v pad={1 if pad else 0} '{awk_script}' '{path_star_chimeric}' | sed 's|chr||g' | sed 's|\t-\t|\t-1\t|g' | sed 's|\t+\t|\t1\t|g' | {bgzip_cmd} -c > '{path_bedpe_out}'"
     else:
-        cmd = f"awk -v has_header={1 if has_header else 0} -v pad={1 if pad else 0} '{awk_script}' '{path_star_chimeric}' | sed 's|\t-\t|\t-1\t|g' | sed 's|\t+\t|\t1\t|g' > '{path_bedpe_out}'"
+        cmd = f"awk -v has_header={1 if has_header else 0} -v pad={1 if pad else 0} '{awk_script}' '{path_star_chimeric}' | sed 's|chr||g' | sed 's|\t-\t|\t-1\t|g' | sed 's|\t+\t|\t1\t|g' > '{path_bedpe_out}'"
     
     try:
         subprocess.run(cmd, shell=True, check=True, stderr=subprocess.PIPE)
@@ -137,4 +143,4 @@ def chimeric2bedpe(path_star_chimeric: str, path_bedpe_out: str, has_header: boo
         print(f"awk chimeric2bedpe failed: {e}")
         raise e
     
-    return path_bedpe_out
+    return True

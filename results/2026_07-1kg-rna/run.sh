@@ -57,5 +57,6 @@ ftp_reliable \
 mkdir -p thousg_rna_bed_sort
 ./sort_bed bed thousg_rna_bed_sort 16
 
-# conda activate giggle-dev
+# conda activate polymerization
 giggle index -s -i "thousg_rna_bed_sort/*.bed.gz" -o thousg_rna_giggle_index
+
