@@ -1,48 +1,22 @@
 import pandas as pd
 from importlib import resources
 
+from importlib.resources import files
+
+def get_data_file(filename):
+    return files("polymerization.data").joinpath(filename)
 
 def get_recurrent_normal_tissue_specific_fusions():
-	"""
-	Load recurrent normal tissue-specific fusions data as a pandas DataFrame.
-	
-	Returns:
-		pd.DataFrame: DataFrame with columns: gene_left, gene_right, tissues
-	"""
-	# Load the TSV file from the package data directory
-	if hasattr(resources, 'files'):
-		# Python 3.9+
-		data_file = resources.files('polymerization').joinpath('data', 'recurrent_normal_tissue_specific_fusions.tsv')
-		with resources.as_file(data_file) as path:
-			df = pd.read_csv(path, sep='\t')
-	else:
-		# Fallback for older Python versions
-		data = resources.read_text('polymerization.data', 'recurrent_normal_tissue_specific_fusions.tsv')
-		from io import StringIO
-		df = pd.read_csv(StringIO(data), sep='\t')
-	
-	return df
+	path = get_data_file("recurrent_normal_tissue_specific_fusions.tsv")
+	return pd.read_csv(path, sep="\t")
+
+def get_recurrent_normal_tissue_agnostic_fusions():
+	path = get_data_file("recurrent_normal_tissue_agnostic_babiceanu_fusions.tsv")
+	return pd.read_csv(path, sep="\t")
 
 def get_pcawg_recurrent_tumor_fusions():
-	"""
-	Load PCAWG recurrent tumor fusions data as a pandas DataFrame.
-	
-	Returns:
-		pd.DataFrame: DataFrame with columns: gene_x, gene_y, projects, tissues
-	"""
-	# Load the TSV file from the package data directory
-	if hasattr(resources, 'files'):
-		# Python 3.9+
-		data_file = resources.files('polymerization').joinpath('data', 'recurrent_tumor_fusions.tsv')
-		with resources.as_file(data_file) as path:
-			df = pd.read_csv(path, sep='\t')
-	else:
-		# Fallback for older Python versions
-		data = resources.read_text('polymerization.data', 'recurrent_tumor_fusions.tsv')
-		from io import StringIO
-		df = pd.read_csv(StringIO(data), sep='\t')
-	
-	return df
+	path = get_data_file("recurrent_tumor_fusions.tsv")
+	return pd.read_csv(path, sep="\t")
 
 def get_pcawg_data_types():
 	x =	{
