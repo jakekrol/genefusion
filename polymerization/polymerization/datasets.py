@@ -6,16 +6,24 @@ from importlib.resources import files
 def get_data_file(filename):
     return files("polymerization.data").joinpath(filename)
 
-def get_recurrent_normal_tissue_specific_fusions():
-	path = get_data_file("recurrent_normal_tissue_specific_fusions.tsv")
+def get_babiceanu_recurrent_normal_tissue_specific_fusions():
+	path = get_data_file("babiceanu_recurrent_normal_tissue_specific_fusions.tsv")
 	return pd.read_csv(path, sep="\t")
 
-def get_recurrent_normal_tissue_agnostic_fusions():
-	path = get_data_file("recurrent_normal_tissue_agnostic_babiceanu_fusions.tsv")
+def get_babiceanu_recurrent_normal_tissue_agnostic_fusions():
+	path = get_data_file("babiceanu_recurrent_normal_tissue_agnostic_fusions.tsv")
 	return pd.read_csv(path, sep="\t")
 
 def get_pcawg_recurrent_tumor_fusions():
-	path = get_data_file("recurrent_tumor_fusions.tsv")
+	path = get_data_file("pcawg_recurrent_tumor_fusions.tsv")
+	return pd.read_csv(path, sep="\t")
+
+def get_pcawg_tumor_fusions():
+	path = get_data_file("pcawg_fusions.tsv")
+	return pd.read_csv(path, sep="\t")
+
+def get_cosmic_tumor_fusions():
+	path = get_data_file("cosmic_fusions.tsv")
 	return pd.read_csv(path, sep="\t")
 
 def get_pcawg_data_types():
