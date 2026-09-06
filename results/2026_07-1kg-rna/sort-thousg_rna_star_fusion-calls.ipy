@@ -1,0 +1,24 @@
+# coding: utf-8
+from polymerization.stix2fusion import *
+get_ipython().run_line_magic('pinfo', 'left_sort_fusion_set')
+get_ipython().run_line_magic('ls', '')
+df=pd.read_csv("thousg_rna_short_read_samples.tsv",sep="\t")
+df
+df=pd.read_csv("thousg_rna-star_fusion_calls.tsv",sep="\t")
+df
+df
+df['gene_x'] = df['fusion'].apply(lambda x: x.split('--')[0])
+df['gene_y'] = df['fusion'].apply(lambda x: x.split('--')[1])
+df
+order = ['gene_x', 'gene_y', 'sample']
+df[order]
+df_sub =df[order]
+df_sub
+f_bed="../2025_04-gene_bedfile_cln/grch37.genes.promoter_pad.bed"
+df_bed=read_bed(f_bed,gene_col_idx=3)
+df_bed
+left_sort_fusion_set(df_sub,df_bed)
+df_sort = left_sort_fusion_set(df_sub,df_bed)
+get_ipython().run_line_magic('ls', '')
+df_sort.to_csv('thousg_rna-star_fusion_calls.sort.tsv',sep="\t")
+df_sort.to_csv('thousg_rna-star_fusion_calls.sort.tsv',sep="\t",index=False)
