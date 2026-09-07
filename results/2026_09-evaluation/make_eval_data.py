@@ -10,42 +10,95 @@ args = parser.parse_args()
 
 COL_EVALUATION_DATASET="eval_dataset"
 
-def merge(x,y, suffixes):
-    return pd.merge(x,y, on = ['gene_left', 'gene_right'],how='outer', suffixes=suffixes)
+def merge(x,y, col_evaluation_dataset=COL_EVALUATION_DATASET):
+    m = pd.merge(x,y, on = ['gene_left', 'gene_right'],how='outer')
+    return m
 
 def main():
-	df_babiceanu_recurrent_normal_tissue_specific_fusions = \
-		get_babiceanu_recurrent_normal_tissue_specific_fusions()
-	df_babiceanu_recurrent_normal_tissue_specific_fusions[COL_EVALUATION_DATASET] = \
-		'babiceanu_recurrent_normal_tissue_specific_fusions'
+    dataset='babiceanu_recurrent_normal_tissue_specific_fusions'
+    df_babiceanu_recurrent_normal_tissue_specific_fusions = \
+        get_babiceanu_recurrent_normal_tissue_specific_fusions()
+    df_babiceanu_recurrent_normal_tissue_specific_fusions[COL_EVALUATION_DATASET] = dataset
+    new_cols = ['gene_left', 'gene_right']
+    for col in df_babiceanu_recurrent_normal_tissue_specific_fusions.columns:
+        if not (col in ['gene_left', 'gene_right']):
+            new_cols.append(f"{col}_{dataset}")
+    df_babiceanu_recurrent_normal_tissue_specific_fusions.columns = new_cols
 
-	df_babiceanu_recurrent_normal_tissue_agnostic_fusions = \
-		get_babiceanu_recurrent_normal_tissue_agnostic_fusions()
-	df_babiceanu_recurrent_normal_tissue_agnostic_fusions[COL_EVALUATION_DATASET] = \
-		'babiceanu_recurrent_normal_tissue_agnostic_fusions'
+    dataset='babiceanu_recurrent_normal_tissue_agnostic_fusions'
+    df_babiceanu_recurrent_normal_tissue_agnostic_fusions = \
+        get_babiceanu_recurrent_normal_tissue_agnostic_fusions()
+    df_babiceanu_recurrent_normal_tissue_agnostic_fusions[COL_EVALUATION_DATASET] = dataset
+    new_cols = ['gene_left', 'gene_right']
+    for col in df_babiceanu_recurrent_normal_tissue_agnostic_fusions.columns:
+        if not (col in ['gene_left', 'gene_right']):
+            new_cols.append(f"{col}_{dataset}")
+    df_babiceanu_recurrent_normal_tissue_agnostic_fusions.columns = new_cols
 
-	df_pcawg_recurrent_tumor_fusions = get_pcawg_recurrent_tumor_fusions()
-	df_pcawg_recurrent_tumor_fusions[COL_EVALUATION_DATASET] = 'pcawg_recurrent_tumor_fusions'
+    dataset='pcawg_recurrent_tumor_fusions'
+    df_pcawg_recurrent_tumor_fusions = get_pcawg_recurrent_tumor_fusions()
+    df_pcawg_recurrent_tumor_fusions[COL_EVALUATION_DATASET] = dataset
+    new_cols = ['gene_left', 'gene_right']
+    for col in df_pcawg_recurrent_tumor_fusions.columns:
+        if not (col in ['gene_left', 'gene_right']):
+            new_cols.append(f"{col}_{dataset}")
+    df_pcawg_recurrent_tumor_fusions.columns = new_cols
 
-	df_pcawg_tumor_fusions = get_pcawg_tumor_fusions()
-	df_pcawg_tumor_fusions[COL_EVALUATION_DATASET] = 'pcawg_tumor_fusions'
+    dataset='pcawg_tumor_fusions'
+    df_pcawg_tumor_fusions = get_pcawg_tumor_fusions()
+    df_pcawg_tumor_fusions[COL_EVALUATION_DATASET] = dataset
+    new_cols = ['gene_left', 'gene_right']
+    for col in df_pcawg_tumor_fusions.columns:
+        if not (col in ['gene_left', 'gene_right']):
+            new_cols.append(f"{col}_{dataset}")
+    df_pcawg_tumor_fusions.columns = new_cols
 
-	df_cosmic_tumor_fusions = get_cosmic_tumor_fusions()
-	df_cosmic_tumor_fusions[COL_EVALUATION_DATASET] = 'cosmic'
+    dataset='cosmic'
+    df_cosmic_tumor_fusions = get_cosmic_tumor_fusions()
+    df_cosmic_tumor_fusions[COL_EVALUATION_DATASET] = dataset
+    new_cols = ['gene_left', 'gene_right']
+    for col in df_cosmic_tumor_fusions.columns:
+        if not (col in ['gene_left', 'gene_right']):
+            new_cols.append(f"{col}_{dataset}")
+    df_cosmic_tumor_fusions.columns = new_cols
 
-	df_merge = merge(
-     df_babiceanu_recurrent_normal_tissue_specific_fusions,
-     df_babiceanu_recurrent_normal_tissue_agnostic_fusions,
-     suffixes=('_babiceanu_recurrent_normal_tissue_specific_fusions', '_babiceanu_recurrent_normal_tissue_agnostic_fusions'))
-	df_merge = merge(df_merge, df_pcawg_recurrent_tumor_fusions, suffixes=('', '_pcawg_recurrent_tumor_fusions'))
-	df_merge = merge(df_merge, df_pcawg_tumor_fusions, suffixes=('', '_pcawg_tumor_fusions'))
-	df_merge = merge(df_merge, df_cosmic_tumor_fusions, suffixes=('', '_cosmic'))
-	leading_columns = ['gene_left', 'gene_right', COL_EVALUATION_DATASET]
-	columns = df_merge.columns.tolist()
-	columns = leading_columns + [c for c in columns if c not in leading_columns]
-	df_merge = df_merge[columns]
-	# consolidate the COL_EVALUATION_DATASET column to a single value per row
-	df_merge.to_csv(args.output, sep='\t', index=False)
+    df_merge = merge(
+        df_babiceanu_recurrent_normal_tissue_specific_fusions,
+        df_babiceanu_recurrent_normal_tissue_agnostic_fusions
+    )
+    df_merge = merge(df_merge, df_pcawg_recurrent_tumor_fusions)
+    df_merge = merge(df_merge, df_pcawg_tumor_fusions)
+    df_merge = merge(df_merge, df_cosmic_tumor_fusions)
+    df_merge.reset_index(drop=True, inplace=True)
+    # consolidate eval data set columns
+    eval_dataset_values = []
+    for i, row in df_merge.iterrows():
+        datasets=[]
+        for col in df_merge.columns:
+            if col.startswith('eval_dataset'):
+                if not pd.isna(row[col]):
+                    datasets.append(row[col])
+        eval_dataset_values.append(
+            ','.join(datasets)
+        )
+    # drop old eval dataset columns
+    drop_cols = []
+    for col in df_merge.columns:
+        if col.startswith("eval_dataset"):
+            drop_cols.append(col)
+    df_merge.drop(columns=drop_cols, inplace=True)
+    df_merge[COL_EVALUATION_DATASET] = eval_dataset_values
+        
+            
+    leading_columns = ['gene_left', 'gene_right', COL_EVALUATION_DATASET]
+    for col in df_merge.columns:
+        if "tissue" in col:
+            leading_columns.append(col)
+    columns = df_merge.columns.tolist()
+    columns = leading_columns + [c for c in columns if c not in leading_columns]
+    df_merge = df_merge[columns]
+    # df_merge.fillna('.', inplace=True)
+    df_merge.to_csv(args.output, sep='\t', index=False)
 
 if __name__ == "__main__":
     main()
