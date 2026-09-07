@@ -62,6 +62,22 @@ def main():
             new_cols.append(f"{col}_{dataset}")
     df_cosmic_tumor_fusions.columns = new_cols
 
+    dataset='thousg_rna_star_fusion'
+    df_thousg_rna_star_fusion = get_thousg_rna_star_fusion_calls()
+    # consolidate all samples per fusion into single string
+    thousg_rna_data = []
+    for fusion, group in df_thousg_rna_star_fusion.groupby(["gene_left", "gene_right"]):
+        samples = list(set(group['sample']))
+        samples = ','.join(samples)
+        thousg_rna_data.append((fusion[0], fusion[1], samples))
+    df_thousg_rna_star_fusion = pd.DataFrame(thousg_rna_data, columns = ['gene_left','gene_right', 'samples'])
+    df_thousg_rna_star_fusion[COL_EVALUATION_DATASET] = dataset
+    new_cols = ['gene_left', 'gene_right']
+    for col in df_thousg_rna_star_fusion.columns:
+        if not (col in ['gene_left', 'gene_right']):
+            new_cols.append(f"{col}_{dataset}")
+    df_thousg_rna_star_fusion.columns = new_cols
+
     df_merge = merge(
         df_babiceanu_recurrent_normal_tissue_specific_fusions,
         df_babiceanu_recurrent_normal_tissue_agnostic_fusions
@@ -69,6 +85,7 @@ def main():
     df_merge = merge(df_merge, df_pcawg_recurrent_tumor_fusions)
     df_merge = merge(df_merge, df_pcawg_tumor_fusions)
     df_merge = merge(df_merge, df_cosmic_tumor_fusions)
+    df_merge = merge(df_merge, df_thousg_rna_star_fusion)
     df_merge.reset_index(drop=True, inplace=True)
     # consolidate eval data set columns
     eval_dataset_values = []
