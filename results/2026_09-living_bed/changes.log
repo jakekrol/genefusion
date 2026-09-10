@@ -1,0 +1,4 @@
+# 2026-09-10
+executed ../2025_04-gene_bedfile_cln/run.sh to get initial bed of genes from GENCODE
+added PARGP1 `10      46350283        46411621        PARGP1  neg`
+inserted 196 genes from fusion eval dataset. used jkbiolib.gene.human.gene2region to get regions
