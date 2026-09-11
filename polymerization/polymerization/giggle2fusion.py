@@ -27,7 +27,6 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
     left_gene: name of left gene
     outfile: path to output file to write giggle results to
     timeout: time limit for giggle to run in seconds, default is 2 hours
-    returns a pandas dataframe of giggle results
     '''
     giggle = shutil.which('giggle')
     if not giggle:
@@ -91,6 +90,73 @@ def run_giggle(argstring, left_gene, outfile, timeout = 60 * 60 * 2, bgzip=False
             return output_path
     return output_path
 
+def bed2giggle(
+    df_bed: pd.DataFrame,
+    df_shard: pd.DataFrame,
+    outdir: str,
+    genes_only: set = set(), # only run giggle on these genes
+    gene_col_idx: int = 3,
+    outfile_prefix: str ='',
+    max_workers: int = 4,
+    timeout: float =60 * 60 * 2,
+    bgzip: bool =True,
+    outfile_column_giggle_prefix: str = 'outfile_giggle'
+):
+    # columns will be gene, chrom, start, end, strand, outfile_<shard_>, ... outfile_<subpopk>
+    df_giggle = df_bed.copy()
+    # if no gene set is provided the whole bed will be run
+    if len(genes_only) < 1:
+        genes = df_bed["gene_name"].unique()
+    else:
+        genes = genes_only
+    max_workers=min(max_workers, len(genes), os.cpu_count())
+    print(f"# giggle searching for {len(genes)} genes using {max_workers} workers")
+    for i, (cat, group) in enumerate(df_shard.groupby('category')):
+        # make outfile column for each category
+        col_name = f"{outfile_column_giggle_prefix}_{cat}"
+        df_giggle[col_name] = pd.NA # initialize
+        outdir_cat = os.path.join(outdir, cat)
+        os.makedirs(outdir_cat,exist_ok=True)
+        # loop over index shards
+        for giggle_index in group['giggle_index'].unique():
+            # parallel giggle queries
+            with ThreadPoolExecutor(max_workers=max_workers) as ex:
+                futures = []
+                for i, row in df_bed.iterrows():
+                    gene = row['gene_name']
+                    outfile = os.path.join(
+                        outdir_cat, f"{outfile_prefix}{gene}.giggle"
+                    )
+                    if bgzip and not outfile.endswith('.gz'):
+                        outfile += '.gz'
+                    # note: the outfile is the same for shards within the same category
+                    # data is appended
+                    idx = df_giggle.index[df_giggle["gene_name"] == gene][0]
+                    df_giggle.loc[idx, col_name] = outfile
+
+                    # only run if gene is in the selected set
+                    if gene in genes:
+                    
+                        # query region 
+                        chromosome = row['chromosome']
+                        start = row['start']
+                        end = row['end']
+                        region = f"{chromosome}:{start}-{end}"
+                        argstring = f"search -i {giggle_index} -r {region} -v"
+
+                        # run giggle
+                        futures.append(ex.submit(run_giggle, argstring, gene, outfile, timeout, bgzip, append=True))
+                if len(futures) > 0:
+                    for future in as_completed(futures):
+                        try:
+                            _ = future.result()
+                        except Exception as e:
+                            print(f"Error in giggle search: {e}")
+                            continue
+    return df_giggle
+
+    
+
 
 
 def merge_fusion_set_bed2giggle(
@@ -99,11 +165,11 @@ def merge_fusion_set_bed2giggle(
     outdir,
     outfile_prefix='',
     max_workers=4,
-    gene_delim='--',
     timeout=60 * 60 * 2,
     bgzip=True,
     outfile_column_giggle_prefix = 'outfile_giggle'
 ):
+    print("# DEPRECATED: use bed2giggle instead.")
     # similar to stix2fusion.merge_fusion_set_bed2stix() but for giggle instead of stix
 
     # only left-genes are searched
@@ -295,8 +361,6 @@ def clean2swap(
                 if infile is None or infile is pd.NA:
                     df_swap.at[idx, col_swap] = pd.NA
                     continue
-                if type(infile) == type(0.1):
-                    breakpoint()
                 outfile = infile.replace('.giggle.clean', '.giggle.clean.swap')
                 fut = ex.submit(swap_intervals, infile, outfile, bgzip)
                 futures[fut] = (idx, outfile, col_swap)
@@ -718,11 +782,12 @@ def agg_evidence_by_category(outdir_g2f, outdir_agg, df_giggle_shards, outfile_s
     return outdir_agg
 
 def giggle2fusion(
-    df_merged,
+    df_bed,
     df_shard,
     outdir,
     logdir,
     path_bedfile,
+    genes_only = set(), # default empty set will use all genes in bed for giggle queries
     gene_col_idx=3,
     sample_clean_func= lambda x: os.path.basename(x), # default takes basename of sample id
     evidence_right_gene_col=3,
@@ -762,8 +827,16 @@ def giggle2fusion(
         if verbose:
             print("# running giggle search")
         t_0= time.time()
-        df_giggle = merge_fusion_set_bed2giggle(
-            df_merged, df_shard, outdir, outfile_prefix, max_workers, gene_delim='--', timeout=timeout, bgzip=bgzip
+        df_giggle = bed2giggle(
+            df_bed,
+            df_shard,
+            outdir,
+            genes_only,
+            gene_col_idx,
+            outfile_prefix,
+            max_workers,
+            timeout=timeout,
+            bgzip=bgzip
         )
         with open (os.path.join(logdir, 'giggle_time.txt'), 'w') as f:
             f.write(f"{time.time() - t_0}\n")
