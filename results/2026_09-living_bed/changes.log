@@ -1,3 +1,6 @@
+# 2026-09-11
+filtered out mitochondrial chromosome genes (^MT)
+
 # 2026-09-10
 executed ../2025_04-gene_bedfile_cln/run.sh to get initial bed of genes from GENCODE
 added PARGP1 `10      46350283        46411621        PARGP1  neg`
