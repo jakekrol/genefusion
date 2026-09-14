@@ -6,6 +6,13 @@ from importlib.resources import files
 def get_data_file(filename):
     return files("polymerization.data").joinpath(filename)
 
+def get_aws_pcawg_rna_bam_paths(bucket):
+    path = get_data_file("aws_pcawg_rna_bam_paths.txt")
+    df = pd.read_csv(path,sep="\t", header=None)
+    df.columns = ['path']
+    df['path'] = df['path'].apply(lambda x: f"s3://{bucket}{x}")
+    return df
+
 def get_thousg_rna_star_fusion_calls():
     path = get_data_file("thousg_rna-star_fusion_calls.tsv")
     return pd.read_csv(path, sep="\t")
@@ -29,6 +36,10 @@ def get_pcawg_tumor_fusions():
 def get_cosmic_tumor_fusions():
     path = get_data_file("cosmic_fusions.tsv")
     return pd.read_csv(path, sep="\t")
+
+def get_evaluation_data():
+    path = get_data_file("fusion_eval.tsv")
+    return pd.read_csv(path,sep="\t")
 
 def get_pcawg_data_types():
     x =    {

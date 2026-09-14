@@ -3,6 +3,18 @@ import numpy as np
 import math
 import pandas as pd
 
+# this function is not used, just documenting idea
+# the idea is to normalize reads score by burden of two genes
+def burden_normalized_reads(reads: int, burden_x: int, burden_y: int, aggregation: str = "midpoint"):
+	n_x = reads / burden_x # in [0,1]
+	n_y = reads / burden_y # in [0,1]
+	if aggregation == "midpoint":
+		return 0.5 * (n_x + n_y)
+	if aggregation == "max":
+		return max(n_x,n_y)
+
+    
+
 def normalize_evidence_columns(
 	df,
 	column_map
