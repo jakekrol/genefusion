@@ -4,7 +4,7 @@ import math
 import pandas as pd
 
 # the idea is to normalize reads score by burden of two genes
-def burden_normalized_reads(reads: np.array, burden_x: np.array, burden_y: np.array, aggregation: str = "midpoint"):
+def burden_normalize_reads(reads: np.array, burden_x: np.array, burden_y: np.array, aggregation: str = "midpoint"):
 	out = np.zeros_like(reads, dtype=np.float64)
 	# if burden is < 1 for either, then it is not possible to have any reads supporting the fusion
 	mask = (burden_x >= 1) & (burden_y >= 1)
@@ -17,6 +17,36 @@ def burden_normalized_reads(reads: np.array, burden_x: np.array, burden_y: np.ar
 		out[mask] = np.maximum(norm_x, norm_y)
 	return out
     
+def burden_normalize_df_evidence(
+	df: pd.DataFrame,
+	df_burden: pd.DataFrame,
+	column_map: dict
+):
+
+	# note: this function operates directly on input df, not a copy
+	# validation
+	for key_column_in in column_map.keys():
+		assert key_column_in in df.columns, f"Expected column '{key_column_in}' not found in DataFrame."
+	for key, sub_dict in column_map.items():
+		assert 'evidence_type' in sub_dict, f"Missing 'evidence_type' in column_map for key '{key}'."
+		assert 'specimen' in sub_dict, f"Missing 'specimen' in column_map for key '{key}'."
+		assert 'total_samples' in sub_dict, f"Missing 'total_samples' in column_map for key '{key}'."
+	for key_column_in, sub_dict in column_map.items():
+		# get parameters
+		evidence_type = sub_dict['evidence_type']
+		specimen = sub_dict['specimen']
+		total_samples = sub_dict['total_samples']
+		# apply normalization
+		if evidence_type == 'sample':
+			df[key_column_in] = normalize_samples(df[key_column_in].values, total_samples)
+		if evidence_type == 'read':
+			burden_column = sub_dict['burden_column']
+			burden = df_burden[burden_column]
+			df['burden_left'] = df['gene_left'].map(burden).fillna(0)
+			df['burden_right'] = df['gene_right'].map(burden).fillna(0)
+			df[key_column_in] = burden_normalize_reads(df[key_column_in].values, df['burden_left'], df['burden_right'])
+
+	return df
 
 def coverage_normalize_df_evidence(
 	df: pd.DataFrame,
