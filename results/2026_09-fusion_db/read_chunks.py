@@ -1,32 +1,36 @@
 #!/usr/bin/env python3
 import numpy as np
 import pandas as pd
-from polymerization.score import coverage_normalize_df_evidence, coverage_normalize_tumor_reads, coverage_normalize_normal_reads, normalize_samples
+from polymerization.score import coverage_normalize_df_evidence, coverage_normalize_tumor_reads, coverage_normalize_normal_reads, normalize_samples, burden_normalize_df_evidence, burden_normalize_reads
 import sqlite3
 import time
 import yaml
 
 DATABASE="fusion.db"
 TABLE='fusion_joined'
+TABLE_BURDEN='burden'
 COLUMN_MAP='score_column_map.yaml'
 with open(COLUMN_MAP, 'r') as f:
     column_map = yaml.safe_load(f)
 
 ### benchmark ###
 
-# ~50k rows per second
-# estimated time: ~55.5 hours total
-def chunk2df(database: str, table: str, chunk_size: int = int(10**5), max_iter: int = 10):
+def chunk2df(database: str, table: str, table_burden: str, chunk_size: int = int(10**5), max_iter: int = 10):
+    # burden
     conn = sqlite3.connect(database)
+    df_burden = pd.read_sql_query(f"SELECT * FROM {table_burden}", conn)
+    df_burden.set_index("gene", inplace=True)
+    # evidence
     n = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
     times = []
     t_0 = time.time()
     for i,df in enumerate(pd.read_sql_query(f"SELECT * FROM {table}", conn, chunksize=chunk_size)):
         if i >= max_iter:
             break
-        df_norm_cov = coverage_normalize_df_evidence(df, column_map)
-        # df_norm_burden
-        df_score.to_csv("chunk2df_{i}.tsv",sep="\t",index=False)
+        df_norm_coverage = coverage_normalize_df_evidence(df.copy(), column_map)
+        df_norm_burden = burden_normalize_df_evidence(df, df_burden, column_map)
+        df_norm_coverage.to_csv(f"chunk2df_norm_cov_{i}.tsv",sep="\t",index=False)
+        df_norm_burden.to_csv(f"chunk2df_norm_burden_{i}.tsv",sep="\t",index=False)
         t_elapsed = time.time() - t_0
         print(f"# time for chunk {i+1}: {t_elapsed}")
         times.append(t_elapsed)
@@ -35,10 +39,7 @@ def chunk2df(database: str, table: str, chunk_size: int = int(10**5), max_iter: 
     return np.mean(times), chunk_size, n
 
 
-# ~125,000 rows per second
-# total rows ~ 10^9
-# estimated time: 22.2 hours
-def chunk2py(database: str, table: str, chunk_size: int = int(10**5), max_iter: int = 10):
+def chunk2py(database: str, table: str, table_burden: str, chunk_size: int = int(10**5), max_iter: int = 10):
     conn = sqlite3.connect(database)
     n = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
     times = []
@@ -66,7 +67,7 @@ def estimate_runtime(avg_t_per_chunk, chunk_size, n):
 def benchmark():
     # estimated time: ~55.5 hours total
     print("# benchmarking chunk2df")
-    avg_t_per_chunk, chunk_size, n  = chunk2df(DATABASE,TABLE)
+    avg_t_per_chunk, chunk_size, n  = chunk2df(DATABASE,TABLE,TABLE_BURDEN)
     t_est = estimate_runtime(avg_t_per_chunk, chunk_size, n)
     print(
         "# estimated time chunk2df with rows={} and chunksize={}: {}".format(
