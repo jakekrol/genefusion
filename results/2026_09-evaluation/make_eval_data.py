@@ -3,9 +3,13 @@
 import argparse
 import pandas
 from polymerization.datasets import *
+from polymerization.io import read_bed
+from polymerization.stix2fusion import left_sort_fusion_set
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--output", type=str, default="fusion_eval.tsv")
+parser.add_argument("--bed", default="../2026_09-living_bed/grch37.genes.sort.bed")
+parser.add_argument("--exclusion", default = "../2026_09-gene_exclusion/genes_exclude.txt")
 args = parser.parse_args()
 
 COL_EVALUATION_DATASET="eval_dataset"
@@ -15,6 +19,11 @@ def merge(x,y, col_evaluation_dataset=COL_EVALUATION_DATASET):
     return m
 
 def main():
+    genes_exclude = set()
+    with open(args.exclusion, "r") as f:
+        for line in f.readlines():
+            genes_exclude.add(line.strip())
+    df_bed = read_bed(args.bed,gene_col_idx=3)
     dataset='babiceanu_recurrent_normal_tissue_specific_fusions'
     df_babiceanu_recurrent_normal_tissue_specific_fusions = \
         get_babiceanu_recurrent_normal_tissue_specific_fusions()
@@ -115,6 +124,15 @@ def main():
     columns = leading_columns + [c for c in columns if c not in leading_columns]
     df_merge = df_merge[columns]
     # df_merge.fillna('.', inplace=True)
+
+    ### filter
+    mask = ~df_merge['gene_left'].isin(genes_exclude)
+    df_merge = df_merge[mask]
+    mask = ~df_merge['gene_right'].isin(genes_exclude)
+    df_merge = df_merge[mask]
+
+    ### verify sort
+    df_merge = left_sort_fusion_set(df_merge, df_bed)
     df_merge.to_csv(args.output, sep='\t', index=False)
 
 if __name__ == "__main__":
