@@ -1,3 +1,11 @@
+# 2026-09-17
+rm dup entry: "ASMTL-AS1". kept chrx, rm chrY
+rm dup entry: "ASMTL". kept chrx, rm chrY
+rm dup entry: "SLC25A6". kept chrx, rm chrY
+rm dup entry: "SLC5A3". kept end=35478561, rm end=35478559
+rm dup entry: "P2RY8". kept chrX rm chrY
+remove duplicate LSP1 entry. two entries: 1 on chr13 1 on chr11. I ran jkbiolib.gene.human.gene2region("LSP1") and it returned chr13
+
 # 2026-09-11
 filtered out mitochondrial chromosome genes (^MT)
 
