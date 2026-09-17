@@ -50,11 +50,18 @@ def left_sort_fusion_set(df_fusion, df_bed):
         gene_y = row.iloc[1]
         # read_bed already sorts the bed file by chromosome and start position
         # therefore, we can compare index in bed_file
-        try:
-            idx_x = df_bed.index[df_bed['gene_name'] == gene_x][0]
-            idx_y = df_bed.index[df_bed['gene_name'] == gene_y][0]
-        except IndexError:
-            continue
+        mask_x = df_bed['gene_name']==gene_x
+        if mask_x.sum() < 1:
+            raise ValueError(f"gene_x={gene_x} not found in bed")
+        if mask_x.sum() > 1:
+            raise ValueError(f"gene_x={gene_x} has two entries in bed")
+        idx_x = df_bed.index[mask_x]
+        mask_y = df_bed['gene_name']==gene_y
+        if mask_y.sum() < 1:
+            raise ValueError(f"gene_y={gene_y} not found in bed")
+        if mask_y.sum() > 1:
+            raise ValueError(f"gene_y={gene_y} has two entries in bed")
+        idx_y = df_bed.index[mask_y]
         if idx_x < idx_y:
             continue
         else:

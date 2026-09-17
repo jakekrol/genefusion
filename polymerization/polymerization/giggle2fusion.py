@@ -845,6 +845,9 @@ def giggle2fusion(
             f.write(f"giggle_output\t{df_giggle.isnull().sum().sum()}\n")
     else:
         df_giggle = pd.read_csv(os.path.join(logdir, 'giggle_output.tsv'), sep='\t')
+    
+    # NAs will raise errors 
+    df_giggle = df_giggle.dropna()
 
     # clean
     if 'clean' in steps:
