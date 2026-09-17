@@ -1,4 +1,17 @@
 # 2026-09-17
+rm dup entry: "ZMYM6". kept (start=35449523,end=35497569), rm (start=35447134,end=35497342)
+rm dup entry: "VAMP7". kept chrx, rm chrY
+rm dup entry: "CKS1B". kept chr1, rm chr5
+rm dup entry: "PAGR1". kept (start=29827285,end=29841948), rm (start=29827832,end=29831438)
+rm dup entry: "ITGB3". kept start=45331212, rm start=45331263
+rm dup entry: "ITFG3". kept(start=284545), rm (start=299546)
+rm dup entry: "GALT". kept(start=34638130,end=34651032), rm (start=34646642,end=34657110)
+rm dup entry: "TMBIM4". kept(start=66517697,end=66563765), rm (start=66517709,end=66563852)
+rm dup entry: "F11R". kept (start=160965001,end=160991138), rm (start=160967747,end=161008752)
+rm dup entry: "EFNA3". kept end=155060014, rm end=155059283
+rm dup entry: "SDHD". kept (start=111957497,end=111990353), rm (start=111957627,end=112064528)
+rm dup entry: "DCAF8". kept start=160185505, rm start=160187254
+rm dup entry: "SOX7". kept start=10581278, rm start=10582909
 rm dup entry: "ASMTL-AS1". kept chrx, rm chrY
 rm dup entry: "ASMTL". kept chrx, rm chrY
 rm dup entry: "SLC25A6". kept chrx, rm chrY
