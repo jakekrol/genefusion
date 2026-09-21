@@ -13,8 +13,8 @@ TBL_FUSION_EVIDENCE="fusion_evidence"
 datasets = [
 	### thousg
     (
-        "thousg_mage_rna",
-        "../2026_07-1kg-rna/g2f_agg/mage_short_read_1000g_rna-fusion_evidence.tsv",
+        "thousg_mage_short_read_rna",
+        "../2026_06-g2f-all_gene_pairs/g2f_agg/mage_short_read_1000g_rna-fusion_evidence.tsv",
     ),
 	(
 		"thousg_low_coverage_dna",
@@ -185,7 +185,7 @@ HAVING COUNT(*) > 1;
         check=True,
     )
 
-def union_fusion_keys(table_names, db, key1="gene_left", key2="gene_right", tbl_gene_pairs=TBL_GENE_PAIRS,, tbl_fusion_evidence=TBL_FUSION_EVIDENCE fill_value="0"):
+def union_fusion_keys(table_names, db, key1="gene_left", key2="gene_right", tbl_gene_pairs=TBL_GENE_PAIRS, tbl_fusion_evidence=TBL_FUSION_EVIDENCE, fill_value="0"):
     # delete table if already exists
     cmd = f"DROP TABLE IF EXISTS {joined_table_name};"
     print(f"# running cmd: {cmd}")
@@ -227,7 +227,7 @@ def union_fusion_keys(table_names, db, key1="gene_left", key2="gene_right", tbl_
     print(result.stdout)
     print(result.stderr)
 
-    # join read and sample column data onto the union fusion key table
+    # gather fusion evidence by join read and sample column data onto the union gene pairs table
     cmd = f"""
     DROP TABLE IF EXISTS {tbl_fusion_evidence};
 
@@ -297,17 +297,20 @@ SELECT * FROM {name} LIMIT 5;
 
 
 ### add individual datasets
+print("# adding individual evidence tables")
 for name, path in datasets:
     assert os.path.exists(path)
     build_table(args.db, name, path)
 
 ### join datasets
+print("# joining fusion evidence tables")
 table_names=[]
 for name, _ in datasets:
     table_names.append(name)
 union_fusion_keys(table_names, args.db)
 
 ### add burden table
+print("# adding burden evidence table")
 path="../2026_09-burden/burden.tsv"
 name="burden"
 df = pd.read_csv(path,sep='\t')

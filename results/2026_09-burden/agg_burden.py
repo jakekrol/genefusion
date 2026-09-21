@@ -34,8 +34,6 @@ def main():
 	# most datasets live here
 	dirs = os.listdir("../2026_06-g2f-all_gene_pairs/g2f_out")
 	dirs = [os.path.join("../2026_06-g2f-all_gene_pairs/g2f_out", d) for d in dirs]
-	# 1kg rna lives here
-	dirs.append("../2026_07-1kg-rna/g2f_out/mage_short_read_1000g_rna")
 	gene2burden = defaultdict(dict)
 	ndirs = len(dirs)
 	for i,directory in enumerate(dirs):
