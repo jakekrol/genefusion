@@ -1,1 +1,1 @@
-File ids  corresponding to PCAWG tissue and sample types
+map pcawg file ids to project to tissue
