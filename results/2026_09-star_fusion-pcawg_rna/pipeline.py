@@ -25,7 +25,7 @@ parser.add_argument("--failed_rows", default="pipeline-failures.tsv", help="tsv 
 args = parser.parse_args()
 
 def ega_download(file_id: str, path_credentials_json: str, executable: str, outdir: str):
-    cmd = f"{executable} download {file_id} --output {outdir} --config-file {path_credentials_json}"
+    cmd = f"{executable} download {file_id} --output {outdir} --config-file {path_credentials_json} --restart"
     print(f"# running cmd: {cmd}")
     result = subprocess.run(cmd, shell=True)
     return result.returncode
@@ -116,14 +116,13 @@ def process_row(row):
         print(f"# bamtofastq failed for pcawg_file_id={pcawg_file_id}, bam_sort={bam_sort}")
         return 0,0,1,0
     ### star fusion
-    breakpoint()
     outdir_star_fusion = os.path.join(os.path.dirname(bam_sort), args.outdir_star_fusion)
     if args.cache and os.path.isdir(outdir_star_fusion):
         result_star_fusion = 0
     else:
         result_star_fusion = star_fusion(
-            fq1=r1_out,
-            fq2=r2_out,
+            fq_1=r1_out,
+            fq_2=r2_out,
             outdir=outdir_star_fusion,
             star_fusion_conda=args.conda_env,
             cpus=int(args.cpus_per_run),
