@@ -6,6 +6,11 @@ from importlib.resources import files
 def get_data_file(filename):
     return files("polymerization.data").joinpath(filename)
 
+def get_icgc_legacy_metadata():
+    path = get_data_file("icgc25k-legacy-metadata.tsv.gz")
+    df = pd.read_csv(path, sep="\t")
+    return df
+
 def get_aws_pcawg_rna_bam_paths(bucket):
     path = get_data_file("aws_pcawg_rna_bam_paths.txt")
     df = pd.read_csv(path,sep="\t", header=None)
