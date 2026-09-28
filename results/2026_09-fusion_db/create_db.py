@@ -187,7 +187,7 @@ HAVING COUNT(*) > 1;
 
 def union_fusion_keys(table_names, db, key1="gene_left", key2="gene_right", tbl_gene_pairs=TBL_GENE_PAIRS, tbl_fusion_evidence=TBL_FUSION_EVIDENCE, fill_value="0"):
     # delete table if already exists
-    cmd = f"DROP TABLE IF EXISTS {joined_table_name};"
+    cmd = f"DROP TABLE IF EXISTS {tbl_gene_pairs};"
     print(f"# running cmd: {cmd}")
     result = subprocess.run(
         ["sqlite3", db],
@@ -198,7 +198,7 @@ def union_fusion_keys(table_names, db, key1="gene_left", key2="gene_right", tbl_
     print(result.stdout)
     print(result.stderr)
     # get union of fusion keys
-    cmd = f"CREATE TABLE {joined_table_name} AS WITH keys AS ( "
+    cmd = f"CREATE TABLE {tbl_gene_pairs} AS WITH keys AS ( "
     n = len(table_names)
     for i,table in enumerate(table_names):
         if i < n-1:
@@ -216,7 +216,7 @@ def union_fusion_keys(table_names, db, key1="gene_left", key2="gene_right", tbl_
     print(result.stdout)
     print(result.stderr)
     # index 
-    cmd = f"CREATE INDEX idx_{joined_table_name} ON {joined_table_name}({key1}, {key2});"
+    cmd = f"CREATE INDEX idx_{tbl_gene_pairs} ON {tbl_gene_pairs}({key1}, {key2});"
     print(f"# running cmd: {cmd}")
     result = subprocess.run(
         ["sqlite3", db],
@@ -295,12 +295,11 @@ SELECT * FROM {name} LIMIT 5;
 
     
 
-
-### add individual datasets
-print("# adding individual evidence tables")
-for name, path in datasets:
-    assert os.path.exists(path)
-    build_table(args.db, name, path)
+# ### add individual datasets
+# print("# adding individual evidence tables")
+# for name, path in datasets:
+#     assert os.path.exists(path)
+#     build_table(args.db, name, path)
 
 ### join datasets
 print("# joining fusion evidence tables")

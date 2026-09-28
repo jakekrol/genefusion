@@ -210,16 +210,6 @@
   evidence_type: "sample"
   specimen: "normal"
   total_samples: 13
-# "reads_thousg_high_coverage_thousg_dna":
-#   evidence_type: "read"
-#   specimen: "normal"
-#   total_samples: 2504
-#   upper_bound: 50
-#   burden_column: "high_coverage_1000g_dna"
-# "samples_high_coverage_thousg_dna":
-#   evidence_type: "sample"
-#   specimen: "normal"
-#   total_samples: 2504
 "reads_pcawg_kidney_normal_dna":
   evidence_type: "read"
   specimen: "normal"
@@ -260,16 +250,6 @@
   evidence_type: "sample"
   specimen: "normal"
   total_samples: 45
-# "reads_low_coverage_thousg_dna":
-#   evidence_type: "read"
-#   specimen: "normal"
-#   total_samples: 2535
-#   upper_bound: 50
-#   burden_column: "low_coverage_1000g_dna"
-# "samples_low_coverage_thousg_dna":
-#   evidence_type: "sample"
-#   specimen: "normal"
-#   total_samples: 2535
 "reads_pcawg_ovary_normal_dna":
   evidence_type: "read"
   specimen: "normal"
@@ -290,3 +270,33 @@
   evidence_type: "sample"
   specimen: "normal"
   total_samples: 114
+# "reads_low_coverage_thousg_dna":
+#   evidence_type: "read"
+#   specimen: "normal"
+#   total_samples: 2535
+#   upper_bound: 50
+#   burden_column: "low_coverage_1000g_dna"
+# "samples_low_coverage_thousg_dna":
+#   evidence_type: "sample"
+#   specimen: "normal"
+#   total_samples: 2535
+"reads_thousg_high_coverage_dna":
+  evidence_type: "read"
+  specimen: "normal"
+  total_samples: 2504
+  upper_bound: 50
+  burden_column: "high_coverage_1000g_dna"
+"samples_thousg_high_coverage_dna":
+  evidence_type: "sample"
+  specimen: "normal"
+  total_samples: 2504
+"reads_thousg_mage_short_read_rna":
+  evidence_type: "read"
+  specimen: "normal"
+  total_samples: 767
+  upper_bound: 50
+  burden_column: "mage_short_read_1000g_rna"
+"samples_thousg_mage_short_read_rna":
+  evidence_type: "sample"
+  specimen: "normal"
+  total_samples: 767
