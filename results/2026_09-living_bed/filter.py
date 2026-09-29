@@ -11,6 +11,5 @@ def cleanup_bed(bed):
     df = df[mask]
     df.to_csv(bed,sep="\t", header=False,index=False)
 
-for bed in ['grch37.genes.bed', 'grch37.genes.sort.bed']:
-    cleanup_bed(bed)
+cleanup_bed('grch37.genes.sort.bed')
 
