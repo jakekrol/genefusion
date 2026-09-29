@@ -8,7 +8,9 @@ parser.add_argument("--repeat_bed_coverage",default="gene_repeat.coverage.bed")
 parser.add_argument("--output", default="gene-repeat-coverage.hist.png")
 parser.add_argument("--title", default="Gene repeat coverage")
 parser.add_argument("--bins", default=30)
+parser.add_argument("--threshold",default=0.75)
 args = parser.parse_args()
+args.threshold=float(args.threshold)
 
 def plot(x,text):
     fig, ax = plt.subplots(figsize=(6,4))
@@ -16,6 +18,7 @@ def plot(x,text):
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.set_title(args.title,loc='left')
+    ax.axvline(args.threshold, linestyle='--', color='red')
     ax.annotate(text,xy=(0.5,0.8),xycoords="axes fraction")
     fig.savefig(args.output)
 
@@ -32,10 +35,10 @@ def main():
         'fraction_of_gene_intersecting_repeat'
     ]
     m = df.shape[0]
-    mask = df['fraction_of_gene_intersecting_repeat'] > 0.5
+    mask = df['fraction_of_gene_intersecting_repeat'] > args.threshold
     frac_gt_half = round(mask.sum()/m, 3)
-    print(f"# {frac_gt_half} genes have >0.5 repeat coverage")
-    text = f"{frac_gt_half* 100}% genes > 0.5 repeat coverage"
+    print(f"# {frac_gt_half} genes have >{args.threshold} repeat coverage")
+    text = f"{frac_gt_half* 100}% genes > {args.threshold} repeat coverage"
     plot(df['fraction_of_gene_intersecting_repeat'],text)
     out_data = args.repeat_bed_coverage.replace(".bed", ".tsv")
     df.to_csv(out_data,sep="\t", index=False)
