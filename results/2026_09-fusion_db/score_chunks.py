@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+# runtime is about 4 hours
 import numpy as np
 import pandas as pd
 from polymerization.score import coverage_normalize_df_evidence, coverage_normalize_tumor_reads, coverage_normalize_normal_reads, normalize_samples, burden_normalize_df_evidence, burden_normalize_reads
@@ -10,7 +12,8 @@ import yaml
 DATABASE="fusion.db"
 TABLE='fusion_evidence'
 TABLE_BURDEN='burden'
-COLUMN_MAP='score_column_map.yaml'
+TABLE_SCORE='score_no_pcawg_rna'
+COLUMN_MAP='score_column_map.no_pcawg_rna.yaml'
 NORMAL_COLUMN_PATTERNS = ["normal", "1000g", "thousg", "mage"]
 THOUSG_COLUMN_PATTERNS = ["1000g", "thousg", "mage"]
 with open(COLUMN_MAP, 'r') as f:
@@ -157,7 +160,7 @@ def chunk2df(
                     df_out = pd.concat([df_out, df[columns]],axis=1)
             if_exists = "replace" if i_chunk == 0 else "append"
             df_out.to_sql(
-                "score",
+                TABLE_SCORE,
                 conn,
                 if_exists=if_exists,
                 index=False,
@@ -166,10 +169,7 @@ def chunk2df(
             print(f"# time for chunk {i_chunk+1}: {t_elapsed}")
             times.append(t_elapsed)
             t_0 = time.time()
-        conn.close()
     return np.mean(times), chunk_size, n
-
-
 
 # def estimate_runtime(avg_t_per_chunk, chunk_size, n):
 #     iterations = n / chunk_size
