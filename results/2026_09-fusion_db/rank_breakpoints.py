@@ -57,6 +57,8 @@ def main():
         df = pd.read_csv(f,sep="\t")
         df['breakpoint_rank'] = args.default_score
         df['breakpoint_rank'] = df['breakpoint_rank'].astype(float)
+        df['transcript_left'] = pd.NA
+        df['transcript_right'] = pd.NA
         for i, row in df.iterrows():
             gene_left = row['gene_left']
             gene_right = row['gene_right']
@@ -66,8 +68,10 @@ def main():
                 continue
             bp_left = int(bp_left.split(":")[1])
             bp_right = int(bp_right.split(":")[1])
-            _,left_bp_score = score_breakpoint(gene_left,df_exon,bp_left, args.default_score)
-            _,right_bp_score = score_breakpoint(gene_right,df_exon,bp_right, args.default_score)
+            transcript_name_left,left_bp_score = score_breakpoint(gene_left,df_exon,bp_left, args.default_score)
+            transcript_name_right,right_bp_score = score_breakpoint(gene_right,df_exon,bp_right, args.default_score)
+            df.at[i, 'transcript_left'] = transcript_name_left
+            df.at[i, 'transcript_right'] = transcript_name_right
             bp_score_avg = (left_bp_score + right_bp_score) / 2
             df.at[i, 'breakpoint_rank'] = bp_score_avg
         df = df.sort_values('breakpoint_rank')

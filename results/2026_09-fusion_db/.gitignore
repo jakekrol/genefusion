@@ -1,0 +1,5 @@
+credentials.json
+fusion.db
+annotate.input
+bams/*
+top_fusions/*

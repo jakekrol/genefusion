@@ -11,7 +11,7 @@ from polymerization.datasets import get_pcawg_data_types
 parser=argparse.ArgumentParser()
 parser.add_argument("--db", default="fusion.db")
 parser.add_argument("--outdir", default="top_fusions")
-parser.add_argument("--table", default="score_no_pcawg_rna")
+parser.add_argument("--table", default="score")
 parser.add_argument("--num_fusions", default=10000)
 parser.add_argument("--cpus",default=30)
 args = parser.parse_args()

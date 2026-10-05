@@ -12,8 +12,8 @@ import yaml
 DATABASE="fusion.db"
 TABLE='fusion_evidence'
 TABLE_BURDEN='burden'
-TABLE_SCORE='score_no_pcawg_rna'
-COLUMN_MAP='score_column_map.no_pcawg_rna.yaml'
+TABLE_SCORE='score'
+COLUMN_MAP='score_column_map.yaml'
 NORMAL_COLUMN_PATTERNS = ["normal", "1000g", "thousg", "mage"]
 THOUSG_COLUMN_PATTERNS = ["1000g", "thousg", "mage"]
 with open(COLUMN_MAP, 'r') as f:
@@ -54,7 +54,7 @@ def get_pcawg_tumor_tissues():
             tissues.add(tissue)
     return tissues
 
-def chunk2df(
+def score_chunk(
     database: str,
     table: str,
     table_burden: str,
@@ -179,7 +179,7 @@ def chunk2df(
 def main():
     subpopulation_weights = column_map2subpopulation_weights(column_map)
     pcawg_tumor_tissues = get_pcawg_tumor_tissues()
-    avg_t_per_chunk, chunk_size, n  = chunk2df(
+    avg_t_per_chunk, chunk_size, n  = score_chunk(
         DATABASE,
         TABLE,
         TABLE_BURDEN,

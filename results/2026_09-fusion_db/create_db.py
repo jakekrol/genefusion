@@ -285,7 +285,7 @@ SELECT * FROM {name} LIMIT 5;
 """
     print(f"# running cmd: {cmd}")
     result = subprocess.run(
-        ["sqlite3", db],
+        ["sqlite3", "--echo", db],
         input=cmd,
         text=True,
         check=True,
