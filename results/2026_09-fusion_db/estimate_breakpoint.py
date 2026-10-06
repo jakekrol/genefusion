@@ -20,13 +20,14 @@ parser.add_argument("--bed", default = "../2026_09-living_bed/grch37.genes.sort.
 parser.add_argument("--cpus", default = 30)
 args = parser.parse_args()
 args.cpus = int(args.cpus)
+MODALITY='rna'
 
 def get_pcawg_tumor_tissues():
     data = get_pcawg_data_types()
     tissues = set()
     for tissue, _ in data.items():
-        if 'tumor' in data[tissue]['modality']['dna']['specimen']:
-            tissues.add(tissue)
+        # if 'tumor' in data[tissue]['modality']['dna']['specimen']:
+        #     tissues.add(tissue)
         if 'tumor' in data[tissue]['modality']['rna']['specimen']:
             tissues.add(tissue)
     return tissues
@@ -39,7 +40,7 @@ def validate_args():
 def find_intersect_file(gene, tissue, directory=args.dir_g2f, suffix=args.intersect_file_suffix):
     directory = os.path.join(
         args.dir_g2f,
-        f"{tissue}_tumor_dna"
+        f"{tissue}_tumor_{MODALITY}"
     )
     intersect_file = os.path.join(
         directory,
@@ -69,6 +70,10 @@ def estimate_breakpoint(in_filepath: str, out_filepath: str, tumor_tissues: list
             group_by_sample=True,
             bgzip=True
         )
+        # intersect_file2breakpoints failed due to timeout or empty file most likely
+        if type(df_bp) != type(pd.DataFrame()):
+            print(f"# failed to estimate breakpoint for {gene_left}--{gene_right}")
+            continue
         left_chrom = df_bp.loc[0,'chromosome_left']
         right_chrom = df_bp.loc[0,'chromosome_right']
         bp_left = int(df_bp['start_left'].mean())
@@ -78,14 +83,16 @@ def estimate_breakpoint(in_filepath: str, out_filepath: str, tumor_tissues: list
     df.to_csv(out_filepath,sep='\t',index=False)
 
 def main():
-    tumor_tissues = get_pcawg_tumor_tissues()
+    tumor_tissues = {"blood", "kidney", "liver", "ovary"}
     os.makedirs(args.outdir,exist_ok=True)
     infiles = glob.glob(f"{args.indir}/*{args.infile_suffix}")
     infiles.sort()
     queries = []
     for f in infiles:
-        outfile = f.replace(args.infile_suffix,args.outfile_suffix)
-        queries.append((f,outfile,tumor_tissues))
+        for tissue in tumor_tissues:
+            if tissue in f:
+                outfile = f.replace(args.infile_suffix,args.outfile_suffix)
+                queries.append((f,outfile,tumor_tissues))
     cpus = min(args.cpus, len(queries))
     print(f"# cpus: {cpus}")
 
