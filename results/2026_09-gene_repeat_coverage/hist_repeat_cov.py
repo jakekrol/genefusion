@@ -19,7 +19,7 @@ def plot(x,text):
     ax.spines['right'].set_visible(False)
     ax.set_title(args.title,loc='left')
     ax.axvline(args.threshold, linestyle='--', color='red')
-    ax.annotate(text,xy=(0.5,0.8),xycoords="axes fraction")
+    ax.annotate(text,xy=(0.15,0.8),xycoords="axes fraction")
     fig.savefig(args.output)
 
 def main():
