@@ -155,8 +155,10 @@ def main():
     # hist fusions called per sample
     fig, ax = plt.subplots(figsize=(6,4))
     ax.hist(df_fusions_per_sample['fusion_count'], color='black',bins=20)
+    mean = df_fusions_per_sample['fusion_count'].mean()
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
+    ax.axvline(mean,color='red',linestyle='--')
     ax.set_title('1KG RNA MAGE STAR-Fusion', loc='left')
     ax.set_xlabel('Fusions per sample')
     ax.set_ylabel('Sample count')
