@@ -44,13 +44,21 @@ def make_exon_bed(transcript_left, chromosome_left,transcript_right, chromosome_
             f.write(f"{str(chromosome_left)}\t{interval[0]}\t{interval[1]}\n")
         for interval in exons_right:
             f.write(f"{str(chromosome_right)}\t{interval[0]}\t{interval[1]}\n")
+    # sort
+    cmd = f"bedtools sort -i {outfile} > {outfile.replace(".bed",".sort.bed")}"
+    print(f"# running cmd: {cmd}")
+    subprocess.run(cmd,shell=True,check=True)
+    outfile = f"{outfile.replace(".bed",".sort.bed")}"
+    # compress
     cmd = f"bgzip -f {outfile}"
     print(f"# running cmd: {cmd}")
     subprocess.run(cmd,shell=True,check=True)
-    cmd = f"tabix -f -p bed {outfile}.gz"
+    outfile = f"{outfile}.gz"
+    # index
+    cmd = f"tabix -f -p bed {outfile}"
     print(f"# running cmd: {cmd}")
     subprocess.run(cmd,shell=True, check=True)
-    return f"{outfile}.gz"
+    return f"{outfile}"
 
 def samplot(
     bams,
@@ -88,6 +96,7 @@ def main():
     for f in tables:
         df = pd.read_csv(f,sep="\t")
         for i,row in df.iterrows():
+            tissue = os.path.basename(f).split('-')[3]
             gene_left = row['gene_left']
             gene_right = row['gene_right']
             chromosome_left = row['breakpoint_left'].split(":")[0]
@@ -116,11 +125,11 @@ def main():
                     tmp_bed
                 )
                 if annotate_bed:
-                    bam_str=','.join(plot_bams)
+                    bam_str=' '.join(plot_bams)
                     name = f"{gene_left}--{gene_right}"
                     outfile_samplot=os.path.join(
                         args.outdir_plot,
-                        f"{gene_left}--{gene_right}{args.outfile_plot_suffix}"
+                        f"{tissue}-{gene_left}--{gene_right}{args.outfile_plot_suffix}"
                     )
                     if chromosome_left == chromosome_right:
                         samplot(

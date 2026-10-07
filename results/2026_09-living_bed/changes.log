@@ -1,3 +1,7 @@
+# 2026-10-06
+rm dup entry: "CFB". kept ('6', 31895475, 31919861, 1), rm (6	31895475	31919825	CFB	pos)
+rm dup entry: "KRBOX1". kept ('3', 42850938, 43097363, 1) rm (3	42850975	42984284	KRBOX1	pos)
+
 # 2026-09-17
 rm dup entry: "ZMYM6". kept (start=35449523,end=35497569), rm (start=35447134,end=35497342)
 rm dup entry: "VAMP7". kept chrx, rm chrY
