@@ -28,3 +28,12 @@ This inconsitency occurs in many DBs:
 
 I used th hg19.ncbiRefSeq.gtf.gz   GTF from https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/genes/
 to get exons near 46kbp
+
+mapping pcawg file ids to ega ids using pcawg_fileid2ega_fileid.tsv
+
+| pcawg | ega |
+| ----- | ----- |
+| FI6523 | EGAF00001719777 |
+| FI1218 | EGAF00001719891 |
+| FI40382 | EGAF00001719867 |
+
