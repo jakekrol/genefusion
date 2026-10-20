@@ -1,0 +1,7 @@
+sample	count	breakpoint_left	transcript_left	breakpoint_right	transcript_right
+thousg_rna_bed_sort_cln/HG00335.SRR19762301.bed.gz	124	10:46358639	PARGP1-201	10:51607367	TIMM23-007
+thousg_rna_bed_sort_cln/NA20412.SRR19762932.bed.gz	118	10:46358639	PARGP1-201	10:51607367	TIMM23-007
+thousg_rna_bed_sort_cln/HG00130.SRR19762746.bed.gz	111	10:46358639	PARGP1-201	10:51607367	TIMM23-007
+pcawg_rna_blood_tumor_bed/FI6523.bed.gz	75	10:46360714	PARGP1-201	10:51606149	TIMM23-007
+pcawg_rna_blood_tumor_bed/FI1218.bed.gz	65	10:46360714	PARGP1-201	10:51606149	TIMM23-007
+pcawg_rna_blood_tumor_bed/FI40382.bed.gz	65	10:46360714	PARGP1-201	10:51606149	TIMM23-007
