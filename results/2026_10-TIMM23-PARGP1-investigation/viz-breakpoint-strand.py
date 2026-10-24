@@ -109,6 +109,8 @@ def main():
         ax[0,i].spines['top'].set_visible(False); ax[0,i].spines['right'].set_visible(False)
         ax[0,i].set_title(MODALITY2TITLE[modality], loc="left")
         ax[0,i].set_ylabel("Count")
+        ax[0,i].set_yscale('log')
+        ax[0,i].set_ylim(1,10**5)
         starts=[]
         ends=[]
         strand_syms=[]
