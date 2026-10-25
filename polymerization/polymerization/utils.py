@@ -1,6 +1,49 @@
 import subprocess
 import shutil
 import os
+import pandas as pd
+
+# use transcript as annotation track for samplot
+def make_exon_bed(
+    transcript_left: str,
+    chromosome_left: str,
+    transcript_right: str,
+    chromosome_right: str,
+    df_transcripts: pd.DataFrame, # index must be transcript names
+    outfile: str
+):
+    try:
+        exons_left = df_transcripts.loc[transcript_left,"exon_intervals"]
+    except KeyError as e:
+        print(e)
+        return None
+    try:
+        exons_right = df_transcripts.loc[transcript_right,"exon_intervals"]
+    except KeyError as e:
+        print(e)
+        return None
+    exons_left = ast.literal_eval(exons_left)
+    exons_right = ast.literal_eval(exons_right)
+    with open(outfile, "w") as f:
+        for interval in exons_left:
+            f.write(f"{str(chromosome_left)}\t{interval[0]}\t{interval[1]}\n")
+        for interval in exons_right:
+            f.write(f"{str(chromosome_right)}\t{interval[0]}\t{interval[1]}\n")
+    # sort
+    cmd = f"bedtools sort -i {outfile} > {outfile.replace(".bed",".sort.bed")}"
+    print(f"# running cmd: {cmd}")
+    subprocess.run(cmd,shell=True,check=True)
+    outfile = f"{outfile.replace(".bed",".sort.bed")}"
+    # compress
+    cmd = f"bgzip -f {outfile}"
+    print(f"# running cmd: {cmd}")
+    subprocess.run(cmd,shell=True,check=True)
+    outfile = f"{outfile}.gz"
+    # index
+    cmd = f"tabix -f -p bed {outfile}"
+    print(f"# running cmd: {cmd}")
+    subprocess.run(cmd,shell=True, check=True)
+    return outfile
 
 
 def sort_bed(input_path, output_path, tmp_dir='/tmp', threads=4, bgzip=False):

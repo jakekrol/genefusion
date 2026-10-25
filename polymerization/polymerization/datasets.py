@@ -6,6 +6,11 @@ from importlib.resources import files
 def get_data_file(filename):
     return files("polymerization.data").joinpath(filename)
 
+def get_pcawg_ega_metadata_map():
+    path = get_data_file("pcawg-ega-metadata-map.tsv.gz")
+    df = pd.read_csv(path,sep="\t")
+    return df
+
 def get_icgc_legacy_metadata():
     path = get_data_file("icgc25k-legacy-metadata.tsv.gz")
     df = pd.read_csv(path, sep="\t")
@@ -17,6 +22,10 @@ def get_aws_pcawg_rna_bam_paths(bucket):
     df.columns = ['path']
     df['path'] = df['path'].apply(lambda x: f"s3://{bucket}{x}")
     return df
+    
+def get_pcawg_rna_star_fusion_calls():
+    path = get_data_file("pcawg_rna-star_fusion_calls.tsv")
+    return pd.read_csv(path, sep="\t")
 
 def get_thousg_rna_star_fusion_calls():
     path = get_data_file("thousg_rna-star_fusion_calls.tsv")

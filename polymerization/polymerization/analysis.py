@@ -1,5 +1,175 @@
+import gzip
+import os
 import pandas as pd
 import numpy as np
+import time
+from collections import defaultdict
+
+
+def intersect_file2sample_counts(path: str, gene_right_query: str, bgzip: bool = False):
+    assert os.path.exists(path)
+    ### relevant columns (0-indexed)
+    COL_GENE_RIGHT=3
+    COL_SAMPLE=14
+    sample_counts=defaultdict(int)
+    with gzip.open(path, "rt") as f:
+        for i,line in enumerate(f.readlines()):
+            if line.startswith("#"):
+                continue
+            columns = line.strip().split()
+            gene_right = columns[COL_GENE_RIGHT]
+            # ignore rows that do not match query
+            if gene_right != gene_right_query:
+                continue
+            sample = columns[COL_SAMPLE]
+            sample_counts[sample] += 1
+    return sample_counts
+
+def intersect_file2data(path: str, gene_right_query: str, group_by_sample: bool = False, bgzip=False,timeout=180):
+    '''
+    returns pd.DataFrame if successful; returns None if timeout or exception is caught
+    '''
+    assert os.path.exists(path)
+    ### relevant columns (0-indexed)
+    COL_GENE_RIGHT=3
+    COL_SAMPLE=14
+    # read info
+    COL_CHROM_LEFT=9
+    COL_START_LEFT=10
+    COL_END_LEFT=11
+    COL_STRAND_LEFT=12
+    COL_CHROM_RIGHT=5
+    COL_START_RIGHT=6
+    COL_END_RIGHT=7
+    COL_STRAND_RIGHT=8
+    row_data = []
+    try:
+        opener = gzip.open if bgzip else open
+        with opener(path, "rt") as f:
+            columns=None
+            t_0=time.time()
+            for i,line in enumerate(f.readlines()):
+                if (t_0 - time.time()) > timeout:
+                    print(f"# intersect_file2data timed out for query: {path}")
+                    return None
+                if line.startswith("#"):
+                    # gene_left=line.strip().split("=")[1]
+                    continue
+                columns = line.strip().split()
+                gene_right = columns[COL_GENE_RIGHT]
+                # ignore rows that do not match query
+                if gene_right != gene_right_query:
+                    continue
+                sample = columns[COL_SAMPLE]
+                chrom_left = columns[COL_CHROM_LEFT]
+                start_left = int(columns[COL_START_LEFT])
+                end_left = int(columns[COL_END_LEFT])
+                strand_left = int(columns[COL_STRAND_LEFT])
+                chrom_right = columns[COL_CHROM_RIGHT]
+                start_right = int(columns[COL_START_RIGHT])
+                end_right = int(columns[COL_END_RIGHT])
+                strand_right = int(columns[COL_STRAND_RIGHT])
+                row_data.append(
+                    (sample, chrom_left, start_left, end_left, strand_left,
+                     chrom_right, start_right, end_right, strand_right)
+                )
+        df = pd.DataFrame(
+            row_data,
+            columns = [
+                'sample', 'chromosome_left', 'start_left', 'end_left', 'strand_left',
+                'chromosome_right', 'start_right', 'end_right', 'strand_right'
+            ]
+        )
+        if group_by_sample:
+            df = df.groupby('sample').agg(
+                start_left=('start_left', 'min'),
+                end_right=('end_right', 'max')
+            ).reset_index()
+            # add back chromosomes, should be same in loop so using last iteration value is fine
+            df['chromosome_left'] = chrom_left
+            df['chromosome_right'] = chrom_right
+        return df
+    except Exception as e:
+        print(f'# error in intersect_file2breakpoints, query={path}:', e)
+        return None
+
+# fast alternative to the read_g2f_intersect(); intersect2breakpoints() approach
+def intersect_file2breakpoints(path: str, gene_right_query: str, group_by_sample: bool = False, bgzip=False,timeout=180):
+    '''
+    returns pd.DataFrame if successful; returns None if timeout or exception is caught
+    '''
+    assert os.path.exists(path)
+    ### relevant columns (0-indexed)
+    COL_GENE_RIGHT=3
+    COL_SAMPLE=14
+    # read info
+    COL_CHROM_LEFT=9
+    COL_START_LEFT=10
+    COL_END_LEFT=11
+    COL_CHROM_RIGHT=5
+    COL_START_RIGHT=6
+    COL_END_RIGHT=7
+    row_data = []
+    try:
+        opener = gzip.open if bgzip else open
+        with opener(path, "rt") as f:
+            sample_breakpoints=defaultdict(dict)
+            columns=None
+            t_0=time.time()
+            for i,line in enumerate(f.readlines()):
+                if (t_0 - time.time()) > timeout:
+                    print(f"# intersect_file2breakpoint timed out for query: {path}")
+                    return None
+                if line.startswith("#"):
+                    continue
+                columns = line.strip().split()
+                gene_right = columns[COL_GENE_RIGHT]
+                # ignore rows that do not match query
+                if gene_right != gene_right_query:
+                    continue
+                sample = columns[COL_SAMPLE]
+                chrom_left = columns[COL_CHROM_LEFT]
+                start_left = int(columns[COL_START_LEFT])
+                end_left = int(columns[COL_END_LEFT])
+                chrom_right = columns[COL_CHROM_RIGHT]
+                start_right = int(columns[COL_START_RIGHT])
+                end_right = int(columns[COL_END_RIGHT])
+                row_data.append(
+                    (sample, chrom_left, start_left, end_left, chrom_right, start_right, end_right)
+                )
+        df = pd.DataFrame(
+            row_data,
+            columns = [
+                'sample', 'chromosome_left', 'start_left', 'end_left',
+                'chromosome_right', 'start_right', 'end_right'
+            ]
+        )
+        if group_by_sample:
+            df = df.groupby('sample').agg(
+                start_left=('start_left', 'min'),
+                end_right=('end_right', 'max')
+            ).reset_index()
+            # add back chromosomes, should be same in loop so using last iteration value is fine
+            df['chromosome_left'] = chrom_left
+            df['chromosome_right'] = chrom_right
+        return df
+    except Exception as e:
+        print(f'# error in intersect_file2breakpoints, query={path}:', e)
+        return None
+
+def estimate_breakpoint(df_intersect: pd.DataFrame):
+    # make sure to use group_by_sample=True for this
+    assert "start_left" in df_intersect.columns
+    assert "end_right" in df_intersect.columns
+    left_chrom = df_intersect.loc[0,'chromosome_left']
+    right_chrom = df_intersect.loc[0,'chromosome_right']
+    bp_left = int(df_intersect['start_left'].mean())
+    bp_right = int(df_intersect['end_right'].mean())
+    bp_left = f"{left_chrom}:{bp_left}"
+    bp_right = f'{right_chrom}:{bp_right}'
+    return bp_left, bp_right
+    
+        
 
 def intersect2chromosome_count(df_intersect):
     '''

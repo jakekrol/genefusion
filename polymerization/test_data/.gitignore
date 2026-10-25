@@ -1,5 +1,7 @@
 stix_output/*
 g2f_output/*
+g2f_agg/*
+g2f_log/*
 TMEM*
 giggle_output.tsv
 stix_evidence_agg/*

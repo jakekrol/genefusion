@@ -1,5 +1,35 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import subprocess
+
+def samplot(
+    bams: list,
+    name: str,
+    chromosome1: str,
+    start1: int,
+    end1: int,
+    outfile: str,
+    annotation_bed: str = '',
+    svtype: str ="BND",
+    chromosome2: str='',
+    start2: str='',
+    end2: str='',
+    conda_env: str='',
+    zoom: int=10000
+):
+    ' '.join(bams)
+    cmd = f"samplot plot -b {bams} -n {name} -c {chromosome1} "
+    cmd += f"-s {start1} -e {end1} -t {svtype} "
+    cmd += f"-o {outfile} --zoom {zoom}"
+    if annotation_bed:
+        cmd += f" -A {annotation_bed}"
+    if all([chromosome2, start2, end2]):
+        cmd += f" -c {chromosome2} -s {start2} -e {end2}"
+    if conda_env:
+        cmd = f"source ~/.bashrc; conda activate {conda_env}; " + cmd
+    print(f"# running cmd: {cmd}")
+    result=subprocess.run(cmd,shell=True,check=True)
+    return result.returncode
 
 def breakpoint2scatter(
     df_breakpoint,
