@@ -173,7 +173,10 @@ def main():
     df_chimeric_counts_sub = df_chimeric_counts[mask]
     x = df_fusions_per_sample_sub['fusion_count'].values
     y = df_chimeric_counts_sub['chimeric_count'].values
+    mean_y = y.mean()
     ax.scatter(x, y, color='black',s=3, alpha = 0.5)
+    ax.axhline(mean_y,color='gray',linestyle='--')
+    ax.annotate(f"Mean chimeric reads = {round(mean_y)}", transform=ax.transAxes, xy=(0.3, 0.2), xycoords='axes fraction', fontsize=8, color='black', verticalalignment='top')
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.set_title('PCAWG RNA STAR-Fusion', loc='left')
