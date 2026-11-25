@@ -11,6 +11,7 @@ import time
 from multiprocessing import Pool
 
 parser=argparse.ArgumentParser()
+parser.add_argument("--skip", default="completed_runs.txt")
 parser.add_argument("--conda_env", default="star_fusion")
 parser.add_argument("--ega_table", default="ega_bams.named.tsv")
 parser.add_argument("--cpus_parallel", default=5, help="num. of input BAMs to process in parallel. keep low to minimize disk space usage")
@@ -58,6 +59,8 @@ def validate_args():
     assert os.path.exists(args.ega_credentials)
     assert os.path.isdir(args.genome_lib_dir)
     assert shutil.which(args.ega_executable)
+    if args.skip:
+        assert os.path.exists(args.skip)
 
 def validate_executables():
     assert shutil.which("samtools")
@@ -80,8 +83,9 @@ def process_row(row):
             executable=args.ega_executable,
             outdir=pcawg_file_id
         )
-        bam = glob.glob(f"{pcawg_file_id}/{ega_file_id}/*.bam")[0]
-    if result_download != 0:
+        bam_search = glob.glob(f"{pcawg_file_id}/{ega_file_id}/*.bam")
+        bam = bam_search[0] if bam_search else None
+    if result_download != 0 or (bam is None):
         print(f"# download failed for pcawg_file_id={pcawg_file_id}, ega_file_id={ega_file_id}")
         return 1,0,0,0
         
@@ -146,6 +150,15 @@ def main():
     # we drop them because we cannot resolve the specimen type (e.g., tumor/normal) nor tissue 
     df.dropna(subset=['pcawg_file_id'],inplace=True)
     df.reset_index(drop=True, inplace=True)
+    # skip completed runs
+    if args.skip:
+        skip_file_ids = set()
+        with open(args.skip,'r') as f:
+            for line in f.readlines():
+                skip_file_ids.add(line.strip())
+        mask = ~df['pcawg_file_id'].isin(skip_file_ids)
+        df = df[mask]
+        df.reset_index(drop=True,inplace=True)
     rows = [row for _, row in df.iterrows()]
     with Pool(processes=args.cpus_parallel) as pool:
         results = pool.map(process_row, rows)

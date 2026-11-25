@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 
-CPUS=4
+CPUS=30
 OUTDIR=bed
 mkdir -p $OUTDIR
 
 parallel_file="chimeric2bedpe.input"
-mapfile -t chimeric_files < <(ls FI*/star-fusion-out/Chimeric.out.junction)
+mapfile -t chimeric_files < <(ls completed/FI*/star-fusion-out/Chimeric.out.junction)
 echo "${chimeric_files[@]}"
 x=$(mktemp)
 trap "rm $x" EXIT
@@ -16,7 +16,7 @@ done
 
 y=$(mktemp)
 trap "rm $y" EXIT
-cut -f 1 -d '/' $x > $y
+cut -f 2 -d '/' $x > $y
 sed -i "s|^|$OUTDIR/|" $y
 sed -i "s|$|.bed.gz|" $y
 paste $x $y > $parallel_file
